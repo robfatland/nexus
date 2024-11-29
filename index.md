@@ -1,18 +1,18 @@
 <img src="assets/img/greenandblack.png"
      alt="green and black icon"
-     height="80"
-     width="80"
+     height="100"
+     width="100"
      style="float: center; margin-right: 10px;" />
 
-# greenandblack
+# nexus
 
-Source file for this content is in the `gh-pages` branch, root folder, filename [`index.md`]([https://github.com/robfatland/greenandblack/edit/gh-pages/index.md](https://github.com/robfatland/greenandblack/blob/gh-pages/index.md)).
 
-## Navigation links
-- ...from the top, [nice format](https://robfatland.github.io/greenandblack), 
-[github](https://github.com/robfatland/greenandblack/blob/gh-pages/index.md)
-- ...the backing lexicon, [nice format](https://robfatland.github.io/greenandblack/lexicon), 
-[github](https://github.com/robfatland/greenandblack/blob/gh-pages/lexicon.md)
+This (gh-pages-branch) source file is called [`index.md`](https://github.com/robfatland/nexus/blob/gh-pages/index.md)).
+
+- [published: nexus](https://robfatland.github.io/nexus)
+- [github: nexus repo: gh-pages branch: editable `index.md`](https://github.com/robfatland/nexus/blob/gh-pages/index.md)
+- [published: related lexicon of nexus terminology](https://robfatland.github.io/nexus/lexicon)
+- [github: nexus repo: gh-pages branch: editable `lexicon.md`](https://github.com/robfatland/nexus/blob/gh-pages/lexicon.md)
 
 
 ## Contents
