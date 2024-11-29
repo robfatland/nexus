@@ -9,10 +9,8 @@
 
 This (gh-pages-branch) source file is called [`index.md`](https://github.com/robfatland/nexus/blob/gh-pages/index.md)).
 
-- [published: nexus](https://robfatland.github.io/nexus)
-- [github: nexus repo: gh-pages branch: editable `index.md`](https://github.com/robfatland/nexus/blob/gh-pages/index.md)
-- [published: related lexicon of nexus terminology](https://robfatland.github.io/nexus/lexicon)
-- [github: nexus repo: gh-pages branch: editable `lexicon.md`](https://github.com/robfatland/nexus/blob/gh-pages/lexicon.md)
+- [published: nexus](https://robfatland.github.io/nexus) and then there is [github: nexus repo: gh-pages branch: editable `index.md`](https://github.com/robfatland/nexus/blob/gh-pages/index.md)
+- [published: related lexicon of nexus terminology](https://robfatland.github.io/nexus/lexicon) and then there is [github: nexus repo: gh-pages branch: editable `lexicon.md`](https://github.com/robfatland/nexus/blob/gh-pages/lexicon.md)
 
 
 ## Contents
