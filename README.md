@@ -5,16 +5,17 @@ You are reading the meta-narrative of this repo. Use the links below to get to t
 # [Pretty version of greenandblack](https://robfatland.github.io/greenandblack/)
 
 
-[This repo](https://github.com/robfatland/greenandblack/tree/main)
-began as a Note To Self on simplifying format of the *Bourne again shell* **`bash`**: 
-No colorized text, just green characters on a black background.
+[This repo](https://github.com/robfatland/nexus/tree/main) began as a note on simplifying 
+the *Bourne again shell* (**`bash`**) interface: Eliminate the colorized text in favor of
+green characters on a black background.
 
 
 This page is the repository reference. To 'get to the point' you want to use one of the 
 two links that follow:
 
-- [the repo documentation branch `gh-pages`](https://github.com/robfatland/greenandblack/tree/gh-pages)
-- [the resulting compiled documents](https://robfatland.github.io/greenandblack).
+
+- [the repo documentation branch `gh-pages`](https://github.com/robfatland/nexus/tree/gh-pages)
+- [the resulting compiled documents](https://robfatland.github.io/nexus).
 
 
 - the scope of the repo has expanded, as scopes will
