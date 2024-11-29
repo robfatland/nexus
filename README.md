@@ -1,8 +1,10 @@
-You are reading meta-content, specifically the ***README*** on the github pages branch of the greenandblack repo. 
-The content (that is rendered pretty) is `index.md`. The pretty render is [here](https://robfatland.github.io/greenandblack).
+This is the **README.md** on the github pages branch of the nexus repo. 
+
+* [nexus main branch](https://github.com/robfatland/nexus/tree/main)
+* [nexus published](https://robfatland.github.io/nexus).
 
 
-# greenandblack
+# nexus
 
 ## Quo vadis
 
