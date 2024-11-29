@@ -1,37 +1,40 @@
 <img src="assets/img/greenandblack.png"
      alt="green and black icon"
-     height="100"
-     width="100"
+     height="130"
+     width="130"
      style="float: center; margin-right: 10px;" />
+
 
 # nexus
 
 
-This (gh-pages-branch) source file is called [`index.md`](https://github.com/robfatland/nexus/blob/gh-pages/index.md)).
+This (gh-pages-branch) source file is [`index.md`](https://github.com/robfatland/nexus/blob/gh-pages/index.md)).
 
-- [published: nexus](https://robfatland.github.io/nexus) and then there is [github: nexus repo: gh-pages branch: editable `index.md`](https://github.com/robfatland/nexus/blob/gh-pages/index.md)
-- [published: related lexicon of nexus terminology](https://robfatland.github.io/nexus/lexicon) and then there is [github: nexus repo: gh-pages branch: editable `lexicon.md`](https://github.com/robfatland/nexus/blob/gh-pages/lexicon.md)
+- [published: nexus](https://robfatland.github.io/nexus) and a corresponding [editable `index.md`](https://github.com/robfatland/nexus/blob/gh-pages/index.md)
+- [published: lexicon](https://robfatland.github.io/nexus/lexicon) and a corresponding [editable `lexicon.md`](https://github.com/robfatland/nexus/blob/gh-pages/lexicon.md)
 
 
 ## Contents
 
-Green and black...
 
-* [from the top](https://robfatland.github.io/greenandblack)
-* [green and black](https://robfatland.github.io/greenandblack#just-make-it-green-and-black)
-* [ssh tunnel](https://robfatland.github.io/greenandblack#ssh-tunnel)
-* [bash](https://robfatland.github.io/greenandblack#bash)
+* [from the top](https://robfatland.github.io/nexus)
+* [green and black](https://robfatland.github.io/nexus#just-make-it-green-and-black)
+* [ssh tunnel](https://robfatland.github.io/nexus#ssh-tunnel)
+* [bash](https://robfatland.github.io/nexus#bash)
 
 
-## Nice format! What's your secret? 
+## How is this site built and published? 
 
-This repo uses GitHub's **gh-pages** service: Built as a distinct `gh-pages` branch off the default **Main**.
-**gh-pages** uses a jekyll template, whatever that is. There are, as a result, three places to be: 
 
-- [The main branch of the github repo](https://github.com/robfatland/greenandblack/tree/main)
-- [The gh-pages branch of the github repo](https://github.com/robfatland/greenandblack/tree/gh-pages)
-- [The pretty documentation website](https://robfatland.github.io/greenandblack/)
-    - [A sub-folder example](https://robfatland.github.io/greenandblack/vscode)
+This **nexus** repo uses a Jekyll template (the service is called *GitHub pages*) to publish the
+content in a nice format. The content resides in the repo on a code branch called `gh-pages`. 
+Publication is triggered automatically after each *commit*. As a result there are three URLs:
+
+
+- [The main branch of the github repo](https://github.com/robfatland/nexus/tree/main)
+- [The gh-pages branch of the github repo](https://github.com/robfatland/nexus/tree/gh-pages)
+- [The published documentation website](https://robfatland.github.io/nexus/)
+    - [A sub-folder example](https://robfatland.github.io/nexus/vscode)
 
 
 Here is how to get one of these https://**organization**.github.io/**repo** websites started:
