@@ -1,7 +1,7 @@
 # nexus lexicon
 
-- [published: nexus](https://robfatland.github.io/greenandblack), [the editable file](https://github.com/robfatland/greenandblack/blob/gh-pages/index.md)
-- [published: this lexicon](https://robfatland.github.io/nexus/lexicon), [the editable file](https://github.com/robfatland/greenandblack/blob/gh-pages/lexicon.md)
+- [published: nexus](https://robfatland.github.io/greenandblack), and then [the editable file](https://github.com/robfatland/greenandblack/blob/gh-pages/index.md)
+- [published: this lexicon](https://robfatland.github.io/nexus/lexicon), and then [the editable file](https://github.com/robfatland/greenandblack/blob/gh-pages/lexicon.md)
 
 
 ## Quo vadis?
