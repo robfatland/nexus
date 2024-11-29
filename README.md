@@ -2,7 +2,7 @@ You are reading meta-narrative for the nexus repo. Use the links below to get to
 'how to do it' documentation.
 
 
-# [Nexus (formerly greenandblack)](https://robfatland.github.io/nexus/)
+# [nexus](https://robfatland.github.io/nexus/)
 
 
 [This repo](https://github.com/robfatland/nexus/tree/main) began as a note on simplifying 
