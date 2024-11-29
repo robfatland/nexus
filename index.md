@@ -14,15 +14,6 @@ This (gh-pages-branch) source file is [`index.md`](https://github.com/robfatland
 - [published: lexicon](https://robfatland.github.io/nexus/lexicon) and a corresponding [editable `lexicon.md`](https://github.com/robfatland/nexus/blob/gh-pages/lexicon.md)
 
 
-## Contents
-
-
-* [from the top](https://robfatland.github.io/nexus)
-* [green and black](https://robfatland.github.io/nexus#just-make-it-green-and-black)
-* [ssh tunnel](https://robfatland.github.io/nexus#ssh-tunnel)
-* [bash](https://robfatland.github.io/nexus#bash)
-
-
 ## How is this site built and published? 
 
 
@@ -48,6 +39,16 @@ Here is how to get one of these https://**organization**.github.io/**repo** webs
 - The root directory `index.md` renders as default content
     - Add other folders and markdown; but cross reference using documentation website URLs, not GitHub URLs
         - Example: **`https://organization.github.io/repo-name/subfolder`** renders the **`index.md`** therein
+
+
+
+## Topics
+
+
+* [green and black](https://robfatland.github.io/nexus#just-make-it-green-and-black)
+* [ssh tunnel](https://robfatland.github.io/nexus#ssh-tunnel)
+* [bash](https://robfatland.github.io/nexus#bash)
+
 
 
 ## motivating rant please?
