@@ -17,32 +17,31 @@ This page is the meta-narrative. To get to the point:
 - [nexus as a compiled site](https://robfatland.github.io/nexus).
 
 
-- the scope of the repo has expanded, as scopes will
-    - some expansion is notional or stubby, such as material on containers and using `bash`
-- this repo uses GitHub **pages** as a means of compiling content into documents
-    - hence the **`gh-pages`** branch of the repo is where editable content resides
-- customizing `bash` and `vi` is focused on green-on-black, a simple prompt, and text editing
-- scope expanded to include
-    - **`ssh`** tunnels from one machine to another
-    - Difference: **`miniconda`** versus **`anaconda`**
-    - Windows PC
-        - **`Ubuntu bash`**
-        - **`Windows Subsystem for Linux (WSL-2)`**
-        - **`VSCode`**?
-    - containers
-    - conda environments
+The published content for the nexus repo takes precedence for content presentation.
+Here -- meanwhile -- is an aspirational snapshot of what nexus would like to connect with:
 
 
-## Related topics
-
-
-- quantum computing
-- API building and use
-- setting up a server using Flask
-- secure use of the cloud
-- natural language processing
-- command line interface to cloud
-- oceanography-driven data science tools
-- cloud spend notification
-- stopping runaway cloud spend automatically
-- [topics in middle school math and coding](https://github.com/robfatland/othermathclub)
+- customizing `bash` and `vi` to back of the garish interface
+- **`ssh`** tunnels from one machine to another
+    - headless `jupyter` running on a cloud VM with a localhost laptop interface
+- Comparison: **`miniconda`** versus **`anaconda`**
+- **`Ubuntu bash`** on a PC
+- **`Windows Subsystem for Linux (WSL-2)`**
+- How to use **`VSCode`**
+    - VSCode and containers
+    - VSCode and conda environments
+- Ambitious topics
+    - quantum computing
+    - cloud infrastructure skills and tasks
+        - API building and use
+        - setting up a server using Flask
+        - secure use of the cloud for data analysis
+        - building CI for ML/AI
+            - CNN examples
+            - natural language processing
+        - command line interface to cloud
+        - cloud spend notification
+        - stopping runaway cloud spend automatically
+    - an oceanography project
+    - [introductory analytic number theory](https://github.com/robfatland/ant)
+    - [middle school STEM outreach](https://github.com/robfatland/othermathclub)
