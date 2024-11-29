@@ -1,11 +1,7 @@
-# Lexicon
+# nexus lexicon
 
-Green and black...
-
-- ...from the top, [nice format](https://robfatland.github.io/greenandblack), 
-[github](https://github.com/robfatland/greenandblack/blob/gh-pages/index.md)
-- ...this lexicon, [nice format](https://robfatland.github.io/greenandblack/lexicon), 
-[github](https://github.com/robfatland/greenandblack/blob/gh-pages/lexicon.md)
+- [published: nexus](https://robfatland.github.io/greenandblack), [the editable file](https://github.com/robfatland/greenandblack/blob/gh-pages/index.md)
+- [published: this lexicon](https://robfatland.github.io/nexus/lexicon), [the editable file](https://github.com/robfatland/greenandblack/blob/gh-pages/lexicon.md)
 
 
 ## Quo vadis?
