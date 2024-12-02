@@ -1,21 +1,36 @@
 # the bash terminal
 
-## Just green and black please
+## green and black please
 
-- I work on a PC running a `bash` shell terminal probably associated with the Windows Subsystem for Linux v2 (WSL-2 ("Weasel"))
-- I am logged in to a Virtual Machine on the cloud
-- The text is a lot of nauseating colors: both in the `bash` shell and in the `vi` editor
-    - Note: At some point `vi` became `vim` but they are the same thing
-    - The `ls` command seems to be doing a lot of colorizing, in particular
-    - oh also the prompt is some byzantine 'meaningful' string
-- I just want green text on a black background and a prompt like `(active-env)vm>`
+- I am working on a PC running the **Terminal** application
+    - I have a tab open that is running the Ubuntu
+*Bourne Again SHell* ([`bash`](https://en.wikipedia.org/wiki/Shell_(computing)))
+    - this is (most likely) associated with the Windows Subsystem for Linux
+        - This Linux subsystem is (2024) on version 2 hence WSL-2 (which I pronounce as 'Weasel')
+        - Again this is the Ubuntu distribution of Linux
+            - There is only one Linux kernel...
+                - ...but there are many *ornamentations* of this kernel available out there...
+                - ...and these are termed **distributions**
+                - ...of which Ubuntu is one. Debian is another, Red Hat is another, and so on
+    - `bash` is the command line interface to Linux: Access to operating system services
+- Perhaps I am also logged in to a Virtual Machine (henceforth ***VM***) on the cloud
+    - ...but I will ignore this for the moment
+- The screen text is in a lot of nauseating colors
+    - both in the `bash` shell and in the `vi` editor
+        - Historical note: At some point the `vi` editor became `vim`. They are the same thing.
+    - Also the `ls` command seems to be doing a lot of colorizing
+    - Also the prompt is some byzantine 'meaningful' string
+- I want green text on a black background and a prompt like `(active-env)vm>`
 
 
 
-### **`bash`**
+### **Terminal: Local `bash`**
 
-The Ubuntu bash shell running on a Windows PC can be customized independently from
-customizing bash on a VM. 
+- Top-of-window bar > clean spot > right click > Settings
+- Use the left sub-topic menu to go through and customize everything you like
+- 
+
+### **Terminal: cloud VM**
 
 # left off here
 
