@@ -1,6 +1,11 @@
+[nexus](https://robfatland.github.io/nexus), [source](https://github.com/robfatland/nexus/blob/gh-pages/index.md)
+
+
 # the bash terminal
 
+
 ## green and black please
+
 
 - I am working on a PC running the **Terminal** application
     - I have a tab open that is running the Ubuntu
