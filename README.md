@@ -1,16 +1,36 @@
+**nexus** is a *threefold* documentation resource for open research: *native* documentation, external *pointers* (usually URLs), 
+and *hybrid* documentation. The latter is commentary from working through an external resource, intended to fill context gaps
+and note any gotchas. 
+
+
 You are reading meta-narrative for the nexus repo. **nexus** content resides in the `gh-pages` branch.
 
 
 # [nexus](https://robfatland.github.io/nexus/)
 
 
-[This repo](https://github.com/robfatland/nexus/tree/main) began as documentation for simplifying 
-the appearance of the **`bash`** interface: Disable the garish colorized text... just green characters 
-on a black background please. It has now become a documentation resource: Where to get help on
-tasks common to the data science research process.
+[This repo](https://github.com/robfatland/nexus/tree/main) started life as 'how to disable garish fonts in
+a typical **`bash`** interface'. I just want green characters on a black background and one day I got sick of 
+looking up the procedure yet again. To generalize the process, nexus is now here to remind me how open
+science procedure works and, related, how to build research computing cyberinfrastructure.
+
+## Example motivating tasks
+
+Each of the following examples links to some corresponding work. 
+
+- Task Zero: How do I manage Python environments?
+- Task I wrote some code that is very specific to some oceanography data. How do I publish it as a package?
+- Task 2: I derived some results as useful data. How do I publish it as an API-accessible resource?
+- Task 3: I am working with some sensitive data and I want to be really careful about restricting access.
+- Task 4: I like having my code backed up in a GitHub repo. What are the ten `git` commands I need to master?
 
 
-To get to the point:
+## Navigating this GitHub repository
+
+
+This repo has a `main` branch which primarily consists of this README file. Then there is the publication
+component in a `gh-pages` branch. Every time there is a commit to this branch: A (much prettier) documentation
+website is refreshed. 
 
 
 - [nexus content `gh-pages` branch](https://github.com/robfatland/nexus/tree/gh-pages)
@@ -18,7 +38,7 @@ To get to the point:
 - [nexus 'main' branch](https://github.com/robfatland/nexus).
 
 
-Here is some aspirational 'what nexus would like to connect with':
+## nexus aspirations
 
 - TCOTU: Understanding, building, maintaining, using Python environments
     - corollary: customizing `bash`, `vi` to a simple appearance
