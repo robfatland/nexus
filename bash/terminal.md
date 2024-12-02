@@ -26,15 +26,20 @@
 
 ### **Terminal: Local `bash`**
 
+
+Rewrite got to about here...
+
+
 - Top-of-window bar > clean spot > right click > Settings
 - Use the left sub-topic menu to go through and customize everything that looks worth the bother
 - Create a new color scheme, re-name it, make green the foreground, set it to default
 - issue the command `ls -al .bash*` to see `bashrc`-related files
 
 
+### historical version here down
+
 
 - Comment out these lines in `.bashrc`
-
 
 ```
 # enable color support of ls and also add handy aliases
