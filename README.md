@@ -1,6 +1,6 @@
 **nexus** is a *threefold* documentation resource for open research: *native* documentation, external *pointers* (usually URLs), 
 and *hybrid* documentation. The latter is commentary from working through an external resource, intended to fill context gaps
-and note any gotchas. 
+and note any gotchas. These documentation modes are indicated by ***n***, ***p***, and ***h*** respectively.
 
 
 You are reading meta-narrative for the nexus repo. **nexus** content resides in the `gh-pages` branch.
