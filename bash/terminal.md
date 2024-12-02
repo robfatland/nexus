@@ -27,16 +27,12 @@
 ### **Terminal: Local `bash`**
 
 - Top-of-window bar > clean spot > right click > Settings
-- Use the left sub-topic menu to go through and customize everything you like
-- 
+- Use the left sub-topic menu to go through and customize everything that looks worth the bother
+- Create a new color scheme, re-name it, make green the foreground, set it to default
+- issue the command `ls -al .bash*` to see `bashrc`-related files
 
-### **Terminal: cloud VM**
 
-# left off here
 
-- From the top window bar: Right click, select Properties, and set Color to green on black
-- Increase font size, adjust whatever else you like
-- Type `ls -al` to observe that *color support* is still enabled. Yeccch.
 - Comment out these lines in `.bashrc`
 
 
@@ -56,6 +52,9 @@
 
 - Command line: `source ~/.bashrc`
 - Check with `ls -al` again
+
+
+### **Terminal: cloud VM**
 
 
 ### green text
@@ -113,9 +112,8 @@ LS_COLORS=`rs=0:di=01;34....etcetera etcetera etceters....;export LS_COLORS`
 
 ### **`vi`** fix
 
-`vi` and `vim` are the same editor, specificially an ancient text editor 
-with arcane syntax inherited from an even older editor called `ed`. `vim` 
-is the modern version of `vi`. 
+`vi` is an ancient text editor with arcane syntax inherited from an even older editor called `ed`. 
+`vim` is the modern version of `vi`. 
 
 
 To disable a profusion of colorized text in `vi`: In escape mode type `:syntax off`. 
