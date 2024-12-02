@@ -11,8 +11,8 @@
 # nexus
 
 nexus is a threefold documentation resource for open research: native, external (via pointers, usually URLs), and hybrid. 
-Hybrid documentation is commentary produced by working through an external resource such as a tutorial. This is intended 
-to fill context gaps, note gotchas and so on: Make the path easier to follow.
+Hybrid documentation is commentary produced by writing up notes whilst working through an external resource such as a 
+tutorial. This is intended to fill context gaps, note gotchas and so on: Make the path easier to follow.
 
 
 This (gh-pages-branch) source file is [`index.md`](https://github.com/robfatland/nexus/blob/gh-pages/index.md)).
