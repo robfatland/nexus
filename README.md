@@ -3,7 +3,9 @@ and *hybrid* documentation. The latter is commentary from working through an ext
 and note any gotchas. These documentation modes are indicated by ***n***, ***p***, and ***h*** respectively.
 
 
-You are reading meta-narrative for the nexus repo. **nexus** content resides in the `gh-pages` branch.
+You are reading [meta-narrative for the nexus repo](https://github.com/robfatland/nexus). 
+**nexus** content resides in the [`gh-pages` branch](https://github.com/robfatland/nexus/tree/gh-pages)
+and this is published at [https://robfatland.github.io/nexus](https://robfatland.github.io/nexus).
 
 
 # [nexus](https://robfatland.github.io/nexus/)
