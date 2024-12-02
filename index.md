@@ -7,25 +7,29 @@
 
 # nexus
 
+nexus is a threefold documentation resource for open research: native, external (via pointers, usually URLs), and hybrid. 
+Hybrid documentation is commentary produced by working through an external resource such as a tutorial. This is intended 
+to fill context gaps, note gotchas and so on: Make the path easier to follow.
+
 
 This (gh-pages-branch) source file is [`index.md`](https://github.com/robfatland/nexus/blob/gh-pages/index.md)).
 
-- [published: nexus](https://robfatland.github.io/nexus) and a corresponding [editable `index.md`](https://github.com/robfatland/nexus/blob/gh-pages/index.md)
-- [published: lexicon](https://robfatland.github.io/nexus/lexicon) and a corresponding [editable `lexicon.md`](https://github.com/robfatland/nexus/blob/gh-pages/lexicon.md)
+
+- [published: nexus](https://robfatland.github.io/nexus) ~ [editable `index.md`](https://github.com/robfatland/nexus/blob/gh-pages/index.md)
+- [published: lexicon](https://robfatland.github.io/nexus/lexicon) ~ [editable `lexicon.md`](https://github.com/robfatland/nexus/blob/gh-pages/lexicon.md)
 
 
 ## How is this site built and published? 
 
 
-This **nexus** repo uses a Jekyll template (the service is called *GitHub pages*) to publish the
-content in a nice format. The content resides in the repo on a code branch called `gh-pages`. 
-Publication is triggered automatically after each *commit*. As a result there are three URLs:
+This **nexus** repo uses a [Jekyll](https://jekyllrb.com/) template (the free service is called *GitHub pages*) 
+to generate a nicely formatted static website.  The content resides in the repo on a code branch called `gh-pages`. 
+Publication is triggered automatically after each *commit*. URLs:
 
 
-- [The main branch of the github repo](https://github.com/robfatland/nexus/tree/main)
-- [The gh-pages branch of the github repo](https://github.com/robfatland/nexus/tree/gh-pages)
-- [The published documentation website](https://robfatland.github.io/nexus/)
-    - [A sub-folder example](https://robfatland.github.io/nexus/vscode)
+- [main branch of the nexus GitHub repo](https://github.com/robfatland/nexus/tree/main)
+- [gh-pages branch](https://github.com/robfatland/nexus/tree/gh-pages)
+- [The nexus static website](https://robfatland.github.io/nexus/)
 
 
 Here is how to get one of these https://**organization**.github.io/**repo** websites started:
