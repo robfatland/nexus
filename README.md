@@ -1,6 +1,6 @@
-**nexus** is a *threefold* documentation resource for open research: *native* documentation, external *pointers* (usually URLs), 
-and *hybrid* documentation. The latter is commentary from working through an external resource, intended to fill context gaps
-and note any gotchas. These documentation modes are indicated by ***n***, ***p***, and ***h*** respectively.
+**nexus** is a *threefold* documentation resource for open research: *native*, *external* (via *pointers*, usually URLs), 
+and *hybrid*. Hybrid documentation is commentary produced by working through an external resource such as a tutorial. This
+is intended to fill context gaps, note gotchas and so on: Make the path easier to follow.
 
 
 You are reading [meta-narrative for the nexus repo](https://github.com/robfatland/nexus). 
@@ -16,9 +16,12 @@ a typical **`bash`** interface'. I just want green characters on a black backgro
 looking up the procedure yet again. To generalize the process, nexus is now here to remind me how open
 science procedure works and, related, how to build research computing cyberinfrastructure.
 
+
 ## Example motivating tasks
 
+
 Each of the following examples links to some corresponding work. 
+
 
 - Task Zero: How do I manage Python environments?
 - Task I wrote some code that is very specific to some oceanography data. How do I publish it as a package?
@@ -40,7 +43,7 @@ website is refreshed.
 - [nexus 'main' branch](https://github.com/robfatland/nexus).
 
 
-## nexus aspirations
+## nexus aspirations (the to-do list)
 
 - TCOTU: Understanding, building, maintaining, using Python environments
     - corollary: customizing `bash`, `vi` to a simple appearance
