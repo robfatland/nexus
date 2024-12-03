@@ -1,4 +1,4 @@
-[nexus](https://robfatland.github.io/nexus), [source](https://github.com/robfatland/nexus/blob/gh-pages/index.md)
+[nexus](https://robfatland.github.io/nexus), [index source](https://github.com/robfatland/nexus/blob/gh-pages/index.md)
 
 
 This **README** anchors the github pages branch of the `nexus` repo. It supersedes `index.md` 
