@@ -52,8 +52,13 @@ Here is how to get one of these https://**organization**.github.io/**repo** webs
 ## Topics
 
 
-* [wrenching the terminal](https://github.com/robfatland/nexus/blob/gh-pages/bash/terminal.md)
-published [as](https://robfatland.github.io/nexus/bash/terminal).
+* [bash and related](https://robfatland.github.io/nexus/bash/), [source](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md)
+    * wrenching the appearance of the terminal
+    * ssh tunnel
+* [artificial intelligence](https://robfatland.github.io/nexus/ai/), [source](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md)
+* [cloud infrastructure](https://robfatland.github.io/nexus/cloud/), [source](https://github.com/robfatland/nexus/blob/gh-pages/cloud/index.md)
+
+
 
 
 # left off here
