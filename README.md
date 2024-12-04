@@ -1,13 +1,11 @@
-[nexus](https://robfatland.github.io/nexus), [index source](https://github.com/robfatland/nexus/blob/gh-pages/index.md)
+[nexus](https://robfatland.github.io/nexus), [index source](https://github.com/robfatland/nexus/blob/gh-pages/index.md), 
+[nexus main branch](https://github.com/robfatland/nexus/tree/main)
 
 
-This **README** anchors the github pages branch of the `nexus` repo. It supersedes `index.md` 
-but I think maybe the README is unnecessary because it is not published; so it would just be 
-redundant with the main branch README. 
+This **README** anchors the github pages branch of the `nexus` repo. It is not published to the pages
+site (the main published page is from the file `index.md`) so I use it here for work-in-progress notes. Resource links:
 
-
-* [nexus main branch](https://github.com/robfatland/nexus/tree/main)
-* [nexus published](https://robfatland.github.io/nexus).
+* [maven doc site](https://cloudmaven.github.io), [github org](https://github.com/cloudmaven), [docs repo](https://github.com/cloudmaven/documentation)
 
 
 ## How is this site built and published? 
