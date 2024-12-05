@@ -5,7 +5,8 @@
 This **README** anchors the github pages branch of the `nexus` repo. It is not published to the pages
 site (the main published page is from the file `index.md`) so I use it here for work-in-progress notes. Resource links:
 
-* [maven doc site](https://cloudmaven.github.io), [github org](https://github.com/cloudmaven), [docs repo](https://github.com/cloudmaven/documentation)
+* [maven published documentation](https://cloudmaven.github.io/documentation),
+[maven github org](https://github.com/cloudmaven), [maven doc repo](https://github.com/cloudmaven/documentation)
 
 
 ## How is this site built and published? 
