@@ -2,6 +2,10 @@
 [nexus main](https://github.com/robfatland/nexus/tree/main)
 
 
+One incidental note (delete this): Try and think through the form of these documentation narratives in terms of 
+what they are attempting to optimize.
+
+
 # Python environments
 
 
