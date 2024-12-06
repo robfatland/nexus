@@ -6,7 +6,8 @@ This **README** anchors the github pages branch of the `nexus` repo. It is not p
 site (the main published page is from the file `index.md`) so I use it here for work-in-progress notes. Resource links:
 
 * [maven published documentation](https://cloudmaven.github.io/documentation),
-[maven github org](https://github.com/cloudmaven), [maven doc repo](https://github.com/cloudmaven/documentation)
+[maven github org](https://github.com/cloudmaven), [maven doc repo](https://github.com/cloudmaven/documentation),
+[maven hipaa notes](https://cloudmaven.github.io/documentation/aws_hipaa.html)
 * [serverless and MSE544 autre](https://github.com/cloudbank-project/az-serverless-tutorial/tree/main)
 * [medium remarks on sphinx](https://kanishkvarshney.medium.com/python-documentation-generating-html-using-sphinx-a0d909f5e963)
 
