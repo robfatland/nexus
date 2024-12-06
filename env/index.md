@@ -1,5 +1,6 @@
 # Python environments
 
+
 This is an ambitious topic because of its many tentacles. Rather than abandon 
 all hope I'm going to start with the concept of the `import` utility.
 
@@ -17,18 +18,19 @@ how to proceed? Here is how to make the dream a reality:
 
 - decide on a reasonably short name for the module: I choose *ant*.
 - open my editor and cut-paste the code from `b.ipynb` into `ant.py`
-- convert the code to a function called `Totient(n)` using `def` + `:` + indentation
-- below this function create a test program in the `ant.py` file as follows:
+- convert the code to a function called `Totient(n)`
+    - remember to include a docstring
+- below the function code create a test program in the `ant.py` file:
 
 
 ```
 if __init__ == "__main__":
     t = Totient(10)
-    if not t == 4: print("The Totient function fails for n = 10")
-    else:          print("The Totient function passed its test")
+    if not t == 4: print("Totient() fails for n = 10")
+    else:          print("Totient() passes its test")
 ```
 
-- save the file as `ant.py`
+- save the file `ant.py`
 - run the file as a program to ensure the test passes: `python3 ant.py`
 - Back in the Jupyter notebook `b.ipynb` write these two lines of code
  
@@ -38,9 +40,11 @@ from ant import Totient
 t = Totient(73)
 ```
 
+- Decide that this module should definitely be published as a Python package
 - Search online for *how to publish a Python package* and follow the tutorial
     - For more on this: See below
- 
+
+
 Now that I have done that: I should really consult with Naomi about how to properly
 do the import. Why not use `from ant import *`? Why not use `import ant`?
 
@@ -55,7 +59,7 @@ The first question 'Why not say `from ant import *` has an involved answer but
 the TLDR is ***don't do this***.
 
 
-#### Why we do not use `from ant import *`
+### Why we do not use `from ant import *`
 
 
 This practice pollutes the global namespace where the `import` runs, in this 
@@ -83,6 +87,6 @@ was included: It runs when the module is run via `python3 ant.py` but it does
 not run during the `import` code execution. 
 
 
-### Publishing a Python package
+## Publishing a Python package
 
 - here is where I left off
