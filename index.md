@@ -26,10 +26,10 @@ This (gh-pages-branch) source file is [`index.md`](https://github.com/robfatland
 
 
 * [bash and related](https://robfatland.github.io/nexus/bash/), [source](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md)
-    * environments
-    * git
-    * wrenching the appearance of the terminal
-    * ssh tunnel
+    * [environments](https://robfatland.github.io/nexus/env), [source](https://github.com/robfatland/nexus/blob/gh-pages/env/index.md)
+    * [git and GitHub](https://robfatland.github.io/nexus/git), [source](https://github.com/robfatland/nexus/blob/gh-pages/git/index.md)
+    * [wrenching the terminal](https://robfatland.github.io/nexus/terminal), [source](https://github.com/robfatland/nexus/blob/gh-pages/bash/terminal.md)
+    * [ssh tunnels](https://robfatland.github.io/nexus/bash/tunnels), [source](https://github.com/robfatland/nexus/blob/gh-pages/bash/tunnels.md)
 * [artificial intelligence](https://robfatland.github.io/nexus/ai/), [source](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md)
 * [cloud infrastructure](https://robfatland.github.io/nexus/cloud/), [source](https://github.com/robfatland/nexus/blob/gh-pages/cloud/index.md)
 
