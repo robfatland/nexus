@@ -5,12 +5,32 @@
 # Python environments
 
 
-This is an ambitious topic because of its many tentacles. Rather than abandon 
-all hope I'm going to start with the concept of the `import` utility.
+## What is the point of conda environments? 
 
 
+`conda create/activate` commands engage Python environments as customized versions of the User's base environment.
+The admirable motivation is to avoid loading up the base environment with every installed Python package we ever 
+need so that it becomes perhaps overburdened and even buggy due to version incompatibility issues. So instead we
+conceive of one or more specialized environments, we create them, we populate them with respectively appropriate
+installed packages, and then we activate and use them in concert with whatever we are working on today. 
 
-## `import`
+### Items this page should address
+
+
+- Address how an active environment appears in a Jupyter notebook server interface
+- Look up guidelines for how to not simply make one working environment != base and have *that* become the One Ring
+- Look up guidelines on copying an environment to create a branch environment
+- Write up how to document and easily select environments
+- Cover the "manual approach" and the "requirements.txt" approach and the "whatchamacallit.yml" approach
+- Debugging the dreaded incompatibility red ink
+- When pip? When conda? What is conda forge?
+
+
+This is obviously an ambitious topic with many tentacles. I continue next with the concept 
+of the Python `import` utility.
+
+
+## Python `import`
 
 
 Suppose I have written some code in a Jupyter notebook that calculates
