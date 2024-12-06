@@ -33,21 +33,6 @@ This (gh-pages-branch) source file is [`index.md`](https://github.com/robfatland
 * [artificial intelligence](https://robfatland.github.io/nexus/ai/), [source](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md)
 * [cloud infrastructure](https://robfatland.github.io/nexus/cloud/), [source](https://github.com/robfatland/nexus/blob/gh-pages/cloud/index.md)
 
-
-
-### What is the point of conda environments? 
-
-
-`conda create/activate` commands engage Python environments as customized versions of 
-our base environment. 
-
-
-- Needed: How does the current environment appear in the Jupyter notebook server interface? 
-
-
-
-## bash
-
 ### List volumes for only top-level directories
 
 ```
