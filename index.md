@@ -34,15 +34,6 @@ This (gh-pages-branch) source file is [`index.md`](https://github.com/robfatland
 * [cloud infrastructure](https://robfatland.github.io/nexus/cloud/), [source](https://github.com/robfatland/nexus/blob/gh-pages/cloud/index.md)
 
 
-### Everything I know about **`git`**
-
-
-- `git pull` to get the latest; then `git add .` then `git commit -m 'ch ch ch changes'` then `git push`
-- From `~` store creds using `git config --global credential.helper store`
-- To abandon changes and back up: `git reset --hard HEAD` or if necessary `git reset --hard HEAD~1` etcetera
-    - HEAD~n means n commits back
-
-
 
 ### What is the point of conda environments? 
 
