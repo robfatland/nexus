@@ -8,6 +8,7 @@ site (the main published page is from the file `index.md`) so I use it here for 
 * [maven published documentation](https://cloudmaven.github.io/documentation),
 [maven github org](https://github.com/cloudmaven), [maven doc repo](https://github.com/cloudmaven/documentation)
 * [serverless and MSE544 autre](https://github.com/cloudbank-project/az-serverless-tutorial/tree/main)
+* [medium remarks on sphinx](https://kanishkvarshney.medium.com/python-documentation-generating-html-using-sphinx-a0d909f5e963)
 
 
 ## How is this site built and published? 
