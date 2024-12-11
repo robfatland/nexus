@@ -32,12 +32,10 @@ This (gh-pages-branch) source file is [`index.md`](https://github.com/robfatland
     * [ssh tunnels](https://robfatland.github.io/nexus/bash/tunnels), [source](https://github.com/robfatland/nexus/blob/gh-pages/bash/tunnels.md)
 * [artificial intelligence](https://robfatland.github.io/nexus/ai/), [source](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md)
 * [cloud infrastructure](https://robfatland.github.io/nexus/cloud/), [source](https://github.com/robfatland/nexus/blob/gh-pages/cloud/index.md)
+* [documentation](), [sphinx](), [python packages](), [flameshot](), [LaTeX](), [Hugo](), [Jekyll]()
 
-### List volumes for only top-level directories
 
-```
-du -h -d1
-```
+
 
 ### CPU monitoring (many-core machine)
 
