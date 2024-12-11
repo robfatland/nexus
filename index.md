@@ -38,6 +38,14 @@ This (gh-pages-branch) source file is [`index.md`](https://github.com/robfatland
 [python packages](), [flameshot](), [LaTeX](), [Hugo](), [Jekyll]()
 
 
+### Follow this up
+
+Q: When do I want to write a class in Python? (In Java everything is a class.)
+
+A: When the object is something that has a state that you need to access at a later time. 
+
+A2: If your functions call other functions you have written and you want to have future users swap those functions out. Like the ML metric function. You are using subclasses to replace old methods with new methods. 
+
 
 
 ### CPU monitoring (many-core machine)
