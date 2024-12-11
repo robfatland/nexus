@@ -33,7 +33,9 @@ This (gh-pages-branch) source file is [`index.md`](https://github.com/robfatland
 * [data security](https://cloudmaven.github.io/documentation/cc_data_security.html)
 * [artificial intelligence](https://robfatland.github.io/nexus/ai/), [source](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md)
 * [cloud infrastructure](https://robfatland.github.io/nexus/cloud/), [source](https://github.com/robfatland/nexus/blob/gh-pages/cloud/index.md)
-* [documentation](), [sphinx](), [python packages](), [flameshot](), [LaTeX](), [Hugo](), [Jekyll]()
+* [documentation](), [sphinx](),
+[sphinx with python](https://kanishkvarshney.medium.com/python-documentation-generating-html-using-sphinx-a0d909f5e963),
+[python packages](), [flameshot](), [LaTeX](), [Hugo](), [Jekyll]()
 
 
 
