@@ -3,3 +3,9 @@
 
 
 `bash index.md` placeholder. will point to terminal and tunnel sub-pages
+
+slightly arcane bash task: What is the volume of each subdirectory in this directory?
+
+```
+du -h -d1
+```
