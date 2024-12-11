@@ -30,6 +30,7 @@ This (gh-pages-branch) source file is [`index.md`](https://github.com/robfatland
     * [git and GitHub](https://robfatland.github.io/nexus/git), [source](https://github.com/robfatland/nexus/blob/gh-pages/git/index.md)
     * [wrenching the terminal](https://robfatland.github.io/nexus/terminal), [source](https://github.com/robfatland/nexus/blob/gh-pages/bash/terminal.md)
     * [ssh tunnels](https://robfatland.github.io/nexus/bash/tunnels), [source](https://github.com/robfatland/nexus/blob/gh-pages/bash/tunnels.md)
+* [data security](https://cloudmaven.github.io/documentation/cc_data_security.html)
 * [artificial intelligence](https://robfatland.github.io/nexus/ai/), [source](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md)
 * [cloud infrastructure](https://robfatland.github.io/nexus/cloud/), [source](https://github.com/robfatland/nexus/blob/gh-pages/cloud/index.md)
 * [documentation](), [sphinx](), [python packages](), [flameshot](), [LaTeX](), [Hugo](), [Jekyll]()
@@ -58,9 +59,9 @@ sudo apt-get update -y && sudo apt-get upgrade -y
 
 - The `lexicon.md` list of terms is relevant, needs a ton of work
 - The file `index.md` is a compendium of useful recipes including the titular material on simplifying bash windows; more work here also
-- What are the relevant related repos $R^3$?
+- What are the relevant related repos ***R3***?
     - `runawaytrain` has AWS Organizations and some API use; so very AWS-cloud-centric 
-    - `reorganiseduponthefloor` has notes on `git` and some other possibly useful notes
+    - formerly `reorganiseduponthefloor` has `git` and more: to transplant
     - `cbburn` does have some pandas DataFrame manipulation
     - `digitaltwin` is itself
     - `serverless` is itself
