@@ -2,9 +2,9 @@
 [nexus main](https://github.com/robfatland/nexus/tree/main)
 
 
-`bash index.md` placeholder. will point to terminal and tunnel sub-pages
+`bash index.md`: will point to terminal, tunnel sub-pages and other topics
 
-slightly arcane bash task: What is the volume of each subdirectory in this directory?
+arcane bash task: What is the volume of each subdirectory in this directory?
 
 ```
 du -h -d1
