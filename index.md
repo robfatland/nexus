@@ -54,7 +54,11 @@ A: When the object is something that has a state that you need to access at a la
 
 A2: If your functions call other functions you have written and you want to have future users swap those functions out. Like the ML metric function. You are using subclasses to replace old methods with new methods. 
 
+### Follow this up
 
+`sudo apt-get install -y nyancat`
+
+...and a remark on the mechanics, separation of concerns, Ohm's law, that sort of thing
 
 ### CPU monitoring (many-core machine)
 
