@@ -43,7 +43,7 @@ This (gh-pages-branch) source file is [`index.md`](https://github.com/robfatland
 How do I log in to another machine using `ssh` and `path/keypair.pem`?
 
 ```
-> ssh -k path/keypair.pem username@123.123.123.123
+> ssh -i path/keypair.pem username@123.123.123.123
 ```
 
 ### Follow this up
