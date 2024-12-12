@@ -9,7 +9,8 @@ site (the main published page is from the file `index.md`) so I use it here for 
 [maven github org](https://github.com/cloudmaven), [maven doc repo](https://github.com/cloudmaven/documentation),
 [maven hipaa notes](https://cloudmaven.github.io/documentation/aws_hipaa.html)
 * [serverless and MSE544 autre](https://github.com/cloudbank-project/az-serverless-tutorial/tree/main)
-* More CB: [zero2Data](https://github.com/cloudbank-project/Zero2Data) and [burnop](https://github.com/cloudbank-project/burnop)
+    * More CB: [zero2Data](https://github.com/cloudbank-project/Zero2Data) and [burnop](https://github.com/cloudbank-project/burnop)
+    * Scan the rest of CB for still more
 * [containerization](https://github.com/naclomi/containers-tutorial)
 * [medium remarks on sphinx](https://kanishkvarshney.medium.com/python-documentation-generating-html-using-sphinx-a0d909f5e963)
 
