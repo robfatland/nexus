@@ -13,7 +13,7 @@ site (the main published page is from the file `index.md`) so I use it here for 
     * More CB: [zero2Data](https://github.com/cloudbank-project/Zero2Data) and [burnop](https://github.com/cloudbank-project/burnop)
     * Scan the rest of CB for still more
     * [Naclomi containerization GitHub](https://github.com/naclomi/containers-tutorial),
-[published](https://naclomi.github.io/containerization)
+[published](https://naclomi.github.io/containers-tutorial/)
 * [medium remarks on sphinx](https://kanishkvarshney.medium.com/python-documentation-generating-html-using-sphinx-a0d909f5e963)
 
 
