@@ -35,7 +35,7 @@ This (gh-pages-branch) source file is [`index.md`](https://github.com/robfatland
 * [cloud infrastructure](https://robfatland.github.io/nexus/cloud/), [source](https://github.com/robfatland/nexus/blob/gh-pages/cloud/index.md)
 * [documentation](), [sphinx](),
 [sphinx with python](https://kanishkvarshney.medium.com/python-documentation-generating-html-using-sphinx-a0d909f5e963),
-[python packages](), [flameshot](), [LaTeX](), [Hugo](), [Jekyll]()
+[python packages](), [flameshot]() + unbind prtscn, [LaTeX](), [Hugo](), [Jekyll]()
 
 
 ## Reminders on other simple little topics...
