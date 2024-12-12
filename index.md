@@ -40,6 +40,14 @@ This (gh-pages-branch) source file is [`index.md`](https://github.com/robfatland
 
 ### Follow this up
 
+How do I log in to another machine using `ssh` and `path/keypair.pem`?
+
+```
+> ssh -k path/keypair.pem username@123.123.123.123
+```
+
+### Follow this up
+
 Q: When do I want to write a class in Python? (In Java everything is a class.)
 
 A: When the object is something that has a state that you need to access at a later time. 
