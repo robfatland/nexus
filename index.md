@@ -38,6 +38,8 @@ This (gh-pages-branch) source file is [`index.md`](https://github.com/robfatland
 [python packages](), [flameshot](), [LaTeX](), [Hugo](), [Jekyll]()
 
 
+## Reminders on other simple little topics...
+
 ### Follow this up
 
 How do I log in to another machine using `ssh` and `path/keypair.pem`?
@@ -56,11 +58,35 @@ A2: If your functions call other functions you have written and you want to have
 
 ### Follow this up
 
+
 `sudo apt-get install -y nyancat`
+
 
 ...and a remark on the mechanics, separation of concerns, Ohm's law, that sort of thing
 
-### CPU monitoring (many-core machine)
+
+### Follow this up
+
+
+save a file called `r.csv` with contents
+
+```
+row,a,b,c
+1,3,3,3
+2,4,2,3
+3,5,1,4
+```
+
+issue:
+
+
+```
+import pandas as pd
+q=pd.read_csv('../../../r.csv')
+q
+```
+
+### Follow up CPU monitoring (many-core machine)
 
 
 Wes says: "Use **`top`** from the bash command line."
