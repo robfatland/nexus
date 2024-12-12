@@ -38,6 +38,11 @@ This (gh-pages-branch) source file is [`index.md`](https://github.com/robfatland
 [python packages](), [flameshot]() + unbind prtscn, [LaTeX](), [Hugo](), [Jekyll]()
 
 
+To unbind the Print Screen key to OneNote screen capture in Windows:
+
+* Windows settings > Accessibility > Keyboard > Use the print screen key to open screen capture > toggle off
+
+
 ## Reminders on other simple little topics...
 
 ### Follow this up
