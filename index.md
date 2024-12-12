@@ -73,6 +73,13 @@ to pay for a higher sampling rate in the console... but why?"
 sudo apt-get update -y && sudo apt-get upgrade -y
 ```
 
+alternative...?...
+
+```
+sudo apt update
+sudo apt install
+```
+
 # residual remarks from gh-pages README
 
 - The `lexicon.md` list of terms is relevant, needs a ton of work
