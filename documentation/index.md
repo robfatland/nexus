@@ -4,6 +4,13 @@
 
 # `index.md` anchor of documentation subfolder in nexus
 
+## ambitious agenda
+
+
+Documentation should include use of `top` and timing code execution. Cause those are documentation skills.
+
+
+
 # Previous iteration content on markdown
 
 
