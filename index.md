@@ -3,10 +3,24 @@
 
 <img src="assets/img/greenandblack.png"
      alt="green and black icon"
-     height="130"
-     width="130"
+     height="30"
+     width="30"
      style="float: center; margin-right: 10px;" />
 
+
+### Temporary listing of resource links 'to be sorted'
+
+
+* [maven published documentation](https://cloudmaven.github.io/documentation),
+[maven github org](https://github.com/cloudmaven), [maven doc repo](https://github.com/cloudmaven/documentation),
+[maven hipaa notes](https://cloudmaven.github.io/documentation/aws_hipaa.html)
+* [MSE544 GitHub](https://github.com/cloudbank-project/az-serverless-tutorial/tree/main),
+[published](https://cloudbank-project.github.io/az-serverless-tutorial/)
+    * More CB: [zero2Data](https://github.com/cloudbank-project/Zero2Data) and [burnop](https://github.com/cloudbank-project/burnop)
+    * Scan the rest of CB for still more
+    * [Naclomi containerization GitHub](https://github.com/naclomi/containers-tutorial),
+[published](https://naclomi.github.io/containers-tutorial/)
+* [medium remarks on sphinx](https://kanishkvarshney.medium.com/python-documentation-generating-html-using-sphinx-a0d909f5e963)
 
 # nexus
 
@@ -44,6 +58,12 @@ To unbind the Print Screen key to OneNote screen capture in Windows:
 
 
 ## Reminders on other simple little topics...
+
+### Other Math Club on package installs
+
+Look in the `Basic Programming.ipynb` in that same folder: On `conda-forge` for WSL-2 Linux 
+and installing for IDLE installations using the Windows Command Prompt.
+
 
 ### Follow this up
 
