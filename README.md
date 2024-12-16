@@ -2,19 +2,9 @@
 [nexus main branch](https://github.com/robfatland/nexus/tree/main)
 
 
-This **README** anchors the github pages branch of the `nexus` repo. It is not published to the pages
-site (the main published page is from the file `index.md`) so I use it here for work-in-progress notes. Resource links:
-
-* [maven published documentation](https://cloudmaven.github.io/documentation),
-[maven github org](https://github.com/cloudmaven), [maven doc repo](https://github.com/cloudmaven/documentation),
-[maven hipaa notes](https://cloudmaven.github.io/documentation/aws_hipaa.html)
-* [MSE544 GitHub](https://github.com/cloudbank-project/az-serverless-tutorial/tree/main),
-[published](https://cloudbank-project.github.io/az-serverless-tutorial/)
-    * More CB: [zero2Data](https://github.com/cloudbank-project/Zero2Data) and [burnop](https://github.com/cloudbank-project/burnop)
-    * Scan the rest of CB for still more
-    * [Naclomi containerization GitHub](https://github.com/naclomi/containers-tutorial),
-[published](https://naclomi.github.io/containers-tutorial/)
-* [medium remarks on sphinx](https://kanishkvarshney.medium.com/python-documentation-generating-html-using-sphinx-a0d909f5e963)
+This **`README.md`** shows up only on the github pages branch of the `nexus` repo. (There is another `README.md` on the
+main branch.) This `README.md` does not get published to the corresponding [`nexus website`](https://robfatland.github.io/nexus);
+rather the source for the root published page is `index.md`, also in this directory.
 
 
 ## How is this site built and published? 
