@@ -135,7 +135,7 @@ sudo apt update
 sudo apt install
 ```
 
-# residual remarks from gh-pages README
+# more residual remarks from the gh-pages README
 
 - The `lexicon.md` list of terms is relevant, needs a ton of work
 - The file `index.md` is a compendium of useful recipes including the titular material on simplifying bash windows; more work here also
