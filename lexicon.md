@@ -8,53 +8,52 @@
 
 ## Quo vadis?
 
+- All headings have corresponding short lexicon entries
+    - This is a two-way street: Look for content in this file that ought to be reindexed to elsewhere!
+- Statement of purpose at the top
+- Define *pedagogy from the Book*
+    - Example: { Open Science + Back up + s/w control + community + intercompatibility } > implications
+        - GitHub > Environments > Miniconda > IPython > Jupyter
+    - Meta: Documentation sufficiency threshold: Operations = { create, delete, rebuild } 
+        - Example: Core `git`, Meso `git`, Pro `git`
+- Overcommunicate: Featured narratives
+    - Here is the sidebar narrative of baseline workflow
+    - `bash > conda activate > cd ~ > jupyter lab > browser > edit > save > commit`
+        - "Notice we did nothing with data; that is an expansion topic covered elsewhere"
+        - "Notice we did not talk about servers and cloud; another expansion topic"
+- Overcommunication: Lateral comparatives
+    - I installed Python on my PC (IDLE?) and WSL-2 is Linux with Miniconda installed...
+        - The former gives me IDLE and a runtime that doesn't balk on Turtles
+        - The latter gives me `jupyter lab` but balks on Turtles
+        - And then VSCode seems to know about one of them... or the other?
+        - Bottom line it feels like I have a lot of friction and/or schism built into my working environment
+            - And incidentally how do I install packages that can be used by IDLE?
 
-- 12/23 did some editing of this content
-- Where this should get to is
-    - All the headings should have definitions
-    - Statement of purpose at the top
-    - Define environments early
-    - Arrive at miniconda as the target, then interactive Python, then the Jupyter family
-        - For each technology we want to have enough information to create, delete and rebuild without loss of existing effort
-            - Best for not losing existing effort: Software control
-            - This in turn implies rudimentary `git` commands
-            - The advanced `git` skill is reconciling incompatible merges
-- Basic `bash > cd ~ > jupyter lab > copy paste > edit > save > commit`
-    - The version of this that runs on a Linux server on Azure, on AWS
-- Incidental questions it would be good to answer
-    - What if I installed Python and I have IDLE and so on... is this creating friction with the miniconda installation?
-        - Digress into IDLE and how package installation is done in that context...
+
+### WSL-2 aka Windows Subsystem for Linux (v2) aka "Weasel"
 
 
-### Weasel?
-
-
-- ***Weasel*** is my informal, unendorsed pronunciation of WSL-2, the second version of the Windows Subsystem for Linux
-    - WSL-2 is a *compatibility layer* (see following section)
-    - The underlying idea is to support the Linux core, particularly 'Linux system calls' in Windows somehow
-        - WSL-1 original idea: Do so without a Virtual Machine or a dual-boot OS
-            - ...by giving the Windows kernel the capacity to execute Linux system calls
+- WSL-2 is a *compatibility layer* (see following section)
+    - The underlying idea is to support the Linux core, particularly 'Linux system calls' in Windows
+    - WSL-1 original basis: Without a Virtual Machine or a dual-boot OS
+        - How: Give the Windows kernel the capacity to execute Linux system calls
     - Superseded by WSL-2
-        - Uses a full-blown virtual machine (VM) to run a Linux kernel
-        - Inviting questions on how this runs and interacts with Windows
-            - And this is out of local scope because...
-            - ...the focus of this repo is just getting a framework in place
-         
-> Bottom line: The plan is to enable WSL-2 on a Windows machine in support of Linux
+    - Uses a full-blown virtual machine (VM) to run a full Linux kernel
+        - How does this run and interact with Windows?
+- Bottom line: WSL-2 on a Windows machine provides a `bash` interface to a Linux VM 
+    - What is meant by a *compatibility layer*
+        - It is an interface: Foreign system binaries run on a host system
+        - Host system is Windows, compatibility layer is WSL-2
+            - Foreign system binary is Linux.
+            - "Enable WSL-2 so as to run Linux on Windows"
 
 
-### More on WSL-2: A *compatibility layer*
+> Question: Can I use my Windows chooser (windows key) to find **`bash`**?
 
 
-A compatibility layer is an interface that allows binaries from a foreign system to run on a host 
-system. 
-
-In the WSL-2 discussion above, the host system is Windows and the compatibility layer is 
-Windows Subsystem for Linux v2, abbreviated WSL-2. 
-The foreign system binary is Linux. One enables WSL-2 so as to run Linux on Windows.
-
-At the Windows Command Prompt -- as Administrator -- one can install `wsl` if needed via `wsl --install`. 
-(Re-start the PC at this point.) Thence: A `wsl` command starts a bash shell in the Command window. 
+- Installation
+    - Windows Command Prompt as Administrator: `wsl --install` and re-start the PC
+    - Command Prompt > `wsl` > bash shell; try `ls`
 
 
 ```
@@ -75,8 +74,7 @@ C:\WINDOWS\system32>
 ```
 
 
-Now the darndest thing is I can also use my Windows chooser (windows key) to find **`bash`**. How did 
-that get there? ...more to do here...
+> Odd: I can use my Windows chooser (windows key) to find **`bash`**. How did that get there?
 
 
 ### **`Anaconda`**?
@@ -133,7 +131,6 @@ jupyter notebook
 ### What is **`conda-forge`**?
 
 
-
 ### What is VSCode?
 
 
@@ -143,7 +140,8 @@ jupyter notebook
 ### What is **`Linux`**?
 
 
-Linux is an operating system traceable back to UNIX.
+Linux is an operating system traceable back to UNIX. It consists of two parts, one immutably constant everywhere in the universe and
+the other part mutable and subject to stylization (Red Hat, Debian, Ubuntu and so on)
 
 
 #### Which version of the Linux operating system am I running? 
