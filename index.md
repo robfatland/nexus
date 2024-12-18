@@ -1,6 +1,12 @@
 [nexus](https://robfatland.github.io/nexus), [index source](https://github.com/robfatland/nexus/blob/gh-pages/index.md), 
 [nexus main](https://github.com/robfatland/nexus/tree/main)
 
+
+**nexus** is a *threefold documentation resource* for open research: *native*, *external* via URL pointers, 
+and *hybrid*. Hybrid documentation is commentary generated when working through an external resource such 
+as a tutorial. This is intended to fill context gaps, note gotchas and so on: Make the path easier to follow.
+
+
 <img src="assets/img/greenandblack.png"
      alt="green and black icon"
      height="30"
@@ -8,7 +14,7 @@
      style="float: center; margin-right: 10px;" />
 
 
-### Temporary listing of resource links 'to be sorted'
+### Temporary: resource links to sort
 
 
 * [maven published documentation](https://cloudmaven.github.io/documentation),
@@ -24,16 +30,17 @@
 
 # nexus
 
-nexus is a threefold documentation resource for open research: native, external (via pointers, usually URLs), and hybrid. 
-Hybrid documentation is commentary produced by writing up notes whilst working through an external resource such as a 
-tutorial. This is intended to fill context gaps, note gotchas and so on: Make the path easier to follow.
+Nexus is a response to a profusion/latency problem: I have a lot of technology topics and associated
+details to keep track of; but many of these topics I am obliged to ignore for weeks or months at a time.
+As a result -- after a latency period -- I feel like I must re-learn all those details, an
+onerous and depressing process. Does it work to energetically document everything? Let's find out.
 
 
 This (gh-pages-branch) source file is [`index.md`](https://github.com/robfatland/nexus/blob/gh-pages/index.md)).
 
 
-- [published: nexus](https://robfatland.github.io/nexus) ~ [editable `index.md`](https://github.com/robfatland/nexus/blob/gh-pages/index.md)
-- [published: lexicon](https://robfatland.github.io/nexus/lexicon) ~ [editable `lexicon.md`](https://github.com/robfatland/nexus/blob/gh-pages/lexicon.md)
+- [published **nexus**](https://robfatland.github.io/nexus) ~ [source `index.md`](https://github.com/robfatland/nexus/blob/gh-pages/index.md)
+- [published **lexicon**](https://robfatland.github.io/nexus/lexicon) ~ [source `lexicon.md`](https://github.com/robfatland/nexus/blob/gh-pages/lexicon.md)
 
 
 ## Topics
