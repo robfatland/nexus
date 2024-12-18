@@ -28,19 +28,17 @@ as a tutorial. This is intended to fill context gaps, note gotchas and so on: Ma
 [published](https://naclomi.github.io/containers-tutorial/)
 * [medium remarks on sphinx](https://kanishkvarshney.medium.com/python-documentation-generating-html-using-sphinx-a0d909f5e963)
 
-# nexus
 
-Nexus is a response to a profusion/latency problem: I have a lot of technology topics and associated
-details to keep track of; but many of these topics I am obliged to ignore for weeks or months at a time.
-As a result -- after a latency period -- I feel like I must re-learn all those details, an
-onerous and depressing process. Does it work to energetically document everything? Let's find out.
+# **nexus**
 
-
-This (gh-pages-branch) source file is [`index.md`](https://github.com/robfatland/nexus/blob/gh-pages/index.md)).
+**Nexus** is a response to a profusion + latency problem: I have a lot of technology topics and associated
+details to track; many that I am obliged to ignore for weeks to months at a time. As a result -- after such a
+latency period -- I must re-learn those details, an onerous and depressing process. Does it work to energetically 
+document everything as it gets worked out? Let's find out.
 
 
 - [published **nexus**](https://robfatland.github.io/nexus) ~ [source `index.md`](https://github.com/robfatland/nexus/blob/gh-pages/index.md)
-- [published **lexicon**](https://robfatland.github.io/nexus/lexicon) ~ [source `lexicon.md`](https://github.com/robfatland/nexus/blob/gh-pages/lexicon.md)
+- [published **nexus lexicon**](https://robfatland.github.io/nexus/lexicon) ~ [source `lexicon.md`](https://github.com/robfatland/nexus/blob/gh-pages/lexicon.md)
 
 
 ## Topics
