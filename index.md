@@ -27,7 +27,7 @@ as a tutorial. This is intended to fill context gaps, note gotchas and so on: Ma
     * [Naclomi containerization GitHub](https://github.com/naclomi/containers-tutorial),
 [published](https://naclomi.github.io/containers-tutorial/)
 * [medium remarks on sphinx](https://kanishkvarshney.medium.com/python-documentation-generating-html-using-sphinx-a0d909f5e963)
-
+* Look at HyakAndCloud in the `main` branch; and scoop up anything else like that and move it to the pipeline here on gh-pages
 
 # **nexus**
 
