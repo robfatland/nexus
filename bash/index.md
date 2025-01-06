@@ -32,7 +32,7 @@ python3 -m venv test-env
 source test-env/bin/activate
 deactivate
 source test-env/bin/activate
-echo put an alias for this activate command in .bashrc_aliases
+echo put an alias for this activate command in .bash_aliases
 pip install pandas
 pip install matplotlib
 ```
