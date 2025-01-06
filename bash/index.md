@@ -4,7 +4,42 @@
 
 `bash index.md`: will point to terminal, tunnel sub-pages and other topics
 
-arcane bash task: What is the volume of each subdirectory in this directory?
+
+### how to bootstrap an Ubuntu VM (AWS Spot case study)
+
+- console: Find instance, check or select
+- reboot the VM
+- use the Connect button > Connect to instance page > Use EC2 Instance Connect > Connect
+
+```
+which python3
+git clone https://github.com/robfatland/ant
+cd ~
+mkdir -p ~/miniconda3
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/minoconda.sh
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+rm ~/miniconda3/miniconda.sh
+echo to go further with the conda package manager: sort out the necessary PATH
+echo for the moment this setup heads towards pip and venv
+sudo apt update
+sudo apt upgrade
+sudo apt install python3-pip -y
+which pip
+which pip3
+sudo apt install python3.12-venv
+python3 -m venv test-env
+source test-env/bin/activate
+pip install pandas
+pip install jupyter
+pip install matplotlib
+```
+
+
+
+
+
+
+### arcane bash task: What is the volume of each subdirectory in this directory?
 
 ```
 du -h -d1
