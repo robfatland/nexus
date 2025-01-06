@@ -30,8 +30,10 @@ which pip3
 sudo apt install python3.12-venv
 python3 -m venv test-env
 source test-env/bin/activate
+deactivate
+source test-env/bin/activate
+echo put an alias for this activate command in .bashrc_aliases
 pip install pandas
-pip install jupyter
 pip install matplotlib
 ```
 
