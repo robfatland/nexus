@@ -19,8 +19,9 @@ mkdir -p ~/miniconda3
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/minoconda.sh
 bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 rm ~/miniconda3/miniconda.sh
-echo to go further with the conda package manager: sort out the necessary PATH
-echo for the moment this setup heads towards pip and venv
+export PATH=~/miniconda3/bin:$PATH
+sudo apt install jupyter-core
+which jupyter
 sudo apt update
 sudo apt upgrade
 sudo apt install python3-pip -y
