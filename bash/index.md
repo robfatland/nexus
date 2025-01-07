@@ -91,12 +91,15 @@ At this point we should be able to set up an ssh tunnel to a jupyter notebook se
 (jupyter lab --no-browser --port=8889) &
 ```
 
-The verbiage that ensues includes a token. Copy it: `5ea4583257df6cb49234ff38427cd1e53a80281aeca5d2e3`
+The verbiage that ensues includes a token. Copy it, example: `5ea4583257df6cb49234ff38427cd1e53a80281aeca5d2e3`
 
 
 ```
  ssh -N -f -i .keypairs/CloudBankExample_AWS_KeyPair.pem -L localhost:7005:localhost:8889 ubuntu@123.123.123.12
 ```
+
+
+To access the VM Jupyter notebook server via the tunnel: In a browser address bar enter `localhost:7005`.
 
 
 ### bash task: What is the volume of each subdirectory in this directory?
