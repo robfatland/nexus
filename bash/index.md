@@ -8,90 +8,104 @@
 # bash
 
 
-The Bourne Again Shell together with `ssh` is our first resource in managing cloud Virtual Machines for use 
-as research environments. The specific goal here is to load a cloud VM with a GitHub repo and install some 
-related data science packages, eventual to work in Jupyter notebooks. 
+The Bourne Again Shell together with `ssh` is our first resource in managing cloud Virtual Machine use 
+as a research environment. The goal is to configure a cloud VM to have a GitHub repo and some data science
+libraries, and then finally to start and use a Jupyter notebook server. 
 
 
 ## Bootstrapping an Ubuntu VM to run jupyter with a GitHub repo: Via ssh tunnel
 
-- console: Find instance, check or select
-- reboot the VM
-- use the Connect button > Connect to instance page > Use EC2 Instance Connect > Connect
+
+These notes were developed on AWS.
+
+
+- AWS Console: Find and select the EC2 instance
+- Connect button > Connect page > Use EC2 Instance Connect > Connect
+- Should reach a black screen with a `bash` prompt.
+
+
+In `~` the `.ssh` directory includes a file `authorized_keys`. This file is pre-loaded from a
+keypair `.pem` file selected or generated during VM spin-up. This file supports `ssh` connections. 
+
 
 ```
-echo The echo commands here are documentation comments.
-echo In ~ the .ssh directory includes a file authorized_keys. It is pre-loaded from the key pair file
-echo that was selected or generated during allocation of the instance. This will support an ssh connection. 
-```
-
-```
+cd ~
 which python3
 git clone https://github.com/robfatland/ant
-cd ~
 mkdir -p ~/miniconda3
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/minoconda.sh
 bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 rm ~/miniconda3/miniconda.sh
 ```
 
+
+To ensure access to `miniconda` from the command line, place the following line at the very end 
+of `~/.bashrc`:
+
 ```
-echo place the following line at the very end of .bashrc and then run it
 export PATH=~/miniconda3/bin:$PATH
+```
+
+Next: Run `~/.bashrc` and confirm the `conda` package manager is available.
+
+
+```
+which conda
+conda init
 source ~/.bashrc
-sudo apt update
-echo The following command (sudo apt upgrade) requires a confirmation Y
-sudo apt upgrade
+sudo apt update -y
+sudo apt upgrade -y
 ```
 
+> Note: `pip` and `venv` can also be installed.
 
-The following pip installation does *not* need to be run: pip is available through miniconda.
-
-- Not necessary: sudo apt install python3-pip -y
-
-
-The following venv install does seem to be necessary but I will comment it out in favor of conda environments. 
-Therefore the deprecated sequence is:
-
-- sudo apt install python3.12-venv
-- python3 -m venv test-env
-- source test-env/bin/activate
-- deactivate
-- Place an alias to activate in a new file called ~/.bash_aliases
-
+Continuing with `conda` environments:
 
 ```
-echo Here is the preferred environment procedure:
 conda create --name testenv
-echo This command should show a folder testenv is present
 ls -al ~/miniconda3/envs
 conda env list
-echo now make the test environment testenv active (will be reflected in the prompt)
-conda init
-echo The above 'conda init' command modifies .bashrc for future conda environment use
-echo At this point we can log out and log back in or try running .bashrc. Here we transcribe the former approach:
-exit
-echo this is a log-out / log-back-in procedure so log back in
-conda activate testenv
-echo The Linux command prompt should now look like this: "(testenv) ubuntu@ip10.0.12.240:~$"
-conda deactivate
-conda activate testenv
-echo Next let's install some data science tools including the Jupyter notebook package
-conda install jupyter
-which jupyter
-echo The following require a [y] affirmation:
-conda install pandas
-conda install numpy
-conda install matplotlib
 ```
 
-At this point we should be able to set up an ssh tunnel to a jupyter notebook server running on the VM.
+
+> Note: `conda init` modifies .bashrc for conda environment use. It should suffice to run `source .bashrc`.
+> It may also work to logout and log back in to the VM (`exit`).
+
+
+```
+conda activate testenv
+conda deactivate
+conda activate testenv
+```
+
+The Linux command prompt should now look like: *(testenv) ubuntu@ip10.0.12.240:~$*
+
+
+Next install data science tools including the Jupyter notebook package.
+
+
+```
+conda install jupyter
+which jupyter
+conda install pandas -y
+conda install numpy -y
+conda install matplotlib -y
+```
+
+
+We can now set up an `ssh` tunnel to a jupyter notebook server running on the VM.
+This is described in more detail on the [*tunnels*]() page. Last command to run 
+on the VM: 
 
 ```
 (jupyter lab --no-browser --port=8889) &
 ```
 
-The verbiage that ensues includes a token. Copy it, example: `5ea4583257df6cb49234ff38427cd1e53a80281aeca5d2e3`
+
+Copy the resulting token, for example: `5ea4583257df6cb49234ff38427cd1e53a80281aeca5d2e3`
+
+
+From the laptop: 
 
 
 ```
@@ -102,14 +116,17 @@ The verbiage that ensues includes a token. Copy it, example: `5ea4583257df6cb492
 To access the VM Jupyter notebook server via the tunnel: In a browser address bar enter `localhost:7005`.
 
 
-### bash task: What is the volume of each subdirectory in this directory?
+
+## More `bash` 
+
+### Get the volume of each subdirectory from a given directory
 
 ```
 du -h -d1
 ```
 
 
-## A quick rundown on `bash`
+### Un-sorted residual notes on `bash`
 
 
 `bash` is an abbreviation for *the Bourne Again Shell*, an interface to the UNIX operating
@@ -290,7 +307,9 @@ Time to synch back to the GitHub copy, i.e. push your changes to GitHub.
         - Here you should need to authenticate: Username and GitHub password
         - You can search on 'saving github credentials locally' to make this step automatic
 
+
 That should do it. Once you have it down it is pretty fast; just three commands: `git add .; git commit; git push`.
+
 
 ## Track B
 
