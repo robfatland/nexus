@@ -8,6 +8,10 @@
 ## Overview
 
 
+This page describes `ssh` tunnel use through the specific application of using a cloud virtual machine
+as a working Jupyter environment. 
+
+
 Suppose I want to run a Jupyter notebook server on a cloud Virtual Machine. I will view and interact with this 
 from my laptop web browser. I can select a VM with a desired level of compute power. I can run the
 `jupyter` notebook server on an internet-facing VM (less secure) or on a cloud-internal VM (more secure). 
@@ -26,7 +30,7 @@ my laptop <-----> cloud VM (bastion) <------> cloud VM (running jupyter)
 ```
 
 
-### Configuration 1: Laptop direct to Jupyter server VM
+### One hop ssh tunnel: Laptop direct to Jupyter server VM
 
 
 This approach is the simpler of the two. It does mean that the Jupyter server VM has a public ip address
@@ -64,7 +68,7 @@ enter the token recorded above. Once the token is authenticated the jupyter envi
 should be available. This includes `bash` access to the VM.
 
 
-### Configuration 2: Laptop to bastion VM to Jupyter server VM
+### Two hop ssh tunnel: Laptop to bastion VM to Jupyter server VM
 
 
 This approach presumes that a (less exposed / more secure) VM called `worker` is configured and running
@@ -73,12 +77,12 @@ An intermediary VM called `bastion` is running as well on this private subnet. `
 public ip address `123.123.123.12`.  The objective here is to establish a two-hop ssh tunnel. 
 
 Note that we need two keypair files: `bastion.pem` located on the laptop in `~/.keypairs` and
-`worker.pem` located on `bastion` in `~/.keypairs`. 
+`worker.pem` located on `bastion` in `~/.keypairs`. The `chmod` command included here is only 
+run once to adjust the keypair file permissions.
 
 
-The following 
-command sequence indicates which computer we are addressing through the command line by means of 
-the prompt. From my `laptop`, in a `bash` shell:
+The following command sequence indicates which computer we are addressing through the command line 
+by means of the prompt. From `laptop` in a `bash` shell:
 
 
 ```
@@ -96,6 +100,7 @@ worker$ conda activate work-env
 (work-env)worker$ (jupyter lab --no-browser --port=8889) &
 ```
 
+
 As noted: The jupyter notebook server will start as a background process that will
 persist after logging off of `worker`; and we are obliged to copy the token provided
 for later authentication. Example token: `5ea4583257df6cb49234ff38427cd1e53a80281aeca5d2e3`.
@@ -108,42 +113,14 @@ We then return to the local `laptop` to create the second part of the tunnel.
 ```
 (work-env)worker$ exit
 
-bastion$ ssh -N -f -i ~/.keypairs/worker.pem -L localhost:7005:localhost:8889 ubuntu@10.0.1.128
+bastion$ ssh -N -f -i ~/.keypairs/worker.pem -L localhost:7006:localhost:8889 ubuntu@10.0.1.128
 bastion$ exit
 
-laptop$ ssh -N -f -i ~/.keypairs/bastion.pem -L localhost:7004:localhost:7005 ubuntu@123.123.123.12
+laptop$ ssh -N -f -i ~/.keypairs/bastion.pem -L localhost:7005:localhost:7006 ubuntu@123.123.123.12
 ```
 
-```
-$ sftp -i bastion.pem ubuntu@12.23.34.45
-sftp> put worker.pem
-```
+As above it remains to enter `localhost:7004` in the laptop web browser address bar to
+open the `jupyter` notebook server interface.
 
-- **`ssh`** from **`local`** to **`bastion`** to **`worker`**
-    - `ssh ubuntu@12.23.34.45 -i bastion.pem`
-    - `ssh -i worker.pem ubuntu@10.0.1.234`
-        - This uses the VPC private subnet ip address for **`worker`**
-
-
-- On worker start a headless Jupyter notebook server
-    - `(jupyter notebook --no-browser --port=8889) &`
-        - The choice of port is fairly arbitrary; but we do not want it to collide with a port that is in use
-        - This command produces a lot of output
-        - Towards the end: copy the long token string
-            - It looks like **`4109891ab3e0ec38c2aec9c427c8be11eda975ab2882a52a`**
-    - `exit`
-    - First time doing this: Log back in to **`worker`** and verify the server is still running 
-        - `ps -ef | grep jupyter`
-        - `exit`
-    - On **`bastion`** create an ssh tunnel
-        - `ssh -N -f -i worker.pem -L localhost:7005:localhost:8889 ubuntu@10.0.1.234`
-            - Same as above remark: On port choice 7005
-            - This command associates inbound **`bastion`** traffic on port 7005 to outbound > **`worker`** port 8889
-        - `exit`
-    - On **`local`** create the second part of the tunnel to **`bastion`**
-        - `ssh -N -f -i bastion.pem -L localhost:7004:localhost:7005 ubuntu@12.23.34.45`
-    - **`local`** browser address bar
-        - `localhost:7004`
-        - If promnpted: paste in token string copied above
   
   
