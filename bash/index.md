@@ -5,7 +5,15 @@
 `bash index.md`: will point to terminal, tunnel sub-pages and other topics
 
 
-### how to bootstrap an Ubuntu VM (AWS Spot case study)
+# bash
+
+
+The Bourne Again Shell together with `ssh` is our first resource in managing cloud Virtual Machines for use 
+as research environments. The specific goal here is to load a cloud VM with a GitHub repo and install some 
+related data science packages, eventual to work in Jupyter notebooks. 
+
+
+## Bootstrapping an Ubuntu VM to run jupyter with a GitHub repo: Via ssh tunnel
 
 - console: Find instance, check or select
 - reboot the VM
@@ -15,6 +23,9 @@
 echo The echo commands here are documentation comments.
 echo In ~ the .ssh directory includes a file authorized_keys. It is pre-loaded from the key pair file
 echo that was selected or generated during allocation of the instance. This will support an ssh connection. 
+```
+
+```
 which python3
 git clone https://github.com/robfatland/ant
 cd ~
@@ -22,21 +33,34 @@ mkdir -p ~/miniconda3
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/minoconda.sh
 bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 rm ~/miniconda3/miniconda.sh
+```
+
+```
 echo place the following line at the very end of .bashrc and then run it
 export PATH=~/miniconda3/bin:$PATH
 source ~/.bashrc
 sudo apt update
 echo The following command (sudo apt upgrade) requires a confirmation Y
 sudo apt upgrade
-echo The following pip installation does *not* need to be run: pip is available through miniconda
-echo Not necessary: sudo apt install python3-pip -y
-echo The following venv install does seem to be necessary but I will comment it out in favor of
-echo conda environments. Therefore the deprecated sequence is:
-echo Deprecated: sudo apt install python3.12-venv
-echo Deprecated: python3 -m venv test-env
-echo Deprecated: source test-env/bin/activate
-echo Deprecated: deactivate
-echo Deprecated: Place an alias to activate in a new file called ~/.bash_aliases
+```
+
+
+The following pip installation does *not* need to be run: pip is available through miniconda.
+
+- Not necessary: sudo apt install python3-pip -y
+
+
+The following venv install does seem to be necessary but I will comment it out in favor of conda environments. 
+Therefore the deprecated sequence is:
+
+- sudo apt install python3.12-venv
+- python3 -m venv test-env
+- source test-env/bin/activate
+- deactivate
+- Place an alias to activate in a new file called ~/.bash_aliases
+
+
+```
 echo Here is the preferred environment procedure:
 conda create --name testenv
 echo This command should show a folder testenv is present
@@ -59,25 +83,27 @@ echo The following require a [y] affirmation:
 conda install pandas
 conda install numpy
 conda install matplotlib
-echo At this point we should be able to set up an ssh tunnel to a jupyter notebook server running on the VM.
+```
+
+At this point we should be able to set up an ssh tunnel to a jupyter notebook server running on the VM.
+
+```
+(jupyter lab --no-browser --port=8889) &
+```
+
+The verbiage that ensues includes a token. Copy it: `5ea4583257df6cb49234ff38427cd1e53a80281aeca5d2e3`
+
+
+```
+ ssh -N -f -i .keypairs/CloudBankExample_AWS_KeyPair.pem -L localhost:7005:localhost:8889 ubuntu@123.123.123.12
 ```
 
 
-
-
-
-
-### arcane bash task: What is the volume of each subdirectory in this directory?
+### bash task: What is the volume of each subdirectory in this directory?
 
 ```
 du -h -d1
 ```
-
-
-# Draft Material from a previous iteration
-
-
-This is sort of an introduction; it is not really vetted for use at this time.
 
 
 ## A quick rundown on `bash`
