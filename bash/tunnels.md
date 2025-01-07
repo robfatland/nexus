@@ -8,7 +8,24 @@
 ## Overview
 
 
-I want to run Jupyter on a secure VM inside the AWS cloud on a private subnet. Let's call this VM **`worker`**.
+Suppose I want to run a Jupyter notebook server on a cloud Virtual Machine. I will view and interact with this 
+using my web browser. This allows me to select a VM with my desired compute power. Depending on my desired level
+of security I can run `jupyter` on an internet-facing VM or on a cloud-internal (private) VM. This plan is
+simpler than instantiating a "Littlest Jupyter Hub" which is itself much simpler than creating a full-scale
+Jupyter Hub.
+
+
+One approach to setting this up is described here: Using an `ssh` tunnel. This takes advantage of the
+security built into `ssh`. We describe two implementations:
+
+```
+my laptop <-----> cloud VM (running jupyter)
+
+my laptop <-----> cloud VM (bastion) <------> cloud VM (running jupyter)
+```
+
+
+on a secure VM inside the AWS cloud on a private subnet. Let's call this VM **`worker`**.
 I have an intermediary bastion server called **`bastion`**. I'm going to connect from my local machine to
 **bastion** to **worker** so that in my browser I see a Jupyter notebook server that is in fact running on **worker**. 
 That means a two-hop ssh tunnel.
