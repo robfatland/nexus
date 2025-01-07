@@ -12,6 +12,9 @@
 - use the Connect button > Connect to instance page > Use EC2 Instance Connect > Connect
 
 ```
+echo The echo commands here are documentation comments.
+echo In ~ the .ssh directory includes a file authorized_keys. It is pre-loaded from the key pair file
+echo that was selected or generated during allocation of the instance. This will support an ssh connection. 
 which python3
 git clone https://github.com/robfatland/ant
 cd ~
