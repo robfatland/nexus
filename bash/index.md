@@ -22,22 +22,44 @@ mkdir -p ~/miniconda3
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/minoconda.sh
 bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 rm ~/miniconda3/miniconda.sh
+echo place the following line at the very end of .bashrc and then run it
 export PATH=~/miniconda3/bin:$PATH
-sudo apt install jupyter-core
-which jupyter
+source ~/.bashrc
 sudo apt update
+echo The following command (sudo apt upgrade) requires a confirmation Y
 sudo apt upgrade
-sudo apt install python3-pip -y
-which pip
-which pip3
-sudo apt install python3.12-venv
-python3 -m venv test-env
-source test-env/bin/activate
-deactivate
-source test-env/bin/activate
-echo put an alias for this activate command in .bash_aliases
-pip install pandas
-pip install matplotlib
+echo The following pip installation does *not* need to be run: pip is available through miniconda
+echo Not necessary: sudo apt install python3-pip -y
+echo The following venv install does seem to be necessary but I will comment it out in favor of
+echo conda environments. Therefore the deprecated sequence is:
+echo Deprecated: sudo apt install python3.12-venv
+echo Deprecated: python3 -m venv test-env
+echo Deprecated: source test-env/bin/activate
+echo Deprecated: deactivate
+echo Deprecated: Place an alias to activate in a new file called ~/.bash_aliases
+echo Here is the preferred environment procedure:
+conda create --name testenv
+echo This command should show a folder testenv is present
+ls -al ~/miniconda3/envs
+conda env list
+echo now make the test environment testenv active (will be reflected in the prompt)
+conda init
+echo The above 'conda init' command modifies .bashrc for future conda environment use
+echo At this point we can log out and log back in or try running .bashrc. Here we transcribe the former approach:
+exit
+echo this is a log-out / log-back-in procedure so log back in
+conda activate testenv
+echo The Linux command prompt should now look like this: "(testenv) ubuntu@ip10.0.12.240:~$"
+conda deactivate
+conda activate testenv
+echo Next let's install some data science tools including the Jupyter notebook package
+conda install jupyter
+which jupyter
+echo The following require a [y] affirmation:
+conda install pandas
+conda install numpy
+conda install matplotlib
+echo At this point we should be able to set up an ssh tunnel to a jupyter notebook server running on the VM.
 ```
 
 
