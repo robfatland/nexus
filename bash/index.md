@@ -5,10 +5,15 @@
 `bash index.md`: will point to terminal, tunnel sub-pages and other topics
 
 
-# bash
+# `bash` tactics
 
 
-The Bourne Again Shell together with `ssh` is our first resource in managing cloud Virtual Machine use 
+This region of `nexus` is focused on configuring and operating on a cloud Virtual Machine as a data 
+scienctist of some type. Sub-pages go into more detail: `conda` environments, `git`, `ssh` tunnels,
+terminal configuration.
+
+
+The Bourne Again Shell (`bash`) together with `ssh` is our first resource in managing cloud Virtual Machine use 
 as a research environment. The goal is to configure a cloud VM to have a GitHub repo and some data science
 libraries, and then finally to start and use a Jupyter notebook server. 
 
