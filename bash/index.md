@@ -114,12 +114,19 @@ From the laptop:
 
 
 To access the VM Jupyter notebook server via the tunnel: In a browser address bar enter `localhost:7005`.
+A more comprehensive way to get connected bundles the token as in the following (again: In the browser address bar):
 
+
+```
+http://localhost:8888/lab?token=5ea4583257df6cb49234ff38427cd1e53a80281aeca5d2e3
+```
 
 
 ## More `bash` 
 
+
 ### Get the volume of each subdirectory from a given directory
+
 
 ```
 du -h -d1
