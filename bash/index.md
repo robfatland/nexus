@@ -8,8 +8,9 @@
 # `bash` tactics
 
 
-This region of `nexus` is focused on configuring and operating on a cloud Virtual Machine as a data 
-scienctist of some type. Sub-pages go into more detail: `conda` environments, `git`, `ssh` tunnels,
+This region of `nexus` is focused on configuring and operating a cloud Virtual Machine as a data 
+scienctist of some type. So there are some presumed preliminary steps... like securing the VM. 
+Sub-pages of this page go into sub-topic detail: `conda` environments, `git`, `ssh` tunnels,
 terminal configuration.
 
 
