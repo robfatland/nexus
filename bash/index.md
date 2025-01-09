@@ -5,18 +5,22 @@
 `bash index.md`: will point to terminal, tunnel sub-pages and other topics
 
 
-# `bash` tactics
+# `bash` tactics for bootstrapping a cloud data science VM
 
 
-This region of `nexus` is focused on configuring and operating a cloud Virtual Machine for 
-use in some form of data science. There are presumed precursor steps: Secure a VM, download
-a keypair file `CloudKeyPair.pem` and change its file permissions to `0400`. Log in to a 
-`bash` terminal on this VM. That's the main substance of the precursor steps before jumping into
-the bootstrapping process outlined below. 
+This page of `nexus` focuses on configuring and operating a cloud data science Virtual Machine (VM). 
+There are presumed some precursory steps: Secure a VM, download
+a keypair file `CloudKeyPair.pem`, change its file permissions to `0400`, get some coffee,
+log in to a `bash` terminal on the VM. That's the main substance of the precursor steps.
+Then jump into the bootstrapping process outlined below. 
 
 
-Sub-pages of this page go into sub-topic details: `conda` environments, `git`, `ssh` tunnels,
-terminal configuration.
+Related sub-topic links: 
+
+- `conda` environments
+- `git`
+- `ssh` tunnels
+- terminal configuration
 
 
 ## Bootstrapping an Ubuntu VM to run jupyter with a GitHub repo: Via ssh tunnel
