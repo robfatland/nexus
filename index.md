@@ -10,7 +10,7 @@ as a tutorial. This is intended to fill context gaps and generally help get to r
 ## Topics
 
 
-* [bash and related](https://robfatland.github.io/nexus/bash/), [source](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md)
+* [bash bootstrap](https://robfatland.github.io/nexus/bash/), [source](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md)
     * [environments](https://robfatland.github.io/nexus/env), [source](https://github.com/robfatland/nexus/blob/gh-pages/env/index.md)
     * [git and GitHub](https://robfatland.github.io/nexus/git), [source](https://github.com/robfatland/nexus/blob/gh-pages/git/index.md)
     * [wrenching the terminal](https://robfatland.github.io/nexus/bash/terminal), [source](https://github.com/robfatland/nexus/blob/gh-pages/bash/terminal.md)
