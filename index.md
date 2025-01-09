@@ -4,7 +4,7 @@
 
 **nexus** is a *threefold documentation resource* for open research: *native*, *external* via URL pointers, 
 and *hybrid*. Hybrid documentation is commentary generated when working through an external resource such 
-as a tutorial. This is intended to fill context gaps, note gotchas and so on: Make the path easier to follow.
+as a tutorial. This is intended to fill context gaps and generally help get to research fast.
 
 
 ## Topics
