@@ -15,9 +15,8 @@ so reminiscent of fighter pilots turning off all the display clutter in their HU
 - Context: A PC running the `Terminal` application
     - Tab: `Ubuntu` (a user-friendly distribution built on Debian Linux)
         - There is but one Linux kernel... and many *ornamentations* including Ubuntu
-        - [`bash`](https://en.wikipedia.org/wiki/Shell_(computing))
         - Association: Windows Subsystem for Linux version 2 (WSL-2)
-        - `bash` is the command line interface to Linux for access to operating system services
+        - [`bash`](https://en.wikipedia.org/wiki/Shell_(computing)): the command line interface to Linux, access to operating system services
     - Tab: `ssh` to a cloud VM; similar issues
 - Screen text is a lot of (unpleasant) colors: both in `bash` and the `vim` editor
     - `ls` produces a lot of colorizing
@@ -26,7 +25,7 @@ so reminiscent of fighter pilots turning off all the display clutter in their HU
 
 
 
-### A rewrite paused here...
+### rewrite paused here...
 
 
 - Top-of-window bar > clean spot > right click > Settings
