@@ -47,7 +47,7 @@ document everything as it gets worked out? Let's find out.
 * [bash and related](https://robfatland.github.io/nexus/bash/), [source](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md)
     * [environments](https://robfatland.github.io/nexus/env), [source](https://github.com/robfatland/nexus/blob/gh-pages/env/index.md)
     * [git and GitHub](https://robfatland.github.io/nexus/git), [source](https://github.com/robfatland/nexus/blob/gh-pages/git/index.md)
-    * [wrenching the terminal](https://robfatland.github.io/nexus/terminal), [source](https://github.com/robfatland/nexus/blob/gh-pages/bash/terminal.md)
+    * [wrenching the terminal](https://robfatland.github.io/nexus/bash/terminal), [source](https://github.com/robfatland/nexus/blob/gh-pages/bash/terminal.md)
     * [ssh tunnels](https://robfatland.github.io/nexus/bash/tunnels), [source](https://github.com/robfatland/nexus/blob/gh-pages/bash/tunnels.md)
 * [data security](https://cloudmaven.github.io/documentation/cc_data_security.html)
 * [artificial intelligence](https://robfatland.github.io/nexus/ai/), [source](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md)
