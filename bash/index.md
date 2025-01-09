@@ -18,10 +18,13 @@ Then jump into the bootstrapping process outlined below.
 Related: 
 
 
-- [`conda` environments](https://robfatland.github.io/nexus/environments)
+- [`conda` environments](https://robfatland.github.io/nexus/env)
 - [`git`](https://robfatland.github.io/nexus/git)
 - [`ssh` tunnels](https://robfatland.github.io/nexus/bash/tunnels)
 - [terminal configuration](https://robfatland.github.io/nexus/bash/terminal)
+- [cloud computing](https://robfatland.github.io/nexus/cloud)
+- [ai](https://robfatland.github.io/nexus/ai)
+- [vscode](https://robfatland.github.io/nexus/vscode)
 
 
 ## Bootstrapping an Ubuntu VM to run jupyter with a GitHub repo: Via ssh tunnel
