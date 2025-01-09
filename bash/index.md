@@ -8,10 +8,18 @@
 # `bash` tactics
 
 
-This region of `nexus` is focused on configuring and operating a cloud Virtual Machine as a data 
-scienctist of some type. So there are some presumed preliminary steps... like securing the VM. 
-Sub-pages of this page go into sub-topic detail: `conda` environments, `git`, `ssh` tunnels,
+This region of `nexus` is focused on configuring and operating a cloud Virtual Machine for 
+use in some form of data science. There are presumed precursor steps: Secure a VM, download
+a keypair file `CloudKeyPair.pem` and change its file permissions to `0400`. Log in to a 
+`bash` terminal on this VM. That's the main substance of the precursor steps before jumping into
+the bootstrapping process outlined below. 
+
+
+Sub-pages of this page go into sub-topic details: `conda` environments, `git`, `ssh` tunnels,
 terminal configuration.
+
+
+## Bootstrapping an Ubuntu VM to run jupyter with a GitHub repo: Via ssh tunnel
 
 
 The Bourne Again Shell (`bash`) together with `ssh` is our first resource in managing cloud Virtual Machine use 
@@ -19,19 +27,23 @@ as a research environment. The goal is to configure a cloud VM to have a GitHub 
 libraries, and then finally to start and use a Jupyter notebook server. 
 
 
-## Bootstrapping an Ubuntu VM to run jupyter with a GitHub repo: Via ssh tunnel
-
-
-These notes were developed on AWS.
+> These notes were developed on AWS; and should be validated on other clouds.
 
 
 - AWS Console: Find and select the EC2 instance
 - Connect button > Connect page > Use EC2 Instance Connect > Connect
 - Should reach a black screen with a `bash` prompt.
+- Alternatively, from a laptop: `ssh -i ~/.keypairs/CloudKeyPar.pem ubuntu@123.123.123.12`
 
 
-In `~` the `.ssh` directory includes a file `authorized_keys`. This file is pre-loaded from a
-keypair `.pem` file selected or generated during VM spin-up. This file supports `ssh` connections. 
+Now on the VM: In `~` the `.ssh` directory includes a file `authorized_keys`. This file should
+be pre-loaded from a keypair `.pem` file selected or generated during VM spin-up, what we
+refer to here as `CloudKeyPair.pem`. The `authorized_keys` file resides on the VM to 
+validate `ssh` connections. 
+
+
+In what follows commands are given without indicating a `bash` prompt. The first
+block of commands installs the `miniconda` package.
 
 
 ```
@@ -48,23 +60,33 @@ rm ~/miniconda3/miniconda.sh
 To ensure access to `miniconda` from the command line, place the following line at the very end 
 of `~/.bashrc`:
 
+
 ```
 export PATH=~/miniconda3/bin:$PATH
 ```
 
-Next: Run `~/.bashrc` and confirm the `conda` package manager is available.
+
+Next: Run `~/.bashrc`, confirm the `conda` package manager is available, and 
+have conda go through its initialization process.
 
 
 ```
+source ~/.bashrc
 which conda
 conda init
 source ~/.bashrc
 ```
 
+
+> Note: `conda init` modifies `.bashrc` for conda environment use. It should suffice to run `source ~/.bashrc`.
+> It should also suffice to log out and log back in to the VM (`exit`).
+
+
 Incidentally in addition to package managers `conda` and `pip` there is also available in Linux
 the Advanced Package Tool or `apt`. This is specific to Debian-based forms of Linux including
-Ubuntu. One can update the package index and then upgrade installed packages using apt, as
+Ubuntu. One can update the package index and then upgrade installed packages using `apt`, as
 follows. I claim this is a worthwhile perfunctory action as part of this bootstrap process.
+
 
 ```
 sudo apt update -y
@@ -72,32 +94,26 @@ sudo apt upgrade -y
 ```
 
 > Note: `pip` and `venv` can also be installed. The functionality we need is covered by
-> `conda` however so this recipe will not delve into `pip/venv` details.
+> `conda` however so this recipe page does not delve into `pip/venv` details.
 
 
 Continuing with `conda` environments:
+
 
 ```
 conda create --name testenv
 ls -al ~/miniconda3/envs
 conda env list
-```
-
-
-> Note: `conda init` modifies .bashrc for conda environment use. It should suffice to run `source .bashrc`.
-> It may also work to logout and log back in to the VM (`exit`).
-
-
-```
 conda activate testenv
 conda deactivate
 conda activate testenv
 ```
 
-The Linux command prompt should now look like: *(testenv) ubuntu@ip10.0.12.240:~$*
+
+The Linux command prompt should now look like: `(testenv) ubuntu@ip10.0.12.240:~$`
 
 
-Next install data science tools including the Jupyter notebook package.
+Install data science tools including the Jupyter notebook package.
 
 
 ```
@@ -110,27 +126,35 @@ conda install matplotlib -y
 
 
 We can now set up an `ssh` tunnel to a jupyter notebook server running on the VM.
-This is described in more detail on the [*tunnels*]() page. Last command to run 
-on the VM: 
+This is described in more detail on the [nexus *tunnels*](https://robfatland.github.io/nexus/bash/tunnels) 
+page. Here is the final command we run on the VM, to start the Jupyter notebook server process as a 
+background task:
+
 
 ```
 (jupyter lab --no-browser --port=8889) &
 ```
 
 
-Copy the resulting token, for example: `5ea4583257df6cb49234ff38427cd1e53a80281aeca5d2e3`
+There will follow from this a lot of text output on the screen. From
+this text: Find and copy the Jupyter access token, for example: 
+`5ea4583257df6cb49234ff38427cd1e53a80281aeca5d2e3`
 
 
-From the laptop: 
+From the laptop create the `ssh` tunnel. It will serve as a secure connection between
+the VM's Jupyter notebook server and a browser running on the laptop. 
 
 
 ```
- ssh -N -f -i .keypairs/CloudBankExample_AWS_KeyPair.pem -L localhost:7005:localhost:8889 ubuntu@123.123.123.12
+ ssh -N -f -i .keypairs/CloudKeyPair.pem -L localhost:7005:localhost:8889 ubuntu@123.123.123.12
 ```
 
+> Note: This does not reconnect you to `bash` on the cloud VM. Rather it creates a persistent tunnel.
 
-To access the VM Jupyter notebook server via the tunnel: In a browser address bar enter `localhost:7005`.
-A more comprehensive way to get connected bundles the token as in the following (again: In the browser address bar):
+
+To access the VM Jupyter notebook server via the tunnel: In a browser address bar enter 
+the text `localhost:7005`. Another option is to include the token copied above, 
+again placed in the browser address bar as:
 
 
 ```
@@ -138,10 +162,14 @@ http://localhost:8888/lab?token=5ea4583257df6cb49234ff38427cd1e53a80281aeca5d2e3
 ```
 
 
-## More `bash` 
+## More about `bash` 
 
 
-### Get the volume of each subdirectory from a given directory
+`bash` is an abbreviation for *the Bourne Again Shell*, an interface to the UNIX operating
+system. Or more constructively to its descendent operating system Linux.
+
+
+### What is the file volume of each subdirectory from a given directory
 
 
 ```
@@ -149,78 +177,64 @@ du -h -d1
 ```
 
 
-### Un-sorted residual notes on `bash`
+### Running a command sequence
 
 
-`bash` is an abbreviation for *the Bourne Again Shell*, an interface to the UNIX operating
-system. Or more constructively to its descendent operating system Linux.
+Edit a text file with Linux commands, save it as `go.script`. Issue `source go.script`.
+The `source` program will attempt to execute the individual commands in sequence.
 
 
-The transaction is this: You have a prompt that echoes whatever you type at the
-keyboard. You go ahead and type a command together with some appended arguments or 
-qualifiers, as needed, and you hit the `enter` key, and the shell does its best to 
-find and execute that command and provide feedback on how things went, returning
-at the end of all this once again to the prompt. 
+Basic `bash` command sequence for file system navigation. This should become 
+second nature.
 
 
-This command/response pattern is interactive. The commands are programs stored
-in memory. 
+```
+pwd
+ls
+mkdir child
+cd child
+pwd
+cd .
+pwd
+cd ..
+pwd
+ls -al
+```
 
 
-You may ask: What about automatically running a sequence of commands to accomplish
-a larger task. No problem: Edit a text file filled with Linux commands, save it 
-as `go.script`, and at the command prompt issue the command `source go.script`.
-The shell will attempt to run the `source` program, operating on our file `go.script`;
-and the `source` program will in turn attempt to execute the individual 
-commands in sequence.
+### `~/.bashrc`
 
 
-There are three other things to mention. 
+A filename that begins with a period is considered a *system file*. It 
+is not listed by a basic `ls` command; but it is visible from `ls -a`. 
 
 
-First, the file system is organized as a big tree; and we start a couple
-levels up from the ground floor in a user home directory, say `/home/rob`. 
+We can edit, customize and run `.bashrc` by typing `source .bashrc`. 
+It runs automatically on login. 
 
 
-* `pwd`
-* `ls`
-* `mkdir child`
-* `cd child`
-* `pwd`
-* `cd .`
-* `pwd`
-* `cd ..`
-* `pwd`
-* `ls -al`
+
+### `~/.something` folders
 
 
-List files with `ls`; and list *all* the files with `ls -al`. 
-In your home directory notice there is a file called `.bashrc`. 
+- May involve or retain credentials
+- Should be treated very carefully ('administrative secrets') and should never
+be copied into working folders or directories.
+- In particular we need to be aware of repository clones that are pushed
+back to GitHub to a local clone. There (we should assume) they are globally
+visible. Careless misuse of `git push` regularly incurs tens of thousands
+of dollars in unintended cloud spend.
 
 
-Because it starts with a period it is considered a system file 
-so it does not get listed by the vanilla `ls` command. This is a script file
-that runs when you log in and configures things for you, including what your
-prompt looks like. You can edit it and run it again to effect your changes
-by saying `source .bashrc`. If you are interested in a bit of customizing
-you can ask me about the `greenandblack` repo. But anyway sometimes these
-'starts with a period' files are actually directories; and they can be 
-surprisingly big. And *sometimes* they can even hold secret things like
-github *login credentials*. So it is important to maintain a sense of discretion
-when you copy a repo from GitHub to a local clone. Make sure nothing winds 
-up in your repo directory that should not be there; because when you run 
-`git push` to copy your changes back to your safe copy, there your credentials
-will be in public view on GitHub. You would think that nobody will ever notice
-because who goes around looking at billions of repos all the time. But the 
-answer is: Bots do. And they scrape credentials and do whatever naughty things
-they were programmed to do. So that's an introduction to the purpose and perils
-of your home directory. 
+### File premissions
 
 
-Third, each file and each directory has an access permission string associated
-with it. You will see this when you issue `ls -al`. There are three fields,
-each consisting of three values. There is also a leading character that tells
-you if a file is actually a directory. Here is an example:
+Each file and directory has an associated access permission string, visible
+via `ls -al`. There are three fields each consisting of three values. 
+There is also a leading character that tells you if a file is a directory.
+
+
+Output of `ls -al`: 
 
 
 ```
@@ -229,144 +243,47 @@ drwxr-xr-x 1 kilroy kilroy  4096 May 16 19:16 miniconda3
 ```
 
 
-The upper file permission field starts with `-`. This means it is a file. Then is 
-has `rwx`, then `rwx` again, and then `rwx` again. The first one means that you,
-the User have read/write/execute permissions on this file. The second trio refers
-to people in the same user Group as you. The third trio refers to Others; anyone
-using this computer. This is really a holdover from when systems were commonly shared
-by larger groups of people. However it is good to know what this means; and you can
-modify the permission string for any file you own using the change mode command, `chmod`.
+The `terraform` file permission field starts with `-` meaning it is an
+ordinary file. `d` in this field for `miniconda3` means it is a directory. 
+The `rwx` fields that follow are bitwise permission fields, in sequence
+left to right for: the User, the Users Group, and Other Users on this 
+computer. In the case of `miniconda3`: The Group and Other
+permissions prevent anyone other than the User from writing in that folder.
 
 
-By the way the lower file
-begins with `d`. This means it is a directory. Notice that in this case the User can
-read/write/execute; but both Group and Other users can only read and execute. They 
-cannot write changes to this directory. 
+We can modify the permission string for a file using the change mode 
+command, `chmod`. We access documentation for this command by issuing 
+the manual command: `man chmod`.
 
 
-## Editors
+
+### Editors
 
 
-Many use `EMACS` or similar "light" versions of this popular editor. The pattern seems to be 
-that they sacrifice a little bit of real-estate at the bottom of the screen to present a ctrl-key
-menu for save/exit/etcetera options. This is one good path to having the means to edit text files.
+`emacs`, `nano`, `zile` (etcetera) are popular editors in the same basic
+format. A popular alternative is the `vi`, `vim` (etcetera) family of editors. 
 
 
-Another approach is to learn the peculiar syntax of the `vi` editor. `vi` has been improved so 
-now it is called `vim`. It has both an `<insert>` and an `<escape>` mode so one has to develop
-a little mental bit for which one you are currently in. When in escape mode you can move your 
-cursor around or issue terse little commands that appear at the bottom of the screen. This is 
-the sort of thing you would learn to do in an afternoon on a "learn vi" interactive website. 
+### more Linux commands
 
-
-I was introduced to `vi` so that is what I use. I think it is pretty amusing although sometimes
-the feature creep has made it look very cluttered; so I've put a little effort into retro-simplification.
-Again that is in my `greenandblack` repo. 
-
-## linux commands
-
-- `source fu.script` executes the commands in `fu.script`
-- `cd` to change directory`
-- `pwd` print working directory
-- `chmod` change permissions
-- `ls` list directory contents; `ls -al` for a comprehensive view
-- `rm file` to delete `file`
-- `rmdir dir` to delete a (necessarily empty) directory
-- `less file` to view the contents of `file` interactively (remembering that less is more)
-- `more file` as an older version of `less`
-- `cp a b` to copy file `a` to a new file called `b`
-- `mv a b` renames file `a` to be file `b`
+- `rm file` deletes `file`
+- `rmdir dir` deletes a (necessarily empty) directory
+- `less file` views the contents of `file` interactively
+- `more file` is an older version of `less`
+- `cp a b` copies file `a` to a new file called `b`
+- `mv a b` renames file `a` to file `b`
 - `cat file1 >> file2` copies the contents of file1 onto the end of file2
 - `grep mohawk file1.txt` searches for the occurrence of string `mohawk` in `file1.txt`
-    - You can also open the file in an editor and search for `mohawk`; a little more time consuming
 - `df .` prints the volume of the file system
 - `du -h -d1` prints the volume of each directory in the current directory
-    - This is a great sanity check to see if any directories have grown monstrous huge
-    - You can also use it to descend into a directory and sort out where specifically monsters live
-- `history` lists your recent commands in chronological order, conveniently numbering them
-- `!54` re-issues command number 54 from your history
-- `!!` re-runs the last command you gave
+- `history` lists your recent commands in chronological order, conveniently numbered
+    - `!54` re-issues command number 54 from your history
+    - `!!` re-runs the last command you gave
+    - `!-3` re-runs the command 3 commands back in your history
 
 
-By the way: Certain text files can be edited (with care). For example `.bashrc`. But other files
-can be very prone to ***breaking*** when edited as they were not intended for editor-based
-modification. A good example is an IPython or Jupyter notebook file (file extension `.ipynb`). 
 
 
-## git
-
-There are two starting points. First is creating a repo of your own on GitHub from scratch
-and then cloning it locally; and modifying the local copy; and updating the GitHub copy; 
-then modifying that repo directly on GitHub; and then updating your local copy. Let's call
-that **Track A**. 
-
-
-Second is copying an existing repo that belongs to someone else as your starting point.
-We'll call that **Track B**.
-
-### Track A
-
-- Log in to GitHub
-- Create new repository
-    - Give it as simple a name as you can think of
-    - Add an MIT License (assuming it is public / open source)
-    - Start it off with a `README.md` file; you don't need to edit this.
-    - Save it and note the clone URL
-- On your local computer
-    - `cd ~`
-    - `git clone https://github.com/youraccount/yourrepo.git`
-        - A clone will appear as subdirectory `yourrepo`
-        - You are now all set to start making modifications to the repo
-
-Time to synch back to the GitHub copy, i.e. push your changes to GitHub.
-
-- On your local computer
-    - `cd ~/yourrepo` to put yourself in the base directory of the repo
-    - `git pull` to make sure nothing has changed at GitHub
-        - Sometimes I edit README files on GitHub and then forget I did so
-    - `git add .` makes all your changes available to commit
-    - `git commit -m 'a short remark telling what I did'`
-    - `git push`
-        - Here you should need to authenticate: Username and GitHub password
-        - You can search on 'saving github credentials locally' to make this step automatic
-
-
-That should do it. Once you have it down it is pretty fast; just three commands: `git add .; git commit; git push`.
-
-
-## Track B
-
-On GitHub: Fork the source repo you are interested in (provided this does not step on anyone's 
-intentions concerning use). Now proceed as in **Track A**.
-
-
-## Something goes wrong
-
-
-Sometimes edits and pulls and pushes and mistakes can cross wires. A drastic-sounding solution 
-that isn't really drastic is to re-name your local directory `myrepo_oops` and regard is as a 
-"source bin". It is no longer a git repository; but it has some good stuff in it that *isn't* 
-on GitHub just yet. You just set that aside for a moment. 
-
-
-Now go and do the clone from GitHub to your local machine.
-You can do this because the repo directory isn't there anymore; you renamed it.
-So you have a fresh, accurate clone of your GitHub repo on your local machine.
-
-
-Now you can move things you changed from your feeder bin directory back into your cloned repo
-folder. You should be able to git add/commit/push this back to GitHub and if all goes well you
-are back to good. 
-
-
-Conversely if things get busted *on GitHub*: Similar procedure. Here I'm assuming you have 
-all the stuff you need on your local machine. So create a new repo on GitHub with a new name.
-Clone that locally. Update the local copy from the local good stuff. `git push` that back up 
-to GitHub. Now you can even delete the old GitHub repo if you like. 
-
-
-This doesn't even touch 94% of GitHubs powerful features like rollbacks and such. This is just
-a basic get started toolkit. Plan to learn `git` properly and teach it to me.
 
 
 
