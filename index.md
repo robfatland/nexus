@@ -7,11 +7,36 @@ and *hybrid*. Hybrid documentation is commentary generated when working through 
 as a tutorial. This is intended to fill context gaps, note gotchas and so on: Make the path easier to follow.
 
 
+## Topics
+
+
+* [bash and related](https://robfatland.github.io/nexus/bash/), [source](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md)
+    * [environments](https://robfatland.github.io/nexus/env), [source](https://github.com/robfatland/nexus/blob/gh-pages/env/index.md)
+    * [git and GitHub](https://robfatland.github.io/nexus/git), [source](https://github.com/robfatland/nexus/blob/gh-pages/git/index.md)
+    * [wrenching the terminal](https://robfatland.github.io/nexus/bash/terminal), [source](https://github.com/robfatland/nexus/blob/gh-pages/bash/terminal.md)
+    * [ssh tunnels](https://robfatland.github.io/nexus/bash/tunnels), [source](https://github.com/robfatland/nexus/blob/gh-pages/bash/tunnels.md)
+* [data security](https://cloudmaven.github.io/documentation/cc_data_security.html)
+* [artificial intelligence](https://robfatland.github.io/nexus/ai/), [source](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md)
+* [cloud infrastructure](https://robfatland.github.io/nexus/cloud/), [source](https://github.com/robfatland/nexus/blob/gh-pages/cloud/index.md)
+* [documentation](), [sphinx](),
+[sphinx with python](https://kanishkvarshney.medium.com/python-documentation-generating-html-using-sphinx-a0d909f5e963),
+[python packages](), [flameshot]() + unbind prtscn, [LaTeX](), [Hugo](), [Jekyll]()
+* [lexicon](https://robfatland.github.io/nexus/lexicon)
+
+
+
+**nexus** was conceived as a response to the tech 'profusion/latency' problem: I need to track a bunch
+of technology with a profusion of details; I am obliged to spend months focused in one particular area; 
+after months of neglect I must return to and re-learn some skills. This is both onerous and depressing.
+So `nexus` is intended to document everything for later use *without* the excrutiating pain of reinventing it.
+
+
 <img src="assets/img/greenandblack.png"
      alt="green and black icon"
      height="30"
      width="30"
      style="float: center; margin-right: 10px;" />
+
 
 
 ### Temporary: resource links to sort
@@ -29,32 +54,6 @@ as a tutorial. This is intended to fill context gaps, note gotchas and so on: Ma
 * [medium remarks on sphinx](https://kanishkvarshney.medium.com/python-documentation-generating-html-using-sphinx-a0d909f5e963)
 * Look at HyakAndCloud in the `main` branch; and scoop up anything else like that and move it to the pipeline here on gh-pages
 
-# **nexus**
-
-**Nexus** is a response to a profusion + latency problem: I have a lot of technology topics and associated
-details to track; many that I am obliged to ignore for weeks to months at a time. As a result -- after such a
-latency period -- I must re-learn those details, an onerous and depressing process. Does it work to energetically 
-document everything as it gets worked out? Let's find out.
-
-
-- [published **nexus**](https://robfatland.github.io/nexus) ~ [source `index.md`](https://github.com/robfatland/nexus/blob/gh-pages/index.md)
-- [published **nexus lexicon**](https://robfatland.github.io/nexus/lexicon) ~ [source `lexicon.md`](https://github.com/robfatland/nexus/blob/gh-pages/lexicon.md)
-
-
-## Topics
-
-
-* [bash and related](https://robfatland.github.io/nexus/bash/), [source](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md)
-    * [environments](https://robfatland.github.io/nexus/env), [source](https://github.com/robfatland/nexus/blob/gh-pages/env/index.md)
-    * [git and GitHub](https://robfatland.github.io/nexus/git), [source](https://github.com/robfatland/nexus/blob/gh-pages/git/index.md)
-    * [wrenching the terminal](https://robfatland.github.io/nexus/bash/terminal), [source](https://github.com/robfatland/nexus/blob/gh-pages/bash/terminal.md)
-    * [ssh tunnels](https://robfatland.github.io/nexus/bash/tunnels), [source](https://github.com/robfatland/nexus/blob/gh-pages/bash/tunnels.md)
-* [data security](https://cloudmaven.github.io/documentation/cc_data_security.html)
-* [artificial intelligence](https://robfatland.github.io/nexus/ai/), [source](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md)
-* [cloud infrastructure](https://robfatland.github.io/nexus/cloud/), [source](https://github.com/robfatland/nexus/blob/gh-pages/cloud/index.md)
-* [documentation](), [sphinx](),
-[sphinx with python](https://kanishkvarshney.medium.com/python-documentation-generating-html-using-sphinx-a0d909f5e963),
-[python packages](), [flameshot]() + unbind prtscn, [LaTeX](), [Hugo](), [Jekyll]()
 
 
 To unbind the Print Screen key to OneNote screen capture in Windows:
