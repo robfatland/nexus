@@ -59,11 +59,21 @@ Next: Run `~/.bashrc` and confirm the `conda` package manager is available.
 which conda
 conda init
 source ~/.bashrc
+```
+
+Incidentally in addition to package managers `conda` and `pip` there is also available in Linux
+the Advanced Package Tool or `apt`. This is specific to Debian-based forms of Linux including
+Ubuntu. One can update the package index and then upgrade installed packages using apt, as
+follows. I claim this is a worthwhile perfunctory action as part of this bootstrap process.
+
+```
 sudo apt update -y
 sudo apt upgrade -y
 ```
 
-> Note: `pip` and `venv` can also be installed.
+> Note: `pip` and `venv` can also be installed. The functionality we need is covered by
+> `conda` however so this recipe will not delve into `pip/venv` details.
+
 
 Continuing with `conda` environments:
 
