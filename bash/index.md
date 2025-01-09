@@ -15,12 +15,13 @@ log in to a `bash` terminal on the VM. That's the main substance of the precurso
 Then jump into the bootstrapping process outlined below. 
 
 
-Related sub-topic links: 
+Related: 
 
-- `conda` environments
-- `git`
-- `ssh` tunnels
-- terminal configuration
+
+- [`conda` environments](https://robfatland.github.io/nexus/environments)
+- [`git`](https://robfatland.github.io/nexus/git)
+- [`ssh` tunnels](https://robfatland.github.io/nexus/bash/tunnels)
+- [terminal configuration](https://robfatland.github.io/nexus/bash/terminal)
 
 
 ## Bootstrapping an Ubuntu VM to run jupyter with a GitHub repo: Via ssh tunnel
