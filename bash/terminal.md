@@ -2,38 +2,31 @@
 [main branch](https://github.com/robfatland/nexus/tree/main)
 
 
-# the bash terminal
+# the `bash` terminal
 
-
-## green and black please
-
-
-- I am working on a PC running the **Terminal** application
-    - I have a tab open that is running the Ubuntu
-*Bourne Again SHell* ([`bash`](https://en.wikipedia.org/wiki/Shell_(computing)))
-    - this is (most likely) associated with the Windows Subsystem for Linux
-        - This Linux subsystem is (2024) on version 2 hence WSL-2 (which I pronounce as 'Weasel')
-        - Again this is the Ubuntu distribution of Linux
-            - There is only one Linux kernel...
-                - ...but there are many *ornamentations* of this kernel available out there...
-                - ...and these are termed **distributions**
-                - ...of which Ubuntu is one. Debian is another, Red Hat is another, and so on
-    - `bash` is the command line interface to Linux: Access to operating system services
-- Perhaps I am also logged in to a Virtual Machine (henceforth ***VM***) on the cloud
-    - ...but I will ignore this for the moment
-- The screen text is in a lot of nauseating colors
-    - both in the `bash` shell and in the `vi` editor
-        - Historical note: At some point the `vi` editor became `vim`. They are the same thing.
-    - Also the `ls` command seems to be doing a lot of colorizing
-    - Also the prompt is some byzantine 'meaningful' string
-- I want green text on a black background and a prompt like `(active-env)vm>`
+These notes need a big recompile. They were a frustrated response to `bash` terminal colorization,
+so reminiscent of fighter pilots turning off all the display clutter in their HUDs. 
 
 
 
-### **Terminal: Local `bash`**
+## green and black perhaps?
 
 
-Rewrite got to about here...
+- Context: A PC running the `Terminal` application
+    - Tab: `Ubuntu` (a user-friendly distribution built on Debian Linux)
+        - There is but one Linux kernel... and many *ornamentations* including Ubuntu
+        - [`bash`](https://en.wikipedia.org/wiki/Shell_(computing))
+        - Association: Windows Subsystem for Linux version 2 (WSL-2)
+        - `bash` is the command line interface to Linux for access to operating system services
+    - Tab: `ssh` to a cloud VM; similar issues
+- Screen text is a lot of (unpleasant) colors: both in `bash` and the `vim` editor
+    - `ls` produces a lot of colorizing
+    - Plus the command prompt is complicated
+- I might enjoy a black screen, green text, and a prompt like `(active-env) cloud$ `
+
+
+
+### A rewrite paused here...
 
 
 - Top-of-window bar > clean spot > right click > Settings
