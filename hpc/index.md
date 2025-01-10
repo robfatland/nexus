@@ -12,14 +12,16 @@ The following link needs follow-through: AWS org, HPC services, etcetera...
 
 ### AWS Parallel Computing Service PCS
 
+
 <img src="../assets/img/AWS_PCS_Architecture.png"
      alt="AWS Parallel Computing Service architecture diagram"
      height="300"
      style="float: center; margin-right: 10px;" />
-     
-- [AWS PCS intro](https://www.youtube.com/watch?v=ciHU2fDzhSc)
+
+
+- [AWS PCS introduction / overview video](https://www.youtube.com/watch?v=ciHU2fDzhSc)
 - Slurm controller
-- Two node groups
-    - 
+- Login node group
+- Compute node group
 
 
