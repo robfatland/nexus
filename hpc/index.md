@@ -4,11 +4,10 @@
 
 # high performance computing
 
-This topic typically presumes multiple computers networked together with very low communication latency, 
-effecting a supercomputer.
+We oversimplify High Performance Computing to mean: Multiple computers networked together with very 
+low communication latency creating in effect a supercomputer. How is this done on the three primary
+cloud platforms?
 
-
-The following link needs follow-through: AWS org, HPC services, etcetera...
 
 ### AWS Parallel Computing Service PCS
 
@@ -23,5 +22,13 @@ The following link needs follow-through: AWS org, HPC services, etcetera...
 - Slurm controller
 - Login node group
 - Compute node group
+
+
+### Azure
+
+
+### GCP
+
+
 
 
