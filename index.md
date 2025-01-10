@@ -16,7 +16,7 @@ as a tutorial. This is intended to fill context gaps and generally help get to r
     * [wrenching the terminal](https://robfatland.github.io/nexus/bash/terminal), [source](https://github.com/robfatland/nexus/blob/gh-pages/bash/terminal.md)
     * [ssh tunnels](https://robfatland.github.io/nexus/bash/tunnels), [source](https://github.com/robfatland/nexus/blob/gh-pages/bash/tunnels.md)
 * [data security](https://cloudmaven.github.io/documentation/cc_data_security.html)
-* [hpc](https://robfatland.github.io/nexus/hpc/) [(src)[https://github.com/robfatland/nexus/blob/gh-pages/hpc/index.md]]
+* [hpc](https://robfatland.github.io/nexus/hpc/) ([src](https://github.com/robfatland/nexus/blob/gh-pages/hpc/index.md))
 * [artificial intelligence](https://robfatland.github.io/nexus/ai/), [source](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md)
 * [cloud infrastructure](https://robfatland.github.io/nexus/cloud/), [source](https://github.com/robfatland/nexus/blob/gh-pages/cloud/index.md)
 * [documentation](), [sphinx](),
