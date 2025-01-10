@@ -12,10 +12,9 @@ The following link needs follow-through: AWS org, HPC services, etcetera...
 
 ### AWS Parallel Computing Service PCS
 
-<img src="assets/img/AWS_PCS_Architecture.png"
-     alt="green and black icon"
-     height="30"
-     width="30"
+<img src="../assets/img/AWS_PCS_Architecture.png"
+     alt="AWS Parallel Computing Service architecture diagram"
+     height="300"
      style="float: center; margin-right: 10px;" />
      
 - [AWS PCS intro](https://www.youtube.com/watch?v=ciHU2fDzhSc)
