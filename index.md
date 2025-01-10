@@ -15,7 +15,7 @@ as a tutorial. This is intended to fill context gaps and generally help get to r
     * [git and GitHub](https://robfatland.github.io/nexus/git), [source](https://github.com/robfatland/nexus/blob/gh-pages/git/index.md)
     * [wrenching the terminal](https://robfatland.github.io/nexus/bash/terminal), [source](https://github.com/robfatland/nexus/blob/gh-pages/bash/terminal.md)
     * [ssh tunnels](https://robfatland.github.io/nexus/bash/tunnels), [source](https://github.com/robfatland/nexus/blob/gh-pages/bash/tunnels.md)
-* [data security](https://cloudmaven.github.io/documentation/cc_data_security.html)
+* [data](https://robfatland.github.io/nexus/data/) ([src](https://github.com/robfatland/nexus/blob/gh-pages/data/index.md))
 * [hpc](https://robfatland.github.io/nexus/hpc/) ([src](https://github.com/robfatland/nexus/blob/gh-pages/hpc/index.md))
 * [artificial intelligence](https://robfatland.github.io/nexus/ai/), [source](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md)
 * [cloud infrastructure](https://robfatland.github.io/nexus/cloud/), [source](https://github.com/robfatland/nexus/blob/gh-pages/cloud/index.md)
@@ -46,6 +46,7 @@ So `nexus` is intended to document everything for later use *without* the excrut
 * [maven published documentation](https://cloudmaven.github.io/documentation),
 [maven github org](https://github.com/cloudmaven), [maven doc repo](https://github.com/cloudmaven/documentation),
 [maven hipaa notes](https://cloudmaven.github.io/documentation/aws_hipaa.html)
+* Maven on [data security](https://cloudmaven.github.io/documentation/cc_data_security.html)
 * [MSE544 GitHub](https://github.com/cloudbank-project/az-serverless-tutorial/tree/main),
 [published](https://cloudbank-project.github.io/az-serverless-tutorial/)
     * More CB: [zero2Data](https://github.com/cloudbank-project/Zero2Data) and [burnop](https://github.com/cloudbank-project/burnop)
