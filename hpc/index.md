@@ -10,4 +10,12 @@ effecting a supercomputer.
 
 The following link needs follow-through: AWS org, HPC services, etcetera...
 
+### AWS Parallel Computing Service PCS
+
+
 - [AWS PCS intro](https://www.youtube.com/watch?v=ciHU2fDzhSc)
+- Slurm controller
+- Two node groups
+    - 
+
+
