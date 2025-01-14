@@ -1,7 +1,8 @@
-# [manim](https://docs.manim.community)
+# [manim](https://github.com/3b1b/manim)
 
-[manim](https://docs.manim.community) is a Python package created by educator Grant Sanderson to
-facilitate building instructional video content, for example YouTube videos on topics in mathematics.
+
+manim [(community documentation link)](https://docs.manim.community) is a Python package created by educator 
+Grant Sanderson for building video content (particularly on mathematics) for publication on YouTube.
 
 
 - [Install `manim` out of `conda-forge`]()
