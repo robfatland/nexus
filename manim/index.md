@@ -41,3 +41,8 @@ python -m manim myvideo.py Scene1
 
 
 Locate and view the output, in my case at `/home/myusername/manim/media/videos/myvideo/1080p60/Scene1.mp4`.
+
+
+## manim reference materials
+
+- [Intro video on YouTube](https://youtu.be/d9nbtyO2YcU?si=alZ0EBIkqTwpP3E_) by [Darwin Tech](https://www.youtube.com/@DarwinTutorials)
