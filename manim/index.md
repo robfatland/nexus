@@ -1,1 +1,41 @@
+# [manim](https://docs.manim.community)
 
+[manim](https://docs.manim.community) is a Python package created by educator Grant Sanderson to
+facilitate building instructional video content, for example YouTube videos on topics in mathematics.
+
+
+- [Install `manim` out of `conda-forge`]()
+- For rendering equations also [install LaTeX](). 
+- Create Python code and save as `myvideo.py`
+
+```
+import manim as m
+class Scene1(m.Scene):
+    def construct(self):
+        c = m.Circle(2, color = m.RED, fill_opacity = 0.6)
+        self.play(m.DrawBorderThenFill(c), run_time = 1.0)
+        title = m.Text("Bumpkin", font_size = 60, slant = "ITALIC").shift(m.UP * 0.3)
+        subtitle = m.Text("Dynamics", font_size = 40, slant = "ITALIC").shift(m.DOWN * 0.3)
+        self.play(m.Write(title), m.Write(subtitle))
+        self.wait(1)
+        a = m.Arc(3.0, m.TAU * (1/2), -m.TAU * (3/4), color = m.GREEN, stroke_width = 30)
+        self.play(m.Create(a))
+        self.wait(3)
+        return
+```
+
+
+There are a number of instructive facets of manim syntax built into this simple example.
+I built it by following [this intro video](https://youtu.be/rIgOfmcd1iA?si=t8BqPVyawcqyPXg2)
+by Mitko Nikov. 
+
+
+- Use the `manim` utility to render the Python (cinematography!) file as a video:
+
+
+```
+python -m manim myvideo.py Scene1
+```
+
+
+Locate and view the output, in my case at `/home/myusername/manim/media/videos/myvideo/1080p60/Scene1.mp4`.
