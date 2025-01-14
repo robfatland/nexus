@@ -4,12 +4,15 @@
 Cloud computing for research comes at a dollar cost. We are interested in optimizing spend.
 
 
-* [preemptible or "spot market" VM use](https://github.com/oorjitchowdhary/ml-training-preemptible-vms/blob/main/README.md)
+* Oorjit Chowdhary's repository on [preemptible ("spot market") VM use](https://github.com/oorjitchowdhary/ml-training-preemptible-vms/blob/main/README.md)
 
 
-* **Checkpointing methods: Getting $3.33 of cloud compute for $1.00**
-* Cloud clinic 23-JAN-2025 11:30AM PDT
-* Abstract: In today’s busy world we can lose track of small details that have a big impact.
+## cloud clinics
+
+
+* 23-JAN-2025 11:30AM PDT **Checkpointing methods: Getting $3.33 of cloud compute for $1.00**
+    * [connect link], [recording link]  
+    * Abstract: In today’s busy world we can lose track of small details that have a big impact.
 Suppose you have a cloud budget of $10,000 but your computations could be scaled up beyond
 that limitation to produce better research. What you need is access to immutable storage (easy),
 access to cheap preemptible cloud VM instances (easy) and a reliable method of checkpointing
