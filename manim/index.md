@@ -2,7 +2,8 @@
 
 
 manim [(community documentation link)](https://docs.manim.community) is a Python package created by educator 
-Grant Sanderson for building video content (particularly on mathematics) for publication on YouTube.
+Grant Sanderson for building video content (particularly on mathematics) for publication on YouTube. A good 
+sign of longevity: There is a lot of [community activity building plugins](https://plugins.manim.community/).
 
 
 - [Install `manim` out of `conda-forge`]()
@@ -26,9 +27,9 @@ class Scene1(m.Scene):
 ```
 
 
-There are a number of instructive facets of manim syntax built into this simple example.
-I built it by following [this intro video](https://youtu.be/rIgOfmcd1iA?si=t8BqPVyawcqyPXg2)
-by Mitko Nikov. 
+Instructive facets of manim syntax are found in this simple example.
+[(Source: this intro video](https://youtu.be/rIgOfmcd1iA?si=t8BqPVyawcqyPXg2)
+by Mitko Nikov.) 
 
 
 - Use the `manim` utility to render the Python (cinematography!) file as a video:
