@@ -49,3 +49,8 @@ Locate and view the output, in my case at `/home/myusername/manim/media/videos/m
 ## manim reference materials
 
 - [Intro video on YouTube](https://youtu.be/d9nbtyO2YcU?si=alZ0EBIkqTwpP3E_) by [Darwin Tech](https://www.youtube.com/@DarwinTutorials)
+
+
+## The 'learning manim' narrative
+
+- We saw in the example code that the constant `TAU` is used for `2*Pi`... so what other constants are available? [Look here](https://docs.manim.community/en/stable/reference/manim.constants.html).
