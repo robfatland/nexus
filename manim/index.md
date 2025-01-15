@@ -2,13 +2,16 @@
 
 
 manim [(community documentation link)](https://docs.manim.community) is a Python package created by educator 
-Grant Sanderson for building video content (particularly on mathematics) for publication on YouTube. A good 
-sign of longevity: There is a lot of [community activity building plugins](https://plugins.manim.community/).
+Grant Sanderson for building video content (particularly on mathematics) for publication on YouTube. 
+[Here is an example of what manim can do.](https://youtu.be/r6sGWTCMz2k?si=cyfvVbgycUttutCd)
+A good sign for betting time and effort on learning the ropes: 
+manim has engendered a lot of [community activity around building plugins](https://plugins.manim.community/).
 
 
-- [Install `manim` out of `conda-forge`]()
-- For rendering equations also [install LaTeX](). 
+- [Install `manim` from `conda-forge`](https://docs.manim.community/en/stable/installation.html)
+- For rendering equations: [Install LaTeX](). 
 - Create Python code and save as `myvideo.py`
+
 
 ```
 import manim as m
