@@ -1,4 +1,11 @@
+[nexus](https://robfatland.github.io/nexus), [index source](https://github.com/robfatland/nexus/blob/gh-pages/index.md), 
+[nexus main branch](https://github.com/robfatland/nexus/tree/main)
+
+
 # cloud
+
+
+This stub page will evolve into primarily a baseline message and a directory of cloud sub-page content. 
 
 
 Cloud computing for research comes at a dollar cost. We are interested in optimizing spend.
