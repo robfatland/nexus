@@ -18,11 +18,15 @@ as a tutorial. This is intended to fill context gaps and generally help get to r
 * [data](https://robfatland.github.io/nexus/data/) ([src](https://github.com/robfatland/nexus/blob/gh-pages/data/index.md))
 * [hpc](https://robfatland.github.io/nexus/hpc/) ([src](https://github.com/robfatland/nexus/blob/gh-pages/hpc/index.md))
 * [artificial intelligence](https://robfatland.github.io/nexus/ai/), [source](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md)
-* [cloud infrastructure](https://robfatland.github.io/nexus/cloud/), [source](https://github.com/robfatland/nexus/blob/gh-pages/cloud/index.md)
-* [documentation](), [sphinx](),
-[sphinx with python](https://kanishkvarshney.medium.com/python-documentation-generating-html-using-sphinx-a0d909f5e963),
-[python packages](), [flameshot]() + unbind prtscn, [LaTeX](), [Hugo](), [Jekyll](), [manim](https://github.com/robfatland/nexus/blob/gh-pages/manim/index.md)
-* [hybrid: Zero2JupyterHub on the Azure cloud](https://github.com/robfatland/zero2x/tree/master/Z2JH)
+* [cloud](https://robfatland.github.io/nexus/cloud/), [source](https://github.com/robfatland/nexus/blob/gh-pages/cloud/index.md)
+* [documentation]()
+* [sphinx](), [sphinx with python](https://kanishkvarshney.medium.com/python-documentation-generating-html-using-sphinx-a0d909f5e963),
+* [python packages]()
+* [flameshot]() + unbind prtscn
+* [LaTeX]()
+* [Hugo](), [Jekyll]()
+* [manim](https://github.com/robfatland/nexus/blob/gh-pages/manim/index.md)
+* [a hybrid example: Zero2JupyterHub on the Azure cloud](https://github.com/robfatland/zero2x/tree/master/Z2JH)
 * [lexicon](https://robfatland.github.io/nexus/lexicon)
 
 
