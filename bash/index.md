@@ -27,6 +27,24 @@ Related:
 - [vscode](https://robfatland.github.io/nexus/vscode)
 
 
+## Brief note on running Linux on a PC running Windows
+
+It is convenient to have a local ("laptop") instance of Linux running. This is facilitated
+on PCs running Windows via a feature called the **Windows Subsystem for Linux (WSL)**. 
+This allows us to run Linux environments without setting up a full-blown VM on the PC.
+
+
+When setting up a hosted Linux environment in this context: Be sure to activate and use 
+the Windows Subsystem for Linux ***version 2*** (WSL-2). See which version is active 
+by opening a Command Prompt window as Administrator and issuing `wsl -l -v`. To 
+change from WSL 1 to WSL 2: `wsl --set-version Ubuntu 2`.
+
+
+One useful feature of mirroring the cloud VM environment on one's local laptop is 
+coding locally, i.e. while not connected to the cloud VM. This is managed via 
+`git push` and `git pull` commands.
+
+
 ## Bootstrapping an Ubuntu VM to run jupyter with a GitHub repo: Via ssh tunnel
 
 
@@ -53,15 +71,9 @@ validate `ssh` connections.
 In what follows commands are given without indicating a `bash` prompt. 
 
 
-This block determines which version of Ubuntu
+Verify the version of Ubuntu using `lsb_release -a`.
 
 
-```lsb_release -a```
-
-
-> Note: For Windows PCs hosting Linux it is advised to activate the Windows Subsystem for Linux version
-> 2. See which version is active by opening the Command Prompt window as Administrator and issuing
-> `wsl -l -v`. To change from WSL 1 to WSL 2: `wsl --set-version Ubuntu 2`.
 
 
 This block installs the `miniconda` package.
