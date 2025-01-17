@@ -50,8 +50,21 @@ refer to here as `CloudKeyPair.pem`. The `authorized_keys` file resides on the V
 validate `ssh` connections. 
 
 
-In what follows commands are given without indicating a `bash` prompt. The first
-block of commands installs the `miniconda` package.
+In what follows commands are given without indicating a `bash` prompt. 
+
+
+This block determines which version of Ubuntu
+
+
+```lsb_release -a```
+
+
+> Note: For Windows PCs hosting Linux it is advised to activate the Windows Subsystem for Linux version
+> 2. See which version is active by opening the Command Prompt window as Administrator and issuing
+> `wsl -l -v`. To change from WSL 1 to WSL 2: `wsl --set-version Ubuntu 2`.
+
+
+This block installs the `miniconda` package.
 
 
 ```
