@@ -3,44 +3,30 @@ and *hybrid*. Hybrid documentation is commentary generated when working through 
 as a tutorial. This is intended to fill context gaps, note gotchas and so on: Make the path easier to follow.
 
 
-You are reading [meta-narrative for the nexus repo](https://github.com/robfatland/nexus). 
-<br> **nexus** content resides in the [`gh-pages` branch](https://github.com/robfatland/nexus/tree/gh-pages)
-<br> and this is published at [https://robfatland.github.io/nexus](https://robfatland.github.io/nexus).
+This is the [meta-narrative for nexus](https://github.com/robfatland/nexus), main branch `README.md`. 
+<br> **nexus** source is the [`gh-pages` branch](https://github.com/robfatland/nexus/tree/gh-pages).
+<br> **nexus** publishes at [https://robfatland.github.io/nexus](https://robfatland.github.io/nexus).
 
 
 # [nexus](https://robfatland.github.io/nexus/)
 
 
-[This repo](https://github.com/robfatland/nexus/tree/main) started life as 'how to disable garish fonts in
-a typical **`bash`** interface'. I just want green characters on a black background and one day I got sick of 
-looking up the procedure yet again. To generalize the process, nexus is now here to remind me how open
-science procedure works and, related, how to build research computing cyberinfrastructure.
+[This repo](https://github.com/robfatland/nexus/tree/main) is motivated by frustration: With sorting out
+some technical detail, writing out notes, losing the notes, and coming back to the same task three months
+later. The process to deal with this is to build the nexus static website using github pages. Themes are
+all within the topic of open science practice and how to build research computing cyberinfrastructure.
 
 
 ## Example motivating tasks
 
 
-Each of the following examples links to some corresponding work. 
-
-
-- Task Zero: How do I manage Python environments?
-- Task I wrote some code that is very specific to some oceanography data. How do I publish it as a package?
-- Task 2: I derived some results as useful data. How do I publish it as an API-accessible resource?
-- Task 3: I am working with some sensitive data and I want to be really careful about restricting access.
-- Task 4: I like having my code backed up in a GitHub repo. What are the ten `git` commands I need to master?
-
-
-## Navigating this GitHub repository
-
-
-This repo has a `main` branch which primarily consists of this README file. Then there is the publication
-component in a `gh-pages` branch. Every time there is a commit to this branch: A (much prettier) documentation
-website is refreshed. 
-
-
-- [nexus content `gh-pages` branch](https://github.com/robfatland/nexus/tree/gh-pages)
-- [nexus published website](https://robfatland.github.io/nexus).
-- [nexus 'main' branch](https://github.com/robfatland/nexus).
+- How do I manage Python environments?
+- How do I publish my oceanography code as a Python package?
+- How do I build an API-based resource?
+- How do I safely manage sensitive data?
+- How do I manage my code development in relation to my GitHub repository?
+- How do I turn off colorization in `bash` and `vi`? Just green on black please.
+- How do I set up a cloud VM as my power workstation and use Jupyter there from my laptop?
 
 
 ## nexus aspirations (the to-do list)
@@ -63,8 +49,8 @@ website is refreshed.
         - cloud spend notification
         - stopping runaway cloud spend automatically
 - [Python's guide to publishing a software package](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
-- My repository-based projects
-    - [epipelargosy, an oceanography project]()
+- Some of my other current (2025) projects
+    - [epipelargosy, an oceanography Jupyter book](https://github.com/robfatland/oceanography)
     - [steam: university-level STE(A)M notes](https://github.com/robfatland/steam)
     - [sodium: a study of distributed forms of information](https://github.com/robfatland/sodium)
     - [analytic number theory](https://github.com/robfatland/ant)
