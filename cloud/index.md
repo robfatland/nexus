@@ -28,3 +28,8 @@ your progress (easy? hard?). This one-two-three punch means you can purchase $33
 cloud computing for a mere $10,000 and get better research results as a consequence. This cloud
 clinic will catch you up on the how-tos and other small details of such a substantial gain in
 compute power. We use a CNN as our example implementation of a compute-intensive research task.
+
+
+## NTS
+
+- working in Rob's project. cifar-pytorch-checkpoints. 
