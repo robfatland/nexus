@@ -9,13 +9,25 @@
 
 
 This page of `nexus` focuses on configuring and operating a cloud data science Virtual Machine (VM). 
-There are presumed some precursory steps: Secure a VM, download
-a keypair file `CloudKeyPair.pem`, change its file permissions to `0400`, get some coffee,
-log in to a `bash` terminal on the VM. That's the main substance of the precursor steps.
-Then jump into the bootstrapping process outlined below. 
+There are presumed some precursory steps: 
+
+- Set up a PC with some operating system that supports Linux
+    - Laptop Linux will commonly support utility programs as needed, for example `conda`, `jupyter`, `docker`, `ssh`, `sftp`, `git`
+    - Laptop Linux might also feature a command line interface utility for a cloud, such as the `aws` utility for AWS.
+- Secure a cloud VM: For example through the cloud console or portal using a VM Create wizard
+    - This process includes downloading a keypair file `CloudKeypair.pem` with permissions set to `0400` using `chmod`
+- Get some coffee
+- Log in to a `bash` terminal on the VM
+    - From one's local/laptop `bash` via `ssh`
+    - From VSCode, the useful IDE
+    - From the cloud vendor's console typically called a cloud shell
+
+That's a quick review of precursor steps.
+We continue this narrative with two intermezzo sections: Resource links and notes on using 
+Linux from a Windows PC. The narrative then jumps into the bootstrapping recipe for the cloud VM. 
 
 
-Related: 
+## Related links and resources 
 
 
 - [`conda` environments](https://robfatland.github.io/nexus/env)
@@ -27,14 +39,15 @@ Related:
 - [vscode](https://robfatland.github.io/nexus/vscode)
 
 
-## Brief note on running Linux on a PC running Windows
-
-It is convenient to have a local ("laptop") instance of Linux running. This is facilitated
-on PCs running Windows via a feature called the **Windows Subsystem for Linux (WSL)**. 
-This allows us to run Linux environments without setting up a full-blown VM on the PC.
+## Linux on a PC running Windows
 
 
-When setting up a hosted Linux environment in this context: Be sure to activate and use 
+It is convenient to have a local ("laptop") instance of Linux. This is facilitated
+on PCs running Windows via a *feature* called the **Windows Subsystem for Linux (WSL)**. 
+This allows us to run Linux without needing a VM to run on the PC.
+
+
+When setting up a hosted Linux environment in this context: Activate and use 
 the Windows Subsystem for Linux ***version 2*** (WSL-2). See which version is active 
 by opening a Command Prompt window as Administrator and issuing `wsl -l -v`. To 
 change from WSL 1 to WSL 2: `wsl --set-version Ubuntu 2`.
@@ -43,6 +56,28 @@ change from WSL 1 to WSL 2: `wsl --set-version Ubuntu 2`.
 One useful feature of mirroring the cloud VM environment on one's local laptop is 
 coding locally, i.e. while not connected to the cloud VM. This is managed via 
 `git push` and `git pull` commands.
+
+
+Some of the GitHub synchronization can be done by means of shell scripts. For example
+for repository `ant` one could set up a script called `pull.sh`:
+
+```
+echo ant
+cd ~/ant; git pull
+cd ~
+```
+
+This is run using `source pull.sh` and it "pays for itself" in workflow time once the
+number of repos to synch exceeds 1.
+
+
+If using Docker to build containers on the PC: Check that `docker` runs properly in 
+`bash`. If `docker` could not be found, one workaround is to start the Docker *app*
+which seems to activate docker integration with WSL-2.
+
+
+The notes that follow on this page for configuring Linux on a cloud VM apply in some
+measure to a laptop environment as well.
 
 
 ## Bootstrapping an Ubuntu VM to run jupyter with a GitHub repo: Via ssh tunnel
