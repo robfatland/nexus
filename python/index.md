@@ -10,13 +10,16 @@
 
 ## Topics covered here
 
-A wish list...
+
+A wish list... topics I'd like to understand
 
 
 - 'hashable' means an object is *immutable* and *comparable* (more below)
+- `iterable`
 - dictionaries: more than an inconvenient version of a list
-- yield
-- decorators
+- `yield`
+- `decorators`
+- `class` under what circumstances? (see `manim` Scene)
 
 
 
