@@ -8,3 +8,7 @@
 ## notes from working through the [544 tutorial](https://naclomi.github.io/containers-tutorial/)
 
 
+- Prerequisite: [Set up a cloud VM (Azure) as a workstation](https://cloudbank-project.github.io/az-serverless-tutorial/workstation/)
+    - Uses VSCode to `ssh` to a `bash` shell
+
+
