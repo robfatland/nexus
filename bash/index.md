@@ -100,6 +100,8 @@ libraries, and then finally to start and use a Jupyter notebook server.
 > ***PRO TIP*** Getting a publickey error when trying the `ssh` to your VM?
 > - Make sure you ran `chmod 400 CloudKeypair.pem`
 > - Make sure you are using the correct username: Is it `ubuntu` or `ec2user` or `azureuser` or ...?
+> - Make sure the home directory in VSCode is the same as that of your local Ubuntu shell
+>     - Sometimes multiple editions of Linux get installed accidentally
 
 
 Now on the VM: In `~` the `.ssh` directory includes a file `authorized_keys`. This file should
@@ -231,8 +233,13 @@ again placed in the browser address bar as:
 
 
 ```
-http://localhost:8888/lab?token=5ea4583257df6cb49234ff38427cd1e53a80281aeca5d2e3
+http://localhost:7005/lab?token=5ea4583257df6cb49234ff38427cd1e53a80281aeca5d2e3
 ```
+
+
+This command tells your browser to connect to port 7005. This was wired into port 8889 on
+the cloud VM (previous `ssh` command). This in turn connects to the jupyter lab notebook
+server running on the cloud VM. 
 
 
 ## More about `bash` 
