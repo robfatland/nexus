@@ -97,6 +97,11 @@ libraries, and then finally to start and use a Jupyter notebook server.
 - Alternatively, from a laptop: `ssh -i ~/.keypairs/CloudKeyPar.pem ubuntu@123.123.123.12`
 
 
+> ***PRO TIP*** Getting a publickey error when trying the `ssh` to your VM?
+> - Make sure you ran `chmod 400 keyfile.pem`
+> - Make sure you are using the correct username: Is it `ubuntu` or `ec2user` or `azureuser` or ...?
+
+
 Now on the VM: In `~` the `.ssh` directory includes a file `authorized_keys`. This file should
 be pre-loaded from a keypair `.pem` file selected or generated during VM spin-up, what we
 refer to here as `CloudKeyPair.pem`. The `authorized_keys` file resides on the VM to 
