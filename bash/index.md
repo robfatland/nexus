@@ -94,11 +94,11 @@ libraries, and then finally to start and use a Jupyter notebook server.
 - AWS Console: Find and select the EC2 instance
 - Connect button > Connect page > Use EC2 Instance Connect > Connect
 - Should reach a black screen with a `bash` prompt.
-- Alternatively, from a laptop: `ssh -i ~/.keypairs/CloudKeyPar.pem ubuntu@123.123.123.12`
+- Alternatively, from a laptop: `ssh -i ~/.keypairs/CloudKeypair.pem ubuntu@123.123.123.12`
 
 
 > ***PRO TIP*** Getting a publickey error when trying the `ssh` to your VM?
-> - Make sure you ran `chmod 400 keyfile.pem`
+> - Make sure you ran `chmod 400 CloudKeypair.pem`
 > - Make sure you are using the correct username: Is it `ubuntu` or `ec2user` or `azureuser` or ...?
 
 
