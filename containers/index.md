@@ -5,6 +5,6 @@
 # containers
 
 
-## notes from working through 544 material
+## notes from working through the [544 tutorial](https://naclomi.github.io/containers-tutorial/)
 
 
