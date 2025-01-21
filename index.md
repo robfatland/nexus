@@ -22,7 +22,7 @@ as a tutorial. This is intended to fill context gaps and generally help get to r
 * [documentation]()
 * [sphinx](), [sphinx with python](https://kanishkvarshney.medium.com/python-documentation-generating-html-using-sphinx-a0d909f5e963)
 * [Python](https://github.com/robfatland/nexus/blob/gh-pages/python/index.md), [python packages]()
-* [containers src](https://https://github.com/robfatland/nexus/blog/gh-pages/containers/index.md)
+* [containers src](https://github.com/robfatland/nexus/blob/gh-pages/containers/index.md)
 * [flameshot]() + unbind prtscn
 * [LaTeX]()
 * [Hugo](), [Jekyll]()
