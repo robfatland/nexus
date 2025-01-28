@@ -4,13 +4,15 @@
 # jupyter
 
 
-Common Jupyter notebook actions often in relation to a GitHub repository. Topics:
+Common Jupyter notebook actions; some in relation to a GitHub repo. 
+
+## Topics
 
 
 - [Display an image](#display-an-image)
 
 
-## display an image
+## Display an image
 
 
 Many ways to do this: From Python or markdown. This method is simple Python and it appears 
@@ -37,7 +39,8 @@ from PIL import Image
 Image.open(f).resize((width,height),Image.ANTIALIAS)
 ```
 
-### Markdown approaches
+### Markdown approaches to display an image
+
 
 I think this renders in the Jupyter book but not in Jupyter lab: 
 
