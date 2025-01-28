@@ -6,7 +6,9 @@
 
 - Recommendation: The [Python Data Science Handbook by Jake Vander Plas](https://jakevdp.github.io/PythonDataScienceHandbook/)
 
+## In this directory
 
+* [Jupyter](https://github.com/robfatland/nexus)
 
 ## Topics covered here
 
