@@ -64,3 +64,22 @@ While this HTML-looking stuff renders in Jupyter lab but not in a Jupyter book:
 <div style="clear: left">
 <BR>
 ```
+
+
+## List directory contents
+
+And related operating system interaction from Python: Use the `os` and `pathlib` libraries.
+
+```
+import os
+
+path = "/path/to/directory"
+files_and_dirs = os.listdir(path)
+cwd = os.getcwd()
+```
+
+```
+datafilelist = [x for x in dir(obj) if not x.startswith('__')]
+```
+
+
