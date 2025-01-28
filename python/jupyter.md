@@ -28,3 +28,36 @@ example the `IPython.display` library features `SVG`, `display`, `display_svg`, 
 and more. To get rolling on this jump into the
 [`display` module documentation](https://ipython.readthedocs.io/en/8.26.0/api/generated/IPython.display.html).
 
+
+Another library to experiment with is `PIL`:
+
+
+```
+from PIL import Image
+Image.open(f).resize((width,height),Image.ANTIALIAS)
+```
+
+### Markdown approaches
+
+I think this renders in the Jupyter book but not in Jupyter lab: 
+
+
+```
+{figure} ../img/revelle.jpg
+---
+height: 300px
+name: directive-fig
+---
+Research Vessel Revelle (Scripps)
+```
+
+
+While this HTML-looking stuff renders in Jupyter lab but not in a Jupyter book: 
+
+
+```
+<BR>
+<img src="./../img/revelle.jpg" style="float: left;" alt="drawing" width="600"/>
+<div style="clear: left">
+<BR>
+```
