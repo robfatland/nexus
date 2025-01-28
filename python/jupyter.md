@@ -3,48 +3,15 @@
 
 # jupyter
 
+
 Common Jupyter notebook actions often in relation to a GitHub repository. Topics:
 
 
 - [Display an image](#display-an-image)
 
-Some
-
-Some
-
-Some
-
-Some
-
-Some
-
-Some
-
-Some
-
-Some
-
-Some
-
-Some
-
-Some
-
-Some
-
-Some
-
-Some
-
-Some
-
-Some
-
-Some
-
-
 
 ## display an image
+
 
 Many ways to do this: From Python or markdown. This method is simple Python and it appears 
 to translate to a proper render in a Jupyter book. Archetype: See the `epipelargosy.ipynb`
