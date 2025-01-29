@@ -17,10 +17,10 @@ as a tutorial. This is intended to fill context gaps and generally help get to r
 ## Topics
 
 
-This is the nexus content map. Links almost always point to GitHub repo content, 
-not the [published site](https://robfatland.github.io/nexus). For each major
-topic (e.g. `bash`) there is a primary `index.md` *index* page and possibly
-a number of additional sub-pages; so the entire tree is 3 levels deep. 
+This is the nexus content map. For the moment these links almost all point to GitHub 
+repo content, not [published (website) content](https://robfatland.github.io/nexus). 
+For each major topic (e.g. `bash`) there is a primary `index.md` *index* page and 
+possibly a number of additional sub-pages; the tree is 3 levels deep. 
 
 
 - [nexus root]()
