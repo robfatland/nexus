@@ -24,7 +24,7 @@ a number of additional sub-pages; so the entire tree is 3 levels deep.
 
 
 - [nexus root]()
-    - [nexus `index.md`](https://github.com/robfatland/nexus/blob/gh-pages/index.md)
+    - [nexus index](https://github.com/robfatland/nexus/blob/gh-pages/index.md)
     - [lexicon](https://github.com/robfatland/nexus/blob/gh-pages/lexicon.md)
     - [loose strands](https://github.com/robfatland/nexus/blob/gh-pages/loosestrands.md)
 - [bash source](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md)
