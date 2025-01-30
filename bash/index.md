@@ -199,6 +199,15 @@ conda install numpy -y
 conda install matplotlib -y
 ```
 
+Suppose we step away and come back a few days later... what got installed?
+
+
+```
+conda list
+```
+
+### jupyter via `ssh` tunnel
+
 
 We can now set up an `ssh` tunnel to a jupyter notebook server running on the VM.
 This is described in more detail on the [nexus *tunnels*](https://robfatland.github.io/nexus/bash/tunnels) 
