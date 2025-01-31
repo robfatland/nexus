@@ -5,11 +5,22 @@
 `bash index.md`: will point to terminal, tunnel sub-pages and other topics
 
 
-# `bash` tactics for bootstrapping a cloud data science VM
+# `bash`
+
+- [bootstrapping a cloud data science VM](#bootstrapping-a-cloud-data-science-vm)
+- [related links and resources](#related-links-and-resources)
+- [linux on a PC running windows](#linux-on-a-pc-running-windows)
+- [Ubuntu Jupyter via ssh tunnel](#ubuntu-jupyter-via-ssh-tunnel)
+- [More on Linux](#more-on-linux)
 
 
-This page of `nexus` focuses on configuring and operating a cloud data science Virtual Machine (VM). 
-There are presumed some precursory steps: 
+## bootstrapping a cloud data science VM
+
+
+Task: Configure and operate a data science Virtual Machine (VM) on the cloud. 
+
+
+### Precursor steps
 
 - Set up a PC with some operating system that supports Linux
     - Laptop Linux will commonly support utility programs as needed, for example `conda`, `jupyter`, `docker`, `ssh`, `sftp`, `git`
@@ -22,7 +33,7 @@ There are presumed some precursory steps:
     - From VSCode, the useful IDE
     - From the cloud vendor's console typically called a cloud shell
 
-That's a quick review of precursor steps.
+
 We continue this narrative with two intermezzo sections: Resource links and notes on using 
 Linux from a Windows PC. The narrative then jumps into the bootstrapping recipe for the cloud VM. 
 
@@ -80,7 +91,10 @@ The notes that follow on this page for configuring Linux on a cloud VM apply in 
 measure to a laptop environment as well.
 
 
-## Bootstrapping an Ubuntu VM to run jupyter with a GitHub repo: Via ssh tunnel
+## Ubuntu Jupyter via ssh tunnel
+
+
+More elaborate heading: **Bootstrapping an Ubuntu VM to run jupyter with a GitHub repo: Via an ssh tunnel**
 
 
 The Bourne Again Shell (`bash`) together with `ssh` is our first resource in managing cloud Virtual Machine use 
@@ -251,7 +265,7 @@ the cloud VM (previous `ssh` command). This in turn connects to the jupyter lab 
 server running on the cloud VM. 
 
 
-## More about `bash` 
+## More on Linux
 
 
 `bash` is an abbreviation for *the Bourne Again Shell*, an interface to the UNIX operating
