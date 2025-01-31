@@ -1,15 +1,20 @@
-- [nexus](https://robfatland.github.io/nexus), [index source](https://github.com/robfatland/nexus/blob/gh-pages/index.md), 
+- [nexus](https://robfatland.github.io/nexus), [index source](https://github.com/robfatland/nexus/blob/gh-pages/index.md)
 - [python src](https://github.com/robfatland/nexus/blob/gh-pages/python/index.md)
+- [packages](https://github.com/robfatland/nexus/blob/gh-pages/python/packages.md)
+
 
 # jupyter
 
 
-Common Jupyter notebook actions; some in relation to a GitHub repo. 
+Common Jupyter notebook actions: In relation to a GitHub repo. 
+
 
 ## Topics
 
 
 - [Display an image](#display-an-image)
+- [List directory contents](#list-directory-contents)
+- [Use a slider control](#use-a-slider-control)
 
 
 ## Display an image
@@ -31,13 +36,14 @@ and more. To get rolling on this jump into the
 [`display` module documentation](https://ipython.readthedocs.io/en/8.26.0/api/generated/IPython.display.html).
 
 
-Another library to experiment with is `PIL`:
+Another library: `PIL` for example:
 
 
 ```
 from PIL import Image
 Image.open(f).resize((width,height),Image.ANTIALIAS)
 ```
+
 
 ### Markdown approaches to display an image
 
@@ -83,3 +89,4 @@ datafilelist = [x for x in dir(obj) if not x.startswith('__')]
 ```
 
 
+## Use a slider control
