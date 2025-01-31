@@ -5,7 +5,16 @@
 [Study on ML implementation using preemptible VMs](https://github.com/oorjitchowdhary/ml-training-preemptible-vms/blob/main/README.md)
 
 
-# spot: Preemptible cloud Virtual Machines, 70-90% savings
+# spot
+
+
+## Preemptible cloud Virtual Machines
+
+
+### By Grabthar's hammer: What a savings
+
+
+#### Overview
 
 
 The spot market exists on all three clouds: "Spot Virtual Machines" represent excess capacity made available 
@@ -21,4 +30,9 @@ a lot of jargon around scale and elasticity: Terms like "load balancing" and "fl
 on this page will try and throttle back the service jargon and stick with basic operating ideas for 
 using spot markets. 
 
+#### Cloud Clinic 1 Content
 
+- Delta over first version
+- Deck link
+- Identify a ML task; assemble code; run and verify
+- Create a Dockerfile
