@@ -6,7 +6,7 @@
 ## In-house "solutions for common patterns"
 
 
-- [Study: ML on Preemptible (Oorjit Chowdhary)](https://github.com/oorjitchowdhary/ml-training-preemptible-vms/blob/main/README.md)
+- [Study: ML on Preemptible (Oorjit Chowdhary)](https://github.com/oorjitchowdhary/ml-training-preemptible-vms/blob/main/README.md): First cloud clinic
 - [Data system study: Towards the second 2025 Cloud Clinic](https://student-atomic-portal.azurewebsites.net/api/lookup?name=Carbon)
 
 
