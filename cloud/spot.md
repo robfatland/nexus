@@ -2,7 +2,11 @@
 [nexus main branch](https://github.com/robfatland/nexus/tree/main)
 
 
+[Study on ML implementation using preemptible VMs](https://github.com/oorjitchowdhary/ml-training-preemptible-vms/blob/main/README.md)
+
+
 # spot: Preemptible cloud Virtual Machines, 70-90% savings
+
 
 The spot market exists on all three clouds: "Spot Virtual Machines" represent excess capacity made available 
 at a reduced rate. For research applications -- once we understand the ground rules -- the spot market makes
