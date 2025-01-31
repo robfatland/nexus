@@ -9,22 +9,20 @@
 
 
 
-**nexus** is a *threefold documentation resource* for open research: *native*, *external* via URL pointers, 
-and *hybrid*. Hybrid documentation is commentary generated when working through an external resource such 
-as a tutorial. This is intended to fill context gaps and generally help get to research fast.
+**nexus** is a *threefold documentation resource* centered on technology, tools and methods of open research.
+Threefold means *native*, *external* and *hybrid* documentation. Hybrid documentation is (native) commentary 
+generated when working through (external) resources like guides and tutorials.
 
 
-## Topics
+## The `nexus` content map 
 
 
-This is the nexus content map. 
-
-- Primary left-justified links --> published GitHub pages
-    - Indented --> gh-pages markdown source links
+- left-justified links go to published GitHub pages
+    - Indented links go to `gh-pages` source markdown files
 
 
-Each major topic (e.g. `bash`) is anchored by an `index.md` *index* page with
-sub-pages built out from there. Consequently the tree is 3 levels deep. 
+Each major subtopic is anchored by an `index.md` *index* page with
+sub-pages built from there: A 3-level tree. 
 
 
 - [nexus root](https://robfatland.github.io/nexus)
