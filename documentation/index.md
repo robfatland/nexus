@@ -137,7 +137,7 @@ and so on; all driven by a simple desire to move from 'painful to look at' to
 
 
 
-(And LaTeX equations now render from GitHub markdown.)
+(And LaTeX equations now render -- more or less -- in GitHub markdown.)
 
 
 $\begin{align}
