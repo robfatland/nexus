@@ -95,6 +95,7 @@ Within a document viewed in a browser: Holding the cursor over a link reveals th
 Within a page, links to headers are simple: Type a pound sign \# followed by
 a header name with spaces replaced by hyphens. (It may not work at the moment.)
 
+
 This `[header section link](#1-headers)` becomes [header section link](#1-headers).
 
 
@@ -105,39 +106,36 @@ This `[header section link](#1-headers)` becomes [header section link](#1-header
 HTML can be embedded in a markdown file.
 
 
-## wandering off into the story
+## LaTeX digression
 
 
-Now I turn to a digression. 
+Some time ago computer scientist Don Knuth was asked to write a short book on programming. 
+He was working as an assistant professor at a small liberal arts college in Pasadena and 
+had lots of time to spare. So he took a close look at the suggestion and decided that he had 
+a better more ambitious idea for a book that would require as many as 12 chapters. He 
+embarked on this expanded project which became a treatise on computer science, with refinements
+still keeping him occupied to this day. For more interesting ideas from Professor Knuth 
+look for him on YouTube. 
 
 
-Some years ago Don Knuth was asked to write a book. 
-He was working as an assistant professor at a small college in Pasadena at the time; and he took a 
-close look at the challenge and replied: "Wait! My idea is a more ambitious and a better book... 12 chapters."
-Whereupon he embarked on the expanded project which in turn expanded into a treatise on computer science,
-and that work has occupied him to this day. He has done and still does other things as well, 
-for example delivering an interesting lecture each December. (These lectures may be found on YouTube.)
+The book, by the way, became a series of six books known collectively as TAOCP. This is short 
+for The Art Of Computer Programming. Still back in time when Volume 2 was going through 
+the publication process (this was 1976) some proof sheets were sent to Professor Knuth for 
+approval. He found the layout and typesetting wanting, and being an energetic individual 
+with lots of spare time he solved the problem of re-typesetting his book by designing and 
+writing a typesetting system. This he published so as to ensure it would be universally available 
+for anyone's use at no cost, forever. This system he named TeX. It went through
+many revisions until its official release in 1989 but long before then it was widely adopted
+in academia. TeX was also over time augmented by a content-oriented *wrapper* called LaTeX 
+that used TeX under the hood.
 
 
-The books he wrote are known collectively as TAOCP, short for The Art Of Computer Programming. 
-By all accounts they are a remarkable series of books, six volumes to date. 
-So here is a detail from that extended project: When Volume 2 was going through the publication 
-process in 1976 some proofs were sent to Professor Knuth for approval. He found the layout,
-the typesetting wanting... and being an energetic individual he solved the problem of re-typesetting 
-his book properly by designing and writing a typesetting system. This he published
-in such a manner as to ensure it would be universally available 
-for anyone's use at no cost. Forever. This system he named TeX. It went through
-many revisions from 1978 to 1989 when it was 'officially' released; but it was in
-serious academic use as early as 1982. And it was augmented by a content-oriented 
-'wrapper' called LaTeX that still used TeX under the hood.
+TeX and LaTeX have been used to typeset thousands of books, hundreds of thousands
+of academic articles, many thousands of dissertations and theses (including mine), 
+and so on; all driven by a simple desire to move from 'painful to look at' to 
+'simply a joy to read'. 
 
 
-TeX and LaTeX have proven phenomenally successful. Thousands of books and hundreds of thousands
-of articles have been elevated from somewhere in the vicinity of 'painful to look at' into a
-typesetting stratosphere, just simply a joy to read. By comparison markdown is a handy but 
-very simple typesetting tool. So hurray for markdown, rejoice... but TeX exists.
+$$y = \sqrt{x}$$
 
 
-This narrative continues in
-[this document](https://github.com/robfatland/reorganiseduponthefloor/edit/main/git/bash_and_git.md)
-to return `bash` and `git`. 
