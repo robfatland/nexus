@@ -17,22 +17,26 @@ as a tutorial. This is intended to fill context gaps and generally help get to r
 ## Topics
 
 
-This is the nexus content map. For the moment these links almost all point to GitHub 
-repo content, not [published (website) content](https://robfatland.github.io/nexus). 
-For each major topic (e.g. `bash`) there is a primary `index.md` *index* page and 
-possibly a number of additional sub-pages; the tree is 3 levels deep. 
+This is the nexus content map. 
+
+- Primary left-justified links --> published GitHub pages
+    - Indented --> gh-pages markdown source links
 
 
-- [nexus root]()
+Each major topic (e.g. `bash`) is anchored by an `index.md` *index* page with
+sub-pages built out from there. Consequently the tree is 3 levels deep. 
+
+
+- [nexus root](https://robfatland.github.io/nexus)
     - [nexus index](https://github.com/robfatland/nexus/blob/gh-pages/index.md)
-    - [lexicon](https://github.com/robfatland/nexus/blob/gh-pages/lexicon.md)
-    - [loose strands](https://github.com/robfatland/nexus/blob/gh-pages/loosestrands.md)
+        - [lexicon](https://github.com/robfatland/nexus/blob/gh-pages/lexicon.md)
+        - [loose strands](https://github.com/robfatland/nexus/blob/gh-pages/loosestrands.md)
 - [bash source](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md)
     - [bash index](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md)
-    - [environments](https://github.com/robfatland/nexus/blob/gh-pages/env/index.md)
-    - [git and GitHub](https://github.com/robfatland/nexus/blob/gh-pages/git/index.md)
-    - [wrenching the terminal](https://github.com/robfatland/nexus/blob/gh-pages/bash/terminal.md)
-    - [ssh tunneling](https://github.com/robfatland/nexus/blob/gh-pages/bash/tunnels.md)
+        - [environments](https://github.com/robfatland/nexus/blob/gh-pages/env/index.md)
+        - [git and GitHub](https://github.com/robfatland/nexus/blob/gh-pages/git/index.md)
+        - [wrenching the terminal](https://github.com/robfatland/nexus/blob/gh-pages/bash/terminal.md)
+        - [ssh tunneling](https://github.com/robfatland/nexus/blob/gh-pages/bash/tunnels.md)
 - [data](https://github.com/robfatland/nexus/blob/gh-pages/data/index.md)
     - [data index](https://github.com/robfatland/nexus/blob/gh-pages/data/index.md)
 - [hpc](https://github.com/robfatland/nexus/blob/gh-pages/hpc/index.md)
@@ -41,13 +45,15 @@ possibly a number of additional sub-pages; the tree is 3 levels deep.
     - [artificial intelligence index](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md)
 - [cloud](https://github.com/robfatland/nexus/blob/gh-pages/cloud/index.md)
     - [cloud index](https://github.com/robfatland/nexus/blob/gh-pages/cloud/index.md)
+        - [spot](https://github.com/robfatland/nexus/blob/gh-pages/cloud/spot.md)
+        - [studies](https://github.com/robfatland/nexus/blob/gh-pages/cloud/studies.md)
 - [manim](https://github.com/robfatland/nexus/blob/gh-pages/manim/index.md)
     - [manim index](https://github.com/robfatland/nexus/blob/gh-pages/manim/index.md)
 - [(meta-)documentation](https://github.com/robfatland/nexus/blob/gh-pages/documentation/index.md)
     - [(meta-)documentation index](https://github.com/robfatland/nexus/blob/gh-pages/documentation/index.md)
 - [python](https://github.com/robfatland/nexus/blob/gh-pages/python/index.md)
     - [python index](https://github.com/robfatland/nexus/blob/gh-pages/python/index.md)
-    - [python packages]()
+        - [python packages](https://github.com/robfatland/nexus/blob/gh-pages/python/packages.md)
 - [containers](https://github.com/robfatland/nexus/blob/gh-pages/containers/index.md)
     - [containers index](https://github.com/robfatland/nexus/blob/gh-pages/containers/index.md)
 
