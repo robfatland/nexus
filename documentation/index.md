@@ -2,19 +2,32 @@
 [nexus main branch](https://github.com/robfatland/nexus/tree/main)
 
 
-# `index.md` anchor of documentation subfolder in nexus
+# documentation
+
+
+This is the `index.md` anchor. 
+
 
 ## ambitious agenda
 
 
-Documentation should include use of `top` and timing code execution. Cause those are documentation skills.
+Documentation covers two topics: How to build documentation *mechanically* and *philosophically*. This 
+is the "Proofs from the Book" idea that there is an optimal path to find in presenting some complex
+topic. This site is centered on the tech, tools and methods of open science (and how to document 
+that all that to reduce dependence on *memorization*.) While building this out: Refer also to 
+the `nexus` [lexicon page](https://github.com/robfatland/nexus/blob/gh-pages/lexicon.md). 
+
+
+### Topics to include
+
+
+* `top`, timing code execution (documentation skills)
 
 
 
-# Previous iteration content on markdown
+## markdown
 
-
-## 1 headers
+### 1 headers
 
 
 GitHub supports markdown format: When a github file with extension `.md` is opened 
@@ -41,7 +54,7 @@ renders as
 
 
 
-## 2 The back-tick character 
+### The back-tick character 
 
 
 The back-tick found at keyboard upper left looks like this: \` .
@@ -67,14 +80,14 @@ inside a backtick field. However asterisk delimiters *outside* of backtick delim
 `**asterisks inside**` versus **`asterisks on the outside`**. 
 
 
-## 3 asterisks
+### asterisks
 
 
 In this text please find single, double, and triple asterisk delimiters. 
 \*Single\*. \*\*Double\*\*. \*\*\*Triple\*\*\* produces *Single* **Double** ***Triple***. 
 
 
-## 4 quotations
+### quotations
 
 
 A leading `>` character renders text as a quotation. 
@@ -83,7 +96,7 @@ A leading `>` character renders text as a quotation.
 > This is useful to offset "special note" offset blocks of text. 
 
 
-## 5 hyperlinks 
+### hyperlinks 
 
 
 Place the text to appear within square bracks and follow it with no spaces by the link URL 
@@ -100,13 +113,16 @@ This `[header section link](#1-headers)` becomes [header section link](#1-header
 
 
 
-## 6 html
+### html
 
 
 HTML can be embedded in a markdown file.
 
 
-## LaTeX digression
+### LaTeX
+
+
+This is not actually documentation. It is an anecdote.
 
 
 Some time ago computer scientist Don Knuth was asked to write a short book on programming. 
