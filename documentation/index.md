@@ -133,7 +133,7 @@ that used TeX under the hood.
 TeX and LaTeX have been used to typeset thousands of books, hundreds of thousands
 of academic articles, many thousands of dissertations and theses (including mine), 
 and so on; all driven by a simple desire to move from 'painful to look at' to 
-'simply a joy to read'. $\tau h \alpha \nu \kappa \sigma \; \; \Delta \omicron \nu$.
+'simply a joy to read'. $\tau h \alpha \nu \kappa \sigma \textrm{ } \Delta \omicron \nu$.
 
 
 
