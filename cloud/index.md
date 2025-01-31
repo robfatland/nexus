@@ -1,6 +1,10 @@
 [nexus](https://robfatland.github.io/nexus), [index source](https://github.com/robfatland/nexus/blob/gh-pages/index.md), 
 [nexus main branch](https://github.com/robfatland/nexus/tree/main)
 
+cloud: [index/root](https://github.com/robfatland/nexus/blob/gh-pages/cloud/index.md), 
+[spot](https://github.com/robfatland/nexus/blob/gh-pages/cloud/spot.md), 
+[studies](https://github.com/robfatland/nexus/blob/gh-pages/cloud/studies.md)
+
 
 # cloud
 
