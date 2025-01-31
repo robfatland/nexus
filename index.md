@@ -31,7 +31,7 @@ sub-pages built out from there. Consequently the tree is 3 levels deep.
     - [nexus index](https://github.com/robfatland/nexus/blob/gh-pages/index.md)
         - [lexicon](https://github.com/robfatland/nexus/blob/gh-pages/lexicon.md)
         - [loose strands](https://github.com/robfatland/nexus/blob/gh-pages/loosestrands.md)
-- [bash source](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md)
+- [bash source](https://robfatland.github.io/nexus/bash)
     - [bash index](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md)
         - [environments](https://github.com/robfatland/nexus/blob/gh-pages/env/index.md)
         - [git and GitHub](https://github.com/robfatland/nexus/blob/gh-pages/git/index.md)
