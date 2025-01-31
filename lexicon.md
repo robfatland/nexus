@@ -1,33 +1,49 @@
-# nexus lexicon
-
 - [published: nexus](https://robfatland.github.io/nexus), and then
 [the editable index.md](https://github.com/robfatland/nexus/blob/gh-pages/index.md)
 - [published: this lexicon](https://robfatland.github.io/nexus/lexicon), and then
 [the editable lexicon.md](https://github.com/robfatland/nexus/blob/gh-pages/lexicon.md)
 
+# nexus lexicon
+
+
+This page provides brief definitions of terms and links to deeper material.
+
 
 ## Quo vadis?
 
-- All headings have corresponding short lexicon entries
-    - This is a two-way street: Look for content in this file that ought to be reindexed to elsewhere!
-- Statement of purpose at the top
-- Define *pedagogy from the Book*
+
+How I would like the lexicon to work. ('Never index your own book.')
+
+
+- headings --> short lexicon entries
+    - two-way street: Content here that should get a heading?
+- SoPii everywhere
+- Approach: *Pedagogy from The Book*
     - Example: { Open Science + Back up + s/w control + community + intercompatibility } > implications
         - GitHub > Environments > Miniconda > IPython > Jupyter
-    - Meta: Documentation sufficiency threshold: Operations = { create, delete, rebuild } 
+    - Meta: Documentation MVP: What is sufficient? The threshold is basic operations = { create, delete, rebuild } 
         - Example: Core `git`, Meso `git`, Pro `git`
 - Overcommunicate: Featured narratives
     - Here is the sidebar narrative of baseline workflow
     - `bash > conda activate > cd ~ > jupyter lab > browser > edit > save > commit`
-        - "Notice we did nothing with data; that is an expansion topic covered elsewhere"
-        - "Notice we did not talk about servers and cloud; another expansion topic"
+        - "We did nothing with data; that is an expansion topic covered elsewhere"
+        - "We did not talk about servers and cloud; another expansion topic"
 - Overcommunication: Lateral comparatives
-    - I installed Python on my PC (IDLE?) and WSL-2 is Linux with Miniconda installed...
-        - The former gives me IDLE and a runtime that doesn't balk on Turtles
-        - The latter gives me `jupyter lab` but balks on Turtles
-        - And then VSCode seems to know about one of them... or the other?
-        - Bottom line it feels like I have a lot of friction and/or schism built into my working environment
-            - And incidentally how do I install packages that can be used by IDLE?
+    - The original content of this Lexicon (see below) was inspired by config problems
+        - Specifically: I work on a PC so how do I manage a development environment
+            - ...and if changes needed: How do I not lose existing work?
+    - The theme here is disentangling lateral dependencies or redundancies
+    - For example:
+        - I installed Python on my PC; behold IDLE, Turtle renders. How to install `pytorch`?
+        - Later I enabled WSL-2 and (have?) (installed?) Ubuntu, installed Miniconda
+            - I can install `jupyter` and `pytorch` and so on... but no Turtle graphics
+        - Then I went and installed VSCode... does it bring in yet a third Python instance? 
+        - Bottom line: Redundancy/friction/schizoid
+            - Which of these?
+            - How to install and manage packages / environments / cloud-cli-s / container-cli-s etc
+
+
+## Lexicon content begins here
 
 
 ### WSL-2 aka Windows Subsystem for Linux (v2) aka "Weasel"
@@ -205,7 +221,13 @@ would often switch them off because it they just amounted to visual clutter.
 ### What is **`requirements.txt`**?
 
 
-I can "install" something called WSL... or maybe it is combined with "turning on Linux" inside Windows. But I can also install Ubuntu bash. Which opens a bash terminal in my home directory... where miniconda is not installed. So I install miniconda and now I can create and activate environments. And I can start a Jupyter notebook server. But the other day my Ubuntu <start> icon stopped working. So I forced Ubuntu to start using the Windows start utility. So it started. So I said "ls" and everything was gone. So all my hard work evaporated (except that it was mostly synched with GitHub so Hah Hah Hah on the gods of data loss). So 
+I can "install" something called WSL... or maybe it is combined with "turning on Linux" inside Windows. 
+But I can also install Ubuntu bash. Which opens a bash terminal in my home directory... where miniconda 
+is not installed. So I install miniconda and now I can create and activate environments. And I can start 
+a Jupyter notebook server. But the other day my Ubuntu <start> icon stopped working. So I forced Ubuntu 
+to start using the Windows start utility. So it started. So I said "ls" and everything was gone. So all 
+my hard work evaporated (except that it was mostly synched with GitHub so Hah Hah Hah on the gods of 
+data loss). So...
   
   
   ### What is a web framework?
