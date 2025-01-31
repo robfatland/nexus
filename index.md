@@ -53,6 +53,7 @@ sub-pages built out from there. Consequently the tree is 3 levels deep.
     - [(meta-)documentation index](https://github.com/robfatland/nexus/blob/gh-pages/documentation/index.md)
 - [python](https://github.com/robfatland/nexus/blob/gh-pages/python/index.md)
     - [python index](https://github.com/robfatland/nexus/blob/gh-pages/python/index.md)
+        - [jupyter](https://github.com/robfatland/nexus/blob/gh-pages/python/jupyter.md)
         - [python packages](https://github.com/robfatland/nexus/blob/gh-pages/python/packages.md)
 - [containers](https://github.com/robfatland/nexus/blob/gh-pages/containers/index.md)
     - [containers index](https://github.com/robfatland/nexus/blob/gh-pages/containers/index.md)
