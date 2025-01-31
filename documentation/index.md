@@ -133,7 +133,7 @@ that used TeX under the hood.
 TeX and LaTeX have been used to typeset thousands of books, hundreds of thousands
 of academic articles, many thousands of dissertations and theses (including mine), 
 and so on; all driven by a simple desire to move from 'painful to look at' to 
-'simply a joy to read'. 
+'simply a joy to read'. $y = \sqrt{x}$
 
 
 $$y = \sqrt{x}$$
