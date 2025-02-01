@@ -10,25 +10,60 @@ The objective is to build an API that can return data from a NoSQL database.
 
 ## notes from the 554 walkthrough
 
-This narrative follows the [MSE554 course activity]() which was built as a proof of concept on Azure. 
-The first step is to set up a NoSQL database on the Azure service "Cosmos DB" that is populated with 
-a table, namely the periodic table of elements. The second step is to build and test a very simple 
-working Azure function app. This is a serverless function that will be deployed on the Azure cloud
-where it will quietly listen for API calls from now until the end of time. 
+This narrative follows the [MSE554 course activity](https://cloudbank-project.github.io/az-serverless-tutorial/) 
+built as proof of concept on Azure. 
+
+- Start up and configure a VM on the Azure cloud as a base of operations
+- Create a NoSQL database, again on Azure, and publish the periodic table of elements to it
+    - The Azure brand name for a NoSQL database is "Cosmos DB"
+- Create a serverless function (on Azure called a 'Function App') that incorporates an API
+    - In this case the API is written in Python
+    - It connects to and uses the NoSQL database
+ 
+
+The first major success milestone is when I can interrogate the periodic table for information 
+on Sodium. 
 
 
-Once this is done the third step is to connect the database table to the function app so that someone 
-can interrogate the periodic table for information on Manganese. 
+Two things I want to pay attention to are debugging methods and calling out "under the hood"
+functionality. The idea is to broaden understanding beyond "copy and paste this magic command"
+approach to building a cloud data system.
 
 
-This walkthrough makes extensive use of two collateral tools working together. The first is a fairly
-low-power on-demand VM on the Azure cloud. The second is the VSCode application, a popular (for good
-reason) IDE. As both the VM and the VSCode application are built by Microsoft it is no shock to learn
-that they integrate well with Azure. 
+This walkthrough makes extensive use of two **environments** used in combination. The first is 
+a low-power, low-cost on-demand virtual machine (VM) on the Azure cloud. The second is an application
+called **VSCode**, a popular free IDE available from Microsoft. Both the VM and VSCode 
+integrate well with the Azure cloud. 
 
-- various things happen that I'm skipping for now
-- we reach the point of testing the Function App on the VM
-    - `func --version`
+
+## Skip for now: VM
+
+## Skip for now: Build the NoSQL Database
+
+## Build the Azure Function App
+
+- skip for now: multiple steps leading up to `Hey Galaxy` test code
+- skip for now: In the interest of whatabout: Can we use a `conda` environment?
+
+> Note: Whilst starting up the `bash` shell the file `.bashrc` is executed. It
+> does some configuration; and as it runs it checks
+> in turn for a file called `.bash_aliases`. If *that* file exists: `.bashrc` will
+> runs it as a subsidiary script. We can put two useful items in this file so we
+> do not have to remember *magic commands*. The first item is an alias for "change to
+> the `db-api` folder and start up the working Python environment `app-env`".
+> The second item is a print statement (using the `echo` command) that *reminds*
+> us of this alias. For example the following code can go anywhere in `.bash_aliases`:
+
+
+```
+echo aliased fnappenv to relocate and activate the API dev environment
+alias fnappenv='cd ~/db-api; source app-env/bin/activate; func --version'
+```
+
+- skip for now: remarks on Azure Function Core Tools and the utility command `func`
+    - Includes `How does the localhost test work?' and the default port 7071 forward.
+- Testing the Function App on the VM
+    - `func --version` checks to see the Azure Function 
     - `fund start` starts the VM's version of the API
         - Note that Azure function core tools appropriate (forward) port 7071
         - this allows `https://localhost:7071` to connect to the VM's running service
