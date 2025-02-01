@@ -11,6 +11,7 @@
         - [Serverless as published](https://cloudbank-project.github.io/az-serverless-tutorial/)
     - [Naclomi containerization GitHub](https://github.com/naclomi/containers-tutorial)
         - [Containers as published](https://naclomi.github.io/containers-tutorial/)
+        - See also the [Carpentries introduction to docker](https://carpentries-incubator.github.io/docker-introduction/)
 - [Cloud Maven Fossil Cloud Resource Site](http://cloudmaven.github.io/documentation)
     - [Cloud Maven on GitHub](https://github.com/cloudmaven)
     - [CM Documentation on GitHub](https://github.com/cloudmaven/documentation)
