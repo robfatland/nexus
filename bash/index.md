@@ -7,6 +7,24 @@
 
 # `bash`
 
+
+The Bourne Again Shell... but *confidentially* the content here is just one big cheat sheet 
+for setting up a data science VM on the cloud running a Jupyter notebook server appearing 
+in one's (say laptop) browser. 
+
+
+## Children
+
+
+- [environments](https://github.com/robfatland/nexus/blob/gh-pages/env/env.md)
+- [git](https://github.com/robfatland/nexus/blob/gh-pages/env/git.md)
+- [terminal](https://github.com/robfatland/nexus/blob/gh-pages/env/terminal.md)
+- [tunneling](https://github.com/robfatland/nexus/blob/gh-pages/env/tunneling.md)
+
+
+## Topics
+
+
 - [bootstrapping a cloud data science VM](#bootstrapping-a-cloud-data-science-vm)
 - [related links and resources](#related-links-and-resources)
 - [linux on a PC running windows](#linux-on-a-pc-running-windows)
@@ -17,10 +35,13 @@
 ## bootstrapping a cloud data science VM
 
 
-Task: Configure and operate a data science Virtual Machine (VM) on the cloud. 
+- Task: Configure and operate a data science Virtual Machine (VM) on the cloud. 
+- Remark: Notice this overlaps with the 544 source material and with API
+- Remark: Anaconda relevance over Miniconda for data science libraries
 
 
 ### Precursor steps
+
 
 - Set up a PC with some operating system that supports Linux
     - Laptop Linux will commonly support utility programs as needed, for example `conda`, `jupyter`, `docker`, `ssh`, `sftp`, `git`
@@ -72,11 +93,13 @@ coding locally, i.e. while not connected to the cloud VM. This is managed via
 Some of the GitHub synchronization can be done by means of shell scripts. For example
 for repository `ant` one could set up a script called `pull.sh`:
 
+
 ```
 echo ant
 cd ~/ant; git pull
 cd ~
 ```
+
 
 This is run using `source pull.sh` and it "pays for itself" in workflow time once the
 number of repos to synch exceeds 1.
