@@ -1,8 +1,8 @@
-[nexus](https://robfatland.github.io/nexus), [index source](https://github.com/robfatland/nexus/blob/gh-pages/index.md), 
-[nexus main](https://github.com/robfatland/nexus/tree/main)
+[nexus published](https://robfatland.github.io/nexus), [nexus index source](https://github.com/robfatland/nexus/blob/gh-pages/index.md),
+[bash index source](https://github.com/robfatland/nexus/blob/gh-pages/env/index.md)
 
 
-`bash index.md`: will point to terminal, tunnel sub-pages and other topics
+`bash/index.md` needs pointers to children `terminal` and `tunnels`
 
 
 # `bash`
