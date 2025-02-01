@@ -47,11 +47,12 @@ integrate well with the Azure cloud.
 - skip for now: multiple steps leading up to `Hey Galaxy` test code
 - skip for now: In the interest of whatabout: Can we use a `conda` environment?
 
-> Note: Whilst starting up the `bash` shell the file `.bashrc` is executed. It
-> does some configuration; and as it runs it checks
-> in turn for a file called `.bash_aliases`. If *that* file exists: `.bashrc` will
-> runs it as a subsidiary script. We can put two useful items in this file so we
-> do not have to remember *magic commands*. The first item is an alias for "change to
+
+> On starting `bash` the script file `~/.bashrc` is run as a configuration step.
+> As `.bashrc` runs it checks for a file called `.bash_aliases`. If *that* file
+> exists: `.bashrc` will run it; so it is a subsidiary script. We can put two
+> useful items in this file so as not to have to remember any *magic commands*.
+> The first item is an alias for "go to
 > the `db-api` folder and start up the working Python environment `app-env`".
 > The second item is a print statement (using the `echo` command) that *reminds*
 > us of this alias. For example the following code can go anywhere in `.bash_aliases`:
@@ -60,6 +61,13 @@ integrate well with the Azure cloud.
 ```
 echo aliased fnappenv to relocate and activate the API dev environment
 alias fnappenv='cd ~/db-api; source app-env/bin/activate; func --version'
+```
+
+> To check that it works properly: Re-run `~/.bashrc`:
+
+
+```
+source ~/.bashrc
 ```
 
 - skip for now: remarks on Azure Function Core Tools and the utility command `func`
