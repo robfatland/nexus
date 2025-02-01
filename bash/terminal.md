@@ -1,5 +1,6 @@
-[nexus pub](https://robfatland.github.io/nexus), [root index src](https://github.com/robfatland/nexus/blob/gh-pages/index.md), 
-[main branch](https://github.com/robfatland/nexus/tree/main)
+[nexus published](https://robfatland.github.io/nexus), [nexus index source](https://github.com/robfatland/nexus/blob/gh-pages/index.md), 
+[bash index source](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md)
+
 
 
 # the `bash` terminal
