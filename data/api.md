@@ -11,7 +11,9 @@ The objective is to build an API that can return data from a NoSQL database.
 ## notes from the 554 walkthrough
 
 This narrative follows the [MSE554 course activity](https://cloudbank-project.github.io/az-serverless-tutorial/) 
-built as proof of concept on Azure. 
+built as proof of concept on Azure. This does not include 
+[***Containerization with docker***](https://naclomi.github.io/containers-tutorial/).
+
 
 - Start up and configure a VM on the Azure cloud as a base of operations
 - Create a NoSQL database, again on Azure, and publish the periodic table of elements to it
