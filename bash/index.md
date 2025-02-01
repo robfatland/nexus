@@ -13,7 +13,7 @@ in one's (say laptop) browser.
 ## Children
 
 
-- [environments](https://github.com/robfatland/nexus/blob/gh-pages/env/env.md)
+- [environments](https://github.com/robfatland/nexus/blob/gh-pages/env.md) including `import`
 - [git](https://github.com/robfatland/nexus/blob/gh-pages/env/git.md)
 - [terminal](https://github.com/robfatland/nexus/blob/gh-pages/env/terminal.md)
 - [tunneling](https://github.com/robfatland/nexus/blob/gh-pages/env/tunneling.md)
