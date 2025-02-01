@@ -1,5 +1,5 @@
 [nexus published](https://robfatland.github.io/nexus), [nexus index source](https://github.com/robfatland/nexus/blob/gh-pages/index.md),
-[bash index source](https://github.com/robfatland/nexus/blob/gh-pages/env/index.md)
+[bash index source](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md)
 
 
 # `bash`
@@ -13,10 +13,10 @@ in one's (say laptop) browser.
 ## Children
 
 
-- [environments](https://github.com/robfatland/nexus/blob/gh-pages/env.md) including `import`
-- [git](https://github.com/robfatland/nexus/blob/gh-pages/env/git.md)
-- [terminal](https://github.com/robfatland/nexus/blob/gh-pages/env/terminal.md)
-- [tunneling](https://github.com/robfatland/nexus/blob/gh-pages/env/tunneling.md)
+- [environments](https://github.com/robfatland/nexus/blob/gh-pages/bash/env.md) including `import`
+- [git](https://github.com/robfatland/nexus/blob/gh-pages/bash/git.md)
+- [terminal](https://github.com/robfatland/nexus/blob/gh-pages/bash/terminal.md)
+- [tunneling](https://github.com/robfatland/nexus/blob/gh-pages/bash/tunneling.md)
 
 
 ## Topics
