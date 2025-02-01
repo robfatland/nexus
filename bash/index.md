@@ -2,9 +2,6 @@
 [bash index source](https://github.com/robfatland/nexus/blob/gh-pages/env/index.md)
 
 
-`bash/index.md` needs pointers to children `terminal`, `git`, `environments` and `tunnels`
-
-
 # `bash`
 
 
