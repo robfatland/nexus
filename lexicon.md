@@ -1,12 +1,10 @@
-- [published: nexus](https://robfatland.github.io/nexus), and then
-[the editable index.md](https://github.com/robfatland/nexus/blob/gh-pages/index.md)
-- [published: this lexicon](https://robfatland.github.io/nexus/lexicon), and then
-[the editable lexicon.md](https://github.com/robfatland/nexus/blob/gh-pages/lexicon.md)
-
-# nexus lexicon
+- [nexus published](https://robfatland.github.io/nexus), [nexus index source](https://github.com/robfatland/nexus/blob/gh-pages/index.md)
 
 
-This page provides brief definitions of terms and links to deeper material.
+# lexicon
+
+
+This page provides terse definitions of the jargon as well as links to deeper material.
 
 
 ## Quo vadis?
