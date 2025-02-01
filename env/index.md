@@ -1,8 +1,5 @@
-[nexus pub](https://robfatland.github.io/nexus), [root index src](https://github.com/robfatland/nexus/blob/gh-pages/index.md), 
-[main branch](https://github.com/robfatland/nexus/tree/main)
-
-One incidental note (delete this): Try and think through the form of these documentation narratives in terms of 
-what they are attempting to optimize.
+[nexus published](https://robfatland.github.io/nexus), [nexus index source](https://github.com/robfatland/nexus/blob/gh-pages/index.md),
+[environments index source](https://github.com/robfatland/nexus/blob/gh-pages/env/index.md)
 
 
 # Python environments
