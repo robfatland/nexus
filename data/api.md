@@ -79,12 +79,22 @@ source ~/.bashrc
         - this allows `https://localhost:7071` to connect to the VM's running service
             - this is not the actual Function App. It is a test environment.
             - Super convenient: We test the API without publishing it to an Azure cloud Function App
-- WARNING: There is a bump in the road just ahead. If something goes wrong: ***Do Not Try To Debug It***. Instead: Just keep reading further in the instructions.
+- WARNING: There is a bump in the road ahead.
+    - If something goes wrong: ***Do Not Try To Debug The Problem***
+    - Rather: Keep reading further in the instructions.
 - Deploying the Function App to Azure
     - We log in to Azure from the Azure VM
         - This may seem a bit incongruous but there it is: VMs are not technically *inside* the Azure fence
         - `az login` parses as **azure command line interface** = `az` followed by **action** = `login`
-    - This output is surprising for two reasons
+    - The load time is a bit slow: 5 minutes or so
+        - Develop and test on localhost is therefore appealing... but the database is not on the VM
+        - The syntax for different routes and argument parsing is high on the list...
+            - Here we have it: `http://abc.net/api/route?name1=value1&name2=value2&name3=value3`
+    - What happens during deployment to Azure?
+        - Presume the entirety of `db-api` is uploaded to an Azure *something*. Container?
+            - Seems to be 48MB
+        - Presume `python3 -m pip install -r requirements.txt` is run during deployment
+
  
 ```
 prompt$ func azure functionapp publish myfunction
