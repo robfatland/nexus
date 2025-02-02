@@ -74,7 +74,7 @@ source ~/.bashrc
     - Includes `How does the localhost test work?' and the default port 7071 forward.
 - Testing the Function App on the VM
     - `func --version` checks to see the Azure Function 
-    - `fund start` starts the VM's version of the API
+    - `func start` starts the VM's version of the API
         - Note that Azure function core tools appropriate (forward) port 7071
         - this allows `https://localhost:7071` to connect to the VM's running service
             - this is not the actual Function App. It is a test environment.
