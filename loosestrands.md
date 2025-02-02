@@ -42,6 +42,7 @@
     - [Yiyu Ni on preemptible instance use](https://github.com/SeisSCOPED/QuakeScope/blob/6d7ac909cce0889d4a33b6373dea7b4842694bc2/sb_catalog/configs/job_definition_picking.yaml#L39C1-L43C56)
         - [AWS on likelihood of preemption](https://aws.amazon.com/ec2/spot/instance-advisor/)
     - [Neotoma](https://www.neotomadb.org/about)
+- Environments in relation to file system structure
 - Useful stuff
     - [flameshot]() + unbind prtscn
     - [LaTeX]()
