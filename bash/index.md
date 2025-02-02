@@ -5,7 +5,7 @@
 # `bash`
 
 
-The Bourne Again Shell... but *confidentially* the content here is just one big cheat sheet 
+The Bourne Again Shell... but *confidentially* the content here is one big cheat sheet 
 for setting up a data science VM on the cloud running a Jupyter notebook server appearing 
 in one's (say laptop) browser. 
 
@@ -30,6 +30,9 @@ in one's (say laptop) browser.
 
 
 ## bootstrapping a cloud data science VM
+
+[Click on this link](#what-is-the-basic-idea-here?) to skip down to a writeup on "What's the basic idea here?"
+
 
 
 - Task: Configure and operate a data science Virtual Machine (VM) on the cloud. 
@@ -403,6 +406,45 @@ format. A popular alternative is the `vi`, `vim` (etcetera) family of editors.
     - `!54` re-issues command number 54 from your history
     - `!!` re-runs the last command you gave
     - `!-3` re-runs the command 3 commands back in your history
+
+
+## What is the basic idea here?
+
+
+[Return to top of page](#topics)
+
+
+Many of us are accustomed to experiencing computers as physical boxes with a cable
+running to a keyboard and another cable running to a monitor; or as an integrated laptop.
+The transition to cloud computing is a potentially challenging process; and in particular
+cloud virtual machines (VMs) can be a bit incongruous. 
+
+
+As users of the 'computer as physical object' we experience our local environment through 
+applications that feature very smooth, elaborate graphics that operate on some local data
+files that reside on a local storage drive. Furthermore we experience a vast network beyond
+our local computer as "a view of the Internet through the windows of browser tabs".
+*Now* supposing we begin to explore cloud computing due to the availability of a vast pool 
+of computing resources. These we can use and pay for by the hour, so far so good. The
+conceptual shift to make this work -- what we write about here -- is a hybridizing of 
+the "local computer view" and the "browser tab Internet view". 
+
+
+The first step in
+this mixed-media approach to computing is to rent a cloud Virtual Machine that is going
+to be exclusively used by us. We are effectively the `root` user. And as such we will
+want to install and run applications that operate the way an application works on our
+local laptop. There are two in particular that we have in mind. The first is a Jupyter
+notebook server featuring Interactive Python (IPython). The second is an Integrated
+Development Environment (IDE) that we can use to build still more machinery on the
+cloud. The one we feature here is called **VSCode** and it is widely regarded as a
+very useful IDE. What these two applications have in common is they present a smooth
+interface through our local computer; which I tend to refer to as *the laptop*. So
+to take the narrative in the other direction: We start with *us* the researcher
+interested in using the cloud. We rent a cloud Virtual Machine to be a (potentially
+very powerful) working environment and we set up one or two applications to run
+on that VM but that present the interface on our laptop. And this is done by means
+of a secure connection called a *tunnel*, specifically an `ssh` tunnel. 
 
 
 
