@@ -87,9 +87,12 @@ source ~/.bashrc
         - This may seem a bit incongruous but there it is: VMs are not technically *inside* the Azure fence
         - `az login` parses as **azure command line interface** = `az` followed by **action** = `login`
     - The load time is a bit slow: 5 minutes or so
-        - Develop and test on localhost is therefore appealing... but the database is not on the VM
+        - Develop and test on localhost is therefore appealing
+            - Surprise! Even database calls work from localhost
+            - `http://localhost:7071/api/lookup?name=Sodium` returns with `[{"AtomicNumber": 11,` etcetera
         - The syntax for different routes and argument parsing is high on the list...
             - Here we have it: `http://abc.net/api/route?name1=value1&name2=value2&name3=value3`
+            - The corresponding code is a little bit arcane
     - What happens during deployment to Azure?
         - Presume the entirety of `db-api` is uploaded to an Azure *something*. Container?
             - Seems to be 48MB
