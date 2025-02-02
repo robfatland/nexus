@@ -415,6 +415,17 @@ format. A popular alternative is the `vi`, `vim` (etcetera) family of editors.
 [Return to top of page](#topics)
 
 
+An open question for any given research group is whether using a commercial cloud platform 
+such as GCP or AWS or Azure is worth the time investment to *learn how*. This question has no 
+automatic or simple answer; hence the idea is to talk through aspects of a 
+cloud-for-research framework to develop an appreciation for the requisite learning curve. 
+From my perspective this framework is closely connected with the practice of 
+[open science](https://en.wikipedia.org/wiki/Open_science). The first order elements
+of the framework are compute power and storage, closely followed by cost management 
+and security.
+
+
+
 Many of us are accustomed to experiencing computers as physical boxes with a cable
 running to a keyboard and another cable running to a monitor; or as an integrated laptop.
 The transition to cloud computing is a potentially challenging process; and in particular
@@ -466,9 +477,16 @@ platforms, the most fundamental being object storage that features fast access
 at a rate of about $0.023 per GB per month.
 
 
-This description is intended to lay out some details to frame the time commitment necessary
-to learn to use cloud computing effectively. Learning the cloud "ropes" is on the one hand not 
-trivial; and there are a number of questions and topics remaining to cover. 
+As noted above this description is intended to sketch a framework in view of the time 
+commitment necessary to learn to use the cloud effectively. Further elaboration is
+essential having left off just shy of...
+
+
+- storage ingress, egress
+- building cloud infrastructure in relation to its use
+- cost management
+- data sharing
+- data security
 
 
 
