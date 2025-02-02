@@ -90,25 +90,28 @@ source ~/.bashrc
         - Develop and test on localhost is therefore appealing
             - Surprise! Even database calls work from localhost
             - `http://localhost:7071/api/lookup?name=Sodium` returns with `[{"AtomicNumber": 11,` etcetera
-        - The syntax for different routes and argument parsing is high on the list...
-            - Here we have it: `http://abc.net/api/route?name1=value1&name2=value2&name3=value3`
-            - The corresponding code is a little bit arcane
+        - Database query using `lookup?name=Sodium`
+            - The code uploaded to Azure is never visible to the outside world
+            - The code should I choose to commit it to a GitHub repo contains a Primary Key
+                - This authenticates the Function App to the NoSQL database
+                    - The Primary Key seems like a security risk
+        - The syntax for multiple routes (api calls) and argument parsing (the `key=value` sequence)
+            - api call syntax: `http://abc.net/api/route?name1=value1&name2=value2&name3=value3`
+            
+
+            - The corresponding interpretation code is arcane; see below
     - What happens during deployment to Azure?
         - Presume the entirety of `db-api` is uploaded to an Azure *something*. Container?
             - Seems to be 48MB
         - Presume `python3 -m pip install -r requirements.txt` is run during deployment
 
- 
-```
-prompt$ func azure functionapp publish myfunction
 
-Local python version '3.12.8' is different from the version expected for your deployed Function App.
-This may result in 'ModuleNotFound' errors in Azure Functions. Please create a Python Function App
-for version 3.12 or change the virtual environment on your local machine to match '3.11'.
-Getting site publishing info...
-[2025-02-01T02:24:36.122Z] Starting the function app deployment...
-[2025-02-01T02:24:36.131Z] Creating archive for current directory...
-Performing remote build for functions project.
-Uploading 45.67 MB
+## api code
+
+
+We have an excellent working example above. Using the Python `requests.get()` method is another way to access:
+
+
 ```
-    
+response = requests.get("https://pythonbytes.azurewebsites.net/api/lookup/", params={"name": "Carbon"})
+```
