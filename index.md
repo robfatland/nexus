@@ -58,6 +58,9 @@ sub-pages built from there: A 3-level tree.
     - [artificial intelligence index](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md)
 
 
+[Essay: Approach to understanding the cloud-for-research time investment](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md#the-basic-idea-here)
+
+
 ## Why is nexus?
 
 
