@@ -27,7 +27,7 @@ in one's (say laptop) browser.
 - [linux on a PC running windows](#linux-on-a-pc-running-windows)
 - [Ubuntu Jupyter via ssh tunnel](#ubuntu-jupyter-via-ssh-tunnel)
 - [More on Linux](#more-on-linux)
-
+- [What is the basic idea here?](#the-basic-idea-here)
 
 ## bootstrapping a cloud data science VM
 
@@ -430,21 +430,44 @@ conceptual shift to make this work -- what we write about here -- is a hybridizi
 the "local computer view" and the "browser tab Internet view". 
 
 
-The first step in
-this mixed-media approach to computing is to rent a cloud Virtual Machine that is going
-to be exclusively used by us. We are effectively the `root` user. And as such we will
-want to install and run applications that operate the way an application works on our
-local laptop. There are two in particular that we have in mind. The first is a Jupyter
-notebook server featuring Interactive Python (IPython). The second is an Integrated
-Development Environment (IDE) that we can use to build still more machinery on the
-cloud. The one we feature here is called **VSCode** and it is widely regarded as a
-very useful IDE. What these two applications have in common is they present a smooth
-interface through our local computer; which I tend to refer to as *the laptop*. So
-to take the narrative in the other direction: We start with *us* the researcher
-interested in using the cloud. We rent a cloud Virtual Machine to be a (potentially
-very powerful) working environment and we set up one or two applications to run
-on that VM but that present the interface on our laptop. And this is done by means
-of a secure connection called a *tunnel*, specifically an `ssh` tunnel. 
+The first step in this hybrid concept of computing is to rent a cloud Virtual Machine that 
+is exclusively for our use: We are the `root` user. As such we want to install and run 
+applications that operate just as an application works on our local laptop. This can be
+disconcerting because the cloud VM obviously does not have direct access to data files on
+our laptop. But we charge ahead for the moment: This `nexus` website emphasizes two such
+applications from the outset, to run on a cloud VM. The first is a **Jupyter
+notebook server** supporting Interactive Python (IPython). The second is an Integrated
+Development Environment (IDE) that we use to build additional machinery on the
+cloud. This IDE is called **VSCode** and it is widely regarded as very useful. 
+
+
+What these two applications have in common is they present a smooth, elaborate interface
+*to a working environment* that appears *on our local computer* (which I will tend to refer 
+to as *our laptop*). We have yet to address the data files but that follows below. The 
+main idea here is that cloud computing comes *to us, on our local computer* in some sense 
+as a new version of our working research environment.  
+
+
+Let's take this narrative from the top once more to add an important detail. We begin with 
+*us researchers* interested in using the cloud. We rent a cloud Virtual Machine to use as 
+a potentially very powerful working environment and we set up two applications to run on 
+the cloud VM. These present an interface on our laptop by means of a secure connection called 
+a *tunnel*, specifically an `ssh` tunnel. This tunnel is fast and secure, meaning there is
+no way to intercept the traffic through it in any meaningful way. 
+
+
+Now to the question of data files. As with the jump to the hybrid picture
+of cloud VMs, the data situation is also a conceptual jump, arguably bigger.
+The bottom line is: The cloud has unlimited low cost storage that will not
+impact a typical research budget until the data volume approaches 200 TB. 
+This is primarily due to multiple modes of data storage available on all cloud
+platforms, the most fundamental being object storage that features fast access
+at a rate of about $0.023 per GB per month.
+
+
+This description is intended to lay out some details to frame the time commitment necessary
+to learn to use cloud computing effectively. Learning the cloud "ropes" is on the one hand not 
+trivial; and there are a number of questions and topics remaining to cover. 
 
 
 
