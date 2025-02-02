@@ -31,7 +31,7 @@ in one's (say laptop) browser.
 
 ## bootstrapping a cloud data science VM
 
-[Click on this link](#what-is-the-basic-idea-here?) to skip down to a writeup on "What's the basic idea here?"
+[Click on this link](#the-basic-idea-here) to skip down to a writeup on "What's the basic idea here?"
 
 
 
@@ -408,7 +408,7 @@ format. A popular alternative is the `vi`, `vim` (etcetera) family of editors.
     - `!-3` re-runs the command 3 commands back in your history
 
 
-## What is the basic idea here?
+## The basic idea here
 
 
 [Return to top of page](#topics)
