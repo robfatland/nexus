@@ -418,7 +418,7 @@ format. A popular alternative is the `vi`, `vim` (etcetera) family of editors.
 An open question for any given research group is whether using a commercial cloud platform 
 such as GCP or AWS or Azure is worth the time investment to *learn how*. This question has no 
 automatic or simple answer; hence the idea is to talk through aspects of a 
-cloud-for-research framework to develop an appreciation for the requisite learning curve. 
+cloud-for-research framework to develop an appreciation of the requisite learning curve. 
 From my perspective this framework is closely connected with the practice of 
 [open science](https://en.wikipedia.org/wiki/Open_science). The first order elements
 of the framework are compute power and storage, closely followed by cost management 
@@ -428,13 +428,18 @@ and security.
 
 Many of us are accustomed to experiencing computers as physical boxes with a cable
 running to a keyboard and another cable running to a monitor; or as an integrated laptop.
-The transition to cloud computing is a potentially challenging process; and in particular
-cloud virtual machines (VMs) can be a bit incongruous. 
+The transition to cloud computing is a potentially puzzling process; so this narrative
+begins with a view of cloud virtual machines (VMs).  
 
 
 As users of the 'computer as physical object' we experience our local environment through 
 applications that feature very smooth, elaborate graphics that operate on some local data
-files that reside on a local storage drive. Furthermore we experience a vast network beyond
+files that reside on a local storage drive. (This experience includes the *server* or 
+*cluster* model where a number of machines and distributed data storage are made available
+to a research team.)
+
+
+Furthermore we experience a vast network beyond
 our local computer as "a view of the Internet through the windows of browser tabs".
 *Now* supposing we begin to explore cloud computing due to the availability of a vast pool 
 of computing resources. These we can use and pay for by the hour, so far so good. The
@@ -479,7 +484,7 @@ at a rate of about $0.023 per GB per month.
 
 As noted above this description is intended to sketch a framework in view of the time 
 commitment necessary to learn to use the cloud effectively. Further elaboration is
-essential having left off just shy of...
+essential, having left off at this point shy of...
 
 
 - storage ingress, egress
@@ -487,6 +492,8 @@ essential having left off just shy of...
 - cost management
 - data sharing
 - data security
+- compare and contrast with a local server cluster
+- compare and contrast with large HPC facilities
 
 
 
