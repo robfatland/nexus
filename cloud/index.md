@@ -3,6 +3,15 @@
 
 # cloud
 
+
+Cloud computing in the context of this site *does* refer to commercial clouds, particularly AWS, GCP and Azure.
+This is in the context of research computing. The content here *does not* consider consumer services such as iCloud and
+Google Drive.
+
+
+[Essay: Is cloud computing a good idea for you?](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md#the-basic-idea-here)
+
+
 ## children
 
 
@@ -13,12 +22,16 @@
 ## references
 
 
+- [VM, Database, Serverless tutorials (Azure) source](https://github.com/cloudbank-project/az-serverless-tutorial/tree/main)]
+    - [VM, Database, Serverless tutorials (Azure) published](https://cloudbank-project.github.io/az-serverless-tutorial/)
+- [Containerization source](https://github.com/naclomi/containers-tutorial)
+    - [Containerization published](https://naclomi.github.io/containers-tutorial/)
+    - [Carpentries introduction to docker containers](https://carpentries-incubator.github.io/docker-introduction/)
 
-
-This stub page will evolve into primarily a baseline message and a directory of cloud sub-page content. 
 
 
 Cloud computing for research comes at a dollar cost. We are interested in optimizing spend.
+
 
 * Preemptible instance use on the cloud (70-90% savings)
     * [Dedicated notes here in nexus](https://github.com/robfatland/nexus/edit/gh-pages/cloud/spot.md)
@@ -39,7 +52,3 @@ cloud computing for a mere $10,000 and get better research results as a conseque
 clinic will catch you up on the how-tos and other small details of such a substantial gain in
 compute power. We use a CNN as our example implementation of a compute-intensive research task.
 
-
-## NTS
-
-- working in Rob's project. cifar-pytorch-checkpoints. 
