@@ -5,6 +5,11 @@
 
 ## CloudBank strands
 
+Sources...
+
+- The `main` branch of this repo
+- OneNote: Considerable
+- GitHub: Fossil repos
 - MSE544 Cloud Skills
     - [VMs + Database + Serverless (Azure) source](https://github.com/cloudbank-project/az-serverless-tutorial/tree/main)]
         - [VMs + Database + Serverless as published](https://cloudbank-project.github.io/az-serverless-tutorial/)
