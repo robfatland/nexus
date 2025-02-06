@@ -12,6 +12,7 @@
 
 ## CloudBank studies
 
+
 ### GEO Directorate
 
 
@@ -24,7 +25,8 @@
         - https://seisscoped.org/HPS-book/chapters/noise/noisepy_aws_batch.html
         - https://seisscoped.org/HPS-book/chapters/quake_catalog/seisbench_catalog.html
     - [Preemptible instance / container detail](https://github.com/SeisSCOPED/QuakeScope/blob/main/sb_catalog/configs/job_definition_picking.yaml)
-- redacted pending permission
+- [Neotoma Paleo Database](https://www.neotomadb.org/)
+
 
 ### DCL CISE
 
