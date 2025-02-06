@@ -4,9 +4,9 @@
 # cloud
 
 
-Cloud computing in the context of this site *does* refer to commercial clouds, particularly AWS, GCP and Azure.
-This is in the context of research computing. The content here *does not* consider consumer services such as iCloud and
-Google Drive.
+"Cloud" in the context of research computing refers to *commercial clouds*, particularly AWS, GCP and Azure,
+where Virtual Machines are available on a pay-as-you-go basis. The content of this repo *does not* however
+concern "cloud" consumer services like iCloud and Google Drive.
 
 
 [Essay: Is cloud computing a good idea for you?](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md#the-basic-idea-here)
