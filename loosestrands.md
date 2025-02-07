@@ -8,7 +8,7 @@
 Sources...
 
 - Incidental locations to check...
-    - The `main` branch of this repo; OneNote; GitHub fossils; GDrive (at least 3 orgs)
+    - Both README files (main and gh-pages) of this repo; OneNote; GitHub fossils; GDrive (at least 3 orgs)
 - MSE544 Cloud Skills
     - [VMs + Database + Serverless (Azure) source](https://github.com/cloudbank-project/az-serverless-tutorial/tree/main)]
         - [VMs + Database + Serverless as published](https://cloudbank-project.github.io/az-serverless-tutorial/)
