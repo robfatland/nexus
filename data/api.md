@@ -38,9 +38,11 @@ called **VSCode**, a popular free IDE available from Microsoft. Both the VM and 
 integrate well with the Azure cloud. 
 
 
-## Skip for now: VM
+## Skip for now: Set up a VM
+
 
 ## Skip for now: Build the NoSQL Database
+
 
 ## Build the Azure Function App
 
@@ -101,18 +103,20 @@ source ~/.bashrc
         - this allows `https://localhost:7071` to connect to the VM's running service
             - this is not the actual Function App. It is a test environment.
             - Super convenient: We test the API without publishing it to an Azure cloud Function App
+
+
 ### Publish Function App to the Azure cloud 
+
 
 - ***WARNING***: There is a bump in the road ahead.
     - Publication/test: If something goes wrong: ***Do Not Try To Debug The Problem***
     - Rather: Keep reading further in the instructions.
 - Deploying the Function App to Azure
-    - We log in to Azure from the Azure VM
-        - This is a bit incongruous but...
-        - ...VMs are not technically *logged in* to Azure when we `ssh` to them
+    - We log in to Azure from the Azure VM: `az login`
         - `az login` = {**azure command line interface** = `az`} +  {**action** = `login`}
-        - The VM session is now authenticated to the azure cloud and can conduct business
-    - The publication load time is a bit slow: 5 minutes or so
+        - The Azure VM session is authenticated to interact with the azure cloud
+    - Publication command is `func azure functionapp publish <project-name>`
+    - The publication load time is a bit slow: 5 minutes or so before the prompt returns
         - This is why localhost testing is good
             - Possible because database calls work from localhost
                 - Example: `http://localhost:7071/api/lookup?name=Sodium` works
@@ -197,7 +201,8 @@ print('                       on print():',          round(sum_tp/tt))
 ```
 
 
-Here is an alternative Python `requests.get()` call passing the key-value information as a dictionary called `params`:
+Here is an alternative Python `requests.get()` call passing the key-value information in the request body
+as dictionary `params`:
 
 
 ```
