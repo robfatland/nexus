@@ -125,8 +125,10 @@ source ~/.bashrc
 
 
 - Code published to Azure is never visible to the outside world
-- The code on the VM contains authentication information (database ip address + primary key)
-    - Should I accidentally commit this code to GitHub: I create a huge security hole
+- The code on the VM contains authentication information
+    - specifically `ACCOUNT_HOST` is the database ip address...
+    - ...and `ACCOUNT_KEY` is the access key)
+    - Suppose I accidentally commit this code to GitHub: I have created a huge security hole.
  
 
 ### Azure function app **routes**
