@@ -48,70 +48,156 @@ integrate well with the Azure cloud.
 - skip for now: In the interest of whatabout: Can we use a `conda` environment?
 
 
-> On starting `bash` the script file `~/.bashrc` is run as a configuration step.
-> As `.bashrc` runs it checks for a file called `.bash_aliases`. If *that* file
-> exists: `.bashrc` will run it; so it is a subsidiary script. We can put two
-> useful items in this file so as not to have to remember any *magic commands*.
-> The first item is an alias for "go to
-> the `db-api` folder and start up the working Python environment `app-env`".
-> The second item is a print statement (using the `echo` command) that *reminds*
-> us of this alias. For example the following code can go anywhere in `.bash_aliases`:
+### Picking up where we left off
 
+
+Suppose we have to step away from the project for a few days... upon return 
+we want to pick up where we left off. To facilitate this
+
+
+- **Start** the VM for example from the portal or console
+- Run `VSCode` and use the lower-left button to start an `ssh` session on the VM
+- In VSCode: Go to the terminal and view the login text...
+    - ...which reminds us of an alias we set up before the hiatus!
+    - ...which means ***Do it now!!*** (see below)
+- Use the alias to move into the project folder and start the corresponding environment
+- Start editing the project code and away we go
+
+
+#### Setting up the `robotron` alias
+
+
+I use `robotron` for the alias as slightly eye-catching. The backstory for this alias
+business: On starting `bash` the script file `~/.bashrc` is executed as a shell script.
+This does some configuration steps including checking for and (if it exists) running
+a sub-script file called `.bash_aliases`. *That* is the file to edit. Add these two lines
+at the end of the `.bash_aliases` file:
 
 ```
-echo aliased fnappenv to relocate and activate the API dev environment
-alias fnappenv='cd ~/db-api; source app-env/bin/activate; func --version'
+echo Use **robotron** to relocate and activate the development environment
+alias robotron='cd ~/db-api; source app-env/bin/activate; func --version'
 ```
 
-> To check that it works properly: Re-run `~/.bashrc`:
+
+To test this:
 
 
 ```
 source ~/.bashrc
 ```
 
-- skip for now: remarks on Azure Function Core Tools and the utility command `func`
+### Skipped tasks/topics
+
+
+- Remarks on Azure Function Core Tools and the utility command `func`
     - Includes `How does the localhost test work?' and the default port 7071 forward.
-- Testing the Function App on the VM
-    - `func --version` checks to see the Azure Function 
-    - `func start` starts the VM's version of the API
-        - Note that Azure function core tools appropriate (forward) port 7071
+
+
+### Testing the Function App on the VM
+
+- `func --version` checks to see the Azure Function 
+- `func start` starts the VM's version of the API
+    - Note that Azure function core tools appropriate (forward) port 7071
         - this allows `https://localhost:7071` to connect to the VM's running service
             - this is not the actual Function App. It is a test environment.
             - Super convenient: We test the API without publishing it to an Azure cloud Function App
-- WARNING: There is a bump in the road ahead.
-    - If something goes wrong: ***Do Not Try To Debug The Problem***
+### Publish Function App to the Azure cloud 
+
+- ***WARNING***: There is a bump in the road ahead.
+    - Publication/test: If something goes wrong: ***Do Not Try To Debug The Problem***
     - Rather: Keep reading further in the instructions.
 - Deploying the Function App to Azure
     - We log in to Azure from the Azure VM
-        - This may seem a bit incongruous but there it is: VMs are not technically *inside* the Azure fence
-        - `az login` parses as **azure command line interface** = `az` followed by **action** = `login`
-    - The load time is a bit slow: 5 minutes or so
-        - Develop and test on localhost is therefore appealing
-            - Surprise! Even database calls work from localhost
-            - `http://localhost:7071/api/lookup?name=Sodium` returns with `[{"AtomicNumber": 11,` etcetera
-        - Database query using `lookup?name=Sodium`
-            - The code uploaded to Azure is never visible to the outside world
-            - The code should I choose to commit it to a GitHub repo contains a Primary Key
-                - This authenticates the Function App to the NoSQL database
-                    - The Primary Key seems like a security risk
-        - The syntax for multiple routes (api calls) and argument parsing (the `key=value` sequence)
-            - api call syntax: `http://abc.net/api/route?name1=value1&name2=value2&name3=value3`
-            
-
-            - The corresponding interpretation code is arcane; see below
-    - What happens during deployment to Azure?
-        - Presume the entirety of `db-api` is uploaded to an Azure *something*. Container?
-            - Seems to be 48MB
-        - Presume `python3 -m pip install -r requirements.txt` is run during deployment
+        - This is a bit incongruous but...
+        - ...VMs are not technically *logged in* to Azure when we `ssh` to them
+        - `az login` = {**azure command line interface** = `az`} +  {**action** = `login`}
+        - The VM session is now authenticated to the azure cloud and can conduct business
+    - The publication load time is a bit slow: 5 minutes or so
+        - This is why localhost testing is good
+            - Possible because database calls work from localhost
+                - Example: `http://localhost:7071/api/lookup?name=Sodium` works
+                - This is possible for two reasons:
+                    - Port 7071 forwards from our laptop to the Azure VM
+                    - The code running on the Azure VM includes credentials to access the NoSQL Periodic table database
 
 
-## api code
+### On database query mechanics and risk
 
 
-We have an excellent working example above. Using the Python `requests.get()` method is another way to access:
+- Code published to Azure is never visible to the outside world
+- The code on the VM contains authentication information (database ip address + primary key)
+    - Should I accidentally commit this code to GitHub: I create a huge security hole
+ 
+
+### Azure function app **routes**
+
+
+- The syntax for the api has two components built into the URL
+    - A route which corresponds to a particular api "command": `https://some.azurewebsites.net/api/someroute`
+    - A sequence of zero or more `key=value` arguments: above + `?key1=value1&key2=value2` etcetera
+- What comes back when the code successfully parses an api call is formatted text that we unpack
+
+
+### What happens during deployment from the VM to the Function App on Azure?
+
+
+- Most-to-all of the `db-api` folder is uploaded to Azure...
+    - ...into a Container perhaps?
+    - Volume seems to be 50MB
+    - Slow (5 minutes) process is presume because `python3 -m pip install -r requirements.txt` runs during this deployment
+
+
+## client code
+
+
+In general we do not build an API in order to manually type API calls into a browser address bar. 
+Rather we write code to make the API calls and parse the returned results. In Python the `requests` 
+library is useful to this end, particularly `requests.get(url)`. The return value can be cast as
+`json` format, in fact a list containing one dictionary. From the dictionary we have the attributes
+of the named element. 
+
+
+The following example client looks up electronegativity for 10 elements. The idea will be to make use 
+of the existing `lookup` route provided by the API. The client code pulls out the resulting value; or
+reports if there is no such value. This code also illustrates a simple timing mechanism that will 
+indicate that most of the run time is spent waiting for the API call to return. Note that the 
+client does not have any insight into the breakdown of this latency on the server side, for example
+whether the delay is in the internet or in the database lookup.
 
 
 ```
-response = requests.get("https://pythonbytes.azurewebsites.net/api/lookup/", params={"name": "Carbon"})
+import requests
+import time
+
+tt = time.time(); sum_ti = sum_tp = 0.
+
+url = 'https://pythonbytes.azurewebsites.net/api/lookup'
+elements = ['Fluorine', 'Sodium', 'Oxygen', 'Hydrogen', 'Carbon', 'Chlorine', 'Potassium', 'Calcium', 'Magnesium', 'Argon']
+attribute = "Electronegativity"
+print(attribute + ": ")
+for e in elements:
+    ti0 = time.time()
+    d = requests.get(url + '?name=' + e).json()[0]
+    ti1 = time.time()
+
+    if attribute in d: print(e + ": " + str(d[attribute]))
+    else:              print(e + " does not have a specified " + attribute)
+    
+    ti2 = time.time()
+
+    sum_ti += ti1 - ti0
+    sum_tp += ti2 - ti1
+    
+tt = time.time() - tt
+
+print('\nFraction of time spent on requests.get():', round(sum_ti/tt, 3))
+print('                       on print():',          round(sum_tp/tt))
+```
+
+
+Here is an alternative Python `requests.get()` call passing the key-value information as a dictionary called `params`:
+
+
+```
+response = requests.get("https://pythonbytes.azurewebsites.net/api/lookup/", params={"name": "Sodium"})
 ```
