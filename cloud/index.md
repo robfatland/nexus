@@ -28,10 +28,12 @@ concern "cloud" consumer services like iCloud and Google Drive.
 - [Containerization source](https://github.com/naclomi/containers-tutorial)
     - [Containerization published](https://naclomi.github.io/containers-tutorial/)
     - [Carpentries introduction to docker containers](https://carpentries-incubator.github.io/docker-introduction/)
+- Build an HPC cluster on a cloud platform: [AWS PCS](https://youtu.be/ciHU2fDzhSc?si=mVxL8qAjJALq8vl8), Azure, GCP
 
 
 
 Cloud computing for research comes at a dollar cost. We are interested in optimizing spend.
+
 
 
 * Preemptible instance use on the cloud (70-90% savings)
