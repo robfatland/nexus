@@ -2,6 +2,9 @@
 [data index source](https://github.com/robfatland/nexus/blob/gh-pages/data/index.md)
 
 
+[uh oh error link](https://github.com/robfatland/nexus/edit/gh-pages/data/api.md#process.py-may-have-developed-an-incompatiblity)
+
+
 # api
 
 
@@ -41,8 +44,45 @@ integrate well with the Azure cloud.
 ## Skip for now: Set up a VM
 
 
-## Skip for now: Build the NoSQL Database
+## Build the NoSQL Database
 
+
+This will be called `robs-data-ocean` and it is built on the Azure portal, being careful to check 
+**Do not apply** on the "Free Tier Discount". And West US 2 (Moses Lake). Be sure as well to 
+**Disable** both aspects of Global Distribution. 
+
+
+> Not addressed: apt install of `pip` and `venv` was already done for (below, out of sequence)
+> the Function App... in this case why no environment creation prior? Nothing about `PATH`.
+> I decide to close this VSCode session and start clean... but as I already ran it there is
+> nothing to be done in `sudo apt install -y` for `python` and `venv`. Ok... and
+> `pip3 install -r requirements.txt` takes some time but is also ok. 
+
+### process.py may have developed an incompatibility
+
+
+```
+(base) azureuser@rob-jan-2025-azure-vm:~/db-populate$ python3 process.py periodic-table.csv
+Traceback (most recent call last):
+  File "/home/azureuser/db-populate/process.py", line 8, in <module>
+    import pandas as pd
+  File "/home/azureuser/miniconda3/lib/python3.12/site-packages/pandas/__init__.py", line 22, in <module>
+    from pandas.compat import is_numpy_dev as _is_numpy_dev  # pyright: ignore # noqa:F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/miniconda3/lib/python3.12/site-packages/pandas/compat/__init__.py", line 25, in <module>
+    from pandas.compat.numpy import (
+  File "/home/azureuser/miniconda3/lib/python3.12/site-packages/pandas/compat/numpy/__init__.py", line 4, in <module>
+    from pandas.util.version import Version
+  File "/home/azureuser/miniconda3/lib/python3.12/site-packages/pandas/util/__init__.py", line 2, in <module>
+    from pandas.util._decorators import (  # noqa:F401
+  File "/home/azureuser/miniconda3/lib/python3.12/site-packages/pandas/util/_decorators.py", line 14, in <module>
+    from pandas._libs.properties import cache_readonly
+  File "/home/azureuser/miniconda3/lib/python3.12/site-packages/pandas/_libs/__init__.py", line 13, in <module>
+    from pandas._libs.interval import Interval
+  File "pandas/_libs/interval.pyx", line 1, in init pandas._libs.interval
+ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
+(base) azureuser@rob-jan-2025-azure-vm:~/db-populate$
+```
 
 ## Build the Azure Function App
 
