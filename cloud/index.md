@@ -29,6 +29,7 @@ concern "cloud" consumer services like iCloud and Google Drive.
     - [Containerization published](https://naclomi.github.io/containers-tutorial/)
     - [Carpentries introduction to docker containers](https://carpentries-incubator.github.io/docker-introduction/)
 - Build an HPC cluster on a cloud platform: [AWS PCS](https://youtu.be/ciHU2fDzhSc?si=mVxL8qAjJALq8vl8), Azure, GCP
+- [Superb learning channel for the AWS cloud platform](https://www.youtube.com/@TechHpc)
 
 
 
