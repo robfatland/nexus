@@ -2,7 +2,7 @@
 [data index source](https://github.com/robfatland/nexus/blob/gh-pages/data/index.md)
 
 
-[uh oh error link](https://github.com/robfatland/nexus/edit/gh-pages/data/api.md#process.py-may-have-developed-an-incompatiblity)
+[uh oh error link](#process-dot-py-may-have-developed-an-incompatiblity)
 
 
 # api
