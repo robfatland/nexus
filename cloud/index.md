@@ -23,7 +23,7 @@ concern "cloud" consumer services like iCloud and Google Drive.
 ## references
 
 
-- [VM, Database, Serverless tutorials (Azure) source](https://github.com/cloudbank-project/az-serverless-tutorial/tree/main)]
+- [VM, Database, Serverless tutorials (Azure) source](https://github.com/cloudbank-project/az-serverless-tutorial/tree/main)
     - [VM, Database, Serverless tutorials (Azure) published](https://cloudbank-project.github.io/az-serverless-tutorial/)
 - [Containerization source](https://github.com/naclomi/containers-tutorial)
     - [Containerization published](https://naclomi.github.io/containers-tutorial/)
