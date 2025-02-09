@@ -58,7 +58,7 @@ This will be called `robs-data-ocean` and it is built on the Azure portal, being
 > nothing to be done in `sudo apt install -y` for `python` and `venv`. Ok... and
 > `pip3 install -r requirements.txt` takes some time but is also ok. 
 
-### process.py may have developed an incompatibility
+### process dot py may have developed an incompatibility
 
 
 ```
