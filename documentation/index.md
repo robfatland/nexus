@@ -1,31 +1,30 @@
 [nexus](https://robfatland.github.io/nexus), [index source](https://github.com/robfatland/nexus/blob/gh-pages/index.md), 
-[nexus main branch](https://github.com/robfatland/nexus/tree/main)
+[documentation index](https://github.com/robfatland/nexus/blob/gh-pages/documentation/index.md)
 
 
 # documentation
 
 
-This is the `index.md` anchor. 
-
-
 ## ambitious agenda
 
 
-Documentation covers two topics: How to build documentation *mechanically* and *philosophically*. This 
-is the "Proofs from the Book" idea that there is an optimal path to find in presenting some complex
-topic. This site is centered on the tech, tools and methods of open science (and how to document 
-that all that to reduce dependence on *memorization*.) While building this out: Refer also to 
-the `nexus` [lexicon page](https://github.com/robfatland/nexus/blob/gh-pages/lexicon.md). 
+Documentation covers building documentation *mechanically* and building it *philosophically*. This 
+is the "Proofs from the Book" idea that there is an optimal path in presenting a complex
+topic. `nexus` is centered on tech, tools and methods of open science; and having ideas on documentation
+is part of that, i.e. not just "document how to start a VM" but "document my code" and "document
+my code performance" and so on.
+
+
+See also the `nexus` [lexicon page](https://github.com/robfatland/nexus/blob/gh-pages/lexicon.md). 
 
 
 ### Topics to include
 
 
-* `top`, timing code execution (documentation skills)
+* `top`, timing code execution
 
 
-
-## markdown
+## markdown maybe gets its own child page
 
 ### 1 headers
 
