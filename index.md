@@ -18,10 +18,11 @@ generated when working through (external) resources like guides and tutorials.
 
 - left-justified links go to published GitHub pages
     - Indented links go to `gh-pages` source markdown files
+    - Each topic is an `index.md` file and this will have...
+        - ...one or more children pages, second indentation
 
 
-Each major subtopic is anchored by an `index.md` *index* page with
-sub-pages built from there: A 3-level tree. 
+Nexus is consequently a 3-level tree. 
 
 
 - [nexus published](https://robfatland.github.io/nexus)
@@ -57,14 +58,15 @@ sub-pages built from there: A 3-level tree.
     - [artificial intelligence index](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md)
 
 
-[Essay: Approach to understanding the cloud-for-research time investment](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md#the-basic-idea-here)
+[Essay: Understanding the cloud-for-research time investment](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md#the-basic-idea-here)
 
 
 ## Why is nexus?
 
 
 **nexus** was conceived as a response to the tech 'profusion/latency' problem: I need to track a bunch
-of technology with a profusion of details; I am obliged to spend months focused in one particular area; 
-after months of neglect I must return to and re-learn some skills. This is both onerous and depressing.
-So `nexus` is intended to document everything for later use *without* the excrutiating pain of reinventing it.
+of technology with a profusion of details; and I am obliged to spend months focused in one particular area. 
+After long neglect I return to an old topic and find myself re-learning a lot of details. This is onerous 
+and depressing. So to heck with that, nichte diese Töne. `nexus` documents everything I know to reduce
+the stress of starting over.
 
