@@ -56,6 +56,9 @@ Nexus is consequently a 3-level tree.
     - [containers index](https://github.com/robfatland/nexus/blob/gh-pages/containers/index.md)
 - [artificial intelligence published](https://robfatland.github.io/nexus/ai)
     - [artificial intelligence index](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md)
+- [quantum computing published](https://robfatland.github.io/nexus/quantum)
+    - [quantum computing index](https://github.com/robfatland/nexus/blob/gh-pages/quantum/index.md)
+        - [Hadamard gates](https://github.com/robfatland/nexus/blob/gh-pages/quantum/hadamard.md)
 
 
 [Essay: Understanding the cloud-for-research time investment](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md#the-basic-idea-here)
