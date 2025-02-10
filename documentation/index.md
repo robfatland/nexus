@@ -1,6 +1,10 @@
 [nexus](https://robfatland.github.io/nexus), [index source](https://github.com/robfatland/nexus/blob/gh-pages/index.md), 
 [documentation index](https://github.com/robfatland/nexus/blob/gh-pages/documentation/index.md)
 
+<img src="../assets/img/forestpath.png"
+     alt="my kingdom for some breadcrumbs"
+     width="400"
+     style="float: center; margin-right: 10px;" />
 
 # documentation
 
