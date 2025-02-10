@@ -9,6 +9,26 @@ Sources...
 
 - Incidental locations to check...
     - Both README files (main and gh-pages) of this repo; OneNote; GitHub fossils; GDrive (at least 3 orgs)
+    - and nexus in general is starting to accumulate stubs
+    - Existing GitHub repos
+        - [Cloud 101/102 dates back to 2017](https://github.com/robfatland/cloud101102)
+        - [curriculum](https://github.com/robfatland/curriculum) is some teraform stuff; this will take 10 minutes to scrape and delete
+        - **cli** likewise scrape and delete
+        - **cloudsecurity**
+        - **quantum**
+        - **zero2x**
+        - **costnotify**
+        - **nlp**
+        - **serverless**
+        - **digitaltwin**
+        - **runawaytrain**
+        - **carpentries**
+        - **cbburn**
+        - **git**
+        - Oceanography (not CI-useful but relevant to data science)
+            - [oceanography (current, Jupyter book)](https://github.com/robfatland/oceanography)
+            - [galleryclone](https://github.com/robfatland/galleryclone), [notebooks](https://github.com/robfatland/notebooks), [chlorophyll](https://github.com/robfatland/chlorophyll)
+            - **ocean**, **golive**, **sensors**
 - MSE544 Cloud Skills
     - [VMs + Database + Serverless (Azure) source](https://github.com/cloudbank-project/az-serverless-tutorial/tree/main)]
         - [VMs + Database + Serverless as published](https://cloudbank-project.github.io/az-serverless-tutorial/)
@@ -58,17 +78,16 @@ Sources...
 
 
 * Look at HyakAndCloud in the `main` branch; and scoop up anything else like that and move it to the pipeline here on gh-pages
-
-
-
-To unbind the Print Screen key to OneNote screen capture in Windows:
-
-* Windows settings > Accessibility > Keyboard > Use the print screen key to open screen capture > toggle off
+* Document and use more of the screencap workflow
+* To unbind the Print Screen key to OneNote screen capture in Windows:
+    * Windows settings > Accessibility > Keyboard > Use the print screen key to open screen capture > toggle off
 
 
 ## Reminders on other simple little topics...
 
+
 ### Other Math Club on package installs
+
 
 Look in the `Basic Programming.ipynb` in that same folder: On `conda-forge` for WSL-2 Linux 
 and installing for IDLE installations using the Windows Command Prompt.
@@ -133,9 +152,11 @@ to pay for a higher sampling rate in the console... but why?"
 
 ### Keep a VM patched
 
+
 ```
 sudo apt-get update -y && sudo apt-get upgrade -y
 ```
+
 
 alternative...?...
 
@@ -146,23 +167,19 @@ sudo apt install
 
 ## more residual remarks from the gh-pages README
 
-- The `lexicon.md` list of terms is relevant, needs a ton of work
-- The file `index.md` is a compendium of useful recipes including the titular material on simplifying bash windows; more work here also
+
 - What are the relevant related repos ***R3***?
     - `runawaytrain` has AWS Organizations and some API use; so very AWS-cloud-centric 
     - formerly `reorganiseduponthefloor` has `git` and more: to transplant
     - `cbburn` does have some pandas DataFrame manipulation
     - `digitaltwin` is itself
     - `serverless` is itself
-    - Left Off Here
 
 
 [This repo](https://github.com/robfatland/greenandblack/tree/main)
 began as a Note To Self on simplifying format of the *Bourne again shell* **`bash`**: 
 No colorized text, just green characters on a black background.
 
-
-- this repo uses GitHub **pages** so switch to the **`gh-pages`** branch to edit content
 - customizing `bash` and `vi` is focused on green-on-black, a simple prompt, and text editing
 - scope expanded to include
     - **`ssh`** tunnels from one machine to another
