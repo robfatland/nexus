@@ -31,7 +31,7 @@ Sure, here you go.
 
 <img src="../assets/img/author.png"
      alt="the author in a contemplative moment"
-     width="300"
+     width="220"
      style="float: center; margin-right: 10px;" />
 
 
