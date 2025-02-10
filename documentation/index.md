@@ -23,9 +23,16 @@ See also the `nexus` [lexicon page](https://github.com/robfatland/nexus/blob/gh-
 
 * `top`, timing code execution
 
-## An author dust jacket photo to go with all this great information?
+## Can we have an author 'dust jacket photo' please?
 
 
+Sure, here you go.
+
+
+<img src="assets/img/author.png"
+     alt="green and black icon"
+     width="300"
+     style="float: center; margin-right: 10px;" />
 
 
 
