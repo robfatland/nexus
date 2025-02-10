@@ -29,8 +29,8 @@ See also the `nexus` [lexicon page](https://github.com/robfatland/nexus/blob/gh-
 Sure, here you go.
 
 
-<img src="assets/img/author.png"
-     alt="green and black icon"
+<img src="../assets/img/author.png"
+     alt="the author in a contemplative moment"
      width="300"
      style="float: center; margin-right: 10px;" />
 
