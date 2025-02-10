@@ -31,14 +31,13 @@ on Sodium.
 
 
 Two things I want to pay attention to are debugging methods and calling out "under the hood"
-functionality. The idea is to broaden understanding beyond "copy and paste this magic command"
-approach to building a cloud data system.
+functionality. The idea is build a cloud data system from an informed perspective.
 
 
-This walkthrough makes extensive use of two **environments** used in combination. The first is 
-a low-power, low-cost on-demand virtual machine (VM) on the Azure cloud. The second is an application
-called **VSCode**, a popular free IDE available from Microsoft. Both the VM and VSCode 
-integrate well with the Azure cloud. 
+This walkthrough makes extensive use of two **workshops** (to avoid using the word *environment*).
+The first workshop is the `bash` shell running on a low-power, low-cost on-demand virtual machine (VM) on the 
+Azure cloud. The second workshop is the **VSCode** application, a popular and free IDE available from 
+Microsoft. Both the VM and the VSCode workshops will integrate well with the Azure cloud. 
 
 
 ## Skip for now: Set up a VM
