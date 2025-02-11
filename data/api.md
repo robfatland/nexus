@@ -67,7 +67,15 @@ This will be called `robs-data-ocean` and it is built on the Azure portal, being
 > the Function App... in this case why no environment creation prior? Nothing about `PATH`.
 > I decide to close this VSCode session and start clean... but as I already ran it there is
 > nothing to be done in `sudo apt install -y` for `python` and `venv`. Ok... and
-> `pip3 install -r requirements.txt` takes some time but is also ok. 
+> `pip3 install -r requirements.txt` takes some time but is also ok.
+
+
+Execute the loader Python script: 
+
+```
+python3 process.py periodic-table.csv
+```
+
 
 ### process dot py may have developed an incompatibility
 
