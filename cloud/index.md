@@ -56,3 +56,10 @@ cloud computing for a mere $10,000 and get better research results as a conseque
 clinic will catch you up on the how-tos and other small details of such a substantial gain in
 compute power. We use a CNN as our example implementation of a compute-intensive research task.
 
+
+
+## gpu instances on AWS
+
+
+- P and G series are recommended GPU-compatible EC2 instance types
+- Here is a helpful [medium article](https://nishant-parmar.medium.com/using-aws-g-and-p-series-ec2-instances-for-high-quality-rendering-cloud-gaming-and-machine-55195075334c)
