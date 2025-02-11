@@ -76,6 +76,25 @@ Execute the loader Python script:
 python3 process.py periodic-table.csv
 ```
 
+## debugging
+
+
+Suppose there is some sort of fail and an associated error message.
+
+
+- copy/paste the error message or fractions thereof in the browser
+    - one can prepend qualifiers like "Azure" or "Python" if that seems like it will help constrain the focus
+    - often the search turns up hits to stack overflow or other knowledge bases
+        - proceed with caution; see if any of the provided recipes make sense or even resolve the problem
+- simplify the problem code to narrow down where the issue lies
+    - Example: the error message cites line 12 of a 75 line program as the source of the problem
+        - Comment out everything from line 13 to the end of the file and re-run to reproduce the error
+        - Supposing the error still happens: Comment out line 12 to ensure the error goes away
+        - Supposing the error goes away but line 12 is simply `import pandas as pd`
+            - This should work by itself; so it must be a preceding line of code that is the issue
+            - Comment out other lines of code to identify the incompatibility
+- Get Python version numbers for installed modules
+    - `pip show numpy` and the much simpler `pip list`
 
 ### process dot py may have developed an incompatibility
 
@@ -111,6 +130,20 @@ import warnings
 warnings.filterwarnings("ignore", message="numpy.dtype size changed")
 warnings.filterwarnings("ignore", message="numpy.ufunc size changed")
 ```
+
+I prepended this to `process.py` but it had no effect; so I tried a few more cut/paste
+searches. Finally hit upon this sequence involving HDBSCAN... I'm not sanguine but fwiw: 
+
+
+```
+pip install --upgrade pip setuptools wheel
+pip install bertopic --no-cache-dir
+pip uninstall hdbscan -y
+pip install hdbscan --no-cache-dir --no-binary :all: --no-build-isolation
+```
+
+I shudder to think what this is doing; it is at the magic spell phase and certainly takes a long time before 
+halting with error message 'Cython not found!'. 
 
 
 ## Build the Azure Function App
