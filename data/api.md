@@ -11,36 +11,48 @@
 The objective is to build an API that can return data from a NoSQL database.
 
 
-## notes from the 5r4 walkthrough
+## from the MSE544 walkthrough...
 
 This narrative follows the [MSE544 course activity](https://cloudbank-project.github.io/az-serverless-tutorial/) 
 built as proof of concept on Azure. This does not include 
 [***Containerization with docker***](https://naclomi.github.io/containers-tutorial/).
 
 
-- Start up and configure a VM on the Azure cloud as a base of operations
-- Create a NoSQL database, again on Azure, and publish the periodic table of elements to it
-    - The Azure brand name for a NoSQL database is "Cosmos DB"
-- Create a serverless function (on Azure called a 'Function App') that incorporates an API
-    - In this case the API is written in Python
-    - It connects to and uses the NoSQL database
- 
-
-The first major success milestone is when I can interrogate the periodic table for information 
-on Sodium. 
+- Not annotated yet: Start up and configure a VM on the Azure cloud as a base of operations
+- Annotation in process: Create an Azure NoSQL database and publish the periodic table of elements
+    - Azure brand name for NoSQL database service is "Cosmos DB"
+- Annotated: Create a serverless function (on Azure called a 'Function App') that incorporates an API
+    - ...in Python
+    - ...connect to, accesses the NoSQL database
+ - Not really covered yet: Debugging methods
 
 
-Two things I want to pay attention to are debugging methods and calling out "under the hood"
-functionality. The idea is build a cloud data system from an informed perspective.
+The first milestone is interrogating the periodic table for information on (say) sodium
+from the Azure portal viewed in a browser tab. The second milestone is making the same
+sodium query from a blank browser tab. The browser (via a URL) invokes an episodic burst
+of simple activity generically called a "cloud serverless function". The brand name in this
+case for Azure is "Azure Function" or equivalently "Azure Function App". 
 
 
-This walkthrough makes extensive use of two **workshops** (to avoid using the word *environment*).
+The third milestone is to interrogate the periodic table from code, specifically using 
+a Python program that uses the Python `requests` library. This Python program is an 
+API *Client* where the database and Azure Function app together comprise the API (cloud data)
+*Server*. At the end of all this we have a completely automated program-to-program data 
+access procedure that models everything that happens on the internet. Underlying all of
+this is a message passing protocol called `HTTP`. 
+
+
+Two things to build out in one's comprehension are *debugging methods* and *underlying context*.
+
+
+A note on process: 
+This walkthrough makes extensive use of two virtual **workshops** (to avoid using the word *environment*).
 The first workshop is the `bash` shell running on a low-power, low-cost on-demand virtual machine (VM) on the 
 Azure cloud. The second workshop is the **VSCode** application, a popular and free IDE available from 
-Microsoft. Both the VM and the VSCode workshops will integrate well with the Azure cloud. 
+Microsoft. Both the VM and the VSCode workshops integrate well with the Azure cloud. 
 
 
-## Skip for now: Set up a VM
+## Skipped for now: Set up a VM
 
 
 ## Build the NoSQL Database
