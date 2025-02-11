@@ -11,9 +11,9 @@
 The objective is to build an API that can return data from a NoSQL database.
 
 
-## notes from the 554 walkthrough
+## notes from the 5r4 walkthrough
 
-This narrative follows the [MSE554 course activity](https://cloudbank-project.github.io/az-serverless-tutorial/) 
+This narrative follows the [MSE544 course activity](https://cloudbank-project.github.io/az-serverless-tutorial/) 
 built as proof of concept on Azure. This does not include 
 [***Containerization with docker***](https://naclomi.github.io/containers-tutorial/).
 
