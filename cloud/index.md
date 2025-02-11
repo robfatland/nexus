@@ -61,5 +61,5 @@ compute power. We use a CNN as our example implementation of a compute-intensive
 ## gpu instances on AWS
 
 
-- P and G series are recommended GPU-compatible EC2 instance types
+- P and G series are recommended [GPU-compatible EC2 instance types](https://docs.aws.amazon.com/dlami/latest/devguide/gpu.html)
 - Here is a helpful [medium article](https://nishant-parmar.medium.com/using-aws-g-and-p-series-ec2-instances-for-high-quality-rendering-cloud-gaming-and-machine-55195075334c)
