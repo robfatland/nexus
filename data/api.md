@@ -95,7 +95,18 @@ ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expec
 (base) azureuser@rob-jan-2025-azure-vm:~/db-populate$
 ```
 
+A search on the ValueError "numpy ... etc ..." turns up [this stack overflow remark](https://stackoverflow.com/questions/40845304/runtimewarning-numpy-dtype-size-changed-may-indicate-binary-incompatibility) that recommends adding this code: 
+
+
+```
+import warnings
+warnings.filterwarnings("ignore", message="numpy.dtype size changed")
+warnings.filterwarnings("ignore", message="numpy.ufunc size changed")
+```
+
+
 ## Build the Azure Function App
+
 
 - skip for now: multiple steps leading up to `Hey Galaxy` test code
 - skip for now: In the interest of whatabout: Can we use a `conda` environment?
