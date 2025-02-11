@@ -36,12 +36,14 @@ concern "cloud" consumer services like iCloud and Google Drive.
 Cloud computing for research comes at a dollar cost. We are interested in optimizing spend.
 
 
-
 * Preemptible instance use on the cloud (70-90% savings)
     * [Dedicated notes here in nexus](https://github.com/robfatland/nexus/edit/gh-pages/cloud/spot.md)
     * [Oorjit's repo on ML using preemptible VMs](https://github.com/oorjitchowdhary/ml-training-preemptible-vms/blob/main/README.md)
 
 
+## open topic: access control
+
+* subnet masks and so on
 ## cloud clinics
 
 
