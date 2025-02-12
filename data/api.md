@@ -2,9 +2,6 @@
 [data index source](https://github.com/robfatland/nexus/blob/gh-pages/data/index.md)
 
 
-[uh oh error link](https://github.com/robfatland/nexus/blob/gh-pages/data/api.md#process-dot-py-may-have-developed-an-incompatibility)
-
-
 # api
 
 
@@ -79,71 +76,29 @@ python3 process.py periodic-table.csv
 ## debugging
 
 
-Suppose there is some sort of fail and an associated error message.
+While testing the database build steps I ran into an error during `python process.py periodic-table.csv`. 
+It appeared to be a library import statement for `pandas`. Three debug procedures:
 
 
-- copy/paste the error message or fractions thereof in the browser
-    - one can prepend qualifiers like "Azure" or "Python" if that seems like it will help constrain the focus
-    - often the search turns up hits to stack overflow or other knowledge bases
-        - proceed with caution; see if any of the provided recipes make sense or even resolve the problem
-- simplify the problem code to narrow down where the issue lies
-    - Example: the error message cites line 12 of a 75 line program as the source of the problem
-        - Comment out everything from line 13 to the end of the file and re-run to reproduce the error
-        - Supposing the error still happens: Comment out line 12 to ensure the error goes away
-        - Supposing the error goes away but line 12 is simply `import pandas as pd`
-            - This should work by itself; so it must be a preceding line of code that is the issue
-            - Comment out other lines of code to identify the incompatibility
-- Get Python version numbers for installed modules
-    - `pip show numpy` and the much simpler `pip list`
-
-### process dot py may have developed an incompatibility
-
-
-```
-(base) azureuser@rob-jan-2025-azure-vm:~/db-populate$ python3 process.py periodic-table.csv
-Traceback (most recent call last):
-  File "/home/azureuser/db-populate/process.py", line 8, in <module>
-    import pandas as pd
-  File "/home/azureuser/miniconda3/lib/python3.12/site-packages/pandas/__init__.py", line 22, in <module>
-    from pandas.compat import is_numpy_dev as _is_numpy_dev  # pyright: ignore # noqa:F401
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/azureuser/miniconda3/lib/python3.12/site-packages/pandas/compat/__init__.py", line 25, in <module>
-    from pandas.compat.numpy import (
-  File "/home/azureuser/miniconda3/lib/python3.12/site-packages/pandas/compat/numpy/__init__.py", line 4, in <module>
-    from pandas.util.version import Version
-  File "/home/azureuser/miniconda3/lib/python3.12/site-packages/pandas/util/__init__.py", line 2, in <module>
-    from pandas.util._decorators import (  # noqa:F401
-  File "/home/azureuser/miniconda3/lib/python3.12/site-packages/pandas/util/_decorators.py", line 14, in <module>
-    from pandas._libs.properties import cache_readonly
-  File "/home/azureuser/miniconda3/lib/python3.12/site-packages/pandas/_libs/__init__.py", line 13, in <module>
-    from pandas._libs.interval import Interval
-  File "pandas/_libs/interval.pyx", line 1, in init pandas._libs.interval
-ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
-(base) azureuser@rob-jan-2025-azure-vm:~/db-populate$
-```
-
-A search on the ValueError "numpy ... etc ..." turns up [this stack overflow remark](https://stackoverflow.com/questions/40845304/runtimewarning-numpy-dtype-size-changed-may-indicate-binary-incompatibility) that recommends adding this code: 
+- copy/paste the error message or fractions thereof in the browser search window
+    - Possibly helpful: prepend qualifiers like "Azure" or "Python"
+    - This often finds related stack overflow (etc) pages
+    - These may or may *not* be helpful; proceed with caution
+- Create a simplified version of the program to isolate the error
+    - Example: the error message cites a problem at line 12
+    - Create a 12-line version of the program and see if this still gives the error
+    - In this case there was some sort of arcane library incompatibility...
+- Simplify `requirements.txt` and reinstall the environment
+    - To get Python library version numbers for installed modules:
+        - `pip show numpy` and the much simpler `pip list`
+    - To uninstall: `pip uninstall -r requirements.txt`
+    - To simplify the listing: `pandas==2.0.3` becomes simply `pandas`, and so on
+    - To reinstall: `pip install -r requirements.txt`
+    - The `process.py` file was restored to its intended content; and now ran to completion
 
 
-```
-import warnings
-warnings.filterwarnings("ignore", message="numpy.dtype size changed")
-warnings.filterwarnings("ignore", message="numpy.ufunc size changed")
-```
-
-I prepended this to `process.py` but it had no effect; so I tried a few more cut/paste
-searches. Finally hit upon this sequence involving HDBSCAN... I'm not sanguine but fwiw: 
-
-
-```
-pip install --upgrade pip setuptools wheel
-pip install bertopic --no-cache-dir
-pip uninstall hdbscan -y
-pip install hdbscan --no-cache-dir --no-binary :all: --no-build-isolation
-```
-
-I shudder to think what this is doing; it is at the magic spell phase and certainly takes a long time before 
-halting with error message 'Cython not found!'. 
+Working with the continuously evolving collection of Python libraries can be a murky process.
+Debugging steps such as described above are simple; and simple is a recommended way to start.
 
 
 ## Build the Azure Function App
