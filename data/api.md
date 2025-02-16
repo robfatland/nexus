@@ -8,7 +8,11 @@
 The objective is to build an API that can return data from a NoSQL database.
 
 
-## from the MSE544 walkthrough...
+- Version 1: The MSE544 [Periodic table exercise](#the-mse544-periodic-table)
+- Version 2: The Cloud Clinic 2 [Ocean Observatory exercise](#ocean-observatory-data)
+
+
+## The MSE544 periodic table
 
 This narrative follows the [MSE544 course activity](https://cloudbank-project.github.io/az-serverless-tutorial/) 
 built as proof of concept on Azure. This does not include 
@@ -266,3 +270,8 @@ as dictionary `params`:
 ```
 response = requests.get("https://pythonbytes.azurewebsites.net/api/lookup/", params={"name": "Sodium"})
 ```
+
+
+## ocean observatory data
+
+ici
