@@ -190,3 +190,25 @@ No colorized text, just green characters on a black background.
         - **`VSCode`**?
     - containers
     - conda environments
+
+
+## nexus aspirations
+
+
+- TCOTU: Understanding, building, maintaining, using Python environments
+    - corollary: customizing `bash`, `vi` to a simple appearance
+    - **`ssh`** tunnels from one machine to another
+    - headless `jupyter` running on a cloud VM with a localhost laptop interface
+- Comparison: **`miniconda`** versus **`anaconda`**
+- PC-based Linux / IDE: **`Ubuntu bash`**, **`WSL-2`**, **`VSCode`**
+    - Containerization
+    - conda environments
+- cloud infrastructure building
+        - Data systems, APIs
+        - Building a Flask server
+        - Cloud security
+        - ML/AI: CNN, NLP
+        - varieties of cloud CLI
+        - cloud spend notification
+        - stopping runaway cloud spend automatically
+- [Python's guide to publishing a software package](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
