@@ -14,7 +14,7 @@ This section of `nexus` really serves two ideas: `documentation` as a task withi
 smoother and faster; and then *documentation* as a philosophical topic.
 
 
-## dust jacket photo
+## children
 
 
 <img src="../assets/img/author.png"
@@ -22,6 +22,8 @@ smoother and faster; and then *documentation* as a philosophical topic.
      width="220"
      style="float: center; margin-right: 10px;" />
 
+
+- [markdown](https://github.com/robfatland/nexus/blob/gh-pages/documentation/markdown.md)
 
 
 ## Tactical documentation
