@@ -1,23 +1,28 @@
-**nexus** is a *threefold documentation resource* for open research: *native*, *external* via URL pointers, 
-and *hybrid*. Hybrid documentation is commentary generated when working through an external resource such 
-as a tutorial. This is intended to fill context gaps, note gotchas and so on: Make the path easier to follow.
+[nexus published](https://robfatland.github.io/nexus), [index source](https://github.com/robfatland/nexus/blob/gh-pages/index.md)
 
 
-This is the [meta-narrative for nexus](https://github.com/robfatland/nexus), main branch `README.md`. 
-<br> **nexus** source is the [`gh-pages` branch](https://github.com/robfatland/nexus/tree/gh-pages).
-<br> **nexus** publishes at [https://robfatland.github.io/nexus](https://robfatland.github.io/nexus).
+# **nexus** 
+
+...is a *threefold documentation resource* for open research: *native*, *external* via URL pointers, 
+and *hybrid* documentation. *Hybrid* is commentary from working an external tutorial: To fill context gaps, 
+note gotchas and so on: Make the path easier to follow.
 
 
-# [nexus](https://robfatland.github.io/nexus/)
+- This is [`main:README.md` for nexus](https://github.com/robfatland/nexus).
+- For content go to the [`gh-pages` branch](https://github.com/robfatland/nexus/tree/gh-pages).
+- Static site published at [https://robfatland.github.io/nexus](https://robfatland.github.io/nexus).
+
+
+## motivation
 
 
 [This repo](https://github.com/robfatland/nexus/tree/main) is motivated by frustration: With sorting out
-some technical detail, writing out notes, losing the notes, and coming back to the same task three months
-later. The process to deal with this is to build the nexus static website using github pages. Themes are
-all within the topic of open science practice and how to build research computing cyberinfrastructure.
+a technical task; then writing out notes; then losing those notes; then coming back to the task three months
+later; then start over. Now the idea is to build the nexus static website from github pages. Theme is
+open science in practice, particularly how to build research computing cyberinfrastructure.
 
 
-## Example motivating tasks
+## Example tasks
 
 
 - How do I manage Python environments?
@@ -29,29 +34,11 @@ all within the topic of open science practice and how to build research computin
 - How do I set up a cloud VM as my power workstation and use Jupyter there from my laptop?
 
 
-## nexus aspirations (the to-do list)
 
+## Other projects in process
 
-- TCOTU: Understanding, building, maintaining, using Python environments
-    - corollary: customizing `bash`, `vi` to a simple appearance
-    - **`ssh`** tunnels from one machine to another
-    - headless `jupyter` running on a cloud VM with a localhost laptop interface
-- Comparison: **`miniconda`** versus **`anaconda`**
-- PC-based Linux / IDE: **`Ubuntu bash`**, **`WSL-2`**, **`VSCode`**
-    - Containerization
-    - conda environments
-- cloud infrastructure building
-        - Data systems, APIs
-        - Building a Flask server
-        - Cloud security
-        - ML/AI: CNN, NLP
-        - varieties of cloud CLI
-        - cloud spend notification
-        - stopping runaway cloud spend automatically
-- [Python's guide to publishing a software package](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
-- Some of my other current (2025) projects
-    - [epipelargosy, an oceanography Jupyter book](https://github.com/robfatland/oceanography)
-    - [steam: university-level STE(A)M notes](https://github.com/robfatland/steam)
-    - [sodium: a study of distributed forms of information](https://github.com/robfatland/sodium)
-    - [analytic number theory](https://github.com/robfatland/ant)
-    - [middle school level STE(A)M outreach](https://github.com/robfatland/othermathclub)
+- [epipelargosy, an oceanography Jupyter book](https://github.com/robfatland/oceanography)
+- [steam: university-level STE(A)M notes](https://github.com/robfatland/steam)
+- [sodium: a study of distributed forms of information](https://github.com/robfatland/sodium)
+- [analytic number theory](https://github.com/robfatland/ant)
+- [middle school level STE(A)M outreach](https://github.com/robfatland/othermathclub)
