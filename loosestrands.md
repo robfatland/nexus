@@ -3,9 +3,11 @@
 
 # Loose strands
 
-## CloudBank strands
 
-Sources...
+This page is an accumulator for nexus "content needed".
+
+
+## CloudBank strands
 
 - Incidental locations to check...
     - Both README files (main and gh-pages) of this repo; OneNote; GitHub fossils; GDrive (at least 3 orgs)
@@ -68,7 +70,6 @@ Sources...
     - [Neotoma](https://www.neotomadb.org/about)
 - Environments in relation to file system structure
 - Useful stuff
-    - [flameshot]() + unbind prtscn
     - [LaTeX]()
     - [Hugo](), [Jekyll]()
 
