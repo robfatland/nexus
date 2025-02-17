@@ -140,5 +140,5 @@ and so on; all driven by a simple desire to move from 'painful to look at' to
 (And LaTeX equations now render in GitHub markdown... it is claimed.)
 
 
-$\begin{align}y = \sqrt{x}\end{align}$
+$\begin{align}y = \sqrt{x^2}\end{align}$
 
