@@ -212,7 +212,27 @@ source ~/.bashrc
     - specifically `ACCOUNT_HOST` is the database ip address...
     - ...and `ACCOUNT_KEY` is the access key)
     - Suppose I accidentally commit this code to GitHub: I have created a huge security hole.
- 
+
+
+ ***Integrate this response***
+
+
+- Can of worms
+    - For a read-only API with data that is not privacy-sensitive (like the periodic table), the main reason to secure it is to prevent someone from using it too much and driving up your bill.
+    - The general way to "secure" an API is with a "token" or "key" (synonyms in this context), which is really just an ultra-long randomly generated password.
+    - Every user who will be accessing your API gets a token.
+    - They go to great effort to not accidentally publish the token to github.
+    - The API administrator needs a way of easily disabling any given token, given the above github scenario.
+    - They also usually want some way to keep track of the person to whom the token was assigned.
+    - The key is provided in every API request, but usually as an HTTP header rather than a URL variable
+        - (eg, it's invisibly a part of the request rather than something that appears after the "?" in the request URL)
+    - You could hypothetically code the logic to manage and check keys into your python program, but Azure Function Apps has some of that machinery built for you already, and that's what we should be using here.
+        - For a few reasons:
+            - (1) we don't have to worry about doing it wrong
+            - (2) we don't have to do all that engineering work
+            - (3) presumably we would get billed for the seconds our python code was checking keys, whereas if we use Azure Function App's built-in key system my assumption is we would not
+    - [Here's the documentation on how keys work in Azure Function Apps](https://learn.microsoft.com/en-us/azure/azure-functions/function-keys-how-to?tabs=azure-portal)
+
 
 ### Azure function app **routes**
 
