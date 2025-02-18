@@ -291,14 +291,27 @@ response = requests.get("https://pythonbytes.azurewebsites.net/api/lookup/", par
 
 ## oceanography
 
+
+### Process
+
+
 - [GeoSmart Jupyter book `oceanography`](https://github.com/geo-smart/oceanography)
-- From this the key code is `shallowprofiler.py`
-    - Adapting `ReadProfileMetadata()` code: single site, adapting to Oregon slope base, January 2022
-    - On the Azure VM we have a db-populate directory with code `process.py` (periodic table loader) as template
-    - Copy this to `process_profiles.py` and modify to load profile metadata into the `osb_profiles` container
-- Following this we want to work from source data to populate two more containers: `osb_temperature` and `osb_salinity`
+    - From this repository the first important source code file is `shallowprofiler.py`
+        - Adapting `ReadProfileMetadata()` code: single site, adapting to Oregon slope base, January 2022
+        - On the Azure VM we have a db-populate directory with example code `process.py`
+            - This was used above to load periodic table rows as dictionaries
+        - Copied this code to a new file `process_profiles.py`
+            - Modify this file to build a profile metadata loader > the `osb_profiles` container
+    - Populate containers `osb_temperature` and `osb_salinity`
  
-  
+
+This code is a simple CSV reader selecting out key metadata for profiler behavior.
+The profiler is an instrument pod parked at 200 meters depth that goes through a
+controlled ascent/descent to near the surface, nine times per day. Each profile is
+marked by four timestamps: Start of rest, start of ascent, start of descent, end of 
+descent.
+
+
 ```
 # read and format profile metadata: OSB, JAN-2022
 import pandas as pd
@@ -310,3 +323,6 @@ df['ascent start time'] = pd.to_datetime(df['ascent start time'])
 df['descent start time'] = pd.to_datetime(df['descent start time'])
 df['descent end time'] = pd.to_datetime(df['descent end time'])
 ```
+
+
+
