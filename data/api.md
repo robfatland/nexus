@@ -16,10 +16,19 @@ The objective is to build an API that can return data from a NoSQL database.
 
 
 - CosmosDB instance: `robs-data-ocean`
-- Database: `oceanography`
-- Container: `osb_profile`
-- Container: `osb_temperature`
-- Container: `osb_salinity`
+- Databases
+    - `periodic-db`
+        - Container: `elements`
+    - `oceanography`
+        - Container: `osb_profile`
+        - Container: `osb_temperature`
+        - Container: `osb_salinity`
+
+
+***For follow-along annotation (Periodic table of elements): Keep reading***
+
+
+***For the oceanography segment: [Jump down in this document](#oceanography)***
 
 
 This narrative follows the [MSE544 course activity](https://cloudbank-project.github.io/az-serverless-tutorial/) 
@@ -280,7 +289,7 @@ response = requests.get("https://pythonbytes.azurewebsites.net/api/lookup/", par
 ```
 
 
-## ocean observatory data
+## oceanography
 
 - [GeoSmart Jupyter book `oceanography`](https://github.com/geo-smart/oceanography)
 - From this the key code is `shallowprofiler.py`
