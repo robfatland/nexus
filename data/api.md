@@ -14,6 +14,14 @@ The objective is to build an API that can return data from a NoSQL database.
 
 ## The MSE544 periodic table
 
+
+- CosmosDB: `robs-data-ocean`
+- Database: `oceanography`
+- Container: `osb_profile`
+- Container: `osb_temperature`
+- Container: `osb_salinity`
+
+
 This narrative follows the [MSE544 course activity](https://cloudbank-project.github.io/az-serverless-tutorial/) 
 built as proof of concept on Azure. This does not include 
 [***Containerization with docker***](https://naclomi.github.io/containers-tutorial/).
@@ -28,7 +36,7 @@ built as proof of concept on Azure. This does not include
  - Not really covered yet: Debugging methods
 
 
-The first milestone is interrogating the periodic table for information on (say) sodium
+The first milestone is interrogating the periodic table for information on (say) Sodium
 from the Azure portal viewed in a browser tab. The second milestone is making the same
 sodium query from a blank browser tab. The browser (via a URL) invokes an episodic burst
 of simple activity generically called a "cloud serverless function". The brand name in this
@@ -274,4 +282,22 @@ response = requests.get("https://pythonbytes.azurewebsites.net/api/lookup/", par
 
 ## ocean observatory data
 
-ici
+- [GeoSmart Jupyter book `oceanography`](https://github.com/geo-smart/oceanography)
+- From this the key code is `shallowprofiler.py`
+    - Adapting `ReadProfileMetadata()` code: single site, adapting to Oregon slope base, January 2022
+    - On the Azure VM we have a db-populate directory with code `process.py` (periodic table loader) as template
+    - Copy this to `process_profiles.py` and modify to load profile metadata into the `osb_profiles` container
+- Following this we want to work from source data to populate two more containers: `osb_temperature` and `osb_salinity`
+ 
+  
+```
+# read and format profile metadata: OSB, JAN-2022
+import pandas as pd
+df = pd.read_csv(sys.argv[1], usecols=["1","2","7","8","13","14","16","17"])
+df.columns=['rest start time','rest start depth','ascent start time','ascent start depth',
+            'descent start time','descent start depth','descent end time','descent end depth']
+df['rest start time'] = pd.to_datetime(df['rest start time'])
+df['ascent start time'] = pd.to_datetime(df['ascent start time'])
+df['descent start time'] = pd.to_datetime(df['descent start time'])
+df['descent end time'] = pd.to_datetime(df['descent end time'])
+```
