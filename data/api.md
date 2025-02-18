@@ -15,7 +15,7 @@ The objective is to build an API that can return data from a NoSQL database.
 ## The MSE544 periodic table
 
 
-- CosmosDB: `robs-data-ocean`
+- CosmosDB instance: `robs-data-ocean`
 - Database: `oceanography`
 - Container: `osb_profile`
 - Container: `osb_temperature`
