@@ -312,6 +312,42 @@ response = requests.get("https://pythonbytes.azurewebsites.net/api/lookup/", par
 ## oceanography
 
 
+This segment of the `nexus api` page concerns the "shoebox problem": A research team has a shoebox of
+data tapes from some point in the past and would like to make that data available; both for their own
+use and possibly for collaborators and for other research teams. The end objective is data access 
+through an API; so here we go through the steps to build this.
+
+
+### Narrative
+
+
+- Get the data in digital form
+- Set up and run pre-processing to get a test dataset in tabular format (`.csv`)
+    - In the worked example below the test dataset is about 400MB (text)
+- Establish a cloud VM and connect using VSCode as described above
+    - Configure the cloud as above
+- Establish a NoSQL database on the cloud: Working example is CosmosDB on Azure
+    - The cloud VM will be used to load the tabular data into the database...
+        - ...so it will need authentication credentials: See above
+- Move the tabular data to the cloud VM
+    - Move files to a cloud VM via secure ftp `sftp` as in...
+        - `chmod 400 .keypairs/cloud_VM_keypair.pem`
+        - `sftp -i .keypairs/cloud_VM_keypair.pem username@123.123.12.12`
+        - `sftp> put tabularfile.csv`
+- Create a program to load the tabular data
+    - The key code for the Azure example is `container.create_item()`
+    - This is run once per record
+- Establish a serverless function with a simple API to access the data
+    - The API has an access URL and one or more 'routes' corresponding to API commands
+    - Test the API using a Client written either on the cloud VM or on a local laptop
+
+
+In the expanded case described below the case is slightly more complicated: 
+There are two sensor streams and a metadata stream. All three are stored as 
+time series data with two or more additional columns of information. 
+
+
+
 ### Process
 
 
