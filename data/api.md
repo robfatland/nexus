@@ -333,15 +333,26 @@ descent.
 
 
 ```
-# read and format profile metadata: OSB, JAN-2022
+# pseudo-code for loading profile data into a container
+# read and format profile metadata: OSB, JAN-2022; all content treated as strings
 import pandas as pd
-df = pd.read_csv(sys.argv[1], usecols=["1","2","7","8","13","14","16","17"])
+df = pd.read_csv(filename, usecols=["1","2","7","8","13","14","16","17"])
 df.columns=['rest start time','rest start depth','ascent start time','ascent start depth',
             'descent start time','descent start depth','descent end time','descent end depth']
-df['rest start time'] = pd.to_datetime(df['rest start time'])
-df['ascent start time'] = pd.to_datetime(df['ascent start time'])
-df['descent start time'] = pd.to_datetime(df['descent start time'])
-df['descent end time'] = pd.to_datetime(df['descent end time'])
+print(df.shape)
+
+# Timestamps are not used; but here is a type conversion for a given column:
+# df['rest start time'] = pd.to_datetime(df['rest start time'])
+
+# open the connection to the target NoSQL database container
+client = etcetera; see tutorial
+db =
+container =
+
+# for each row in the CSV file create a database entry
+for record in df.to_dict(orient='records'):
+    record["id"] = record["ascent start time"]
+    container.create_item(body=record)
 ```
 
 
