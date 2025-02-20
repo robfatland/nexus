@@ -176,6 +176,7 @@ source ~/.bashrc
 
 Need remarks on `Azure Function Core Tools` in relation to the utility command `func`.
 Need remarks on `How does the localhost test work?' and the default port 7071 forward.
+Need a work-through example of using API keys provided by Azure Function Apps.
 
 
 ### Testing the Function App on the VM
@@ -209,43 +210,64 @@ Need remarks on `How does the localhost test work?' and the default port 7071 fo
                     - The code running on the Azure VM includes credentials to access the NoSQL Periodic table database
 
 
-### On database query mechanics and risk
+### database access risk
 
 
-- Code published to Azure is never visible to the outside world
-- The code on the VM contains authentication information
-    - specifically `ACCOUNT_HOST` is the database ip address...
-    - ...and `ACCOUNT_KEY` is the access key)
-    - Suppose I accidentally commit this code to GitHub: I have created a huge security hole.
+We consider three aspects of risk:
+- The Azure Function App database access credentials become public
+- The credentials we install on the development VM become public
+- The API itself becomes public
 
 
- ***Integrate this response***
+
+- On the first topic: Code published to Azure (in a Function App) is not visible to the outside world
+    - The Function App does have database access credentials 'built in'
+    - We can regard these as safe
 
 
-- Can of worms
-    - For a read-only API with data that is not privacy-sensitive (like the periodic table), the main reason to secure it is to prevent someone from using it too much and driving up your bill.
-    - The general way to "secure" an API is with a "token" or "key" (synonyms in this context), which is really just an ultra-long randomly generated password.
-    - Every user who will be accessing your API gets a token.
-    - They go to great effort to not accidentally publish the token to github.
-    - The API administrator needs a way of easily disabling any given token, given the above github scenario.
-    - They also usually want some way to keep track of the person to whom the token was assigned.
-    - The key is provided in every API request, but usually as an HTTP header rather than a URL variable
-        - (eg, it's invisibly a part of the request rather than something that appears after the "?" in the request URL)
-    - You could hypothetically code the logic to manage and check keys into your python program, but Azure Function Apps has some of that machinery built for you already, and that's what we should be using here.
-        - For a few reasons:
-            - (1) we don't have to worry about doing it wrong
-            - (2) we don't have to do all that engineering work
-            - (3) presumably we would get billed for the seconds our python code was checking keys, whereas if we use Azure Function App's built-in key system my assumption is we would not
-    - [Here's the documentation on how keys work in Azure Function Apps](https://learn.microsoft.com/en-us/azure/azure-functions/function-keys-how-to?tabs=azure-portal)
+- On the second topic: The code on the development VM contains two pieces of authentication information
+    - `ACCOUNT_HOST` is the database ip address
+    - `ACCOUNT_KEY` is the database access key
+    - Neither of these should be openly visible to the world
+    - Suppose I accidentally commit this code to GitHub: This is a big security hole
+        - Be careful to set up `.gitignore` and test it with fake credentials
+        - Remember that GitHub retains older versions of code
+            - If credentials are compromised: Generate new credentials 
 
 
-### Azure function app **routes**
+- Thoughts on the API being public
+    - The periodic table example is a read-only API and the data is not privacy-sensitive
+    - This represents low risk; the there are two reasons to consider securing it
+        - A bot could maliciously use the API many times costing you money
+        - You may envision future work where privacy *will* be important
+        - You may envision future work where the database will continue to accumulate new data
+    - The general way to secure an API is with a *token* or synonymously a *key*
+        - In practice this is a very long (hundreds of characters) randomly generated password
+    - Every approved API User will receive a token
+        - They take great care not to publish this token for example to GitHub
+    - In the event of an accidental breach of security: The API Administrator needs a means of easily disabling any token
+    - This also implies tracking the status of each person to whom a token is assigned
+    - The token is passed in every API request as an HTTP header (not as a URL variable)
+        - This HTTP *header* comes along invisibly in the HTTP *request*
+        - i.e. it does not appear after the "?" in the request URL
+    - One *could* code the logic of token management into the Python server-side API program...
+        - ...however Azure Function Apps has built-in machinery for this purpose...
+        - ...so *that* is what we should use, for several reasons:
+            - we do not have to worry about doing it incorrectly
+            - we do not have to do the (considerable) engineering work
+            - using Azure Function App's built-in key system is very cheap 
+    - [Documentation: How keys work in Azure Function Apps](https://learn.microsoft.com/en-us/azure/azure-functions/function-keys-how-to?tabs=azure-portal)
 
 
-- The syntax for the api has two components built into the URL
-    - A route which corresponds to a particular api "command": `https://some.azurewebsites.net/api/someroute`
-    - A sequence of zero or more `key=value` arguments: above + `?key1=value1&key2=value2` etcetera
-- What comes back when the code successfully parses an api call is formatted text that we unpack
+### Azure function app routes
+
+
+- The syntax for a basic API call has two components built into the URL
+    - A route which corresponds to a particular API call
+        - `https://myfunctionapp.azurewebsites.net/api/myroute`
+    - A sequence of zero or more `key=value` arguments; suppose we are using three:
+        - to the above example append `?key1=value1&key2=value2&key3=value3`
+- A successful API call returns formatted text that our Client code unpacks
 
 
 ### What happens during deployment from the VM to the Function App on Azure?
