@@ -312,39 +312,74 @@ response = requests.get("https://pythonbytes.azurewebsites.net/api/lookup/", par
 ## oceanography
 
 
-This segment of the `nexus api` page concerns the "shoebox problem": A research team has a shoebox of
-data tapes from some point in the past and would like to make that data available; both for their own
-use and possibly for collaborators and for other research teams. The end objective is data access 
-through an API; so here we go through the steps to build this.
+This segment of the `nexus api` page concerns the "shoebox problem": A research team has an old 
+shoebox full of data tapes from ten years back. They would like to make that data available: For 
+themselves, their collaborators and possibly for other research teams. The end result would be a
+data access API. Here we go through the steps to build a non-trivial example.
 
 
 ### Narrative
 
 
 - Get the data in digital form
-- Set up and run pre-processing to get a test dataset in tabular format (`.csv`)
-    - In the worked example below the test dataset is about 400MB (text)
-- Establish a cloud VM and connect using VSCode as described above
-    - Configure the cloud as above
-- Establish a NoSQL database on the cloud: Working example is CosmosDB on Azure
-    - The cloud VM will be used to load the tabular data into the database...
+- Set up / run pre-processing: Get a test dataset in tabular (`csv`) form
+    - In the worked example below the dataset is about 400MB as text
+        - Two sensors
+        - One sample per second
+        - Three values per sample: Timestamp, pressure, measurement
+            - First sensor measures temperature; second measures salinity
+- Establish a moderate-size cloud Virtual Machine
+    - Connect using VSCode as described above
+    - Configure the cloud VM as described above
+- Establish a NoSQL database on the cloud
+    - This working example uses CosmosDB on Azure
+    - The cloud VM will load tabular data into the database...
         - ...so it will need authentication credentials: See above
 - Move the tabular data to the cloud VM
-    - Move files to a cloud VM via secure ftp `sftp` as in...
+    - For example use secure ftp `sftp`:
         - `chmod 400 .keypairs/cloud_VM_keypair.pem`
         - `sftp -i .keypairs/cloud_VM_keypair.pem username@123.123.12.12`
         - `sftp> put tabularfile.csv`
-- Create a program to load the tabular data
-    - The key code for the Azure example is `container.create_item()`
-    - This is run once per record
-- Establish a serverless function with a simple API to access the data
-    - The API has an access URL and one or more 'routes' corresponding to API commands
-    - Test the API using a Client written either on the cloud VM or on a local laptop
+- Create a program to load the tabular data into the database
+    - The key line of code on Azure is `container.create_item(record)`
+    - This is naively run once per measurement
+- Build a serverless function with a simple API for access to the data
+    - The API has a URL and one or more *routes* as above
+    - Test the API using a Client running on a handy laptop
+    - The Client could also be tested from the cloud VM
+    - Authentication and use
+        - At this point the API calls do not use authentication keys
+        - As such the API is considered to be *anonymous*
+        - The data should not be sensitive
+        - The Client code can be shared for example through a GitHub repository
+            - This is the approach used for this example
+        - The Client code could also be published as a Python library
+        - Future changes beyond this example should take privacy and security into account
+- The end result experience for "some other scientist"...
+    - Scientist does a `git clone` of the Client repository
+    - The repository includes a test IPython notebook
+    - The repository also has a Python `client.py` file
+        - The notebook includes a cell with these two lines of code:
+
+```
+import client
+client.Chart('04-JAN-2022', 7)
+```
+
+The resulting chart looks like this:
 
 
-In the expanded case described below the case is slightly more complicated: 
-There are two sensor streams and a metadata stream. All three are stored as 
-time series data with two or more additional columns of information. 
+
+
+Figure caption: There are two sensors -- temperature and salinity -- that record data once per
+second from an oceanographic installation 100 km off the coast of Oregon at the base of the 
+continental shelf. Nine times per day these sensors are raised and then lowered through the 
+upper 200 meters of the ocean resulting in a profile of temperature and salinity with depth.
+
+The scientist does not know when the profiling runs happen; only that they are fairly 
+consistent in timing under normal conditions. The `Chart()` function call given above 
+represents the scientist saying "For January 4, 2022: Show me temperature and salinity
+for profile number 7." 
 
 
 
