@@ -14,6 +14,9 @@ The objective is to build an API that can return data from a NoSQL database.
 
 ## The MSE544 periodic table
 
+MSE544 is a data science course taught at the University of Washington by Professor Luna Huang. 
+Part of the course covers skills for building research computing infrastructure on the public cloud.
+
 
 - CosmosDB instance: `robs-data-ocean`
 - Databases
@@ -129,30 +132,30 @@ Debugging steps such as described above are simple; and simple is a recommended 
 - skip for now: In the interest of whatabout: Can we use a `conda` environment?
 
 
-### Picking up where we left off
+### Resuming a paused project
 
 
-Suppose we have to step away from the project for a few days... upon return 
-we want to pick up where we left off. To facilitate this
+Suppose we have to step away for a few days: From a VM where we are working on 
+some project. Some simple advance steps can facilitate smooth resumption: Use
+the `.bashrc` and `.bash_aliases` to save configuration aliases and print a
+message on how to resume using `echo`. 
 
 
 - **Start** the VM for example from the portal or console
-- Run `VSCode` and use the lower-left button to start an `ssh` session on the VM
-- In VSCode: Go to the terminal and view the login text...
-    - ...which reminds us of an alias we set up before the hiatus!
-    - ...which means ***Do it now!!*** (see below)
-- Use the alias to move into the project folder and start the corresponding environment
-- Start editing the project code and away we go
+- Run `VSCode` and `ssh` into this VM
+- In VSCode > terminal > read the login message
+    - ...this reminds us of configuration aliases we set up before the hiatus
+        - For example: activating an environment, moving to the working directory
 
 
-#### Setting up the `robotron` alias
+#### the `robotron` alias
 
 
-I use `robotron` for the alias as slightly eye-catching. The backstory for this alias
-business: On starting `bash` the script file `~/.bashrc` is executed as a shell script.
-This does some configuration steps including checking for and (if it exists) running
-a sub-script file called `.bash_aliases`. *That* is the file to edit. Add these two lines
-at the end of the `.bash_aliases` file:
+I use the alias `robotron` as it is eye-catching. Some Linux aliases are defined on 
+login when the user's `bash` script `~/.bashrc` is automatically run.
+This script also checks for and (if it exists) runs a sub-script called `~/.bash_aliases`. 
+*That* is a good place to add custom aliases; and `echo` statements that remind us
+of those aliases. For example: Add these at the end of `~/.bash_aliases`:
 
 ```
 echo Use **robotron** to relocate and activate the development environment
@@ -160,21 +163,23 @@ alias robotron='cd ~/db-api; source app-env/bin/activate; func --version'
 ```
 
 
-To test this:
+Test this:
 
 
 ```
 source ~/.bashrc
 ```
 
-### Skipped tasks/topics
+
+### open task
 
 
-- Remarks on Azure Function Core Tools and the utility command `func`
-    - Includes `How does the localhost test work?' and the default port 7071 forward.
+Need remarks on `Azure Function Core Tools` in relation to the utility command `func`.
+Need remarks on `How does the localhost test work?' and the default port 7071 forward.
 
 
 ### Testing the Function App on the VM
+
 
 - `func --version` checks to see the Azure Function 
 - `func start` starts the VM's version of the API
