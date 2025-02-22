@@ -417,8 +417,14 @@ data access API. Here we go through the steps to build a non-trivial example.
 
 ```
 import oceanclient as oc
-oc.Chart('04-JAN-2022', 7)
+dfT, dfS = oc.Chart('04-JAN-2022', 7)
 ```
+
+
+The `oceanclient` library is a single file of Python code that is treated as an
+imported namespace `oc.` For demonstration purposes it is hardcoded to do three things
+- Produce a `matplotlib` chart of both temperature and salinity for the selected profile
+- Return a temperature and a salinity `pandas` Dataframe 
 
 
 The resulting chart looks like this:
