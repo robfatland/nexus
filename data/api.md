@@ -374,6 +374,34 @@ data access API. Here we go through the steps to build a non-trivial example.
 
 ### Narrative
 
+To follow this narrative it helps to have in mind *five* virtual locations. Together they comprise
+our development environment:
+
+
+- A local laptop that may include a Python installation
+- The Azure portal: An interface to the Azure cloud on a laptop browser tab
+- An Azure Virtual Machine (VM) we launch using the Azure portal
+    - Once launched we login using `keypair` authentication
+    - We run an instance of VSCode on this Azure VM.
+        - It appears on our laptop looking like the VSCode application...
+        - ...but -- emphasis -- it is running on the Azure VM, *not* on our laptop
+- A CosmosDB NoSQL instance running on the Azure cloud
+    - We launch and configure this using the Azure portal
+- An Azure Function App (serverless function) running on the Azure cloud
+    - We develop the Function App content on the Azure VM using VSCode
+    - We then *publish* the Function App to Azure from the Azure VM
+
+
+This may seem unnecessarily Byzantine but it is the best we can manage at this
+time, with three advantages: This approach mostly bypasses laptop configuration
+because everything happens in a browser or on VSCode. This approach includes 
+support for debugging, an important component of publishing data to the web as
+an Application Programming Interface (API). And thirdly this approach provides
+data access as a fairly robust, secure channel. 
+
+
+Here is the 'what we do, what happens' narrative:
+
 
 - Get the data in digital form
 - Set up / run pre-processing: Get a test dataset in tabular (`csv`) form
@@ -382,9 +410,11 @@ data access API. Here we go through the steps to build a non-trivial example.
         - One sample per second
         - Three values per sample: Timestamp, pressure, measurement
             - First sensor measures temperature; second measures salinity
-- Establish a moderate-size cloud Virtual Machine
+        - One month
+        - In practice: Just five days to make the point
+- Establish a moderate-size cloud Virtual Machine on Azure
     - Connect using VSCode as described above
-    - Configure the cloud VM as described above
+    - Configure the VM as described above
 - Establish a NoSQL database on the cloud
     - This working example uses CosmosDB on Azure
     - The cloud VM will load tabular data into the database...
@@ -399,8 +429,10 @@ data access API. Here we go through the steps to build a non-trivial example.
     - This is naively run once per measurement
 - Build a serverless function with a simple API for access to the data
     - The API has a URL and one or more *routes* as above
-    - Test the API using a Client running on a handy laptop
-    - The Client could also be tested from the cloud VM
+    - Test the API running on the Azure VM using a browser running on the Azure VM
+    - Publish the API to the Azure cloud: It now has an open/public URL
+    - Test the API on the Azure cloud using a Python Client running on a handy laptop
+        - Option: This tester Python Client can just as easily be run from the Azure VM
     - Authentication and use
         - At this point the API calls do not use authentication keys
         - As such the API is considered to be *anonymous*
