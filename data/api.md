@@ -35,45 +35,41 @@ Part of the course covers skills for building research computing infrastructure 
 
 
 This narrative follows the [MSE544 course activity](https://cloudbank-project.github.io/az-serverless-tutorial/) 
-built as proof of concept on Azure. This does not include 
-[***Containerization with docker***](https://naclomi.github.io/containers-tutorial/).
+built as proof of concept on Azure. This data API builder does not make use of  
+[***docker containerization***](https://naclomi.github.io/containers-tutorial/).
 
 
-- Not annotated yet: Start up and configure a VM on the Azure cloud as a base of operations
-- Annotation in process: Create an Azure NoSQL database and publish the periodic table of elements
-    - Azure brand name for NoSQL database service is "Cosmos DB"
-- Annotated: Create a serverless function (on Azure called a 'Function App') that incorporates an API
-    - ...in Python
-    - ...connect to, accesses the NoSQL database
- - Not really covered yet: Debugging methods
+- Create an Azure NoSQL database and publish data
+    - The Azure brand name for their NoSQL database service is "Cosmos DB"
+- Create a serverless function (on Azure this is called a 'Function App')
+    - Hosts a data API
+    - Written in Python
+    - Connects to the NoSQL database
 
 
-The first milestone is interrogating the periodic table for information on (say) Sodium
-from the Azure portal viewed in a browser tab. The second milestone is making the same
-sodium query from a blank browser tab. The browser (via a URL) invokes an episodic burst
-of simple activity generically called a "cloud serverless function". The brand name in this
-case for Azure is "Azure Function" or equivalently "Azure Function App". 
+For the Periodic Table demonstration we have three "working" milestones
+- Get periodic table information for (say) Sodium using the Azure portal (browser tab) 
+- Same query but using an API website; also on a browser tab but the Azure portal is not involved
+    - This invokes the Azure Function App, a serverless function on the Azure cloud
+- Same query run from code, specifically a Python program behaving as a *Client*
+    - Use the Python `requests` library.
+    - Here the Azure Function app plus the NoSQL database comprise the API *Server*
+    - The result is a completely automated program-to-program data access procedure
+        - This is something of a model for everything that happens on the internet
+        - Underlying technology: A message passing protocol called `HTTP`. 
 
 
-The third milestone is to interrogate the periodic table from code, specifically using 
-a Python program that uses the Python `requests` library. This Python program is an 
-API *Client* where the database and Azure Function app together comprise the API (cloud data)
-*Server*. At the end of all this we have a completely automated program-to-program data 
-access procedure that models everything that happens on the internet. Underlying all of
-this is a message passing protocol called `HTTP`. 
-
-
-Two things to build out in one's comprehension are *debugging methods* and *underlying context*.
+Two things to try and develop in passing are *debugging skills* and *underlying context*.
 
 
 A note on process: 
-This walkthrough makes extensive use of two virtual **workshops** (to avoid using the word *environment*).
+This tutorial uses two virtual **workshops** (intentionally avoiding the word *environment*).
 The first workshop is the `bash` shell running on a low-power, low-cost on-demand virtual machine (VM) on the 
 Azure cloud. The second workshop is the **VSCode** application, a popular and free IDE available from 
-Microsoft. Both the VM and the VSCode workshops integrate well with the Azure cloud. 
+Microsoft. Both `bash` on the VM and the VSCode application integrate well with the Azure cloud. 
 
 
-## Skipped for now: Set up a VM
+## Set up a VM
 
 
 ## Build the NoSQL Database
@@ -178,6 +174,7 @@ and not all can be answered in the moment; so here is the accuulator. Write more
 on/as/for....
 
 
+- Not annotated yet: Start up and configure a VM on the Azure cloud as a base of operations
 - `pandas` Dataframe column zero: For sensors this is a Timestamp (not an integer)
     - It would be helpful to review the formalism per Jake
 - ...remarks on `Azure Function Core Tools` in relation to as we know it the utility command `func`
