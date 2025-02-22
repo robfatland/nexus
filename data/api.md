@@ -178,6 +178,8 @@ and not all can be answered in the moment; so here is the accuulator. Write more
 on/as/for....
 
 
+- `pandas` Dataframe column zero: For sensors this is a Timestamp (not an integer)
+    - It would be helpful to review the formalism per Jake
 - ...remarks on `Azure Function Core Tools` in relation to as we know it the utility command `func`
     - including the basic vocabulary of imperatives
 - `az login` from the Azure VM
