@@ -205,7 +205,7 @@ on/as/for....
             - `profilotron` for the profile API
             - `sensortron` for the sensor API
             - Why does the `populate` process not involve installing and activating a Python environment?
-
+- Be sure to revisit the Easy button: GLODAP on S3
 
 ### Testing the Function App on the VM
 
