@@ -24,7 +24,7 @@ Part of the course covers skills for building research computing infrastructure 
         - Container: `elements`
     - `oceanography`
         - Container: `osb_profile`
-        - Container: `osb_temperature`
+        - Container: `osb_temp`
         - Container: `osb_salinity`
 
 
@@ -187,8 +187,9 @@ on/as/for....
     - Interesting error message on *activation* includes [this link for more](https://code.visualstudio.com/api/references/activation-events#Start-up) so what is this about?
     - Why is the VSCode Python not the same as my Ubuntu environment miniconda Python?
     - Azure VM
+        - Can this support a Jupyter notebook?
         - Directory structure
-            - ~
+            - ~ can host Jupyter-style repository clones e.g. the `oceanography` Jupyter book
                 - `db-api` **tutorial periodic table API folder**
                     - `app-env` is an **environment directory** from the tutorial 
                 - `db-populate` **tutorial directory** for loading Containers in CosmosDB
