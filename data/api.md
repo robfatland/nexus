@@ -185,6 +185,7 @@ on/as/for....
 - `az login` from the Azure VM
 - ...explain how the localhost test works with the default port 7071 forward
 - ...a work-through example of using API keys provided by Azure Function Apps.
+- Still need to clear up `venv` vs `local.settings.json`: Where are the creds placed, used when, uploaded how, etc
 - VSCode
     - Interesting error message on *activation* includes [this link for more](https://code.visualstudio.com/api/references/activation-events#Start-up) so what is this about?
     - Why is the VSCode Python not the same as my Ubuntu environment miniconda Python?
