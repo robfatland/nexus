@@ -470,7 +470,7 @@ To keep things simple we assume the id keys are alphabetic and can be compared u
 less than / greater than `<` and `>`. These are datetime strings. 
 
 
-Once we establish the two API parameters `day` 
+Once we establish that the two API parameters `day` 
 and `index` are in the proper range we have the API code do a query on the osb-profiles
 Container and return the requested values: `ascent_start_time` and `descent_start_time`. 
 Suppose the API call passes `day=3` and `index=1`, the first of four
@@ -478,7 +478,65 @@ These will be text strings of the form `2022-01-03 20:37:00` and `2022-01-01 21:
 This indicates that the ascent duration was 
 
 
-Here is some important source information
+#### Python to SQL query formalism
+
+
+Here is some simplified pseudo-code: Setting up an Azure serverless function to query a NoSQL 
+database container. In this case the User has stipulated `lookup` (the *route*) as well as a
+single parameter `name=Sodium`. The lookup is intended to return some information about Sodium
+from the periodic table. 
+
+
+In what follows let's attempt to differentiate Python namespace from NoSQL query machinery.
+There is one NoSQL variable in use, called `@id`. This is used for an equality comparative; 
+and we know it is SQL because only one equals sign is needed: `WHERE r.id=@id`.
+
+```
+# route "lookup" pulls element information by name
+@app.route(route="lookup", auth_level=func.AuthLevel.ANONYMOUS)
+def lookup(req: func.HttpRequest) -> func.HttpResponse:
+
+    # Get the "name=Sodium" key-value input from the URL
+    element = req.params.get('name')       # element will now be a string with value 'Sodium'
+    if element:
+
+        establish client, db, and container: See the tutorial
+        
+        # `items` will be a list of one or more dictionaries, in fact just one because the API call
+        # requested the one element 'Sodium'. For ocean data we will have `profile` and `sensor` queries.
+        # These will return one dictionary and thousands of dictionaries respectively.
+        items = list(container.query_items(query="SELECT * FROM r WHERE r.id=@id",
+                                           parameters=[{"name": "@id", "value": element}],
+                                           enable_cross_partition_query=True))
+
+        # remove extraneous information, 'serialize' to json and send this in the HttpResponse()
+        stripPrivateKeys(items)
+        items_json = json.dumps(items)
+        return func.HttpResponse(items_json, mimetype="application/json", status_code=200)
+```
+
+From this pseudo-code we proceed to this interpretation:
+
+- `container.query_items()` is a method that executes a query on a NoSQL Container
+    - The method has three key-value arguments: `query`, `parameters` and `enable_cross_partition_query`
+        - `query="SELECT etcetera"` assigns `query` a string to be interpreted as a NoSQL query
+            - `r.id=@id` means 'Does the `id` of `r` precisely equal the value of SQL variable `@id`?'
+            - the value of `@id` is set in the `parameters=` assignment
+                - [{"name": "@id", "value": doc_id}]`.
+    - What the code is doing: When `container.query_items()` runs a query...
+        - ...it must provide a list of usable SQL variables within the SQL code
+    - These SQL variables in this list appear in Python code as a list of (one or more) dictionaries...
+        - ...each of which represents a SQL variable by means of two keys:
+            - name: of the SQL variable we will use in the query
+            - value: a value from the Python namespace transcribed into the SQL variable.
+        - This is where and how the value of @id is assigned
+    - The value of the SQL variable is that of a Python variable `doc_id`
+    - We'd need to see the Python value assignment to `doc_id` to say more
+    - Probably in a `lookup` call it takes the value `Sodium` from `name=Sodium` (to be verified)
+    - We follow this `query / parameters / [{ . . . }] / @id` protocol...
+        - ...rather than just using `Sodium` directly from the API request...
+        - ...to avoid the *Little Bobby Tables* situation (cf xkcd).
+        - The invisible machinery of `query_items()` and `parameters` does the safety checks for us 
 
 
 #### sensor api
