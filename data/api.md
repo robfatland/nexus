@@ -171,12 +171,36 @@ source ~/.bashrc
 ```
 
 
-### open task
+### open tasks
+
+In the process of learning how to build the Oceanography data system: Questions come up, 
+and not all can be answered in the moment; so here is the accuulator. Write more documentation 
+on/as/for....
 
 
-Need remarks on `Azure Function Core Tools` in relation to the utility command `func`.
-Need remarks on `How does the localhost test work?' and the default port 7071 forward.
-Need a work-through example of using API keys provided by Azure Function Apps.
+- ...remarks on `Azure Function Core Tools` in relation to as we know it the utility command `func`
+    - including the basic vocabulary of imperatives
+- `az login` from the Azure VM
+- ...explain how the localhost test works with the default port 7071 forward
+- ...a work-through example of using API keys provided by Azure Function Apps.
+- VSCode
+    - Interesting error message on *activation* includes [this link for more](https://code.visualstudio.com/api/references/activation-events#Start-up) so what is this about?
+    - Why is the VSCode Python not the same as my Ubuntu environment miniconda Python?
+    - Azure VM
+        - Directory structure
+            - ~
+                - `db-api` **tutorial periodic table API folder**
+                    - `app-env` is an **environment directory** from the tutorial 
+                - `db-populate` **tutorial directory** for loading Containers in CosmosDB
+                    - `db-profile-api` **profile api folder**
+                        - `profile-app-env` **environment** subdirectory for the profile API
+                    - `db-sensor-api` **sensor api folder**
+                        - `sensor-app-env` **environment** subdirectory for the sensor API
+        - Activation commands
+            - `robotron` for the tutorial (Periodic table) API
+            - `profilotron` for the profile API
+            - `sensortron` for the sensor API
+            - Why does the `populate` process not involve installing and activating a Python environment?
 
 
 ### Testing the Function App on the VM
