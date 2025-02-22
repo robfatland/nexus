@@ -481,18 +481,19 @@ This indicates that the ascent duration was
 #### Python to SQL query formalism
 
 
-Here is some simplified pseudo-code: Setting up an Azure serverless function to query a NoSQL 
-database container. In this case the User has stipulated `lookup` (the *route*) as well as a
-single parameter `name=Sodium`. The lookup is intended to return some information about Sodium
-from the periodic table. 
+Below we have simplified pseudo-code: An Azure serverless 'Function App' in Python that 
+has received a query and queries a NoSQL database Container (a data table) to build a 
+reply. The API Client stipulates `lookup` (the *route*) plus a single parameter 
+`name=Sodium`. The reply will send back information about Sodium from the periodic table. 
 
 
-In what follows let's attempt to differentiate Python namespace from NoSQL query machinery.
-There is one NoSQL variable in use, called `@id`. This is used for an equality comparative; 
-and we know it is SQL because only one equals sign is needed: `WHERE r.id=@id`.
+Here we want to differentiate the Python code's namespace from the NoSQL query.
+There is a single NoSQL variable in use, called `@id`. The leading `@` is SQL
+variable syntax. `@id` is used in an equality comparative: `WHERE r.id=@id`.
+(The single equal sign is also SQL syntax.)
+
 
 ```
-# route "lookup" pulls element information by name
 @app.route(route="lookup", auth_level=func.AuthLevel.ANONYMOUS)
 def lookup(req: func.HttpRequest) -> func.HttpResponse:
 
@@ -500,28 +501,32 @@ def lookup(req: func.HttpRequest) -> func.HttpResponse:
     element = req.params.get('name')       # element will now be a string with value 'Sodium'
     if element:
 
-        establish client, db, and container: See the tutorial
+        at this point: establish client, db, and container: See the tutorial
         
-        # `items` will be a list of one or more dictionaries, in fact just one because the API call
-        # requested the one element 'Sodium'. For ocean data we will have `profile` and `sensor` queries.
-        # These will return one dictionary and thousands of dictionaries respectively.
+        # In what follows `items` will be a derived list of one or more Python dictionaries. In practice:
+        # just one as the API call requests the one element 'Sodium'. For the ocean data we have `profile`
+        # and `sensor` queries that will return one and hundreds of dictionaries respectively.
         items = list(container.query_items(query="SELECT * FROM r WHERE r.id=@id",
                                            parameters=[{"name": "@id", "value": element}],
                                            enable_cross_partition_query=True))
-
-        # remove extraneous information, 'serialize' to json and send this in the HttpResponse()
-        stripPrivateKeys(items)
-        items_json = json.dumps(items)
-        return func.HttpResponse(items_json, mimetype="application/json", status_code=200)
 ```
+
+
+At this point in the execution, having recovered `items`, it remains to:
+- remove extraneous information
+- serialize `items` as json
+- send this as an HttpResponse()
 
 From this pseudo-code we proceed to this interpretation:
 
 - `container.query_items()` is a method that executes a query on a NoSQL Container
-    - The method has three key-value arguments: `query`, `parameters` and `enable_cross_partition_query`
-        - `query="SELECT etcetera"` assigns `query` a string to be interpreted as a NoSQL query
-            - `r.id=@id` means 'Does the `id` of `r` precisely equal the value of SQL variable `@id`?'
-            - the value of `@id` is set in the `parameters=` assignment
+    - The query will return in this case one dictionary corresponding to a Document in the Container
+    - The `.query_items()` method has three key-value arguments: `query`, `parameters` and `enable_cross_partition_query`
+        - `query="SELECT etcetera"` assigns `query` a string that will be interpreted as a NoSQL query
+            - `r.id=@id` means 'Does the `id` of Document `r` precisely equal the value of a SQL variable called `@id`?'
+        - `parameters=[{...etcetera}] is used to define this SQL variable `@id`.
+            - `@id` is defined using a 2-element dictionary
+                - set in the `parameters=` assignment
                 - [{"name": "@id", "value": doc_id}]`.
     - What the code is doing: When `container.query_items()` runs a query...
         - ...it must provide a list of usable SQL variables within the SQL code
