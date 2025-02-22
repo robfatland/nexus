@@ -389,9 +389,10 @@ data access API. Here we go through the steps to build a non-trivial example.
         - The notebook includes a cell with these two lines of code:
 
 ```
-import client
-client.Chart('04-JAN-2022', 7)
+import oceanclient as oc
+oc.Chart('04-JAN-2022', 7)
 ```
+
 
 The resulting chart looks like this:
 
@@ -453,5 +454,31 @@ for record in df.to_dict(orient='records'):
     container.create_item(body=record)
 ```
 
+### oceanography api builds
 
 
+#### profile api
+
+
+The profiles use `ascent start time` as their Container `id`. The Container is `osb_profiles`
+which encodes the site name Oregon Slope Base (OSB) in the Container name. The data covers 
+January 2022 so there are 31 days and up to nine profiles per day for a total of 279 possible
+entries or 'documents'.
+
+
+To keep things simple we assume the id keys are alphabetic and can be compared using
+less than / greater than `<` and `>`. These are datetime strings. 
+
+
+Once we establish the two API parameters `day` 
+and `index` are in the proper range we have the API code do a query on the osb-profiles
+Container and return the requested values: `ascent_start_time` and `descent_start_time`. 
+Suppose the API call passes `day=3` and `index=1`, the first of four
+These will be text strings of the form `2022-01-03 20:37:00` and `2022-01-01 21:49:00`.
+This indicates that the ascent duration was 
+
+
+Here is some important source information
+
+
+#### sensor api
