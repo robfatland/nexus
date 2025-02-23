@@ -176,6 +176,10 @@ on/as/for....
 
 - I seem to be testing using localhost:7071 on my laptop that forwards to the VM
     - What port on the VM? Also 7071? How do I find this? What about the other port in VSCode?
+    - I do not believe so verify that port forwarding is used by VSCode itself
+- Because `id` and `Timestamp` are the same: One could be removed from the return value.
+    - This would visit the "remove item" function used blindly up to this point
+    - Likewise cleaning up the unnecessary extra digits 
 - Not annotated yet: Start up and configure a VM on the Azure cloud as a base of operations
 - `pandas` Dataframe column zero: For sensors this is a Timestamp (not an integer)
     - It would be helpful to review the formalism per Jake
@@ -622,4 +626,27 @@ Here is an API test call when the Function App is running on the Azure VM in pre
 
 ```
 http://localhost:7071/api/sensors?start=2022-01-02%2005:00:00&stop=2022-01-02%2005:01:00
+```
+
+Result
+
+
+```
+[
+  {
+    "Timestamp": "2022-01-02 05:00:00.445123072",
+    "depth": 181.852099066549,
+    "temp": 8.01025965207612,
+    "id": "2022-01-02 05:00:00.445123072"
+  },
+  .
+  .
+  .
+  {
+    "Timestamp": "2022-01-02 05:00:59.444251648",
+    "depth": 178.944708403201,
+    "salinity": 33.9309653751137,
+    "id": "2022-01-02 05:00:59.444251648"
+  }
+]
 ```
