@@ -167,13 +167,15 @@ source ~/.bashrc
 ```
 
 
-### open tasks
+# open tasks
 
 In the process of learning how to build the Oceanography data system: Questions come up, 
-and not all can be answered in the moment; so here is the accuulator. Write more documentation 
+and not all can be answered in the moment; so here is the accumulator. Write more documentation 
 on/as/for....
 
 
+- I seem to be testing using localhost:7071 on my laptop that forwards to the VM
+    - What port on the VM? Also 7071? How do I find this? What about the other port in VSCode?
 - Not annotated yet: Start up and configure a VM on the Azure cloud as a base of operations
 - `pandas` Dataframe column zero: For sensors this is a Timestamp (not an integer)
     - It would be helpful to review the formalism per Jake
@@ -204,15 +206,16 @@ on/as/for....
             - Why does the `populate` process not involve installing and activating a Python environment?
 - Be sure to revisit the Easy button: GLODAP on S3
 
+
 ### Testing the Function App on the VM
 
 
 - `func --version` checks to see the Azure Function 
 - `func start` starts the VM's version of the API
-    - Note that Azure function core tools appropriate (forward) port 7071
-        - this allows `https://localhost:7071` to connect to the VM's running service
-            - this is not the actual Function App. It is a test environment.
-            - Super convenient: We test the API without publishing it to an Azure cloud Function App
+    - Azure Function core tools appropriates (forwards) my laptop's port 7071
+        - result: `https://localhost:7071` connects to the test API running on the Azure VM
+            - this test environment is not the Azure Function App
+            - it is convenient to test the API before publishing it to the Azure cloud Function App
 
 
 ### Publish Function App to the Azure cloud 
@@ -608,3 +611,15 @@ From this pseudo-code we proceed to this interpretation:
 
 
 #### sensor api
+
+Notice the sensor API expects a time range as two Timestamp strings, for example `2022-01-02 05:00:00`
+which will be 0500 Zulu on January 2, 2022. This Timestamp contains a space ` ` character which must
+be represented as three characters `%20`. 
+
+
+Here is an API test call when the Function App is running on the Azure VM in pre-publish test mode.
+
+
+```
+http://localhost:7071/api/sensors?start=2022-01-02%2005:00:00&stop=2022-01-02%2005:01:00
+```
