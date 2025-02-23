@@ -650,3 +650,19 @@ Result
   }
 ]
 ```
+
+
+### publishing the api
+
+- done twice: Once for the `profile` api and once for the `sensors` api
+- first step is to copy-paste the `ACCOUNT_HOST` and `ACCOUNT_KEY` environment variables
+    - From: Either `local.settings.json` on the Azure VM ***or*** the NoSQL access through the Azure portal
+    - To: The Azure Function App *Environment Variables* as two new key-value pairs
+        - And once set: Remember to click the `Apply` button to restart the Function App
+    - Now the Function App is ready to be populated with the code developed in VSCode
+- second step is `az login` in the VSCode `bash` terminal: Log in to Azure with authentication via browser
+    - Note: There may be a 15 minute delay before step three will work properly
+- third step is `func azure functionapp publish oceansensors` (or `oceanography`)
+    - As they are thematically related this suggests a later simplification: One Function App rather than two
+    - As noted above: It may take multiple tries or a few minutes of elapsed time before `publish` runs properly
+    - `func azure functionapp publish` takes five or so minutes to complete
