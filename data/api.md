@@ -56,8 +56,8 @@ Related to this heirarchy we have three URLs corresponding to three APIs:
 ***Follow-along annotation for the Periodic table example follows directly below***
 
 
-***Annotation for the oceanography segment [begins further down, here.](#oceanography). The example Client
-that uses the oceanography APIs is [found here](https://github.com/robfatland/oceanclient).***
+***Annotation for the oceanography segment [begins further down, here.](#oceanography) 
+The example Client for the oceanography APIs is [found here](https://github.com/robfatland/oceanclient).***
 
 
 ## The MSE544 periodic table
