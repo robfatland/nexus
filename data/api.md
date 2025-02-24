@@ -8,9 +8,9 @@
 ## overview 
 
 
-The objective of this effort is to build an API that returns data from a NoSQL database.
-The database content loaded in the *build* process; so it is essentially static.  This page
-does not address dynamic data contribution scenarios.
+The concrete objective here is to build an API that returns data from a NoSQL database.
+Database content is loaded in a *build* process; so it is *static*.  Dynamic data 
+contribution over time is not covered here.
 
 
 This document is divided into two parts (data access scenarios):
