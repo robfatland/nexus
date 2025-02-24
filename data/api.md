@@ -760,6 +760,32 @@ Result
     - `func azure functionapp publish` takes five or so minutes to complete
  
 
+## closeout notes
+
+
+- Ensure the Client code is accessible to your intended audience
+    - The example presented here is [available at this `oceanclient` link](https://github.com/robfatland/oceanclient).
+- Original development work: We want to save our well-documented code in a GitHub repository
+    - ***WARNING*** Do not commit `local.settings.json` to a GitHub repository
+        - Good news: The file `.gitignore` is automatically generated in each `Function App` folder
+            - This file is configured to exclude `local.settings.json`
+    - Why? Because this tutorial uses an Azure VM that is *to be deleted*
+        - Once the code is safe on GitHub it can be worked on collaboratively
+- What on the VM is worth preserving?
+    - `db-populate.py` and variants
+    - `requirements.txt` files
+    - `function_app.py` files: One for each Function App (this page describes three of them)
+    - `~/.bash_aliases` useful ideas
+        - `echo Use **profilotron** to relocate and activate the profiler API development environment`
+        - `alias profilotron='cd ~/db-populate/db-profile-api; source profile-app-env/bin/activate'
+    - Data files?
+        - Small data files such as the periodic table data are easily incorporated in a repository
+        - Data files exceeding a total volume of 100MB should be moved to separate storage
+            - One cloud-based option is *object storage* ('blobs')
+                - This exists / persists independent of the VM
+    - Final check: Custom work? Reproducibility documentation?
+- Delete the VM when it is no longer in active use
+
 
 
 ## open tasks
@@ -769,8 +795,7 @@ In the course of building this example oceanography data system, questions do co
 This section is the accumulator; so write more documentation on/as/for....
 
 - MUST DO SECTION
-    - Publish an Open repo on GitHub called `oceanclient` consisting of one Python file and one Jupyter notebook
-    - Make the API self-documenting
+    - Make the API self-documenting: `test` should list `profile` and `sensors` routes. "Oh I forgot how to use the API calls"
     - Cover all the abstract's bases
     - Easier forms of publication including S3 GLODAP
     - `az login` from the Azure VM: What is going on here?
@@ -785,7 +810,11 @@ This section is the accumulator; so write more documentation on/as/for....
     - annotate the VM start process: choice of OS, instance power
     - X: work-through of API keys provided by Azure Function Apps
     - filesystem diagram
+    - costing RUs: [See this link](https://learn.microsoft.com/en-us/azure/cosmos-db/request-units)
 - KNOW YOUR STUFF SECTION
+    - How to patch a Document in NoSQL, two methods
+        - Bird in the hand way: Delete the Container, create a new one, modify the `db-populate.py` code, re-run it, test the API
+        - Correct way: [Use `partial document update` per this documentation](https://learn.microsoft.com/en-us/azure/cosmos-db/partial-document-update)
     - Who is using localhost:7071: My laptop forwards to what on the VM? When? How to see? 2nd port?
     - Differentiate what VSCode is running traffic on (ssh connection?) 
     - `pandas` Dataframe column zero: For sensors = Timestamp; review formalism (Jake)
@@ -823,9 +852,65 @@ This section is the accumulator; so write more documentation on/as/for....
 
 Breakdown
 - There is more than one road to Rome; but the rather long one presented here does get at security, flexibility and scale
-- Flexibility and scale particularly address the new data and new ideas that are certain to come
+- When research goes as hoped there is a continuum of new ideas and new data...
+    - Flexibility and scale particularly address these developments
 - The first *expansion* idea is discovering crystal field theory... how does one ETL a NoSQL document?
 - The second *expansion* idea goes from a `profile` API to get time windows to a `get the sensor data as well`
     - Be sure to mention some "could also do's" like averaging and noise estimation
 - What is meant by ACID in the context of transactions and NoSQL?
     - This is really going to come into play when you start getting into more complicated designs
+
+
+### .gitignore
+
+
+```
+bin
+obj
+csx
+.vs
+edge
+Publish
+
+*.user
+*.suo
+*.cscfg
+*.Cache
+project.lock.json
+
+/packages
+/TestResults
+
+/tools/NuGet.exe
+/App_Data
+/secrets
+/data
+.secrets
+appsettings.json
+local.settings.json
+
+node_modules
+dist
+
+# Local python packages
+.python_packages/
+
+# Python Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Azurite artifacts
+__blobstorage__
+__queuestorage__
+__azurite_db*__.json
+```
