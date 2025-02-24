@@ -60,24 +60,41 @@ built as proof of concept on Azure. This data API builder does not make use of
 [***docker containerization***](https://naclomi.github.io/containers-tutorial/).
 
 
-- Create an Azure NoSQL database and publish data
-    - The Azure brand name for their NoSQL database service is "Cosmos DB"
-- Create a serverless function (on Azure this is called a 'Function App')
-    - Hosts a data API
-    - Written in Python
-    - Connects to the NoSQL database
+> Suggestion: Read through this section casually; then go try the tutorial at the above link.
 
 
-For the Periodic Table demonstration we have three "working" milestones
-- Get periodic table information for (say) Sodium using the Azure portal (browser tab) 
-- Same query but using an API website; also on a browser tab but the Azure portal is not involved
-    - This invokes the Azure Function App, a serverless function on the Azure cloud
-- Same query run from code, specifically a Python program behaving as a *Client*
-    - Use the Python `requests` library.
-    - Here the Azure Function app plus the NoSQL database comprise the API *Server*
-    - The result is a completely automated program-to-program data access procedure
-        - This is something of a model for everything that happens on the internet
-        - Underlying technology: A message passing protocol called `HTTP`. 
+### Azure brand names
+
+- The Azure brand name for a Virtual Machine is... a Virtual Machine (or VM)
+- The Azure brand name for their database service is "Cosmos DB".
+    - Within that service: `NoSQL` is an available *type* of database that we use here
+- The Azure brand name for a serverless function service is 'Azure Function App'
+    - This is where the API intelligence is hosted as running Python code
+    - The Function App has secure credentials so it can query our NoSQL databases
+
+
+### Milestone sequence
+
+
+For the Periodic Table exercise we have three success milestones:
+
+
+- We can get periodic table information for Sodium using the Azure portal (browser tab) 
+- We can query the periodic table using an API call (browser tab); the Azure portal is not involved
+    - This query is directed at the Azure Function App
+- We can query the periodic table using the same API; but by running Python code
+    - Such a Python program is called an API *Client*
+    - The Python program relies on the `requests` library
+
+
+
+### Additional context
+
+
+The Azure Function App plus the NoSQL database comprise an API *Server*. A completely automated 
+program-to-program data access procedure will presumably scale up in the context of some 
+research task. The Server-Client interaction is also a model for just about everything that 
+happens on the Internet. The underlying technology is a message passing protocol called `HTTP`. 
 
 
 Two things to try and develop in passing are *debugging skills* and *underlying context*.
@@ -93,19 +110,22 @@ Microsoft. Both `bash` on the VM and the VSCode application integrate well with 
 ## Set up a VM
 
 
+We use a Virtual Machine on the Azure cloud as our development environment. This gets us away from 
+having to build a development environment on our personal laptops. Everything we do on the cloud VM
+is facilitated either by browser or by the `VSCode` application.
+
+
+The MSE544 guide to setting up the Azure VM is pretty self-explanatory; so there are no further annotations here at this time.
+
+
 ## Build the NoSQL Database
 
 
-This will be called `robs-data-ocean` and it is built on the Azure portal, being careful to check 
-**Do not apply** on the "Free Tier Discount". And West US 2 (Moses Lake). Be sure as well to 
-**Disable** both aspects of Global Distribution. 
+The database is given a unique, descriptive name. I used `robs-data-ocean`. This is built on the Azure 
+portal, taking care to check **Do not apply** on the "Free Tier Discount". The chosen region is West US 2 
+(Moses Lake). Take care also to **disable** both aspects of Global Distribution. 
 
 
-> Not addressed: apt install of `pip` and `venv` was already done for (below, out of sequence)
-> the Function App... in this case why no environment creation prior? Nothing about `PATH`.
-> I decide to close this VSCode session and start clean... but as I already ran it there is
-> nothing to be done in `sudo apt install -y` for `python` and `venv`. Ok... and
-> `pip3 install -r requirements.txt` takes some time but is also ok.
 
 
 Execute the loader Python script: 
@@ -689,6 +709,8 @@ This section is the accumulator; so write more documentation on/as/for....
     - Narrative: How the pre-publish localhost tests work
     - Narrative: Of issue X below
     - Narrative: Why an environment is necessary for the three APIs
+    - Under *Build the NoSQL database* I had an extended comment to address on the tutorial sequence
+        - > `apt install` of `pip` and `venv` was done for the Function App in advance... why no environment creation prior? Nothing on `PATH`. Closed the VSCode session to start clean... but as I already ran it there is nothing to be done in `sudo apt install -y` for `python` and `venv`. Ok... and `pip3 install -r requirements.txt` takes some time but is also ok. Go back through this from scratch maybe?
 - GOOD IDEA NOT ESSENTIAL SECTION
     - `sensor` API degeneracy `id` and `Timestamp`; and how does remove item work?
     - don't need 18 digit precision
@@ -724,9 +746,17 @@ This section is the accumulator; so write more documentation on/as/for....
                 - `sensortron` for the sensor API
             - Why does the `populate` process not involve installing and activating a Python environment?
 
+
 ### Address the abstract
+
 
 > Source abstract: Organizations such as Science Gateways and the eScience Institute idealistically promote open science through data sharing; and you may wish you had the skills to build something that puts you firmly in that camp. Go open science! But there is a catch: Building something that works is much easier than building something that works that is secure. And then there is the inevitable catastrophe once you have it up and running: You have a new idea and you wish to expand on what your system’s baseline design was intended to do. No fear: This clinic will give you the basic one-two-three punch to build a data server with a built-in API, make it secure enough (assuming you are not working with personalized human data), and expand it in a new direction after it is up and running. We will use as a working example the supposition that you have invented the periodic table of elements and that you subsequently discovered crystal field theory. We address the pressing question: Can a cloud-hosted NoSQL chemistry data system be ACIDic?
 
 Breakdown
-- asdf
+- There is more than one road to Rome; but the rather long one presented here does get at security, flexibility and scale
+- Flexibility and scale particularly address the new data and new ideas that are certain to come
+- The first *expansion* idea is discovering crystal field theory... how does one ETL a NoSQL document?
+- The second *expansion* idea goes from a `profile` API to get time windows to a `get the sensor data as well`
+    - Be sure to mention some "could also do's" like averaging and noise estimation
+- What is meant by ACID in the context of transactions and NoSQL?
+    - This is really going to come into play when you start getting into more complicated designs
