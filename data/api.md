@@ -167,48 +167,7 @@ source ~/.bashrc
 ```
 
 
-# open tasks
 
-In the process of learning how to build the Oceanography data system: Questions come up, 
-and not all can be answered in the moment; so here is the accumulator. Write more documentation 
-on/as/for....
-
-
-- I seem to be testing using localhost:7071 on my laptop that forwards to the VM
-    - What port on the VM? Also 7071? How do I find this? What about the other port in VSCode?
-    - I do not believe so verify that port forwarding is used by VSCode itself
-- Because `id` and `Timestamp` are the same: One could be removed from the return value.
-    - This would visit the "remove item" function used blindly up to this point
-    - Likewise cleaning up the unnecessary extra digits 
-- Not annotated yet: Start up and configure a VM on the Azure cloud as a base of operations
-- `pandas` Dataframe column zero: For sensors this is a Timestamp (not an integer)
-    - It would be helpful to review the formalism per Jake
-- ...remarks on `Azure Function Core Tools` in relation to as we know it the utility command `func`
-    - including the basic vocabulary of imperatives
-- `az login` from the Azure VM
-- ...explain how the localhost test works with the default port 7071 forward
-- ...a work-through example of using API keys provided by Azure Function Apps.
-- Still need to clear up `venv` vs `local.settings.json`: Where are the creds placed, used when, uploaded how, etc
-- VSCode
-    - Interesting error message on *activation* includes [this link for more](https://code.visualstudio.com/api/references/activation-events#Start-up) so what is this about?
-    - Why is the VSCode Python not the same as my Ubuntu environment miniconda Python?
-    - Azure VM
-        - Can this support a Jupyter notebook?
-        - Directory structure
-            - ~ can host Jupyter-style repository clones e.g. the `oceanography` Jupyter book
-                - `db-api` **tutorial periodic table API folder**
-                    - `app-env` is an **environment directory** from the tutorial 
-                - `db-populate` **tutorial directory** for loading Containers in CosmosDB
-                    - `db-profile-api` **profile api folder**
-                        - `profile-app-env` **environment** subdirectory for the profile API
-                    - `db-sensor-api` **sensor api folder**
-                        - `sensor-app-env` **environment** subdirectory for the sensor API
-        - Activation commands
-            - `robotron` for the tutorial (Periodic table) API
-            - `profilotron` for the profile API
-            - `sensortron` for the sensor API
-            - Why does the `populate` process not involve installing and activating a Python environment?
-- Be sure to revisit the Easy button: GLODAP on S3
 
 
 ### Testing the Function App on the VM
@@ -311,25 +270,42 @@ We consider three aspects of risk:
     - Slow (5 minutes) process is presume because `python3 -m pip install -r requirements.txt` runs during this deployment
 
 
-## client code
+### client code
 
 
-In general we do not build an API in order to manually type API calls into a browser address bar. 
-Rather we write code to make the API calls and parse the returned results. In Python the `requests` 
-library is useful to this end, particularly `requests.get(url)`. The return value can be cast as
-`json` format, in fact a list containing one dictionary. From the dictionary we have the attributes
-of the named element. 
+In general we do not build an API merely to type API calls into the browser address bar. 
+We write code to call the API and parse the returned results; that's the whole point. This
+code can be referred to as a *Client*. (Better still: Someone *else* writes the Client and 
+makes it openly available.)
 
 
-The following example client looks up electronegativity for 10 elements. The idea will be to make use 
-of the existing `lookup` route provided by the API. The client code pulls out the resulting value; or
-reports if there is no such value. This code also illustrates a simple timing mechanism that will 
-indicate that most of the run time is spent waiting for the API call to return. Note that the 
-client does not have any insight into the breakdown of this latency on the server side, for example
-whether the delay is in the internet or in the database lookup.
+In writing a Python Client we can make use of the `requests` library. We can *get* the API's
+response for example using `r = requests.get(url)`. The return value placed in variable `r` 
+can be interpreted through `json` as a list of dictionaries. In the periodic table case we have
+requested information on a single element and receive in return a single dictionary of attributes
+for that element. The subsequent oceanography example involves a return of many dictionaries
+corresponding to sensor measurements. 
+
+
+The following example Client looks up electronegativity for 10 elements making use 
+of the `lookup` route provided by the API. The Client code pulls out the resulting value of
+interest; or reports if there is no such value. The code also features a simple timing mechanism 
+showing that most of the run time is waiting for the API call to return. The Client does not 
+have insight into the Server latency, for example whether the pause is due to the internet 
+connection or due to the database lookup.
+
+
+A point to reemphasize here is that the Client code is making use of a base URL 
+`https://pythonbytes.azurewebsites.net`. This URL connects not to a *database* but to 
+an Azure serverless function or 'Function App'. This in turn pivots to consult the
+database and format the resulting information as a reply. This action is triggered
+through a *route* (dedicated Python function) associated with the api call. Many 
+more routes and api call could be built in this vein
+raising the question of how to design an API (beyond the scope of this page).
 
 
 ```
+# Simple periodic table Client
 import requests
 import time
 
@@ -359,8 +335,9 @@ print('                       on print():',          round(sum_tp/tt))
 ```
 
 
-Here is an alternative Python `requests.get()` call passing the key-value information in the request body
-as dictionary `params`:
+Here is an alternative means of getting data with the Python `requests.get()` call.
+Rather than placing arguments in the URL they are passed as key-value information 
+in the request body using a dictionary called `params`:
 
 
 ```
@@ -378,6 +355,7 @@ data access API. Here we go through the steps to build a non-trivial example.
 
 
 ### Narrative
+
 
 To follow this narrative it helps to have in mind *five* virtual locations. Together they comprise
 our development environment:
@@ -671,3 +649,49 @@ Result
     - As they are thematically related this suggests a later simplification: One Function App rather than two
     - As noted above: It may take multiple tries or a few minutes of elapsed time before `publish` runs properly
     - `func azure functionapp publish` takes five or so minutes to complete
+ 
+
+
+
+## open tasks
+
+
+In the course of building this example oceanography data system, questions do come up.
+This section is the accumulator; so write more documentation on/as/for....
+
+
+- I seem to be testing using localhost:7071 on my laptop that forwards to the VM
+    - What port on the VM? Also 7071? How do I find this? What about the other port in VSCode?
+    - I do not believe so verify that port forwarding is used by VSCode itself
+- Because `id` and `Timestamp` are the same: One could be removed from the return value.
+    - This would visit the "remove item" function used blindly up to this point
+    - Likewise cleaning up the unnecessary extra digits 
+- Not annotated yet: Start up and configure a VM on the Azure cloud as a base of operations
+- `pandas` Dataframe column zero: For sensors this is a Timestamp (not an integer)
+    - It would be helpful to review the formalism per Jake
+- ...remarks on `Azure Function Core Tools` in relation to as we know it the utility command `func`
+    - including the basic vocabulary of imperatives
+- `az login` from the Azure VM
+- ...explain how the localhost test works with the default port 7071 forward
+- ...a work-through example of using API keys provided by Azure Function Apps.
+- Still need to clear up `venv` vs `local.settings.json`: Where are the creds placed, used when, uploaded how, etc
+- VSCode
+    - Interesting error message on *activation* includes [this link for more](https://code.visualstudio.com/api/references/activation-events#Start-up) so what is this about?
+    - Why is the VSCode Python not the same as my Ubuntu environment miniconda Python?
+    - Azure VM
+        - Can this support a Jupyter notebook?
+        - Directory structure
+            - ~ can host Jupyter-style repository clones e.g. the `oceanography` Jupyter book
+                - `db-api` **tutorial periodic table API folder**
+                    - `app-env` is an **environment directory** from the tutorial 
+                - `db-populate` **tutorial directory** for loading Containers in CosmosDB
+                    - `db-profile-api` **profile api folder**
+                        - `profile-app-env` **environment** subdirectory for the profile API
+                    - `db-sensor-api` **sensor api folder**
+                        - `sensor-app-env` **environment** subdirectory for the sensor API
+        - Activation commands
+            - `robotron` for the tutorial (Periodic table) API
+            - `profilotron` for the profile API
+            - `sensortron` for the sensor API
+            - Why does the `populate` process not involve installing and activating a Python environment?
+- Be sure to revisit the Easy button: GLODAP on S3
