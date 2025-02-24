@@ -436,6 +436,10 @@ in the request body using a dictionary called `params`:
 response = requests.get("https://pythonbytes.azurewebsites.net/api/lookup/", params={"name": "Sodium"})
 ```
 
+This concludes notes on Part 1, the 
+[MSE544 tutorial on building a periodic table API](https://cloudbank-project.github.io/az-serverless-tutorial/).
+The next section, Part 2, works through a more complicated oceanographic example.
+
 
 ## oceanography
 
