@@ -454,7 +454,7 @@ Here is the 'what we do, what happens' narrative:
 
 ```
 import oceanclient as oc
-dfT, dfS = oc.Chart('2022-01-04', 7)
+dfT, dfS = oc.Chart('2022-01-05', 9)
 ```
 
 
