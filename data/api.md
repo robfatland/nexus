@@ -445,8 +445,8 @@ imported namespace `oc.` For demonstration purposes it is hardcoded to do three 
 The resulting chart looks like this:
 
 
-<img src="assets/img/osb_temp_salinity_chart.png"
-     alt="green and black icon"
+<img src="./../assets/img/osb_temp_salinity_chart.png"
+     alt="data chart, profiles for temperature and salinity"
      width="600"
      style="float: center; margin-right: 10px;" />
 
