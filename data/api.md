@@ -659,43 +659,53 @@ Result
 In the course of building this example oceanography data system, questions do come up.
 This section is the accumulator; so write more documentation on/as/for....
 
-- Very important: An API should be self-documenting and this is not done yet here
-- Let's cover all the bases we hit in the abstract (see below)
-- I seem to be testing using localhost:7071 on my laptop that forwards to the VM
-    - What port on the VM? Also 7071? How do I find this? What about the other port in VSCode?
-    - I do not believe so verify that port forwarding is used by VSCode itself
-- Because `id` and `Timestamp` are the same: One could be removed from the return value.
-    - This would visit the "remove item" function used blindly up to this point
-    - Likewise cleaning up the unnecessary extra digits 
-- Not annotated yet: Start up and configure a VM on the Azure cloud as a base of operations
-- `pandas` Dataframe column zero: For sensors this is a Timestamp (not an integer)
-    - It would be helpful to review the formalism per Jake
-- ...remarks on `Azure Function Core Tools` in relation to as we know it the utility command `func`
-    - including the basic vocabulary of imperatives
-- `az login` from the Azure VM
-- ...explain how the localhost test works with the default port 7071 forward
-- ...a work-through example of using API keys provided by Azure Function Apps.
-- Still need to clear up `venv` vs `local.settings.json`: Where are the creds placed, used when, uploaded how, etc
-- VSCode
-    - Interesting error message on *activation* includes [this link for more](https://code.visualstudio.com/api/references/activation-events#Start-up) so what is this about?
-    - Why is the VSCode Python not the same as my Ubuntu environment miniconda Python?
-    - Azure VM
-        - Can this support a Jupyter notebook?
-        - Directory structure
-            - ~ can host Jupyter-style repository clones e.g. the `oceanography` Jupyter book
-                - `db-api` **tutorial periodic table API folder**
-                    - `app-env` is an **environment directory** from the tutorial 
-                - `db-populate` **tutorial directory** for loading Containers in CosmosDB
-                    - `db-profile-api` **profile api folder**
-                        - `profile-app-env` **environment** subdirectory for the profile API
-                    - `db-sensor-api` **sensor api folder**
-                        - `sensor-app-env` **environment** subdirectory for the sensor API
-        - Activation commands
-            - `robotron` for the tutorial (Periodic table) API
-            - `profilotron` for the profile API
-            - `sensortron` for the sensor API
+- MUST DO SECTION
+    - Publish an Open repo on GitHub called `oceanclient` consisting of one Python file and one Jupyter notebook
+    - Make the API self-documenting
+    - Cover all the abstract's bases
+    - Easier forms of publication including S3 GLODAP
+    - `az login` from the Azure VM: What is going on here?
+    - Narrative: How the pre-publish localhost tests work
+    - Narrative: Of issue X below
+    - Narrative: Why an environment is necessary for the three APIs
+- GOOD IDEA NOT ESSENTIAL SECTION
+    - `sensor` API degeneracy `id` and `Timestamp`; and how does remove item work?
+    - don't need 18 digit precision
+    - annotate the VM start process: choice of OS, instance power
+    - X: work-through of API keys provided by Azure Function Apps
+    - filesystem diagram
+- KNOW YOUR STUFF SECTION
+    - Who is using localhost:7071: My laptop forwards to what on the VM? When? How to see? 2nd port?
+    - Differentiate what VSCode is running traffic on (ssh connection?) 
+    - `pandas` Dataframe column zero: For sensors = Timestamp; review formalism (Jake)
+    - `Azure Function Core Tools` utility command `func` + basic vocabulary of imperatives
+    - Clear up `venv` vs `local.settings.json`; and why does db-populate not need its own environment
+        - Where are the creds placed, used when, uploaded how...
+    - VSCode
+        - Error message on *activation* includes
+            - [this link for more](https://code.visualstudio.com/api/references/activation-events#Start-up)
+            - What is this about?
+        - Why is the VSCode Python not the same as my Ubuntu environment miniconda Python?
+        - Azure VM
+            - Can this support a Jupyter notebook?
+            - Directory structure
+                - ~ can host Jupyter-style repository clones e.g. the `oceanography` Jupyter book
+                    - `db-api` **tutorial periodic table API folder**
+                        - `app-env` is an **environment directory** from the tutorial 
+                    - `db-populate` **tutorial directory** for loading Containers in CosmosDB
+                        - `db-profile-api` **profile api folder**
+                            - `profile-app-env` **environment** subdirectory for the profile API
+                        - `db-sensor-api` **sensor api folder**
+                            - `sensor-app-env` **environment** subdirectory for the sensor API
+            - Activation commands
+                - `robotron` for the tutorial (Periodic table) API
+                - `profilotron` for the profile API
+                - `sensortron` for the sensor API
             - Why does the `populate` process not involve installing and activating a Python environment?
-- Be sure to revisit the Easy button: GLODAP on S3
 
+### Address the abstract
 
-> Abstract: Organizations such as Science Gateways and the eScience Institute idealistically promote open science through data sharing; and you may wish you had the skills to build something that puts you firmly in that camp. Go open science! But there is a catch: Building something that works is much easier than building something that works that is secure. And then there is the inevitable catastrophe once you have it up and running: You have a new idea and you wish to expand on what your system’s baseline design was intended to do. No fear: This clinic will give you the basic one-two-three punch to build a data server with a built-in API, make it secure enough (assuming you are not working with personalized human data), and expand it in a new direction after it is up and running. We will use as a working example the supposition that you have invented the periodic table of elements and that you subsequently discovered crystal field theory. We address the pressing question: Can a cloud-hosted NoSQL chemistry data system be ACIDic?
+> Source abstract: Organizations such as Science Gateways and the eScience Institute idealistically promote open science through data sharing; and you may wish you had the skills to build something that puts you firmly in that camp. Go open science! But there is a catch: Building something that works is much easier than building something that works that is secure. And then there is the inevitable catastrophe once you have it up and running: You have a new idea and you wish to expand on what your system’s baseline design was intended to do. No fear: This clinic will give you the basic one-two-three punch to build a data server with a built-in API, make it secure enough (assuming you are not working with personalized human data), and expand it in a new direction after it is up and running. We will use as a working example the supposition that you have invented the periodic table of elements and that you subsequently discovered crystal field theory. We address the pressing question: Can a cloud-hosted NoSQL chemistry data system be ACIDic?
+
+Breakdown
+- asdf
