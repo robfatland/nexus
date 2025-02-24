@@ -9,41 +9,48 @@
 
 
 The objective of this effort is to build an API that returns data from a NoSQL database.
-This document is divided into two parts.
+The database content loaded in the *build* process; so it is essentially static.  This page
+does not address dynamic data contribution scenarios.
 
 
-- Part 1: The **MSE544** [Periodic table exercise](#the-mse544-periodic-table)
-- Part 2: The [Ocean Observatory data publication exercise](#ocean-observatory-data)
+This document is divided into two parts (data access scenarios):
+
+
+- Part 1: The **MSE544** [Periodic table scenario](#the-mse544-periodic-table)
+- Part 2: The [Ocean Observatory sensor data scenario](#ocean-observatory-data)
 
 
 
 MSE544 is a data science course taught at the University of Washington by Professor Luna Huang. 
 Part of the course covers skills for building research computing infrastructure on the public cloud.
 This includes publishing a simple dataset -- the periodic table -- and building an application
-programming interface or API. The end result: We can use a browser or some Python code to get 
-some information about sodium. All of this is built on the public cloud, in this case on Microsoft 
-Azure. 
+programming interface or API to query that data. The result: We can use a browser or some Python 
+code to get information about sodium. This is built on the public cloud, specifically on the Microsoft 
+Azure platform. 
 
 
-This `nexus` document annotates the build/test process for a data system rooted in a NoSQL database.
-It will help to have in mind the following database structure.
+> This `nexus` document annotates the build/test process for a data system anchored by a NoSQL database.
+It helps to have in mind some heirarchical terminology:
 
 
-- CosmosDB instance: `robs-data-ocean`. This is the high-level Azure database service
-    - Databases within `robs-data-ocean`
-        - `periodic-db` per the MSE544 tutorial
-            - `elements`: A *Container* (table-like structure) within `periodic-db`
-        - `oceanography`
-            - `osb_profile`: A *Container* for ocean-profiling metadata
+- CosmosDB instance, the high-level Azure database service:
+    - `robs-data-ocean` is the name of the example CosmosDB instance
+    - In the `robs-data-ocean` CosmosDB instance we have two databases:
+        - `periodic-db` per the MSE544 tutorial is a NoSQL database used for the periodic table
+            - Within the `periodic-db` database is a *Container*, a table-like structure
+            - `elements` is the Container for data about each of the elements in the periodic table
+        - `oceanography` per Part 2 is a NoSQL database featuring three Containers
+            - `osb_profile`: A Container for metadata for an ocean profiler
             - `osb_temp`: A Container for temperature data 
             - `osb_salinity`: A Container for salinity data
 
-There are three related URLs each with its own set of APIs
+
+Related to this heirarchy we have three URLs corresponding to three APIs:
 
 
-- [`https://pythonbytes.azurewebsites.net`](https://pythonbytes.azurewebsites.net)
-- [`https://oceanography.azurewebsites.net`](https://oceanography.azurewebsites.net)
-- [`https://oceansensors.azurewebsites.net`](https://oceansensors.azurewebsites.net)
+- [`https://pythonbytes.azurewebsites.net`](https://pythonbytes.azurewebsites.net) ~ the periodic table API
+- [`https://oceanography.azurewebsites.net`](https://oceanography.azurewebsites.net) ~ the profiler metadata API
+- [`https://oceansensors.azurewebsites.net`](https://oceansensors.azurewebsites.net) ~ the temperature and salinity data API
 
 
 ***Follow-along annotation for the Periodic table example follows directly below***
@@ -56,21 +63,41 @@ There are three related URLs each with its own set of APIs
 
 
 This narrative follows the [MSE544 course activity](https://cloudbank-project.github.io/az-serverless-tutorial/) 
-built as proof of concept on Azure. This data API builder does not make use of  
-[***docker containerization***](https://naclomi.github.io/containers-tutorial/).
+built on the Microsoft Azure cloud platform. This activity does not rely upon  
+[***containerization*** which is addressed separately.](https://naclomi.github.io/containers-tutorial/)
 
 
-> Suggestion: Read through this section casually; then go try the tutorial at the above link.
+> Suggestion: Read through this section casually; then try the tutorial at the above link.
 
 
 ### Azure brand names
 
-- The Azure brand name for a Virtual Machine is... a Virtual Machine (or VM)
-- The Azure brand name for their database service is "Cosmos DB".
-    - Within that service: `NoSQL` is an available *type* of database that we use here
+
+- The Azure brand name for a Virtual Machine is... a Virtual Machine (or VM *instance*)
+- The Azure brand name for a hosted database service is "Cosmos DB".
+    - Within that service: `NoSQL` is the *type* of database used here
 - The Azure brand name for a serverless function service is 'Azure Function App'
-    - This is where the API intelligence is hosted as running Python code
-    - The Function App has secure credentials so it can query our NoSQL databases
+    - [Azure Function documentation link](https://learn.microsoft.com/en-us/azure/azure-functions/functions-overview)
+    - The Azure Function App hosts the API intelligence (Python code)
+    - The Function App uses internally stored (secure) credentials to access our NoSQL database
+    - We install utility applications to facilitate the build process
+
+
+For reference the installation command sequence. ***Recommended: Run these commands 
+in sequence as directed when following the 
+[tutorial](https://cloudbank-project.github.io/az-serverless-tutorial/functions/).
+
+
+```
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+az
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-$(lsb_release -cs 2>/dev/null)-prod $(lsb_release -cs 2>/dev/null) main" > /etc/apt/sources.list.d/dotnetdev.list'
+sudo apt-get update
+sudo apt-get install -y azure-functions-core-tools-4
+func --version
+```
 
 
 ### Milestone sequence
@@ -79,32 +106,39 @@ built as proof of concept on Azure. This data API builder does not make use of
 For the Periodic Table exercise we have three success milestones:
 
 
-- We can get periodic table information for Sodium using the Azure portal (browser tab) 
-- We can query the periodic table using an API call (browser tab); the Azure portal is not involved
-    - This query is directed at the Azure Function App
-- We can query the periodic table using the same API; but by running Python code
+- Get periodic table information for Sodium using the Azure portal (browser tab) 
+- Query the periodic table Container using an API call (from a browser tab)
+    - The Azure portal is not involved in this step
+    - This query is directed at the Azure Function App which will refer to the database
+- Query the periodic table using that same API: From running Python code
     - Such a Python program is called an API *Client*
-    - The Python program relies on the `requests` library
+    - The Python program relies on the `requests` [library](https://librarycarpentry.github.io/lc-python-intro/libraries.html#python-libraries-are-powerful-collections-of-tools-)
 
 
 
 ### Additional context
 
 
-The Azure Function App plus the NoSQL database comprise an API *Server*. A completely automated 
-program-to-program data access procedure will presumably scale up in the context of some 
-research task. The Server-Client interaction is also a model for just about everything that 
-happens on the Internet. The underlying technology is a message passing protocol called `HTTP`. 
+The Azure Function App plus the NoSQL database comprise an API *Server*. The premise of this 
+narrative is that a research program will benefit from building a Server, for at least four reasons:
+- The data are *secure*
+- The system will accommodate scaling up: data volume over time
+- The system will accommodate scaling up: queries
+- The programmatic structure facilitates future expansion: Data product types, query modes etcetera
 
 
-Two things to try and develop in passing are *debugging skills* and *underlying context*.
+The intent is that by automating data access ('program-to-program') we leverage the central 
+transaction model of the internet (based on a messaging protocol called `HTTP`) to streamline 
+data-driven research. The up-front *cost* of taking this approach is an investment of time and
+effort in learning the build technology. In so doing the builder has to develop an
+understanding of the *underlying context* and must also develop *debugging skills*.  
 
 
-A note on process: 
-This tutorial uses two virtual **workshops** (intentionally avoiding the word *environment*).
-The first workshop is the `bash` shell running on a low-power, low-cost on-demand virtual machine (VM) on the 
-Azure cloud. The second workshop is the **VSCode** application, a popular and free IDE available from 
-Microsoft. Both `bash` on the VM and the VSCode application integrate well with the Azure cloud. 
+A note on the *process* of following the tutorial: 
+We use two virtual **workshops** (here we intentionally avoid the term *environment*):
+The first workshop is the `bash` shell running on a basic low-cost on-demand virtual machine (VM) 
+that we appropriate on the Azure cloud. The second workshop is the **VSCode** application, a 
+popular and free IDE available from Microsoft.
 
 
 ## Set up a VM
@@ -112,61 +146,75 @@ Microsoft. Both `bash` on the VM and the VSCode application integrate well with 
 
 We use a Virtual Machine on the Azure cloud as our development environment. This gets us away from 
 having to build a development environment on our personal laptops. Everything we do on the cloud VM
-is facilitated either by browser or by the `VSCode` application.
+happens either in browser tabs or from the `VSCode` application.
 
 
-The MSE544 guide to setting up the Azure VM is pretty self-explanatory; so there are no further annotations here at this time.
+The MSE544 guide to setting up the Azure VM is self-explanatory; no further annotations 
+are needed here on this `nexus` page.
 
 
 ## Build the NoSQL Database
 
 
-The database is given a unique, descriptive name. I used `robs-data-ocean`. This is built on the Azure 
-portal, taking care to check **Do not apply** on the "Free Tier Discount". The chosen region is West US 2 
-(Moses Lake). Take care also to **disable** both aspects of Global Distribution. 
+On the Azure cloud we appropriate services by clicking a **Create** button. The first example of this is
+the VM mentioned above, and the second is a Cosmos DB instance, a database service that supports one or
+more actual databases. The Cosmos DB instance is given a unique descriptive name during creation, in this
+case **`robs-data-ocean`**. Note that during *Create* we check **Do not apply** on the "Free Tier Discount". 
+The chosen region is *`West US 2 (Moses Lake)`*; and we **disable** both aspects of Global Distribution. 
 
 
-
-
-Execute the loader Python script: 
+With the Cosmos DB running we proceed to create a `periodic-db` NoSQL database and theron an `elements` 
+Container. We get the periodic table dataset, a comma-separated-value (CSV) file; and then we run a 
+Python program that loads the periodic table data into the `elements` Container: 
 
 ```
 python3 process.py periodic-table.csv
 ```
 
-## debugging
+### debugging
 
 
-While testing the database build steps I ran into an error during `python process.py periodic-table.csv`. 
-It appeared to be a library import statement for `pandas`. Three debug procedures:
+While testing the above-described database build steps my run of `python process.py periodic-table.csv`
+failed. The error message concerned a library import statement for `pandas`. This led to exploring
+three debug procedures:
 
 
-- copy/paste the error message or fractions thereof in the browser search window
+- Copy/paste an error message (or key parts thereof) in the browser search window
     - Possibly helpful: prepend qualifiers like "Azure" or "Python"
-    - This often finds related stack overflow (etc) pages
-    - These may or may *not* be helpful; proceed with caution
+    - This often turns up hits on relevant stack overflow knowledge base solutions
+        - These may or may *not* be helpful; proceed with caution
 - Create a simplified version of the program to isolate the error
-    - Example: the error message cites a problem at line 12
-    - Create a 12-line version of the program and see if this still gives the error
-    - In this case there was some sort of arcane library incompatibility...
-- Simplify `requirements.txt` and reinstall the environment
-    - To get Python library version numbers for installed modules:
-        - `pip show numpy` and the much simpler `pip list`
+    - Example: The error message cites a problem at line 12
+        - We delete everything after line 12-line and re-run to verify this is the problem
+        - In my case there was some arcane library incompatibility... issue confirmed
+            - Library incompatibility in Python traces back to library installation
+                - Versions of libraries are stipulated in `requirements.txt`
+- Edit `requirements.txt` by removing version details and reinstall the environment
+    - To get Python library version numbers for installed modules use...
+        - ...`pip show numpy` and the much simpler `pip list`
     - To uninstall: `pip uninstall -r requirements.txt`
     - To simplify the listing: `pandas==2.0.3` becomes simply `pandas`, and so on
     - To reinstall: `pip install -r requirements.txt`
-    - The `process.py` file was restored to its intended content; and now ran to completion
+    - After the above steps...
+        - ...the `process.py` file was refreshed to full content
+        - ...`python process.py periodic-table.csv` was run again
+        - ...and this ran to completion, no errors
 
 
-Working with the continuously evolving collection of Python libraries can be a murky process.
-Debugging steps such as described above are simple; and simple is a recommended way to start.
+Working with a continuously evolving space of Python libraries can be an arcane or 
+murky process. Simple debugging steps such as those described above are a means of
+cutting through the apparent complexity (a wall of red ink error messages) to what
+is often a simple fix.
 
 
 ## Build the Azure Function App
 
 
-- skip for now: multiple steps leading up to `Hey Galaxy` test code
-- skip for now: In the interest of whatabout: Can we use a `conda` environment?
+At this point the narrative turns to creating and then populating an Azure Function App, 
+generically called a *cloud serverless function*. This service allows us to write code
+specific to the API we are building without any time or energy spent on configuring a 
+supporting cloud VM. 
+
 
 
 ### Resuming a paused project
@@ -724,6 +772,7 @@ This section is the accumulator; so write more documentation on/as/for....
     - `Azure Function Core Tools` utility command `func` + basic vocabulary of imperatives
     - Clear up `venv` vs `local.settings.json`; and why does db-populate not need its own environment
         - Where are the creds placed, used when, uploaded how...
+    - In building the `db-api` function_app.py environment we use `venv`. Might we use a `conda` environment?
     - VSCode
         - Error message on *activation* includes
             - [this link for more](https://code.visualstudio.com/api/references/activation-events#Start-up)
