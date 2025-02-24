@@ -68,7 +68,9 @@ built on the Microsoft Azure cloud platform. This activity does not rely upon
 [***containerization*** which is addressed separately.](https://naclomi.github.io/containers-tutorial/)
 
 
-> Suggestion: Read through this section casually; then try the tutorial at the above link.
+> Suggestion: Read through this section casually,
+> then [try working through the tutorial](https://cloudbank-project.github.io/az-serverless-tutorial/)
+> (requires access to an Azure cloud subscription).
 
 
 ### Azure brand names
