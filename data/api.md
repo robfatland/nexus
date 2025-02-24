@@ -573,6 +573,23 @@ marked by four timestamps: Start of rest, start of ascent, start of descent, end
 descent.
 
 
+> Point of potential confusion: "The profiler is *parked*" means "resting in a cradle on
+> a platform that is positively buoyant. The platform is tethered to the sea floor by means
+> of two long cables so that it *floats* in a manner of speaking 200 meters below the ocean
+> surface. This platform is provided with power and a cable winch attached to the sensor
+> pod which is also positively buoyant. The winch is spooled out and then spooled back
+> nine times per day, each time allowing the sensor pod to rise to about ten meters
+> depth. The ascent from 200 meters to 10 meters comprises one profile. Over two days
+> the depth-with-time chart is as follows:
+
+
+<img src="./../assets/img/osb_temp_salinity_chart.png"
+     alt="data chart, profiles for temperature and salinity"
+     width="600"
+     style="float: center; margin-right: 10px;" />
+
+
+
 ```
 # pseudo-code for loading profile data into a container
 # read and format profile metadata: OSB, JAN-2022; all content treated as strings
