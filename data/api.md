@@ -467,12 +467,17 @@ imported namespace `oc.` For demonstration purposes it is hardcoded to do three 
 The resulting chart looks like this:
 
 
+<img src="assets/img/osb_temp_salinity_chart.png"
+     alt="green and black icon"
+     width="600"
+     style="float: center; margin-right: 10px;" />
 
 
-Figure caption: There are two sensors -- temperature and salinity -- that record data once per
+
+Figure caption: Two sensors -- temperature and salinity -- record data once per
 second from an oceanographic installation 100 km off the coast of Oregon at the base of the 
 continental shelf. Nine times per day these sensors are raised and then lowered through the 
-upper 200 meters of the ocean resulting in a profile of temperature and salinity with depth.
+200 meter upper water column producing data profiles as shown here.
 
 The scientist does not know when the profiling runs happen; only that they are fairly 
 consistent in timing under normal conditions. The `Chart()` function call given above 
