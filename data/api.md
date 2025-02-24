@@ -659,7 +659,8 @@ Result
 In the course of building this example oceanography data system, questions do come up.
 This section is the accumulator; so write more documentation on/as/for....
 
-
+- Very important: An API should be self-documenting and this is not done yet here
+- Let's cover all the bases we hit in the abstract (see below)
 - I seem to be testing using localhost:7071 on my laptop that forwards to the VM
     - What port on the VM? Also 7071? How do I find this? What about the other port in VSCode?
     - I do not believe so verify that port forwarding is used by VSCode itself
@@ -695,3 +696,6 @@ This section is the accumulator; so write more documentation on/as/for....
             - `sensortron` for the sensor API
             - Why does the `populate` process not involve installing and activating a Python environment?
 - Be sure to revisit the Easy button: GLODAP on S3
+
+
+> Abstract: Organizations such as Science Gateways and the eScience Institute idealistically promote open science through data sharing; and you may wish you had the skills to build something that puts you firmly in that camp. Go open science! But there is a catch: Building something that works is much easier than building something that works that is secure. And then there is the inevitable catastrophe once you have it up and running: You have a new idea and you wish to expand on what your system’s baseline design was intended to do. No fear: This clinic will give you the basic one-two-three punch to build a data server with a built-in API, make it secure enough (assuming you are not working with personalized human data), and expand it in a new direction after it is up and running. We will use as a working example the supposition that you have invented the periodic table of elements and that you subsequently discovered crystal field theory. We address the pressing question: Can a cloud-hosted NoSQL chemistry data system be ACIDic?
