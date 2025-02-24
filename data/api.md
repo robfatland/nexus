@@ -223,17 +223,15 @@ supporting cloud VM.
 ### Resuming a paused project
 
 
-Suppose we have to step away for a few days: From a VM where we are working on 
-some project. Some simple advance steps can facilitate smooth resumption: Use
-the `.bashrc` and `.bash_aliases` to save configuration aliases and print a
-message on how to resume using `echo`. 
+Suppose we have to step away for a few days. It can help to have the login message include
+a reminder on how to configure the VM upon resuming this work. One way is to use the `~/.bashrc` 
+and `~/.bash_aliases` files to save configuration aliases and remind us what they are using `echo`. 
 
 
 - **Start** the VM for example from the portal or console
-- Run `VSCode` and `ssh` into this VM
-- In VSCode > terminal > read the login message
-    - ...this reminds us of configuration aliases we set up before the hiatus
-        - For example: activating an environment, moving to the working directory
+- Run `VSCode` to `ssh` into the VM
+- In VSCode > terminal > read the login message...
+    - ...prints a reminder message listing configuration aliases
 
 
 #### the `robotron` alias
