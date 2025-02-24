@@ -5,33 +5,54 @@
 # api
 
 
-The objective is to build an API that can return data from a NoSQL database.
+## overview 
 
 
-- Version 1: The MSE544 [Periodic table exercise](#the-mse544-periodic-table)
-- Version 2: The Cloud Clinic 2 [Ocean Observatory exercise](#ocean-observatory-data)
+The objective of this effort is to build an API that returns data from a NoSQL database.
+This document is divided into two parts.
 
 
-## The MSE544 periodic table
+- Part 1: The **MSE544** [Periodic table exercise](#the-mse544-periodic-table)
+- Part 2: The [Ocean Observatory data publication exercise](#ocean-observatory-data)
+
+
 
 MSE544 is a data science course taught at the University of Washington by Professor Luna Huang. 
 Part of the course covers skills for building research computing infrastructure on the public cloud.
+This includes publishing a simple dataset -- the periodic table -- and building an application
+programming interface or API. The end result: We can use a browser or some Python code to get 
+some information about sodium. All of this is built on the public cloud, in this case on Microsoft 
+Azure. 
 
 
-- CosmosDB instance: `robs-data-ocean`
-- Databases
-    - `periodic-db`
-        - Container: `elements`
-    - `oceanography`
-        - Container: `osb_profile`
-        - Container: `osb_temp`
-        - Container: `osb_salinity`
+This `nexus` document annotates the build/test process for a data system rooted in a NoSQL database.
+It will help to have in mind the following database structure.
 
 
-***For follow-along annotation (Periodic table of elements): Keep reading***
+- CosmosDB instance: `robs-data-ocean`. This is the high-level Azure database service
+    - Databases within `robs-data-ocean`
+        - `periodic-db` per the MSE544 tutorial
+            - `elements`: A *Container* (table-like structure) within `periodic-db`
+        - `oceanography`
+            - `osb_profile`: A *Container* for ocean-profiling metadata
+            - `osb_temp`: A Container for temperature data 
+            - `osb_salinity`: A Container for salinity data
+
+There are three related URLs each with its own set of APIs
 
 
-***For the oceanography segment: [Jump down in this document](#oceanography)***
+- [`https://pythonbytes.azurewebsites.net`](https://pythonbytes.azurewebsites.net)
+- [`https://oceanography.azurewebsites.net`](https://oceanography.azurewebsites.net)
+- [`https://oceansensors.azurewebsites.net`](https://oceansensors.azurewebsites.net)
+
+
+***Follow-along annotation for the Periodic table example follows directly below***
+
+
+***Annotation for the oceanography segment [begins here.](#oceanography)***
+
+
+## The MSE544 periodic table
 
 
 This narrative follows the [MSE544 course activity](https://cloudbank-project.github.io/az-serverless-tutorial/) 
