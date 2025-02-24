@@ -583,9 +583,9 @@ descent.
 > the depth-with-time chart is as follows:
 
 
-<img src="./../assets/img/osb_temp_salinity_chart.png"
-     alt="data chart, profiles for temperature and salinity"
-     width="600"
+<img src="./../assets/img/shallow_profiler_two_day_history.png"
+     alt="shallow profiler making 18 profile ascents over two days"
+     width="800"
      style="float: center; margin-right: 10px;" />
 
 
