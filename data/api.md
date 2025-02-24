@@ -86,9 +86,9 @@ built on the Microsoft Azure cloud platform. This activity does not rely upon
     - We install utility applications to facilitate the build process
 
 
-For reference the installation command sequence. ***Recommended: Run these commands 
-in sequence as directed when following the 
-[tutorial](https://cloudbank-project.github.io/az-serverless-tutorial/functions/).
+For reference the installation command sequence. ***Recommendation: 
+Run these commands in the directed sequence following the 
+[tutorial](https://cloudbank-project.github.io/az-serverless-tutorial/functions/).***
 
 
 ```
