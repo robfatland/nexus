@@ -9,11 +9,10 @@
 
 
 The concrete objective here is to build an API that returns data from a NoSQL database.
-Database content is loaded in a *build* process; so it is *static*.  Dynamic data 
-contribution over time is not covered here.
+Database content is loaded in the *build* phase. Subsequent data accumulation not covered.
 
 
-This document is divided into two parts (data access scenarios):
+This `api` page consists of two parts:
 
 
 - Part 1: The **MSE544** [Periodic table scenario](#the-mse544-periodic-table)
@@ -21,7 +20,8 @@ This document is divided into two parts (data access scenarios):
 
 
 
-MSE544 is a data science course taught at the University of Washington by Professor Luna Huang. 
+In Part 1 we leverage course material from MSE544, a data science course taught at the University of 
+Washington by Professor Luna Huang. 
 Part of the course covers skills for building research computing infrastructure on the public cloud.
 This includes publishing a simple dataset -- the periodic table -- and building an application
 programming interface or API to query that data. The result: We can use a browser or some Python 
@@ -273,10 +273,29 @@ source ~/.bashrc
 
 ### Publish Function App to the Azure cloud 
 
+The next step is to publish the Function App from your development environment on an Azure VM
+to the Azure Function App service.
 
-- ***WARNING***: There is a bump in the road ahead.
-    - Publication/test: If something goes wrong: ***Do Not Try To Debug The Problem***
-    - Rather: Keep reading further in the instructions.
+
+**Prelim remark 1**: To get permission to publish the API to an actual Azure Function App we first login using the `az` 
+utility program: `az login`. This jumps to a browser and generally things go smoothly. If however
+they do not there is a further option: Enter `az login --use-device-code` and follow those 
+instructions. 
+
+
+**Prelim remark 2**: It seems to be common for the publish command 
+`func azure functionapp publish <api-name>`
+to throw an error on the first try with the message 
+`Error [2025-02-25T20:32:20.006Z] Uploading archive... (ServiceUnavailable)`.
+In this case -- supposing you have logged in to Azure -- we suggest you 
+try a couple more times. I have also had some luck with stopping and 
+restarting VSCode.
+
+
+- ***WARNING***: The tutorial features a small 'bump in the road' coming up.
+    - Publish-and-test: Suppose this does not seem to work; what to do?
+        - In this instance please ***do not try and debug the situation***...
+        - ...just keep reading further in the tutorial
 - Deploying the Function App to Azure
     - We log in to Azure from the Azure VM: `az login`
         - `az login` = {**azure command line interface** = `az`} +  {**action** = `login`}
