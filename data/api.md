@@ -797,6 +797,7 @@ In the course of building this example oceanography data system, questions do co
 This section is the accumulator; so write more documentation on/as/for....
 
 - MUST DO SECTION
+    - UNBURY THE LEAD: The fun of looking at these signals
     - Make the API self-documenting: `test` should list `profile` and `sensors` routes. "Oh I forgot how to use the API calls"
     - Cover all the abstract's bases
     - Easier forms of publication including S3 GLODAP
