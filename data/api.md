@@ -864,7 +864,6 @@ This section is the accumulator; so write more documentation on/as/for....
                 - `robotron` for the tutorial (Periodic table) API
                 - `profilotron` for the profile API
                 - `sensortron` for the sensor API
-            - Why does the `populate` process not involve installing and activating a Python environment?
 
 
 ### Address the abstract
