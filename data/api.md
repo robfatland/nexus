@@ -69,7 +69,7 @@ built on the Microsoft Azure cloud platform. This activity does not rely upon
 It *does* rely upon NoSQL: 
 [See the lecture notes here.](https://docs.google.com/presentation/d/1-eQ6qgeTaExS_6Cxh7Wq9LFpqbD49ZX3kXazOPNc7Js/edit?usp=sharing)
 It also relies on Serverless Functions: 
-[See the lecture notes here.]()
+[See the lecture notes here.](https://docs.google.com/presentation/d/1R2HHfHYgmarje2q_0x42hMecUc7R6SFjI-ih1L05foQ/edit#slide=id.gd607fce26d_0_0)
 
 
 > Suggestion: Read through this section casually,
