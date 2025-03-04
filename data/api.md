@@ -77,20 +77,26 @@ The example Client for the oceanography APIs is [found here](https://github.com/
 
 ### Azure brand names
 
+The things we pay money for in the cloud are called *services*. Each cloud vendor has its own 
+naming convention for these services.
 
-- The Azure brand name for a Virtual Machine is... a Virtual Machine (or VM *instance*)
-- The Azure brand name for a hosted database service is "Cosmos DB".
-    - Within that service: `NoSQL` is the *type* of database used here
-- The Azure brand name for a serverless function service is 'Azure Function App'
+
+- The Azure brand name for an on-demand Virtual Machine *service* is... wait for it... a Virtual Machine (or VM *instance*)
+- The Azure brand name for a hosted database *service* is **Cosmos DB**.
+    - Within that service: `NoSQL` is the *type* of database we will use
+- The Azure brand name for a serverless function *service* is 'Azure Function App'
     - [Azure Function documentation link](https://learn.microsoft.com/en-us/azure/azure-functions/functions-overview)
     - The Azure Function App hosts the API intelligence (Python code)
     - The Function App uses internally stored (secure) credentials to access our NoSQL database
     - We install utility applications to facilitate the build process
+        - The main utility program we install is an abbreviation of *function*, to wit: `func`
+            - This is easier to say than 'Azure Functions Core Tools application'
 
 
 For reference the installation command sequence. ***Recommendation: 
 Run these commands in the directed sequence following the 
-[tutorial](https://cloudbank-project.github.io/az-serverless-tutorial/functions/).***
+[tutorial](https://cloudbank-project.github.io/az-serverless-tutorial/functions/).
+Do not bulk-copy-paste them as probably something will go haywire.***
 
 
 ```
