@@ -821,65 +821,64 @@ Result
 
 
 In the course of building this example oceanography data system, questions do come up.
-This section is the accumulator; so write more documentation on/as/for....
-
-- MUST DO SECTION
-    - UNBURY THE LEAD: The fun of looking at these signals
-    - Make the API self-documenting: `test` should list `profile` and `sensors` routes. "Oh I forgot how to use the API calls"
-    - Cover all the abstract's bases
-    - Easier forms of publication including S3 GLODAP
-    - `az login` from the Azure VM: What is going on here?
-    - Narrative: How the pre-publish localhost tests work
-    - Narrative: Of issue X below
-    - Narrative: Why an environment is necessary for the three APIs
-    - Under *Build the NoSQL database* I had an extended comment to address on the tutorial sequence
-        - > `apt install` of `pip` and `venv` was done for the Function App in advance... why no environment creation prior? Nothing on `PATH`. Closed the VSCode session to start clean... but as I already ran it there is nothing to be done in `sudo apt install -y` for `python` and `venv`. Ok... and `pip3 install -r requirements.txt` takes some time but is also ok. Go back through this from scratch maybe?
-- GOOD IDEA NOT ESSENTIAL SECTION
-    - `sensor` API degeneracy `id` and `Timestamp`; and how does remove item work?
-    - don't need 18 digit precision
-    - annotate the VM start process: choice of OS, instance power
-    - X: work-through of API keys provided by Azure Function Apps
-    - filesystem diagram
-    - costing RUs: [See this link](https://learn.microsoft.com/en-us/azure/cosmos-db/request-units)
-- KNOW YOUR STUFF SECTION
-    - How to patch a Document in NoSQL, two methods
-        - Bird in the hand way: Delete the Container, create a new one, modify the `db-populate.py` code, re-run it, test the API
-        - Correct way: [Use `partial document update` per this documentation](https://learn.microsoft.com/en-us/azure/cosmos-db/partial-document-update)
-    - Who is using localhost:7071: My laptop forwards to what on the VM? When? How to see? 2nd port?
-    - Differentiate what VSCode is running traffic on (ssh connection?) 
-    - `pandas` Dataframe column zero: For sensors = Timestamp; review formalism (Jake)
-    - `Azure Function Core Tools` utility command `func` + basic vocabulary of imperatives
-    - Clear up `venv` vs `local.settings.json`; and why does db-populate not need its own environment
-        - Where are the creds placed, used when, uploaded how...
-    - In building the `db-api` function_app.py environment we use `venv`. Might we use a `conda` environment?
-    - VSCode
-        - Error message on *activation* includes
-            - [this link for more](https://code.visualstudio.com/api/references/activation-events#Start-up)
-            - What is this about?
-        - Why is the VSCode Python not the same as my Ubuntu environment miniconda Python?
-        - Azure VM
-            - Can this support a Jupyter notebook?
-            - Directory structure
-                - ~ can host Jupyter-style repository clones e.g. the `oceanography` Jupyter book
-                    - `db-api` **tutorial periodic table API folder**
-                        - `app-env` is an **environment directory** from the tutorial 
-                    - `db-populate` **tutorial directory** for loading Containers in CosmosDB
-                        - `db-profile-api` **profile api folder**
-                            - `profile-app-env` **environment** subdirectory for the profile API
-                        - `db-sensor-api` **sensor api folder**
-                            - `sensor-app-env` **environment** subdirectory for the sensor API
-            - Activation commands
-                - `robotron` for the tutorial (Periodic table) API
-                - `profilotron` for the profile API
-                - `sensortron` for the sensor API
+This section is the accumulator; items to address
 
 
-### Address the abstract
+- Link up front to the CB CC-2 presentation deck
+- Make the API self-documenting: `test` and `help` and `info` and `api` > helpful printouts
+- Review ACID (and CRUD?) in relation to NoSQL and the use case given here
+- Elaborate on trashbin publication
+- `az login` from the Azure VM: Elaborate better
+- Narrative: How the pre-publish localhost tests work
+- Narrative: Work through API keys provided by Azure Function Apps
+- Narrative: Why an environment is necessary for the three APIs
+- Under *Build the NoSQL database* I had an extended comment to address on the tutorial sequence
+    - > `apt install` of `pip` and `venv` was done for the Function App in advance... why no environment creation prior? Nothing on `PATH`. Closed the VSCode session to start clean... but as I already ran it there is nothing to be done in `sudo apt install -y` for `python` and `venv`. Ok... and `pip3 install -r requirements.txt` takes some time but is also ok. Go back through this from scratch maybe?
+- `sensor` API degeneracy `id` and `Timestamp`; and how does remove item work?
+- don't need 18 digit precision
+- annotate the VM start process: choice of OS, instance power
+- filesystem diagram
+- costing RUs: [See this link](https://learn.microsoft.com/en-us/azure/cosmos-db/request-units)
+- How to patch a Document in NoSQL, two methods
+    - Bird in the hand way: Delete the Container, create a new one, modify the `db-populate.py` code, re-run it, test the API
+    - Correct way: [Use `partial document update` per this documentation](https://learn.microsoft.com/en-us/azure/cosmos-db/partial-document-update)
+- Who is using localhost:7071: My laptop forwards to what on the VM? When? How to see? 2nd port?
+- Differentiate what VSCode is running traffic on (ssh connection?) 
+- `pandas` Dataframe column zero: For sensors = Timestamp; review formalism (Jake)
+- `Azure Function Core Tools` utility command `func` + basic vocabulary of imperatives
+- Clear up `venv` vs `local.settings.json`; and why does db-populate not need its own environment
+    - Where are the creds placed, used when, uploaded how...
+- In building the `db-api` function_app.py environment we use `venv`. Might we use a `conda` environment?
+- VSCode
+    - Error message on *activation* includes
+        - [this link for more](https://code.visualstudio.com/api/references/activation-events#Start-up)
+        - What is this about?
+    - Why is the VSCode Python not the same as my Ubuntu environment miniconda Python?
+    - Azure VM
+        - Can this support a Jupyter notebook?
+        - Directory structure
+            - ~ can host Jupyter-style repository clones e.g. the `oceanography` Jupyter book
+                - `db-api` **tutorial periodic table API folder**
+                    - `app-env` is an **environment directory** from the tutorial 
+                - `db-populate` **tutorial directory** for loading Containers in CosmosDB
+                    - `db-profile-api` **profile api folder**
+                        - `profile-app-env` **environment** subdirectory for the profile API
+                    - `db-sensor-api` **sensor api folder**
+                        - `sensor-app-env` **environment** subdirectory for the sensor API
+        - Activation commands
+            - `robotron` for the tutorial (Periodic table) API
+            - `profilotron` for the profile API
+            - `sensortron` for the sensor API
 
+
+### Update the abstract
 
 > Source abstract: Organizations such as Science Gateways and the eScience Institute idealistically promote open science through data sharing; and you may wish you had the skills to build something that puts you firmly in that camp. Go open science! But there is a catch: Building something that works is much easier than building something that works that is secure. And then there is the inevitable catastrophe once you have it up and running: You have a new idea and you wish to expand on what your system’s baseline design was intended to do. No fear: This clinic will give you the basic one-two-three punch to build a data server with a built-in API, make it secure enough (assuming you are not working with personalized human data), and expand it in a new direction after it is up and running. We will use as a working example the supposition that you have invented the periodic table of elements and that you subsequently discovered crystal field theory. We address the pressing question: Can a cloud-hosted NoSQL chemistry data system be ACIDic?
 
-Breakdown
+
+#### Breakdown
+
+
 - There is more than one road to Rome; but the rather long one presented here does get at security, flexibility and scale
 - When research goes as hoped there is a continuum of new ideas and new data...
     - Flexibility and scale particularly address these developments
