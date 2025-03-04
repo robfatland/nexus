@@ -66,8 +66,8 @@ The example Client for the oceanography APIs is [found here](https://github.com/
 - This `nexus` narrative follows the [MSE544 course activity](https://cloudbank-project.github.io/az-serverless-tutorial/) 
     - In sprint 2025 this is built on the Microsoft Azure cloud platform
 - It relies upon a database architecture called NoSQL ([see lecture notes](https://docs.google.com/presentation/d/1-eQ6qgeTaExS_6Cxh7Wq9LFpqbD49ZX3kXazOPNc7Js/edit?usp=sharing))
-- It also relies upon Serverless Functions ([see lecture notes](https://docs.google.com/presentation/d/1R2HHfHYgmarje2q_0x42hMecUc7R6SFjI-ih1L05foQ/edit?usp=sharing)) and [adjoint deck](https://docs.google.com/presentation/d/1FTsHW3igVQgx-4GhtPrryle-tVX0Vf_2/edit?usp=sharing&ouid=115128503909653631241&rtpof=true&sd=true))
-- This activity does not involve [***containerization***, a separate activity).](https://naclomi.github.io/containers-tutorial/) (see also the [containerization lecture notes](https://docs.google.com/presentation/d/1-eQ6qgeTaExS_6Cxh7Wq9LFpqbD49ZX3kXazOPNc7Js/edit?usp=sharing))
+- It also relies upon Serverless Functions (see [lecture slides](https://docs.google.com/presentation/d/1R2HHfHYgmarje2q_0x42hMecUc7R6SFjI-ih1L05foQ/edit?usp=sharing) and [adjoint slide deck](https://docs.google.com/presentation/d/1FTsHW3igVQgx-4GhtPrryle-tVX0Vf_2/edit?usp=sharing&ouid=115128503909653631241&rtpof=true&sd=true))
+- This activity does not involve [***containerization***, a separate activity).](https://naclomi.github.io/containers-tutorial/) (see also the [containerization lecture notes](https://pythonbytes.azurewebsites.net/api/gargutron))
 
 
 > Suggestion: Read through this section casually,
