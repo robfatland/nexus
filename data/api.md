@@ -66,6 +66,10 @@ The example Client for the oceanography APIs is [found here](https://github.com/
 This narrative follows the [MSE544 course activity](https://cloudbank-project.github.io/az-serverless-tutorial/) 
 built on the Microsoft Azure cloud platform. This activity does not rely upon  
 [***containerization*** which is addressed separately.](https://naclomi.github.io/containers-tutorial/)
+It *does* rely upon NoSQL: 
+[See the lecture notes here.](https://docs.google.com/presentation/d/1-eQ6qgeTaExS_6Cxh7Wq9LFpqbD49ZX3kXazOPNc7Js/edit?usp=sharing)
+It also relies on Serverless Functions: 
+[See the lecture notes here.]()
 
 
 > Suggestion: Read through this section casually,
