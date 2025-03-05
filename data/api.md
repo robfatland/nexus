@@ -67,7 +67,9 @@ The example Client for the oceanography APIs is [found here](https://github.com/
     - Spring 2025: Built on the Microsoft Azure cloud platform
 - It relies upon a database architecture called NoSQL; refer to the [lecture slides](https://docs.google.com/presentation/d/1-eQ6qgeTaExS_6Cxh7Wq9LFpqbD49ZX3kXazOPNc7Js/edit?usp=sharing).
 - It also relies upon Serverless Functions; see *these* [lecture slides](https://docs.google.com/presentation/d/1R2HHfHYgmarje2q_0x42hMecUc7R6SFjI-ih1L05foQ/edit?usp=sharing) plus [an adjoint slide deck](https://docs.google.com/presentation/d/1FTsHW3igVQgx-4GhtPrryle-tVX0Vf_2/edit?usp=sharing&ouid=115128503909653631241&rtpof=true&sd=true).
-- The periodic table activity does *not* use [***containers***](https://naclomi.github.io/containers-tutorial/). That is a separate activity; and here for reference is a broken-non-link to the [containerization lecture slides](https://pythonbytes.azurewebsites.net/api/gargutron).
+- The periodic table activity does *not* use [***containers***](https://naclomi.github.io/containers-tutorial/). That is a separate activity;
+and here for reference are
+[containerization lecture slides](https://docs.google.com/presentation/d/1_CIXw_UKUzueunTzVKmNqS2jA5DM4MEtnGeOTG_kAaU/edit?usp=sharing).
 
 
 > Suggestion: Read through this section casually,
