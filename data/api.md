@@ -45,19 +45,17 @@ It helps to have in mind some heirarchical terminology:
             - `osb_salinity`: A Container for salinity data
 
 
-Related to this heirarchy we have three URLs corresponding to three APIs:
+Here are corresponding API URLs:
 
 
-- [`https://pythonbytes.azurewebsites.net`](https://pythonbytes.azurewebsites.net) ~ the periodic table API
-- [`https://oceanography.azurewebsites.net`](https://oceanography.azurewebsites.net) ~ the profiler metadata API
-- [`https://oceansensors.azurewebsites.net`](https://oceansensors.azurewebsites.net) ~ the temperature and salinity data API
+- Periodic table: [`https://pythonbytes.azurewebsites.net`](https://pythonbytes.azurewebsites.net)
+- Ocean profiler metadata: [`https://oceanography.azurewebsites.net`](https://oceanography.azurewebsites.net)
+- Ocean sensor data (temperature and salinity): [`https://oceansensors.azurewebsites.net`](https://oceansensors.azurewebsites.net)
+    - An example Client for the oceanography data is [published here](https://github.com/robfatland/oceanclient)
 
 
-***Follow-along annotation for the Periodic table example follows directly below***
-
-
-***Annotation for the oceanography segment [begins further down, here.](#oceanography) 
-The example Client for the oceanography APIs is [found here](https://github.com/robfatland/oceanclient).***
+As noted, part 1 concerns an API to get information about elements from the Periodic table. Annotations begin
+just here, and annotations for part 2 (oceanography) [are found further down on this page.](#oceanography) 
 
 
 ## The MSE544 periodic table
@@ -65,22 +63,23 @@ The example Client for the oceanography APIs is [found here](https://github.com/
 
 - This `nexus` narrative follows the [MSE544 course activity](https://cloudbank-project.github.io/az-serverless-tutorial/) 
     - Spring 2025: Built on the Microsoft Azure cloud platform
-- It relies upon a database architecture called NoSQL; refer to the [lecture slides](https://docs.google.com/presentation/d/1-eQ6qgeTaExS_6Cxh7Wq9LFpqbD49ZX3kXazOPNc7Js/edit?usp=sharing).
-- It also relies upon Serverless Functions; see *these* [lecture slides](https://docs.google.com/presentation/d/1R2HHfHYgmarje2q_0x42hMecUc7R6SFjI-ih1L05foQ/edit?usp=sharing) plus [an adjoint slide deck](https://docs.google.com/presentation/d/1FTsHW3igVQgx-4GhtPrryle-tVX0Vf_2/edit?usp=sharing&ouid=115128503909653631241&rtpof=true&sd=true).
-- The periodic table activity does *not* use [***containers***](https://naclomi.github.io/containers-tutorial/). That is a separate activity;
-and here for reference are
-[containerization lecture slides](https://docs.google.com/presentation/d/1_CIXw_UKUzueunTzVKmNqS2jA5DM4MEtnGeOTG_kAaU/edit?usp=sharing).
+    - It relies upon the NoSQL database architecture: Refer to the [lecture slides](https://docs.google.com/presentation/d/1-eQ6qgeTaExS_6Cxh7Wq9LFpqbD49ZX3kXazOPNc7Js/edit?usp=sharing).
+    - It also relies upon Serverless Functions: Refer to more
+[lecture slides](https://docs.google.com/presentation/d/1R2HHfHYgmarje2q_0x42hMecUc7R6SFjI-ih1L05foQ/edit?usp=sharing) and an
+[adjoint slide deck](https://docs.google.com/presentation/d/1FTsHW3igVQgx-4GhtPrryle-tVX0Vf_2/edit?usp=sharing&ouid=115128503909653631241&rtpof=true&sd=true).
+- The periodic table activity does *not* use *containers*. That is a separate [activity](https://naclomi.github.io/containers-tutorial/)
+with corresponding [lecture slides](https://docs.google.com/presentation/d/1_CIXw_UKUzueunTzVKmNqS2jA5DM4MEtnGeOTG_kAaU/edit?usp=sharing).
 
 
-> Suggestion: Read through this section casually,
-> then [try working through the tutorial](https://cloudbank-project.github.io/az-serverless-tutorial/)
-> (you will need access to an Azure cloud subscription).
+> Suggested approach: Read through these notes casually then [try working through the tutorial](https://cloudbank-project.github.io/az-serverless-tutorial/),
+> preferably while logged in to the Azure cloud.
 
 
 ### Azure brand names
 
-The things we pay money for in the cloud are called *services*. Each cloud vendor has its own 
-naming convention for these services.
+
+Things we pay for in the cloud are *services*. Each cloud vendor has its own 
+naming convention for these services. To reiterate the terminology given above:
 
 
 - The Azure brand name for an on-demand Virtual Machine *service* is... wait for it... a Virtual Machine (or VM *instance*)
@@ -93,12 +92,13 @@ naming convention for these services.
     - We install utility applications to facilitate the build process
         - The main utility program we install is an abbreviation of *function*, to wit: `func`
             - This is easier to say than 'Azure Functions Core Tools application'
+- The Azure brand name for a logically related set of services (think 'project') is **Resource Group**
 
 
-For reference the installation command sequence. ***Recommendation: 
-Run these commands in the directed sequence following the 
-[tutorial](https://cloudbank-project.github.io/az-serverless-tutorial/functions/).
-Do not bulk-copy-paste them as probably something will go haywire.***
+For reference here is an installation command sequence. ***Recommended: 
+Run these commands one at a time in sequence as directed by the 
+[tutorial](https://cloudbank-project.github.io/az-serverless-tutorial/functions/), 
+not as a bulk copy-paste.***
 
 
 ```
@@ -133,7 +133,8 @@ For the Periodic Table exercise we have three success milestones:
 
 
 The Azure Function App plus the NoSQL database comprise an API *Server*. The premise of this 
-narrative is that a research program will benefit from building a Server, for at least four reasons:
+narrative is that a research program will benefit from building a Server, for at least four reasons.
+
 - The data are *secure*
 - The system will accommodate scaling up: data volume over time
 - The system will accommodate scaling up: queries
