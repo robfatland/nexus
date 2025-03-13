@@ -14,8 +14,9 @@ and so forth) is indicated *gen-AI*.
 
 ## resources
 
+
 - UCLA professor John Villasenor has [published extensively on this topic](https://johnvillasenor.com/artificial-intelligence/)
-- [An interesting study of AI-AI interaction by UW student Harvy Gandhi](https://medium.com/@harvygandhi2/ai-to-ai-conversations-unraveling-the-future-of-intelligent-systems-6e360c629734)
+- [A study of LLM-to-LLM conversations by UW student Harvy Gandhi](https://medium.com/@harvygandhi2/ai-to-ai-conversations-unraveling-the-future-of-intelligent-systems-6e360c629734)
 
 
 ## cloud platform technologies
