@@ -31,6 +31,7 @@ This page is an accumulator for nexus "content needed".
             - [oceanography (current, Jupyter book)](https://github.com/robfatland/oceanography)
             - [galleryclone](https://github.com/robfatland/galleryclone), [notebooks](https://github.com/robfatland/notebooks), [chlorophyll](https://github.com/robfatland/chlorophyll)
             - **ocean**, **golive**, **sensors**
+- Tilde: Specifically work slash uw research programs
 - MSE544 Cloud Skills
     - [VMs + Database + Serverless (Azure) source](https://github.com/cloudbank-project/az-serverless-tutorial/tree/main)]
         - [VMs + Database + Serverless as published](https://cloudbank-project.github.io/az-serverless-tutorial/)
