@@ -6,19 +6,25 @@
 # artificial intelligence...
 
 
-...is defined herein in the broadest traditional sense of computation that in some way resembles human thought.
-This is what we mean by the acronym *AI*. When in contrast we discuss generative AI (Large Language Models 
-and so forth) we will make every effort to qualify this by writing *genAI*.
+...is defined here in the broad tradition of -- in some sense -- autonomous computation, the biggest circle of the Euler
+diagram. That this in some way resembles human thought is an analogy, but one that is not particularly practical or
+constructive. *AI* writ large is an ensemble of methods for data analysis. In contrast, *generative AI* (Large Language Models 
+and so forth) is indicated *gen-AI*. 
 
 
-Draft of association terms:
+## resources
 
+- UCLA professor John Villasenor has [published extensively on this topic](https://johnvillasenor.com/artificial-intelligence/)
+- [An interesting study of AI-AI interaction by UW student Harvy Gandhi](https://medium.com/@harvygandhi2/ai-to-ai-conversations-unraveling-the-future-of-intelligent-systems-6e360c629734)
+
+
+## cloud platform technologies
 
 - AWS
     - SageMaker
     - Bedrock
     - Foundation Model emphasis
-    - Claude
+    - Anthropic > Claude
     - Dedicated hardware: Trainium, Inferentia
 - Azure
     - AI Foundry
@@ -27,3 +33,8 @@ Draft of association terms:
 - GCP
     - Gemini
     - Vertex AI
+
+## independent generative AI programs
+
+- Amplify at Vanderbilt
+- OLMO at AI2
