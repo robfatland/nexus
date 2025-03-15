@@ -104,4 +104,5 @@ a VM on AWS by means of the VSCode application.
 
 ### Log in from VSCode
 
+- Use [this tutorial](https://cloudbank-project.github.io/az-serverless-tutorial/workstation/) to connect to the VM from VSCode
 
