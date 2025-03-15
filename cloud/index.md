@@ -60,8 +60,48 @@ compute power. We use a CNN as our example implementation of a compute-intensive
 
 
 
-## gpu instances on AWS
+## AWS EC2 Virtual Machines
+
+
+AWS virtual machines fall into a variety of categories and size scales; so there is some studying
+up to do in deciding which instance to select. A typical powerful workstation will run between $0.50
+and $1.00 per hour; so it is important to Stop (not Terminate) the instance when it is not in use.
+
+
+Below are remarks on non-GPU and then GPU-based VMs. Following that are instructions for logging in to
+a VM on AWS by means of the VSCode application.
+
+
+### non-GPU instances
+
+
+- [Information on naming conventions](https://docs.aws.amazon.com/ec2/latest/instancetypes/instance-type-names.html)
+- Examples from the compute-optimized C-series
+    - c6id.4xlarge
+        - C = compute optimized, 6 = generation 6
+        - i = Intel processors (contrast: 'a' for AMD processors)
+        - d = instance store volumes: temporary, high-performance block-level storage...
+            - ...physically attached to the host computer running the EC2 instance
+            - ...fast data access
+            - ...but data is lost if the instance is stopped or terminated
+        - 4xlarge = 16vCPU, 32GB RAM, $.8344 per hour for Ubuntu
+        - 12xlarge = 48vCPU, 96GB RAM, $2.5032 per hour for Ubuntu: Cost scales linearly with vCPU count and RAM
+    - c6i.4xlarge: C-series, 6th-generation, Intel, 16vCPU, 32GB RAM, $0.708/hr Ubuntu
+    - c7i-flex.4xlarge: C, 7th-gen, Intel, 16vCPU, 32GB RAM, $0.7063/hr Ubuntu
+        - The `-flex` modifier is reputed to be "5% cost savings with occasional performance hit"
+        - This choice would be a nominal cost optimizer but 'remains to be shown'
+        - This suggests benchmarking identical configurations on a moderate processing task
+            - How would a cheaper C5 or C4 compare?
+            - How to ensure the entire vCPU bank is engaged?
+
+
+### gpu instances
 
 
 - P and G series are recommended [GPU-compatible EC2 instance types](https://docs.aws.amazon.com/dlami/latest/devguide/gpu.html)
 - Here is a helpful [medium article](https://nishant-parmar.medium.com/using-aws-g-and-p-series-ec2-instances-for-high-quality-rendering-cloud-gaming-and-machine-55195075334c)
+
+
+### Log in from VSCode
+
+
