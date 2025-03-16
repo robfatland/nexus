@@ -4,7 +4,7 @@
 # cloud
 
 
-"Cloud" in the context of research computing refers to *commercial clouds*, particularly AWS, GCP and Azure,
+"Cloud" in the context of research computing refers to *commercial clouds*, for example AWS, GCP and Azure,
 where Virtual Machines are available on a pay-as-you-go basis. The content of this repo *does not* however
 concern "cloud" consumer services like iCloud and Google Drive.
 
