@@ -44,6 +44,8 @@ Cloud computing for research comes at a dollar cost. We are interested in optimi
 ## open topic: access control
 
 * subnet masks and so on
+
+
 ## cloud clinics
 
 
@@ -105,4 +107,23 @@ a VM on AWS by means of the VSCode application.
 ### Log in from VSCode
 
 - Use [this tutorial](https://cloudbank-project.github.io/az-serverless-tutorial/workstation/) to connect to the VM from VSCode
+- The objective is to have the VS Code Server automatically install on the VM so VSCode simply *runs* on the *VM*
+    - On the AWS Console: Be sure to Create and subsequently Download a new keypair file when starting the VM
+    - On the AWS Console: Take note of the ip address of the VM
+    - On "your laptop" move the downloaded `keypair.pem` file to a location in your file system where VSCode can see it
+    - On VSCode: Use the >< icon in the lower left corner to bring up the connection interface
+    - On VSCode: Add a new connection, e.g. the command `ssh ubuntu@123.234.123.234`
+    - On VSCode: Edit the configuration file `config` to have a pointer to the keypair file
+        - This keypair might reside in the WSL Linux filesystem, e.g. `\\wsl.localhost\Ubuntu\home\myname`
+        - This keypair might reside in a subfolder you create in your home directory, e.g. `C:\Users\myusername\.keypairs`
+        - `config` in my system is found / selected at `homedirectory\.ssh\config`
+        - The important line to add to the Host entry for this VM:
+            - `  IdentityFile "C:\Users\username\.keypairs\keypair.pem"`
+        - With this in place VSCode can be instructed to establish a connection to the AWS VM
+            - This will install a communication app called VSCode Server
+            - VSCode Server securely connects your laptop to the AWS VM via your local VS Code Client
+            - Once you are connected you should see an (Ubuntu OS) prompt; you are logged in to the VM
+            - To test this try issuing a shutdown command that will Stop (not Terminate) the VM
+                - `sudo shutdown -h now`
+            - You can re-start the VM from the AWS console
 
