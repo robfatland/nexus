@@ -22,20 +22,8 @@ later; then start over. Now the idea is to build the nexus static website from g
 open science in practice, particularly how to build research computing cyberinfrastructure.
 
 
-## Example tasks
+## other projects
 
-
-- How do I manage Python environments?
-- How do I publish my oceanography code as a Python package?
-- How do I build an API-based resource?
-- How do I safely manage sensitive data?
-- How do I manage my code development in relation to my GitHub repository?
-- How do I turn off colorization in `bash` and `vi`? Just green on black please.
-- How do I set up a cloud VM as my power workstation and use Jupyter there from my laptop?
-
-
-
-## Other projects in process
 
 - [epipelargosy, an oceanography Jupyter book](https://github.com/robfatland/oceanography)
 - [steam: university-level STE(A)M notes](https://github.com/robfatland/steam)
