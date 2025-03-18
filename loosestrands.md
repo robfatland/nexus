@@ -4,15 +4,18 @@
 # Loose strands
 
 
-This page is an accumulator for nexus "content needed".
+This page is an accumulator for nexus feeder content: Various places where research computing information is parked 
+(including cloud infrastructure material).
 
 
 ## CloudBank strands
 
-- Incidental locations to check...
-    - Both README files (main and gh-pages) of this repo; OneNote; GitHub fossils; GDrive (at least 3 orgs)
-    - and nexus in general is starting to accumulate stubs
-    - Existing GitHub repos
+- Incidental locations
+    - gh-pages branch README: brief notes on publishing with gh-pages
+    - R's OneNote
+    - GDrive (3+ orgs)
+    - GitHub fossils
+        - R's relevant GitHub repos
         - [Cloud 101/102 dates back to 2017](https://github.com/robfatland/cloud101102)
         - [curriculum](https://github.com/robfatland/curriculum) is some teraform stuff; this will take 10 minutes to scrape and delete
         - **cli** likewise scrape and delete
@@ -79,10 +82,10 @@ This page is an accumulator for nexus "content needed".
 ## Residual loose strands
 
 
-* Look at HyakAndCloud in the `main` branch; and scoop up anything else like that and move it to the pipeline here on gh-pages
-* Document and use more of the screencap workflow
-* To unbind the Print Screen key to OneNote screen capture in Windows:
-    * Windows settings > Accessibility > Keyboard > Use the print screen key to open screen capture > toggle off
+* HyakAndCloud in `nexus`: `main`; and similar
+* `flameshot` screencap workflow
+    * To unbind the Print Screen key to OneNote screen capture in Windows:
+        * Windows settings > Accessibility > Keyboard > Use the print screen key to open screen capture > toggle off
 
 
 ## Reminders on other simple little topics...
@@ -214,3 +217,14 @@ No colorized text, just green characters on a black background.
         - cloud spend notification
         - stopping runaway cloud spend automatically
 - [Python's guide to publishing a software package](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
+
+
+## Burning questions
+
+- How do I manage Python environments?
+- How do I publish my oceanography code as a Python package?
+- How do I build an API-based resource?
+- How do I safely manage sensitive data?
+- How do I manage my code development in relation to my GitHub repository?
+- How do I turn off colorization in bash and vi? Just green on black please.
+- How do I set up a cloud VM as my power workstation and use Jupyter there from my laptop?
