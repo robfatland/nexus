@@ -47,6 +47,7 @@ This page is an accumulator for nexus feeder content: Various places where resea
     - [HIPAA](https://cloudmaven.github.io/documentation/aws_hipaa.html)
     - [data security](https://cloudmaven.github.io/documentation/cc_data_security.html)
     - [polemics](https://cloudmaven.github.io/documentation/ccs_precis.html#introduction)
+    - [root index](https://cloudmaven.github.io/documentation/index.html)
 - CloudBank GitHub organization
     - [zero2Data](https://github.com/cloudbank-project/Zero2Data)
     - [spend tracking](https://github.com/cloudbank-project/burnop)
