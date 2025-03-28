@@ -2,13 +2,19 @@
 [main branch](https://github.com/robfatland/nexus/tree/main)
 
 
-
-
 # `git` and `GitHub`
 
 
-The basic `git/GitHub` scenario has two aims: Create a safe version of a software project (on the cloud) and
-manage revisions. The project corresopnds to a **repository** or **repo** residing in a folder with sub-folders.
+This writeup begins with a basic `git/GitHub` scenario with two aims: Create a safe version of a software project 
+(on the cloud) and manage simple "sole author" revisions. The `nexus` entry is primarily intended as a fast-read
+reminder on these basics. More complex use scenarios are covered in the second
+section in the same quick reference style; and in greater detail elsewhere.
+
+
+## Basic use scenario
+
+
+The project corresopnds to a **repository** or **repo** residing in a folder with sub-folders.
 Most content development happens on either a local machine (laptop, desktop, etc) or on a cloud VM. The latter
 in particular if more compute power is needed; or if the project involves some web presence, for example when
 building a data source with a dedicated API. We can also create content -- particularly documentation in markdown
@@ -77,13 +83,13 @@ and `push`.
 
 
 
-## More advanced git
+## advanced topics
 
 
-- Linking large data volumes to a repo
-- Deleting files from the repo (for example after accidentally committing a big data file)
 - Automatic authentication using a token to streamline the `push` process
     - From `~` store creds using `git config --global credential.helper store`
+- Linking larger data volumes to a repo
+- Deleting files from the repo (for example after accidentally committing a big data file)
 - To abandon changes and back up: `git reset --hard HEAD` or if necessary `git reset --hard HEAD~1` etcetera
     - HEAD~n means n commits back
  
