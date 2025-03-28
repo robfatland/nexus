@@ -26,13 +26,16 @@ Well initially let us stay with "GitHub as safe copy with version control" and i
 I do not lose any work.
 
 
-A [GitHub](https://github.com) account has an organization name -- I will use `lemon` -- and therein one or
-more repositories. Suppose one of these is called `ocean`. This repository is created in an empty state from
-the browser interface to GitHub at `https://github.com/lemon` with appropriate sign-in taken as read.
+A [GitHub](https://github.com) account has an organization name -- I will use `lemon` -- so we have
+an organization page `https://github.com/lemon`. Within `lemon` we then create some repositories. 
+Suppose for example there is a repository called `ocean`; so its URL is `https://github.com/lemon/ocean`. 
+This repository can be created as an empty project using the GitHub browser interface once you sign in.
+Now in a Linux environment a *clone* of this repo will be subject to Linux `git` commands which 
+generally take the form `git <verb> <qualifiers>`. 
 
 
-Now the `ocean` repo exists and I want to start building out the codebase on my laptop. In a `bash` shell 
-on my laptop I execute `git clone` as follows:
+Suppose the `ocean` repo exists and I want to start building out the codebase of this repo on my laptop. 
+In a `bash` shell on my laptop I execute `git clone` as follows:
 
 ```
 cd ~
@@ -40,41 +43,46 @@ git clone https://github.com/lemon/ocean
 cd ocean
 ```
 
-Perhaps I create a couple of Python module files and a Jupyter notebook. Now it is time to synch up with the original
-repo on GitHub using `git push`. The verb push the edits back up to GitHub to replace the older version residing
-there. This way I have updated my *safe code backup in the cloud*. The update requires four `git` commands (verbs)
-but first: There is a warning in [this YouTube video](https://youtu.be/xN1-2p06Urc) about `git pull`. So here
-is the sequence with a mysterious qualifier added to `git pull`:
+This `ocean` folder will be an empty repo as it is a clone of the empty repo created at the GitHub site. 
+
+
+Imagine that here I create a couple of Python module files and a Jupyter notebook. Now it is time to synch up 
+with the original repo on GitHub using `git push`. The verb `push` will do just that: push the modified version
+of the repo back up to GitHub updating that older empty version. This updates the *safe backup in the cloud*. 
+The update process takes four `git` commands (verbs)
+but first please note: There is a warning in [this YouTube video](https://youtu.be/xN1-2p06Urc) 
+about efficient use of one of these four, the `git pull` command. With that here are the four commands:
 
 
 ```
 cd ~/ocean
 git pull --rebase
 git add .
-git commit -m 'a comment on what I edited just now`
+git commit -m 'a comment on what I modified just now`
 git push
 ```
 
 
-Why is the first `git` command `git pull`? If I work occasionally on another computer (office machine, 
+Why is the first `git` command `git pull --rebase`? If I work occasionally on another computer (office machine, 
 cloud VM etcetera) then I may have committed changes from that *elsewhere*. We say that the GitHub 
-version of the repo is "ahead" of my local copy). I do `pull` first to bring in those changes where
+version of the repo is "ahead" of my local copy. I do `pull` first to bring in those changes where
 hopefully they do not conflict with what I have been doing on *this* computer. Now when I do `add / commit / push`
 my changes are merged with no errors or conflicts. The topic of collisions is discussed (or *will be* discussed)
-in more detail below. To understand the `--rebase` qualifier: Watch that YouTube video. Those folks note: If
+in more detail below. To understand the `--rebase` qualifier: Watch that YouTube video, which notes: If
 `git pull --rebase` generates an error this can be reversed with `git rebase --abort`.
 
 
-In summary, in an ideal world: All I need in `git` verbs are `clone`, `pull`, `add`, `commit` and `push`. 
+In summary, in an ideal world: All I need to use `git` are the verbs are `clone`, `pull`, `add`, `commit` 
+and `push`. 
 
 
 
-## Notes on what else
+## More advanced git
 
 
 - Linking large data volumes to a repo
 - Deleting files from the repo (for example after accidentally committing a big data file)
-- Automatic authentication using a token to streamline the `push` process 
+- Automatic authentication using a token to streamline the `push` process
     - From `~` store creds using `git config --global credential.helper store`
 - To abandon changes and back up: `git reset --hard HEAD` or if necessary `git reset --hard HEAD~1` etcetera
     - HEAD~n means n commits back
@@ -145,7 +153,7 @@ Clone that locally. Update the local copy from the local good stuff. `git push` 
 to GitHub. Now you can even delete the old GitHub repo if you like. 
 
 
-This doesn't even touch 94% of GitHubs powerful features like rollbacks and such. This is just
+This doesn't even touch 94% of GitHub's powerful features like rollbacks and such. This is just
 a basic get started toolkit. Plan to learn `git` properly and teach it to me.
 
 
