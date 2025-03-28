@@ -7,54 +7,68 @@
 # `git` and `GitHub`
 
 
-The most *basic* `git/GitHub` scenario uses GitHub as a stable safe backup for my software. I tend to develop this
-software on a local machine like a laptop. More involved scenarios follow: What if I am collaborating in a team? 
-What if I need to run my project code on a more powerful computer? And so on. For the moment I will kick these
-considerations down the road and stick with "GitHub is my code backup. A truck can run over my laptop and I
-will not have lost any work."
+The basic `git/GitHub` scenario has two aims: Create a safe version of a software project (on the cloud) and
+manage revisions. The project corresopnds to a **repository** or **repo** residing in a folder with sub-folders.
+Most content development happens on either a local machine (laptop, desktop, etc) or on a cloud VM. The latter
+in particular if more compute power is needed; or if the project involves some web presence, for example when
+building a data source with a dedicated API. We can also create content -- particularly documentation in markdown
+format -- directly on GitHub by using the pencil icon at the upper right to go into a text editor mode. 
 
 
-Suppose I have a [GitHub](https://github.com) account under the name `lemon` and I create a repository called `ocean`. 
-I want to edit `ocean` locally; so in my `bash` shell on my laptop I execute
+More involved scenarios for content development follow: Suppose I am collaborating with a team. Suppose 
+the repository is automatically being published as a documentation website using GitHub *pages*; and so on. 
+Well initially let us stay with "GitHub as safe copy with version control" and if a truck runs over my laptop 
+I do not lose any work.
+
+
+A [GitHub](https://github.com) account has an organization name -- I will use `lemon` -- and therein one or
+more repositories. Suppose one of these is called `ocean`. This repository is created in an empty state from
+the browser interface to GitHub at `https://github.com/lemon` with appropriate sign-in taken as read.
+
+
+Now the `ocean` repo exists and I want to start building out the codebase on my laptop. In a `bash` shell 
+on my laptop I execute `git clone` as follows:
 
 ```
 cd ~
 git clone https://github.com/lemon/ocean
+cd ocean
 ```
 
-Now I `cd` into this directory and begin editing content. Maybe I add some Jupyter notebooks and some
-small data files. I want now to push the edits back up to GitHub to replace the older version residing
-there. This way I have updated my *safe code backup in the cloud*. The update requires four `git` commands:
+Perhaps I create a couple of Python module files and a Jupyter notebook. Now it is time to synch up with the original
+repo on GitHub using `git push`. The verb push the edits back up to GitHub to replace the older version residing
+there. This way I have updated my *safe code backup in the cloud*. The update requires four `git` commands (verbs)
+but first: There is a warning in [this YouTube video](https://youtu.be/xN1-2p06Urc) about `git pull`. So here
+is the sequence with a mysterious qualifier added to `git pull`:
 
 
 ```
 cd ~/ocean
-git pull
+git pull --rebase
 git add .
 git commit -m 'a comment on what I edited just now`
 git push
 ```
 
 
-Why is the first `git` command `git pull`? This is out of habit in case I work occasionally from a
-different computer. If I have committed changes from another computer (so the GitHub copy is "ahead"
-of my local copy) I want to update my local copy to be in synch. As I am doing this update from
-my current local computer the operation is a `pull`. This can create collisions in repo content 
-that are not easily resolved. So both before working on the repo and before doing a push it is
-a good habit to "make sure the coast is clear" by running `git pull`. 
+Why is the first `git` command `git pull`? If I work occasionally on another computer (office machine, 
+cloud VM etcetera) then I may have committed changes from that *elsewhere*. We say that the GitHub 
+version of the repo is "ahead" of my local copy). I do `pull` first to bring in those changes where
+hopefully they do not conflict with what I have been doing on *this* computer. Now when I do `add / commit / push`
+my changes are merged with no errors or conflicts. The topic of collisions is discussed (or *will be* discussed)
+in more detail below. To understand the `--rebase` qualifier: Watch that YouTube video. Those folks note: If
+`git pull --rebase` generates an error this can be reversed with `git rebase --abort`.
 
 
-In an ideal world all I need to know to use `git` and `GitHub` are these five `git` qualifiers:
-`git clone`, `git pull`, `git add`, `git commit` and `git push`. In practice however there are 
-some other `git` skills that are worth learning. There is also the useful step of setting up
-automatic authentication using a token so that I do not have to bother with that every time I do 
-a push. 
+In summary, in an ideal world: All I need in `git` verbs are `clone`, `pull`, `add`, `commit` and `push`. 
+
 
 
 ## Notes on what else
 
 
-- From `~` store creds using `git config --global credential.helper store`
+- Automatic authentication using a token to streamline the `push` process 
+    - From `~` store creds using `git config --global credential.helper store`
 - To abandon changes and back up: `git reset --hard HEAD` or if necessary `git reset --hard HEAD~1` etcetera
     - HEAD~n means n commits back
  
