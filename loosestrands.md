@@ -77,7 +77,8 @@ This page is an accumulator for nexus feeder content: Various places where resea
 - Useful stuff
     - [LaTeX]()
     - [Hugo](), [Jekyll]()
-
+- [Oorjit repo: Originally studying preemptible](https://github.com/oorjitchowdhary/ml-training-preemptible-vms)
+    - [Rob's notes in Oorjit's repo](https://github.com/oorjitchowdhary/ml-training-preemptible-vms/blob/main/assets/notesbyrob.md)
 
 
 ## Residual loose strands
