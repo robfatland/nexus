@@ -15,6 +15,11 @@ building a data source with a dedicated API. We can also create content -- parti
 format -- directly on GitHub by using the pencil icon at the upper right to go into a text editor mode. 
 
 
+A note on data: At this time (2025) there is about a 100MB limit on repo size. Linking data to a project
+is one of the advanced topics. The basic take is: Limit the repo size by carefully controlling the amount 
+of "built in" data.
+
+
 More involved scenarios for content development follow: Suppose I am collaborating with a team. Suppose 
 the repository is automatically being published as a documentation website using GitHub *pages*; and so on. 
 Well initially let us stay with "GitHub as safe copy with version control" and if a truck runs over my laptop 
@@ -67,6 +72,8 @@ In summary, in an ideal world: All I need in `git` verbs are `clone`, `pull`, `a
 ## Notes on what else
 
 
+- Linking large data volumes to a repo
+- Deleting files from the repo (for example after accidentally committing a big data file)
 - Automatic authentication using a token to streamline the `push` process 
     - From `~` store creds using `git config --global credential.helper store`
 - To abandon changes and back up: `git reset --hard HEAD` or if necessary `git reset --hard HEAD~1` etcetera
