@@ -8,14 +8,23 @@
 # artificial intelligence on the Google Cloud Platform
 
 
-These notes cover some basic Vertex AI API examples. Access will be from a Jupyter notebook avoiding colab.
-(This is not a preference; just simpler at the moment.)
+Circumvent this content by working from [this GCP Quickstart page](https://cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/quickstart).
 
 
-First get access to Gemini on the Google cloud. 
-- Find the Gemini for Google Cloud page in the console using search
-- Click "Enable"
-- Go get some coffee... this tends to take a few minutes
+This page covers a simple Vertex AI API example. Access is from a Jupyter notebook avoiding `colab`.
+(This is not a preference; just simpler.)
+
+
+The basic idea is that Vertex AI provides an interface / API to various AI models. We set things up, 
+choose a particular model and send it a prompt. 
+
+
+> Before you start: Be aware that GCP uses logical organization units called *Projects* which have both
+> informal and formal labels. For example my Project is called `robs-project` *informally* but I refer to
+> this project by its *formal* identifier `robs-project-314159`.
+>
+> Before you start: After logging in to GCP be sure to enable the Gemini API. See the Quickstart link above.
+> The TLDR is: Find the **Gemini for Google Cloud** page in the console using search and click "Enable" (and get some coffee).
 
 
 
@@ -39,46 +48,31 @@ an organization. This is referred to using `PROJECT_ID` so be aware this will co
 
 
 ```
-import os
 import vertexai
-
-PROJECT_ID = "<some text identifier>"
-LOCATION = os.environ.get("GOOGLE_CLOUD_REGION", "us-east4")
-vertexai.init(project=PROJECT_ID, location=LOCATION)
+PROJECT_ID = "<formal project identifier (see comment above)>"
+vertexai.init(project=PROJECT_ID, location="us-west1")
 ```
 
 
-Now we have a handle through the `vertexai` object. From here
-import some libraries.
+Now we have an API handle through the `vertexai` object. Next import some libraries, establish a connection to Gemini Flash and try a prompt.
 
 
 ```
-from vertexai.generative_models import (
-    GenerationConfig,
-    GenerativeModel,
-    HarmBlockThreshold,
-    HarmCategory,
-    Image,
-    Part,
-    SafetySetting,
-)
-```
-
-
+from vertexai.generative_models import GenerationConfig, GenerativeModel, HarmBlockThreshold, HarmCategory, Image, Part, SafetySetting
 model = GenerativeModel("gemini-2.0-flash")
-response = model.generate_content("How does the Feynman path integral formulation permit speeds greater than the speed of light?")
-print(response.text)
+
+def Q(s):
+    response = model.generate_content(s)
+    print(response.text)
+    return response
+
+Q("What are the integers between 3 and 7?")
+```
+
+Here is example code for tinkering with the basic LLM interface: 
 
 
-
-
-responses = model.generate_content("Why is the sky blue?", stream=True)
-for response in responses:
-    print(response.text, end="")
-
-
-
-
+```
 generation_config = GenerationConfig(
     temperature=0.9,
     top_p=1.0,
@@ -87,9 +81,6 @@ generation_config = GenerationConfig(
     max_output_tokens=8192,
 )
 
-response = model.generate_content(
-    "Why is the sky blue?",
-    generation_config=generation_config,
-)
-
+response = model.generate_content("Why is the sky blue?", generation_config=generation_config)
 print(response.text)
+```
