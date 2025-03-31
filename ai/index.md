@@ -11,8 +11,9 @@
 
 
 This page touches on the *broad* definition of artificial intelligence as forms of autonomous computation. 
-This big region on the AI Euler diagram encompasses Machine Learning, Deep Learning, CNNs, Supervised and Unsupervised
-training, K-means and so on; a profusion of tools and methods.
+This big region on the AI Euler diagram encompasses all manners and forms of AI: Machine Learning, Deep Learning, 
+Convolutional Neural Networks, Supervised and Unsupervised forms of training, clustering algorithms such as 
+K-means and so forth.
 
 
 The related sub-pages linked above -- *gcp*, *aws* and *azure* -- are AI notes on cloud-specific technology stacks.
