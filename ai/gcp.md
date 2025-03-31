@@ -64,7 +64,7 @@ model = GenerativeModel("gemini-2.0-flash")
 def Q(s):
     response = model.generate_content(s)
     print(response.text)
-    return response
+    # Enable this to see a breakdown of the prompt/response: return response
 
 Q("What are the integers between 3 and 7?")
 ```
