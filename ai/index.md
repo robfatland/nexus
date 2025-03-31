@@ -1,24 +1,27 @@
 [nexus](https://robfatland.github.io/nexus), [index source](https://github.com/robfatland/nexus/blob/gh-pages/index.md), 
 [nexus main](https://github.com/robfatland/nexus/tree/main)
 
-[ai index src](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md)
+- [ai index src](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md)
+- [Google cloud](https://github.com/robfatland/nexus/blob/gh-pages/ai/gcp.md) simple vertex/gemini example
+- [AWS cloud](https://github.com/robfatland/nexus/blob/gh-pages/ai/aws.md) stub
+- [Azure cloud](https://github.com/robfatland/nexus/blob/gh-pages/ai/azure.md) stub
+
 
 # artificial intelligence
 
 
-...is discussed here in the *broad* sense and tradition of autonomous computation, in many different forms. This is 
-the big region on an AI Euler diagram that encompasses Machine Learning, Deep Learning, CNNs, Supervised and Unsupervised
-training, K-means and so on and so on; in other words AI is the term for a profusion of tools and methods. In this sense
-AI resembles or reflects human modes of thought; a high-level analogy that can be somewhat impractical or misleading. 
+This page touches on the *broad* definition of artificial intelligence as forms of autonomous computation. 
+This big region on the AI Euler diagram encompasses Machine Learning, Deep Learning, CNNs, Supervised and Unsupervised
+training, K-means and so on; a profusion of tools and methods.
 
 
-Note: In contrast to the broad definition of AI I indicate the sub-category of *generative* AI -- including Large Language Models -- using *'gen-AI'*. 
+The related sub-pages linked above -- *gcp*, *aws* and *azure* -- are AI notes on cloud-specific technology stacks.
 
 
 ## resources
 
 
-- UCLA law professor John Villasenor has published extensively on AI in relation to society; see [this link](https://johnvillasenor.com/artificial-intelligence/).
+- UCLA law professor John Villasenor has written [essays on AI in relation to society](https://johnvillasenor.com/artificial-intelligence/).
 - [A study of LLM-to-LLM conversations by UW student Harvy Gandhi](https://medium.com/@harvygandhi2/ai-to-ai-conversations-unraveling-the-future-of-intelligent-systems-6e360c629734)
 
 
@@ -36,10 +39,13 @@ Note: In contrast to the broad definition of AI I indicate the sub-category of *
     - AI Studio
     - ML Studio
 - GCP
-    - Gemini
-    - Vertex AI
+    - Gemini: An LLM
+    - Vertex AI: A platform for building, training and deploying AI models
+        - More simply: Can be used as an interface to a multitude of models (including Gemini)
+
 
 ## independent generative AI programs
+
 
 - Amplify at Vanderbilt
 - OLMO at AI2
