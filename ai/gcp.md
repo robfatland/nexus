@@ -1,4 +1,11 @@
-# Google Cloud Platform
+[nexus](https://robfatland.github.io/nexus), [index source](https://github.com/robfatland/nexus/blob/gh-pages/index.md), 
+[nexus main](https://github.com/robfatland/nexus/tree/main)
+
+
+[ai index src](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md)
+
+
+# artificial intelligence on the Google Cloud Platform
 
 
 These notes cover some basic Vertex AI API examples. Access will be from a Jupyter notebook avoiding colab.
