@@ -23,10 +23,13 @@ appropriate installed packages, and then activate and use them in context.
 - `conda create --name new_env_name` brings a new environment into play; see this with `conda env list`
     - Activate it with `conda activate new_env_name`
         - Now the shell prompt should reflect this active environment: `(new_env_name) prompt>`
+        - Verify the Python version using `python --version`
+            - What to do if Python has some how reverted to something ancient like Python 2?
     - At this point: Installing new libraries will make them permanently part of this active environment
         - `pip install -r requirements.txt` is the `pip` way
         - `conda env update -f environment.yml` is the `conda` way
     - run `conda env export` to produce `environment.yml` for the current environment
+    - `conda remove -n new_env_name --all` to delete
 - `pip` to `requirements.txt` goes as follows
     - Create a virtual environment `python3 -m venv /path/to/new/virtual/env`
     - Install packages using `pip install <package>`
