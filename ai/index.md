@@ -2,9 +2,9 @@
 [nexus main](https://github.com/robfatland/nexus/tree/main)
 
 - [ai index src](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md)
-- [Google cloud](https://github.com/robfatland/nexus/blob/gh-pages/ai/gcp.md) simple vertex/gemini example
-- [AWS cloud](https://github.com/robfatland/nexus/blob/gh-pages/ai/aws.md) stub
-- [Azure cloud](https://github.com/robfatland/nexus/blob/gh-pages/ai/azure.md) stub
+- [google](https://github.com/robfatland/nexus/blob/gh-pages/ai/gcp.md) cloud: A simple vertex/gemini example
+- [aws](https://github.com/robfatland/nexus/blob/gh-pages/ai/aws.md) cloud: stub
+- [azure](https://github.com/robfatland/nexus/blob/gh-pages/ai/azure.md) cloud: stub
 
 
 # artificial intelligence
