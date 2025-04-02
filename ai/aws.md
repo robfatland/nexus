@@ -5,4 +5,7 @@
 [ai index src](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md)
 
 
-# artificial intelligence on the Amazon Web Services cloud platform
+# AI on the Amazon Web Services cloud platform
+
+
+
