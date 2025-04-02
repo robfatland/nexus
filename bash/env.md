@@ -6,7 +6,18 @@
 # environments
 
 
-## fossil source material
+- `environment.yml` of `requirements.txt` are the two traditional environment configuration filenames
+    - Associated respectively with `conda` and `pip` package managers
+- `conda deactivate` will do just that to the current running environment, returning to the `base` environment
+- `conda create --name new_env_name` brings a new environment into play; see this with `conda env list`
+    - Activate it with `conda activate new_env_name`
+        - Now the shell prompt should reflect this active environment: `(new_env_name) prompt>`
+    - At this point: Installing new libraries will make them permanently part of this active environment
+        - `pip install -r requirements.txt` is the `pip` way
+        - `conda env update -f environment.yml` is the `conda` way
+
+
+## from here down is fossil source material
 
 
 * Can use `environment.yml` or `requirements.txt`
