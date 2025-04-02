@@ -5,6 +5,17 @@
 
 # environments
 
+`conda create/activate` commands -- as well as `venv` paths -- engage Python environments as augmented / customized versions 
+of a base environment. This avoids burdening the base environment with every installed Python package we ever grabbed.
+That kitchen sink approach could become overburdened and buggy from version incompatibility issues. 
+
+
+So rather we work from specialized environments activated as needed. We create them, populate them with respectively 
+appropriate installed packages, and then activate and use them in context. 
+
+
+## quick reference
+
 
 - `environment.yml` of `requirements.txt` are the two traditional environment configuration filenames
     - Associated respectively with `conda` and `pip` package managers
@@ -15,31 +26,16 @@
     - At this point: Installing new libraries will make them permanently part of this active environment
         - `pip install -r requirements.txt` is the `pip` way
         - `conda env update -f environment.yml` is the `conda` way
+    - run `conda env export` to produce `environment.yml` for the current environment
+- `pip` to `requirements.txt` goes as follows
+    - Create a virtual environment `python3 -m venv /path/to/new/virtual/env`
+    - Install packages using `pip install <package>`
+    - Save all packages `pip freeze > requirements.txt`
+    - "Pin all the package versions"... not sure what the action is or what this means
+    - Move `requirements.txt` to the root directory of the project
 
 
 ## from here down is fossil source material
-
-
-* Can use `environment.yml` or `requirements.txt`
-    * The latter is associated with `pip install` and can be made a sub-component of the former
-    * `environment.yml` as follows
-        * `conda env export` produces `environment.yml`
-    * `requirements.txt` as follows
-        * Create a virtual environment `python3 -m venv /path/to/new/virtual/env`
-        * Install packages using `pip install <package>`
-        * Save all packages `pip freeze > requirements.txt`
-        * "Pin all the package versions"... not sure what the action is or what this means
-        * Move `requirements.txt` to the root directory of the project
-
-
-## What is the point of conda environments? 
-
-
-`conda create/activate` commands engage Python environments as customized versions of the User's base environment.
-The admirable motivation is to avoid loading up the base environment with every installed Python package we ever 
-need so that it becomes perhaps overburdened and even buggy due to version incompatibility issues. So instead we
-conceive of one or more specialized environments, we create them, we populate them with respectively appropriate
-installed packages, and then we activate and use them in concert with whatever we are working on today. 
 
 ### Items this page should address
 
