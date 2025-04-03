@@ -8,7 +8,11 @@
 # artificial intelligence on the Google Cloud Platform
 
 
-Circumvent this content by working from [this GCP Quickstart page](https://cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/quickstart).
+## a quick bootstrap for prompting the Gemini LLM
+
+
+Alternative to this content:
+[Here is a GCP Quickstart page](https://cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/quickstart).
 
 
 This page covers a simple Vertex AI API example. Access is from a Jupyter notebook avoiding `colab`.
