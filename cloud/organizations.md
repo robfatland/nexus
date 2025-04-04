@@ -78,8 +78,7 @@ the above payer account.
 
 - Billing Preferences should be ok
 - [How to](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html)
-- CloudWatch > Alarms > All alarms > Create
-- 
+- CloudWatch > N.Virginia > Alarms > All alarms > Create > Customize > Add filter to select a particular account
 
 ## Azure
 
