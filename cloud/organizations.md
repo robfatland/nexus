@@ -73,7 +73,13 @@ the above payer account.
     - Automated daily spend report as a single email with a status value in the Subject
         - Green / Yellow / Red
 
+### conversaion 4-APR-2025
 
+
+- Billing Preferences should be ok
+- [How to](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html)
+- CloudWatch > Alarms > All alarms > Create
+- 
 
 ## Azure
 
