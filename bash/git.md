@@ -46,7 +46,8 @@ git clone -b gh-pages https://github.com/robfatland/nexuse
 ...then edit this file and do a push to see that it appears properly modified at GitHub...
 
 
-
+...and indeed this worked as expected. This allows me to introduce IPython noteboooks 
+into the gh-pages branch since they are easier to manufacture and refine on my workstation.
 
 
 
