@@ -31,7 +31,22 @@ drop-down. But when issuing `git clone my-gh-pages-based-repo` I only get the `m
 not get the `gh-pages` content. So what to do here? 
 
 
-...left off here...
+The experiment I am trying is to use the `-b` switch for `git clone` to get the `gh-pages`
+branch... but I think I am not supposed to do this *elsewhere* but I am doing that *anyway*.
+
+
+```
+cd ~
+mkdir gh-pages_branch
+cd gh-pages_branch
+git clone -b gh-pages https://github.com/robfatland/nexuse
+```
+
+
+...then edit this file and do a push to see that it appears properly modified at GitHub...
+
+
+
 
 
 
