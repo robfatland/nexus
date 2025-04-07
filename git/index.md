@@ -4,6 +4,15 @@
 
 # `git` and `GitHub`
 
+## WARNING! ALERT! CONFLICT NOTICE!
+
+
+This file attempts an ABCs view of `git` from the Level 2 `git` folder. But go look in the `bash` folder 
+and behold: Another take on `git` ABCs. So left off here decide and reconcile.
+
+
+## ok back to our regularly scheduled program
+
 
 This writeup begins with a basic `git/GitHub` scenario with two aims: Create a safe version of a software project 
 (on the cloud) and manage simple "sole author" revisions. The `nexus` entry is primarily intended as a fast-read
