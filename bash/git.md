@@ -5,12 +5,34 @@
 
 # git
 
-## The three levels of `git`
+## The three [sic] levels of `git`
 
 
+- Level 0 the gh-pages gotcha
 - Level 1 main (bulldozer) idea: Requires a basic set of six commands
 - Level 2 mezzanine idea: Stashing and resolving conflicts
 - Level 3 advanced uses: GitHub integration, branching, pull requests, actions, ... 
+
+
+### Level 0 The gh-pages gotcha
+
+
+This Level 0 deals with a *gotcha* that applies for example to this `nexus` repo: The repercussions
+of multi-branch repos in relation to the `git` command. We might as well dispense with this before
+getting into the ABCs of `git`. 
+
+
+`git` manages time evolution of complex software projects by means of *branches*. In particular
+`GitHub` has a built-in way to reflect repository content into a reader-friendly website by means
+of an optional template called `gh-pages` (for "GitHub pages"). The default branch for a repo is
+called `main` and then when we opt in to `gh-pages` there is a branch called, yes, `gh-pages`. Now
+on the browser it is easy to bounce between branches in the console: There is a branch selector
+drop-down. But when issuing `git clone my-gh-pages-based-repo` I only get the `main` branch. I do
+not get the `gh-pages` content. So what to do here? 
+
+
+...left off here...
+
 
 
 ### Level 1 Basics
