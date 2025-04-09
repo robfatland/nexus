@@ -56,6 +56,9 @@ in one's (say laptop) browser.
     - From the cloud vendor's console typically called a cloud shell
 
 
+> Restarted the VM after a time gap? Wondering which Linux distribution? Try `lsb_release -a`
+
+
 We continue this narrative with two intermezzo sections: Resource links and notes on using 
 Linux from a Windows PC. The narrative then jumps into the bootstrapping recipe for the cloud VM. 
 
