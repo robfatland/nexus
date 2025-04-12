@@ -16,7 +16,7 @@ in one's (say laptop) browser.
 - [environments](https://github.com/robfatland/nexus/blob/gh-pages/bash/env.md) including `import`
 - [git](https://github.com/robfatland/nexus/blob/gh-pages/bash/git.md)
 - [terminal](https://github.com/robfatland/nexus/blob/gh-pages/bash/terminal.md)
-- [tunneling](https://github.com/robfatland/nexus/blob/gh-pages/bash/tunneling.md)
+- [tunneling](https://github.com/robfatland/nexus/blob/gh-pages/bash/tunneling.md) (manual *and* VSCode methods)
 
 
 
