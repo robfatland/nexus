@@ -3,6 +3,10 @@
 
 # ssh tunnels
 
+`ssh` tunnels enable us to log in to remote machines and even run `jupyter lab` by means of port forwarding. 
+[This lab](https://github.com/cloudbank-project/az-serverless-tutorial/blob/main/content/workstation/_index.md) 
+walks through setting up **VS Code Server** in this manner. My notes are below under the heading
+[Using VSCode Server](#Using-VSCode-Server].
 
 ## Overview
 
@@ -28,6 +32,26 @@ my laptop <-----> cloud VM (running jupyter)
 my laptop <-----> cloud VM (bastion) <------> cloud VM (running jupyter)
 ```
 
+
+### Using VSCode Server
+
+*Abbreviated notes* for reference; see 
+[the lab](https://github.com/cloudbank-project/az-serverless-tutorial/blob/main/content/workstation/_index.md)
+for the complete careful procedure.
+
+- Click the **><** icon at lower left to bring up the connection menu
+- `Connect to Host... remote ssh` > Add new > `123.12.23.123`
+- Where to save? `/home/user/.ssh/config`: Open this and edit an entry to read:
+
+```
+Host 123.12.23.123
+  HostName 123.12.23.123
+  User azureuser
+  IdentityFile "/home/user/.keypairs/some_keypair_filename.pem"
+```
+
+- connect and test port forwarding by `jupyter lab`
+- 
 
 ### One hop ssh tunnel: Laptop direct to Jupyter server VM
 
