@@ -65,7 +65,7 @@ Sub-pages to this one:
 
 
 > - Restarted the VM after a time gap? Wondering which Linux distribution? Try `lsb_release -a`
-> - Interested in updating/upgrading system packages? `sudo apt update` then `sudo apt upgrade` (avec coffee)
+> - Interested in updating/upgrading system packages? `sudo apt update -y` then `sudo apt upgrade -y` (avec coffee)
 
 
 We continue this narrative with two intermezzo sections: Resource links and notes on using 
@@ -207,7 +207,9 @@ export PATH=~/miniconda3/bin:$PATH
 
 
 Next: Run `~/.bashrc`, confirm the `conda` package manager is available, and 
-have conda go through its initialization process.
+have conda go through its initialization process. `conda` modifies `.bashrc` 
+to accommodate `conda environments`. It may invite you to restart the `bash` 
+terminal session to complete this process. 
 
 
 ```
@@ -218,14 +220,10 @@ source ~/.bashrc
 ```
 
 
-> Note: `conda init` modifies `.bashrc` for conda environment use. It should suffice to run `source ~/.bashrc`.
-> It should also suffice to log out and log back in to the VM (`exit`).
-
-
 Incidentally in addition to package managers `conda` and `pip` there is also available in Linux
 the Advanced Package Tool or `apt`. This is specific to Debian-based forms of Linux including
 Ubuntu. One can update the package index and then upgrade installed packages using `apt`, as
-follows. I claim this is a worthwhile perfunctory action as part of this bootstrap process.
+follows: A worthwhile perfunctory activity also mentioned above. Plus: More coffee.
 
 
 ```
