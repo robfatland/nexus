@@ -98,13 +98,33 @@ by opening a Command Prompt window as Administrator and issuing `wsl -l -v`. To
 change from WSL 1 to WSL 2: `wsl --set-version Ubuntu 2`.
 
 
-One useful feature of mirroring the cloud VM environment on one's local laptop is 
-coding locally, i.e. while not connected to the cloud VM. This is managed via 
-`git push` and `git pull` commands.
+Here is what `wsl -l -v` gives me:
+
+```
+  NAME              STATE           VERSION
+* Ubuntu            Running         2
+  Ubuntu-20.04      Running         2
+  docker-desktop    Stopped         2
+```
+
+Interpretation: I seem to have accumulated *two* versions of Ubuntu Linux which can only
+be bad news. `docker-desktop` can be enabled by running the Docker Desktop app; which 
+starts up the docker engine making the `docker` cli available on the `bash` command line.
 
 
-Some of the GitHub synchronization can be done by means of shell scripts. For example
-for repository `ant` one could set up a script called `pull.sh`:
+### Digression on parallel development environments
+
+
+In the main storyline we intend to arrive at a development environment using Jupyter
+running on a cloud VM; which pushes pixels for our viewing enjoyment to a browser 
+running on our laptop. This is the `ssh` tunnel business referred to above. 
+
+
+However! One useful approach might be to mirror the cloud VM environment on one's local 
+laptop. This permits coding locally (not connected to the cloud VM) which can be convenient
+if there is no internet. The master copy of the repo is on GitHub which we synchronize using 
+`git push` and `git pull` commands. GitHub synchronization can be sped up by means of shell 
+scripts. For example repository `ant` could use this `pull.sh` script:
 
 
 ```
@@ -114,13 +134,8 @@ cd ~
 ```
 
 
-This is run using `source pull.sh` and it "pays for itself" in workflow time once the
-number of repos to synch exceeds 1.
-
-
-If using Docker to build containers on the PC: Check that `docker` runs properly in 
-`bash`. If `docker` could not be found, one workaround is to start the Docker *app*
-which seems to activate docker integration with WSL-2.
+This is run by: `source pull.sh`. It pays for its setup time once the number of repos 
+to synch exceeds 1.
 
 
 The notes that follow on this page for configuring Linux on a cloud VM apply in some
