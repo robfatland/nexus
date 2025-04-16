@@ -5,12 +5,18 @@
 # `bash`
 
 
-The Bourne Again Shell... but *confidentially* the content here is one big cheat sheet 
-for setting up a data science VM on the cloud running a Jupyter notebook server appearing 
-in one's (say laptop) browser. 
+`bash` is the Bourne Again Shell, the entry point for this page on configuring a data science VM on the cloud that runs 
+a Jupyter notebook server viewed in a browser. There are two ways to get there:
 
 
-## Children
+- set up an `ssh` tunnel
+- have VSCode set up an `ssh` tunnel
+
+
+## children
+
+
+Sub-pages to this one: 
 
 
 - [environments](https://github.com/robfatland/nexus/blob/gh-pages/bash/env.md) including `import`
@@ -20,7 +26,7 @@ in one's (say laptop) browser.
 
 
 
-## Topics
+## topics
 
 
 - [bootstrapping a cloud data science VM](#bootstrapping-a-cloud-data-science-vm)
@@ -30,7 +36,9 @@ in one's (say laptop) browser.
 - [More on Linux](#more-on-linux)
 - [What is the basic idea here?](#the-basic-idea-here)
 
+
 ## bootstrapping a cloud data science VM
+
 
 [Click on this link](#the-basic-idea-here) to skip down to a writeup on "What's the basic idea here?"
 
