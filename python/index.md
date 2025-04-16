@@ -11,7 +11,6 @@
 * [jupyter](https://github.com/robfatland/nexus/blob/gh-pages/python/jupyter.md)
 * [packages](https://github.com/robfatland/nexus/blob/gh-pages/python/packages.md)
 
-* 
 
 ## Topics covered here
 
