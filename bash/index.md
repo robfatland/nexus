@@ -240,6 +240,16 @@ Continuing with `conda` environments:
 
 ```
 conda create --name testenv
+```
+
+
+This may prompt you to update `conda`, also providing the command. Do it!
+
+
+Continue with the `testenv` environment:
+
+
+```
 ls -al ~/miniconda3/envs
 conda env list
 conda activate testenv
