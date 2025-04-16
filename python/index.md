@@ -8,7 +8,10 @@
 
 ## In this directory
 
-* [Jupyter](https://github.com/robfatland/nexus)
+* [jupyter](https://github.com/robfatland/nexus/blob/gh-pages/python/jupyter.md)
+* [packages](https://github.com/robfatland/nexus/blob/gh-pages/python/packages.md)
+
+* 
 
 ## Topics covered here
 
@@ -22,6 +25,7 @@ A wish list... topics I'd like to understand
 - `yield`
 - `decorators`
 - `class` under what circumstances? (see `manim` Scene)
+- `dunder`
 
 
 
