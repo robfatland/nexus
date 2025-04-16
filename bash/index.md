@@ -64,8 +64,8 @@ Sub-pages to this one:
     - From the cloud vendor's console typically called a cloud shell
 
 
-> Restarted the VM after a time gap? Wondering which Linux distribution? Try `lsb_release -a`
-> Interested in updating/upgrading system packages? `sudo apt update` then `sudo apt upgrade` (avec coffee)
+> - Restarted the VM after a time gap? Wondering which Linux distribution? Try `lsb_release -a`
+> - Interested in updating/upgrading system packages? `sudo apt update` then `sudo apt upgrade` (avec coffee)
 
 
 We continue this narrative with two intermezzo sections: Resource links and notes on using 
