@@ -243,7 +243,13 @@ conda create --name testenv
 ```
 
 
-This may prompt you to update `conda`, also providing the command. Do it!
+This may prompt you to update `conda`, also providing the necessary command. If this 
+happens I recommend: Do it! 
+
+
+Another thing to be aware of is that this `testenv` may not inherit the installed packages
+found in `base`. Use `conda list` in both environments to compare. In particular I found
+(and could `import`) `pandas` in `base` but not in the newly created `testenv`. 
 
 
 Continue with the `testenv` environment:
