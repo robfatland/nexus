@@ -1,3 +1,11 @@
-links needed: earth/index.md and earth/data.md
+[nexus published](https://robfatland.github.io/nexus), [nexus index source](https://github.com/robfatland/nexus/blob/gh-pages/index.md),
+[earth science index source](https://github.com/robfatland/nexus/blob/gh-pages/earth/index.md)
 
-Move to earth/data this link to the [jpl podaac for viirs](https://podaac.jpl.nasa.gov/dataset/VIIRS_NPP-NAVO-L2P-v1.0#)
+
+
+# nexus earth science resources
+
+CMR is I think the "common metadata repository". 
+
+
+- [data access](https://github.com/robfatland/nexus/blob/gh-pages/earth/data.md)
