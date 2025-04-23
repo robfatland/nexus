@@ -68,7 +68,8 @@ just here, and annotations for part 2 (oceanography) [are found further down on 
     - It also relies upon Serverless Functions: Refer to more
 [lecture slides](https://docs.google.com/presentation/d/1R2HHfHYgmarje2q_0x42hMecUc7R6SFjI-ih1L05foQ/edit?usp=sharing) and an
 [adjoint slide deck](https://docs.google.com/presentation/d/1FTsHW3igVQgx-4GhtPrryle-tVX0Vf_2/edit?usp=sharing&ouid=115128503909653631241&rtpof=true&sd=true).
-- The periodic table activity does *not* use *containers*. That is a separate [activity](https://naclomi.github.io/containers-tutorial/)
+- The periodic table project does *not* use *Docker containers*, not to be confused with CosmosDB NoSQL containers (tables of data). The Docker container
+project is a separate [activity](https://naclomi.github.io/containers-tutorial/)
 with corresponding [lecture slides](https://docs.google.com/presentation/d/1_CIXw_UKUzueunTzVKmNqS2jA5DM4MEtnGeOTG_kAaU/edit?usp=sharing).
 
 
