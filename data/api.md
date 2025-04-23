@@ -35,6 +35,7 @@ It helps to have in mind some heirarchical terminology:
 
 - CosmosDB instance, the high-level Azure database service:
     - `robs-data-ocean` is the name of the example CosmosDB instance
+        - the student lab uses instead: `rg-amlclass-netid`
     - In the `robs-data-ocean` CosmosDB instance we have two databases:
         - `periodic-db` per the MSE544 tutorial is a NoSQL database used for the periodic table
             - Within the `periodic-db` database is a *Container*, a table-like structure
