@@ -51,3 +51,69 @@ The related sub-pages linked above -- *gcp*, *aws* and *azure* -- are AI notes o
 - Amplify at Vanderbilt
 - OLMO at AI2
 - Maizey at UMich
+
+
+## ai recipe
+
+
+Let's run through a HuggingFace example subject to these constraints:
+
+- Easy to implement on Ubuntu Linux running on WSL2 in turn on a Windows laptop
+- Very lightweight processing task
+
+```
+sudo apt update
+sudo apt upgrade
+```
+
+```
+sudo apt install python3 python3-pip
+```
+
+```
+pip3 install transformers
+pip3 install torch  # PyTorch
+```
+
+Optional: Clone a repo for a web interface: 
+
+
+```
+git clone https://github.com/oobabooga/text-generation-webui
+cd text-generation-webui/
+```
+
+Need to elaborate and set up an environment: MISSING STEP
+
+```
+pip install -r requirements.txt
+```
+
+
+"Run the application"... ?!?!?!???
+
+```
+./start_linux.sh  # On Linux
+```
+
+Example pre-trained model: DistilBERT
+
+
+```
+from transformers import pipeline
+sentiment_pipeline = pipeline("sentiment-analysis")
+result = sentiment_pipeline("I love Hugging Face!")
+print(result)
+```
+
+
+More from the AI: 
+
+YouTube: Search "Running HuggingFace models on WSL2" or "Using HuggingFace Transformers on Ubuntu" for a visual guide.
+
+
+- DistilBERT: A smaller, faster, and cheaper version of BERT. It is well-suited for tasks like text classification and sentiment analysis 1 .
+
+- BERT: A versatile model for various NLP tasks, including question answering and natural language inference 1 .
+
+- RoBERTa: An optimized version of BERT that improves performance on NLP tasks 1 .
