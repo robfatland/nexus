@@ -13,7 +13,7 @@
 This page touches on the *broad* definition of artificial intelligence as forms of autonomous computation. 
 This big region on the AI Euler diagram encompasses all manners and forms of AI: Machine Learning, Deep Learning, 
 Convolutional Neural Networks, Supervised and Unsupervised forms of training, clustering algorithms such as 
-K-means and so forth.
+K-means, spectral graph theory, adversarial networks and that's just getting started.
 
 
 The related sub-pages linked above -- *gcp*, *aws* and *azure* -- are AI notes on cloud-specific technology stacks.
@@ -52,14 +52,23 @@ The related sub-pages linked above -- *gcp*, *aws* and *azure* -- are AI notes o
 - OLMO at AI2
 - Maizey at UMich
 
+
 ## context
+
 
 Suggestion: Build a prompt using the "PACE" guideline acronym: State Problem, Action, Context, Example.
 
 
-## ai recipe
+## eigenconcept for ai
 
-Let's run through a HuggingFace example subject to these constraints:
+
+The central idea in generative AI is the transformer; and the central model hub is Hugging Face. 
+Let's run through a HuggingFace use example subject to some constraints and see how the Python
+library `transformers` comes into play. In particular we want to learn how to operate an instance of
+a **`pipeline`** which is imported from `transformers`. This is queryable (analogous to `requests`)
+using default models through an API; so the minimum viable code is down around 2, 3, 4 or so lines. 
+The source video for this eigenconcept is [here on YouTube](https://youtu.be/QEaBAZQCtwE).
+
 
 - Easy to implement on Ubuntu Linux running on WSL2 in turn on a Windows laptop
 - Very lightweight processing task
