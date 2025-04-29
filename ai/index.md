@@ -52,30 +52,38 @@ The related sub-pages linked above -- *gcp*, *aws* and *azure* -- are AI notes o
 - OLMO at AI2
 - Maizey at UMich
 
+## context
+
+Suggestion: Build a prompt using the "PACE" guideline acronym: State Problem, Action, Context, Example.
+
 
 ## ai recipe
-
 
 Let's run through a HuggingFace example subject to these constraints:
 
 - Easy to implement on Ubuntu Linux running on WSL2 in turn on a Windows laptop
 - Very lightweight processing task
 
+
+Update the Advanced Package Tool `apt` library registry; and permit it to make upgrades of
+installed libraries: 
+
+
 ```
 sudo apt update
 sudo apt upgrade
 ```
 
-```
-sudo apt install python3 python3-pip
-```
+Ensure that `python`, `pip` and `conda` are installed. Let's assume `pip` will do the job: 
+First install `pytorch`, then `transformers`.  
+
 
 ```
-pip3 install transformers
-pip3 install torch  # PyTorch
+pip install torch
+pip install transformers
 ```
 
-Optional: Clone a repo for a web interface: 
+To set up a browser-based interface: Clone the following repository:
 
 
 ```
