@@ -80,6 +80,30 @@ This page is an accumulator for nexus feeder content: Various places where resea
 - [Oorjit repo: Originally studying preemptible](https://github.com/oorjitchowdhary/ml-training-preemptible-vms)
     - [Rob's notes in Oorjit's repo](https://github.com/oorjitchowdhary/ml-training-preemptible-vms/blob/main/assets/notesbyrob.md)
 
+## clean slate project
+
+- I have a Windows PC that runs an application called `Terminal`
+    - This is a multi-tabbed application with Settings and a Chooser menu
+- There are two Linux options in the Terminal menu
+    - `lsb_release -a` in "Linux 20.04" gives me 20.04: `/home/kilroy` with just some `.something` files and folders
+    - `lsb_release -a` in "Linux" gives me 18.04: `/home/kilroy` with lots of repos, folders, files
+    - One has a home directory full of stuff; the other has only `.something` files and directories
+- WSL2 is running
+- VSCode seems to know about one version of Linux
+    - So the checklist of the clean slate is VSCode sees the same Linux file system that I actually use
+- Backing everything up
+    - Back up both versions of Linux including the `.something` material
+    - Back up the repos (with respect to the other PC also)
+    - Back up the data folder
+    - Back up the other folders
+    - Be really sure everything important is recoverable
+    - Note down the symlink connection to Windows filespace, particularly Downloads
+    - Note down the environments: List them, get their dependency files `requirements.txt` etc
+- uninstall Python definitely; start over with `miniconda`
+- uninstall Linux maybe? What does `sudo apt update / upgrade` get us?
+- Notice that `cli` commands like `az` and `aws` and `docker` will need to be reinstalled
+    - Work from a plan for environments rather than improvising things
+- uninstall Linux? Update?
 
 ## Residual loose strands
 
