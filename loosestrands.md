@@ -153,7 +153,7 @@ A2: If your functions call other functions you have written and you want to have
 ### Follow this up
 
 
-`sudo apt-get install -y nyancat`
+`sudo apt install -y nyancat`
 
 
 ...and a remark on the mechanics, separation of concerns, Ohm's law, that sort of thing
@@ -195,16 +195,12 @@ to pay for a higher sampling rate in the console... but why?"
 
 
 ```
-sudo apt-get update -y && sudo apt-get upgrade -y
+sudo apt update -y && sudo apt upgrade -y
 ```
 
 
-alternative...?...
+(Note: `apt` is the modern version of the older `apt-get`; more user friendly.)
 
-```
-sudo apt update
-sudo apt install
-```
 
 ## more residual remarks from the gh-pages README
 
