@@ -89,8 +89,18 @@ This page is an accumulator for nexus feeder content: Various places where resea
     - `lsb_release -a` in "Linux" gives me 18.04: `/home/kilroy` with lots of repos, folders, files
     - One has a home directory full of stuff; the other has only `.something` files and directories
 - WSL2 is running
-- VSCode seems to know about one version of Linux
-    - So the checklist of the clean slate is VSCode sees the same Linux file system that I actually use
+- VSCode seems to have its own ideas
+    - Terminal starts PowerShell which lands in C:\Users\kilroy (home directory of Windows User kilroy)
+    - Terminal += Ubuntu (WSL) lands in bash but same location Windows User kilroy home
+        - This is styled as `/mnt/c/Users/kilroy` in Linux
+        - If I say `cd ~` I wind up in `/home/kilroy` the cluttered version
+        - So the null hypothesis says `lsb_release -a` gives me Linux 18.04: Confirmed
+    - Terminal += `Ubuntu-20.04 (WSL)` gives a new bash shell in `/mnt/c/Users/kilroy` with 20.04 confirmed
+        - `cd ~` goes to `/home/kilroy` with `.something` content plus the `nobody_home` touch file
+    - Terminal += `Azure Cloud Shell (bash)` does not work; some additional install `jsnode` missing
+    - In summary both Linux installs are "visible" to VSCode through Ubuntu Terminal options
+        - Both involve WSL and wander off into the respective home file systems
+    - End result: VSCode agrees about which Ubuntu/Python/home
 - Backing everything up
     - Back up both versions of Linux including the `.something` material
     - Back up the repos (with respect to the other PC also)
