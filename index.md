@@ -8,62 +8,62 @@
 
 
 
-**nexus** is a *threefold documentation resource* centered on technology, tools and methods of open research.
-Threefold means *native*, *external* and *hybrid* documentation. Hybrid documentation is (native) commentary 
-generated when working through (external) resources like guides and tutorials.
+**nexus** is a *threefold documentation resource* centered on technology, tools and methods of open 
+data science. Threefold: *native* plus *external* plus *hybrid* documentation. *Hybrid* is (native) 
+commentary from working through (external) guides and tutorials.
 
 
-## The `nexus` content map 
+## Interpreting the `nexus` content map 
 
 
-- left-justified links go to published GitHub pages
-    - Indented links go to `gh-pages` source markdown files
-    - Each topic is an `index.md` file and this will have...
-        - ...one or more children pages, second indentation
+- left-justified: To published GitHub pages
+    - Indented: To `gh-pages` source markdown files
+    - Each topic is anchored by `index.md` file with...
+        - ...one or more children
 
 
-Nexus is consequently a 3-level tree. 
+Nexus is a 3-level tree. Here is the link map:
 
 
-- [nexus published](https://robfatland.github.io/nexus)
-    - [nexus index](https://github.com/robfatland/nexus/blob/gh-pages/index.md) (L1)
-        - [lexicon](https://github.com/robfatland/nexus/blob/gh-pages/lexicon.md) (L1-sub)
-        - [loose strands](https://github.com/robfatland/nexus/blob/gh-pages/loosestrands.md) (L1-sub)
-- [bash published](https://robfatland.github.io/nexus/bash)
-    - [bash index](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md) (L2)
-        - [environments](https://github.com/robfatland/nexus/blob/gh-pages/bash/env.md) (L3)
-        - [git and GitHub](https://github.com/robfatland/nexus/blob/gh-pages/bash/git.md) (L3)
-        - [wrenching the terminal](https://github.com/robfatland/nexus/blob/gh-pages/bash/terminal.md) (L3)
-        - [ssh tunneling](https://github.com/robfatland/nexus/blob/gh-pages/bash/tunneling.md) (L3, and so on)
-- [data published](https://robfatland.github.io/nexus/data)
-    - [data index](https://github.com/robfatland/nexus/blob/gh-pages/data/index.md)
+- [nexus](https://robfatland.github.io/nexus)
+    - [nexus root index.md](https://github.com/robfatland/nexus/blob/gh-pages/index.md) (L1)
+        - [nexus lexicon](https://github.com/robfatland/nexus/blob/gh-pages/lexicon.md)
+        - [nexus loose strands (a ttdl)](https://github.com/robfatland/nexus/blob/gh-pages/loosestrands.md)
+- [bash](https://robfatland.github.io/nexus/bash)
+    - [bash index.md](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md)
+        - [environments](https://github.com/robfatland/nexus/blob/gh-pages/bash/env.md)
+        - [git and GitHub](https://github.com/robfatland/nexus/blob/gh-pages/bash/git.md)
+        - [wrenching the terminal](https://github.com/robfatland/nexus/blob/gh-pages/bash/terminal.md)
+        - [ssh tunneling](https://github.com/robfatland/nexus/blob/gh-pages/bash/tunneling.md)
+- [data](https://robfatland.github.io/nexus/data)
+    - [data index.md](https://github.com/robfatland/nexus/blob/gh-pages/data/index.md)
         - [api](https://github.com/robfatland/nexus/blob/gh-pages/data/api.md)
-- [hpc published](https://robfatland.github.io/nexus/hpc)
-    - [hpc index](https://github.com/robfatland/nexus/blob/gh-pages/hpc/index.md)
+- [hpc](https://robfatland.github.io/nexus/hpc)
+    - [hpc index.md](https://github.com/robfatland/nexus/blob/gh-pages/hpc/index.md)
 - [cloud published](https://robfatland.github.io/nexus/cloud)
-    - [cloud index](https://github.com/robfatland/nexus/blob/gh-pages/cloud/index.md)
+    - [cloud index.md](https://github.com/robfatland/nexus/blob/gh-pages/cloud/index.md)
         - [spot](https://github.com/robfatland/nexus/blob/gh-pages/cloud/spot.md)
         - [studies](https://github.com/robfatland/nexus/blob/gh-pages/cloud/studies.md)
 - [manim published](https://robfatland.github.io/nexus/manim)
-    - [manim index](https://github.com/robfatland/nexus/blob/gh-pages/manim/index.md)
+    - [manim index.md](https://github.com/robfatland/nexus/blob/gh-pages/manim/index.md)
 - [(meta-)documentation published](https://robfatland.github.io/nexus/documentation)
-    - [(meta-)documentation index](https://github.com/robfatland/nexus/blob/gh-pages/documentation/index.md)
+    - [(meta-)documentation index.md](https://github.com/robfatland/nexus/blob/gh-pages/documentation/index.md)
 - [python published](https://robfatland.github.io/nexus/python)
-    - [python index](https://github.com/robfatland/nexus/blob/gh-pages/python/index.md)
+    - [python index.md](https://github.com/robfatland/nexus/blob/gh-pages/python/index.md)
         - [jupyter](https://github.com/robfatland/nexus/blob/gh-pages/python/jupyter.md)
         - [python packages](https://github.com/robfatland/nexus/blob/gh-pages/python/packages.md)
-- [containers published](https://robfatland.github.io/nexus/containers)
-    - [containers index](https://github.com/robfatland/nexus/blob/gh-pages/containers/index.md)
-- [artificial intelligence published](https://robfatland.github.io/nexus/ai)
-    - [artificial intelligence index](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md)
+- [containers](https://robfatland.github.io/nexus/containers)
+    - [containers index.md](https://github.com/robfatland/nexus/blob/gh-pages/containers/index.md)
+- [artificial intelligence](https://robfatland.github.io/nexus/ai)
+    - [artificial intelligence index.md](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md)
         - [gcp](https://github.com/robfatland/nexus/blob/gh-pages/ai/gcp.md)
         - [aws](https://github.com/robfatland/nexus/blob/gh-pages/ai/aws.md)
         - [azure](https://github.com/robfatland/nexus/blob/gh-pages/ai/azure.md)
-- [quantum computing published](https://robfatland.github.io/nexus/quantum)
-    - [quantum computing index](https://github.com/robfatland/nexus/blob/gh-pages/quantum/index.md)
+- [quantum computing](https://robfatland.github.io/nexus/quantum)
+    - [quantum computing index.md](https://github.com/robfatland/nexus/blob/gh-pages/quantum/index.md)
         - [Hadamard gates](https://github.com/robfatland/nexus/blob/gh-pages/quantum/hadamard.md)
-- [earth science published](https://robfatland.github.io/nexus/earth)
-    - [earth science index](https://github.com/robfatland/nexus/blob/gh-pages/earth/index.md)
+- [earth science](https://robfatland.github.io/nexus/earth)
+    - [earth science index.md](https://github.com/robfatland/nexus/blob/gh-pages/earth/index.md)
         - [data](https://github.com/robfatland/nexus/blob/gh-pages/earth/data.md)
 
 
