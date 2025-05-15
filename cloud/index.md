@@ -5,8 +5,8 @@
 
 
 "Cloud" in the context of research computing refers to *commercial clouds*, for example AWS, GCP and Azure,
-where Virtual Machines are available on a pay-as-you-go basis. The content of this repo *does not* however
-concern "cloud" consumer services like iCloud and Google Drive.
+where Virtual Machines are available on a pay-as-you-go basis. The content of this repo does *not*
+concern cloud consumer services such as iCloud and Google Drive.
 
 
 [Essay: Is cloud computing a good idea for you?](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md#the-basic-idea-here)
@@ -38,7 +38,7 @@ Cloud computing for research comes at a dollar cost. We are interested in optimi
 
 * Preemptible instance use on the cloud (70-90% savings)
     * [Dedicated notes here in nexus](https://github.com/robfatland/nexus/edit/gh-pages/cloud/spot.md)
-    * [Oorjit's repo on ML using preemptible VMs](https://github.com/oorjitchowdhary/ml-training-preemptible-vms/blob/main/README.md)
+    * [Oorjit Chowdhary's repo on ML using preemptible VMs](https://github.com/oorjitchowdhary/ml-training-preemptible-vms/blob/main/README.md)
 
 
 ## open topic: access control
@@ -77,6 +77,8 @@ a VM on AWS by means of the VSCode application.
 ### non-GPU instances
 
 
+This information has a half life of about a year but still has value as a sketch of the landscape. 
+
 - [Information on naming conventions](https://docs.aws.amazon.com/ec2/latest/instancetypes/instance-type-names.html)
 - Examples from the compute-optimized C-series
     - c6id.4xlarge
@@ -100,11 +102,17 @@ a VM on AWS by means of the VSCode application.
 ### gpu instances
 
 
-- P and G series are recommended [GPU-compatible EC2 instance types](https://docs.aws.amazon.com/dlami/latest/devguide/gpu.html)
-- Here is a helpful [medium article](https://nishant-parmar.medium.com/using-aws-g-and-p-series-ec2-instances-for-high-quality-rendering-cloud-gaming-and-machine-55195075334c)
+- AWS EC2 instance types for using GPUs
+    - P and G instances are [GPU-compatible](https://docs.aws.amazon.com/dlami/latest/devguide/gpu.html)
+    - An informative [medium article](https://nishant-parmar.medium.com/using-aws-g-and-p-series-ec2-instances-for-high-quality-rendering-cloud-gaming-and-machine-55195075334c)
+    - Low end to high end costs
+        - Low end needed 
+        - The AWS EC2 instance **`p5.48xlarge`** includes eight NVIDIA H100s; about $100 per hour on demand.
+        - The **`p5en`** variant ('enhanced networking') and supports H200s.
 
 
 ### Log in from VSCode
+
 
 - Use [this tutorial](https://cloudbank-project.github.io/az-serverless-tutorial/workstation/) to connect to the VM from VSCode
 - The objective is to have the VS Code Server automatically install on the VM so VSCode simply *runs* on the *VM*
