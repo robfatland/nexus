@@ -8,9 +8,10 @@
 
 
 
-**nexus** is a *threefold documentation resource* centered on technology, tools and methods of open 
-data science. Threefold: *native* plus *external* plus *hybrid* documentation. *Hybrid* is (native) 
-commentary from working through (external) guides and tutorials.
+**nexus** is a *threefold documentation resource* centered on technology, tools and methods for 
+open data science. Nexus is "How I Did It" notes in case I need to do it again in the future.
+Content is threefold in the sense of: *native* plus *external* plus *hybrid* documentation. 
+*Hybrid* is (native) commentary from working through (external) guides and tutorials.
 
 
 ## Interpreting the `nexus` content map 
@@ -73,9 +74,11 @@ Nexus is a 3-level tree. Here is the link map:
 ## Why is nexus?
 
 
-**nexus** was conceived as a response to the tech 'profusion/latency' problem: I need to track a bunch
-of technology with a profusion of details; and I am obliged to spend months focused in one particular area. 
-After long neglect I return to an old topic and find myself re-learning a lot of details. This is onerous 
-and depressing. So to heck with that, nichte diese Töne. `nexus` documents everything I know to reduce
-the stress of starting over.
+**nexus** is a response to the tech 'profusion/latency' problem faced by scientists who need a degree of
+familiarity with computing infrastructure. The scientist is first a Builder and then a User where they
+can focus on the actual research. Suppose a research team needs to puzzle out how to develop code for 
+and then run a *lot* of compute tasks on a limited budget; so perhaps containerization and Jupyter Lab servers 
+are pieces of the solution. Once set in place the *how to* can be forgotten... but *how to* invariably 
+comes up again at some point down the road, be that weeks or months or a year. It is onerous and depressing 
+to have to begin again as Builder *de novo*. Nichte diese Töne: `nexus` hopes to be helpful.
 
