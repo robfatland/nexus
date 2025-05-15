@@ -10,6 +10,14 @@ This page is an accumulator for nexus feeder content: Various places where resea
 
 ## Find out and resolve why Chris Simmons says Micro Mamba not Anaconda and even not Miniconda
 
+## Add Ocean Science
+
+
+* {Epipelargosy "from scratch" (Jupyter Book) + Discourse }
+    * includes intercomparison with: VIRRS, ARGO, ROMS, CE Gliders, FTICR-MS, GLODAP, NDBP, ...
+* Requested: Spreadsheet of sensors and science themes
+
+
 ## CloudBank strands
 
 - Incidental locations
