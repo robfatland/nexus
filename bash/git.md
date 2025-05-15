@@ -5,6 +5,10 @@
 
 # git
 
+
+"If it's not in `git` it doesn't exist." -Chris Simmons
+
+
 ## The three [sic] levels of `git`
 
 
