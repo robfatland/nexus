@@ -15,7 +15,8 @@ This page is an accumulator for nexus feeder content: Various places where resea
 
 * {Epipelargosy "from scratch" (Jupyter Book) + Discourse }
     * includes intercomparison with: VIRRS, ARGO, ROMS, CE Gliders, FTICR-MS, GLODAP, NDBP, ...
-* Requested: Spreadsheet of sensors and science themes
+* Requested: Spreadsheet of sensors and science themes (George)
+* Question to Sensor chart: See Downloads
 
 
 ## CloudBank strands
