@@ -8,6 +8,8 @@ This page is an accumulator for nexus feeder content: Various places where resea
 (including cloud infrastructure material).
 
 
+## Find out and resolve why Chris Simmons says Micro Mamba not Anaconda and even not Miniconda
+
 ## CloudBank strands
 
 - Incidental locations
