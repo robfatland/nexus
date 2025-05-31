@@ -6,8 +6,8 @@
 # environments
 
 `conda create/activate` commands -- as well as `venv` paths -- engage Python environments as augmented / customized versions 
-of a base environment. This avoids burdening the base environment with every installed Python package we ever grabbed.
-That kitchen sink approach could become overburdened and buggy from version incompatibility issues. 
+of the default or *base* environment. This avoids burdening the base environment with every installed Python package ever grabbed:
+The kitchen sink approach will become overburdened and buggy from version incompatibility issues. 
 
 
 So rather we work from specialized environments activated as needed. We create them, populate them with respectively 
@@ -17,6 +17,7 @@ appropriate installed packages, and then activate and use them in context.
 ## quick reference
 
 
+- `uname -a` to get the name of the Linux OS; and `which conda` to verify the path to `conda`
 - `environment.yml` of `requirements.txt` are the two traditional environment configuration filenames
     - Associated respectively with `conda` and `pip` package managers
 - `conda deactivate` will do just that to the current running environment, returning to the `base` environment
