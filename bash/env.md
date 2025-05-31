@@ -17,7 +17,7 @@ appropriate installed packages, and then activate and use them in context.
 ## quick reference
 
 
-- `uname -a` to get the name of the Linux OS; and `which conda` to verify the path to `conda`
+- `uname -a` for Linux OS details; `lsb_release -a` for distribution/version; and `which conda` to verify `conda`
 - `environment.yml` of `requirements.txt` are the two traditional environment configuration filenames
     - Associated respectively with `conda` and `pip` package managers
 - `conda deactivate` will do just that to the current running environment, returning to the `base` environment
