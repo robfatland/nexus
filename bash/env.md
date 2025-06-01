@@ -5,6 +5,18 @@
 
 # environments
 
+There are good instructions online for installing various Python distributions. Here I am avoiding the full-blown `Anaconda`
+in favor of `Miniconda`; but there are other options such as `Micromamba` that run faster. 
+
+
+The environment command associated with Anaconda/Miniconda is [`conda`](https://en.wikipedia.org/wiki/Conda_(package_manager)) 
+which is both an open source package and environment management system and the eponymous utility command. It is an alternative
+or complement to the Python native package manager `pip` (which does not manage environments). 
+Both `pip` and `conda` can be used to install packages individually or *en masse* by means of grocery list files: 
+`conda env create -f environment.yml` file. The corresponding environment
+configuration file for `pip` is called `requirements.txt`. The bulk install command using `pip` is `pip install -r requirements.txt` 
+and the corresponding command for `conda` is 
+
 `conda create/activate` commands -- as well as `venv` paths -- engage Python environments as augmented / customized versions 
 of the default or *base* environment. This avoids burdening the base environment with every installed Python package ever grabbed:
 The kitchen sink approach will become overburdened and buggy from version incompatibility issues. 
