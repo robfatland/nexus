@@ -44,10 +44,11 @@ avoidance, ease of collaboration, and peace of mind from working in an unclutter
 
 
 Installing packages (libraries) within an environment can be done on an as-needed basis; but reproducibility comes by
-means of "what has been installed" files. The two common varieties are `environment.yml` and `requirements.txt`. These
+means of grocery list files that consist primarily of a list of libraries. The two common varieties are 
+`environment.yml` and `requirements.txt` files. These
 correspond respectively to `conda` and `pip`. Mnemonic: `p` is close to `q` and `c` is close to `e`. The idea is to
 feed the package manager one of these package list files and let it solve the compatibilities and install compatible
-versions of these various packages.
+versions of the various packages.
 
 
 To recapitulate, then: The environment command associated with Anaconda/Miniconda is `conda`,
@@ -62,7 +63,7 @@ and analyzing oceanographic data.
 
 
 
-- [`conda env create -f /path/to/requirements.txt -n envname`](https://docs.conda.io/projects/conda/en/stable/commands/env/create.html)
+- [`conda env create --file environment.yml --name myusefulenv`](https://docs.conda.io/projects/conda/en/stable/commands/env/create.html)
 - `pip install -r requirements.txt` 
 
 
