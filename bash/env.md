@@ -15,6 +15,13 @@ to install them on an as-needed basis. Also worth researching: Other Python inst
 `Micromamba`. 
 
 
+## Initialize conda
+
+
+`conda init bash` will insert the miniconda `bin` directory at the top of the `bash` `PATH`. In this manner an
+existing Python executable say within Linux is superseded by the one installed with `miniconda`.
+
+
 ## What are Python virtual environments?
 
 
