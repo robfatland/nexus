@@ -44,10 +44,10 @@ avoidance, ease of collaboration, and peace of mind from working in an unclutter
 
 
 Installing packages (libraries) within an environment can be done on an as-needed basis; but reproducibility comes by
-means of grocery list files that consist primarily of a list of libraries. The two common varieties are 
-`environment.yml` and `requirements.txt` files. These
+means of grocery list files (called *environment files*) that consist primarily of a list of libraries. 
+Two common varieties are `environment.yml` and `requirements.txt` files. These
 correspond respectively to `conda` and `pip`. Mnemonic: `p` is close to `q` and `c` is close to `e`. The idea is to
-feed the package manager one of these package list files and let it solve the compatibilities and install compatible
+feed the package manager one of these environment files and let it solve for compatibilities and install corresponding
 versions of the various packages.
 
 
@@ -56,6 +56,14 @@ both the open source package and environment management system and its eponymous
 It is an alternative or complement to the Python native package manager `pip` (package management)
 together with `venv` (environment management). Both `pip` and `conda` can be used to install packages 
 individually or *en masse* by means of grocery list files.
+
+
+Some best practices
+- Avoid mixing `conda install` and `pip install` in a given environment
+- One environment per project
+- Keep environments small
+- Verify reproducibility by sharing environment files
+
 
 
 Example: Suppose I have three projects in mind: Learning some number theory, developing a curriculum for beginning programmers,
