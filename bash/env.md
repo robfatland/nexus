@@ -22,12 +22,17 @@ to install them on an as-needed basis. Also worth researching: Other Python inst
 > virtual environment.
 
  
-A Python virtual environment (or simply 'an environment') is created using a package/environment management utility such as `conda`
-or `venv` which uses `pip` for package management. Creating, activating, modifying, and deactivating Python virtual environments 
+A Python virtual environment (or simply 'an environment') is created using a package/environment management utility such as 
+[`conda`](https://en.wikipedia.org/wiki/Conda_(package_manager))
+or [`venv`](https://docs.python.org/3/library/venv.html) which uses 
+[`pip`](https://en.wikipedia.org/wiki/Pip_(package_manager))
+for package management. 
+Creating, activating, modifying, and deactivating Python virtual environments 
 is the protocol for managing a larger computing environment. Each created environment acts as a distinct context. This
 is in contrast to a 'kitchen sink' approach where all needed libraries are installed in one place, for example in the default 
 `base` environment. This can be done of course but it can result in incompatibility errors, in part because the Python ecosystem 
 is very dynamic and can involve complex dependencies.
+
 
 In summary then, the advantages of using virtual environments include dependency isolation, reproducibility, conflict 
 avoidance, ease of collaboration, and peace of mind from working in an uncluttered workspace.
@@ -38,15 +43,23 @@ avoidance, ease of collaboration, and peace of mind from working in an unclutter
 > the `miniconda` folder (independent of project folders).
 
 
+Installing packages (libraries) within an environment can be done on an as-needed basis; but reproducibility comes by
+means of "what has been installed" files. The two common varieties are `environment.yml` and `requirements.txt`. These
+correspond respectively to `conda` and `pip`. Mnemonic: `p` is close to `q` and `c` is close to `e`. The idea is to
+feed the package manager one of these package list files and let it solve the compatibilities and install compatible
+versions of these various packages.
+
+
+To recapitulate, then: The environment command associated with Anaconda/Miniconda is `conda`,
+both the open source package and environment management system and its eponymous utility command. 
+It is an alternative or complement to the Python native package manager `pip` (package management)
+together with `venv` (environment management). Both `pip` and `conda` can be used to install packages 
+individually or *en masse* by means of grocery list files.
+
+
 Example: Suppose I have three projects in mind: Learning some number theory, developing a curriculum for beginning programmers,
 and analyzing oceanographic data.
 
-
-
-The environment command associated with Anaconda/Miniconda is [`conda`](https://en.wikipedia.org/wiki/Conda_(package_manager)) 
-which is both an open source package and environment management system and an eponymous utility command. It is an alternative
-or complement to the Python native package manager `pip` (package management but not environment management). 
-Both `pip` and `conda` can be used to install packages individually or *en masse* by means of grocery list files.
 
 
 - [`conda env create -f /path/to/requirements.txt -n envname`](https://docs.conda.io/projects/conda/en/stable/commands/env/create.html)
