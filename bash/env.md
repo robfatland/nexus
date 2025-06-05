@@ -34,6 +34,11 @@ A Python virtual environment (or simply 'an environment') is created using a pac
 or [`venv`](https://docs.python.org/3/library/venv.html) which uses 
 [`pip`](https://en.wikipedia.org/wiki/Pip_(package_manager))
 for package management. 
+For a more in-depth view search online for tutorials, 
+for example [like this one](https://realpython.com/python-virtual-environments-a-primer/).
+
+
+
 Creating, activating, modifying, and deactivating Python virtual environments 
 is the protocol for managing a larger computing environment. Each created environment acts as a distinct context. This
 is in contrast to a 'kitchen sink' approach where all needed libraries are installed in one place, for example in the default 
@@ -72,19 +77,6 @@ Some best practices
 - Verify reproducibility by sharing environment files
 
 
-
-Example: Suppose I have three projects in mind: Learning some number theory, developing a curriculum for beginning programmers,
-and analyzing oceanographic data.
-
-
-
-- [`conda env create --file environment.yml --name myusefulenv`](https://docs.conda.io/projects/conda/en/stable/commands/env/create.html)
-- `pip install -r requirements.txt` 
-
-
-`conda` environments are typically activated from the `base` environment. 
-
-
 ## reference
 
 
@@ -92,8 +84,11 @@ and analyzing oceanographic data.
 - `lsb_release -a` for distribution/version
 - `python --version`
 - `which conda` verifies `conda` is installed
+- `conda init bash` as noted puts the miniconda `bin` directory at the top of `PATH`
 - `environment.yml` and `requirements.txt` are default configuration filenames
     - Associated respectively with `conda` and `pip` package managers
+- [`conda env create --file environment.yml --name myusefulenv`](https://docs.conda.io/projects/conda/en/stable/commands/env/create.html)
+- `pip install -r requirements.txt` 
 - `conda deactivate` returns to the parent environment
 - `conda create --name new_env_name` brings a new environment into play manually
     - `conda env list` lists the created environments
