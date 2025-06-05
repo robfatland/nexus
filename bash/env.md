@@ -77,7 +77,7 @@ Some best practices
 - Verify reproducibility by sharing environment files
 
 
-## reference
+## command reference
 
 
 - `uname -a` for Linux OS details
@@ -107,7 +107,18 @@ Some best practices
     - Move `requirements.txt` to the root directory of the project
 
 
-## from here down is fossil source material
+## project installation notes
+
+This section tracks some personal environment names corresponding to projects; as well as 
+(indented) module installations. Unless noted the modules are installed by `conda install`.
+
+- numbertheory: Basic coursework; see [this source repository](https://github.com/robfatland/ant).
+    - jupyterlab: run this using the command `jupyter-lab`
+    - matplotlib: typical charting accessed in `pyplot` via `from matplotlib import pyplot as plt`
+        - Note this breaks with the domain name heuristic.
+    - potential to install: install FLINT and then install the `python-flint` wrapper
+- epipelargosy
+- pythonbytes 
 
 ### Items this page should address
 
