@@ -110,15 +110,24 @@ Some best practices
 ## project installation notes
 
 This section tracks some personal environment names corresponding to projects; as well as 
-(indented) module installations. Unless noted the modules are installed by `conda install`.
+(indented) module installations. Unless noted the modules are installed with `conda install`.
 
 - numbertheory: Basic coursework; see [this source repository](https://github.com/robfatland/ant).
     - jupyterlab: run this using the command `jupyter-lab`
     - matplotlib: typical charting accessed in `pyplot` via `from matplotlib import pyplot as plt`
         - Note this breaks with the domain name heuristic.
-    - potential to install: install FLINT and then install the `python-flint` wrapper
+    - potentially: `FLINT` and then `python-flint` wrapper
 - epipelargosy
-- pythonbytes 
+    - jupyterlab
+    - matplotlib
+    - pandas
+- pbytes
+    - jupyterlab
+    - already done: requests, turtle
+- sodium
+    - jupyterlab
+    - matplotlib
+    - pandas
 
 ### Items this page should address
 
