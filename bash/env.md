@@ -37,9 +37,9 @@ existing Python executable say within Linux is superseded by the one installed w
  
 A Python virtual environment (or simply 'an environment') is created using a package/environment management utility such as 
 [`conda`](https://en.wikipedia.org/wiki/Conda_(package_manager))
-or [`venv`](https://docs.python.org/3/library/venv.html) which uses 
+or [`venv`](https://docs.python.org/3/library/venv.html) (noting that `venv` uses 
 [`pip`](https://en.wikipedia.org/wiki/Pip_(package_manager))
-for package management. 
+to handle package management.) 
 For a more in-depth view search online for tutorials, 
 for example [like this one](https://realpython.com/python-virtual-environments-a-primer/).
 
