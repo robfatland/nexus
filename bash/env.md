@@ -22,6 +22,12 @@ to install them on an as-needed basis. Also worth researching: Other Python inst
 existing Python executable say within Linux is superseded by the one installed with `miniconda`.
 
 
+> A new `conda` environment can fail to inherit the above `PATH` logic: `which python` turns up nothing when
+> a new environment is activated. This is fixed by `conda install jupyterlab` but I do not know why; and
+> this is a kluge. `conda init bash` from the activated environment does *not* appear to fix matters. For
+> now I leave this as an unfortunate bug. 
+
+
 ## What are Python virtual environments?
 
 
@@ -109,8 +115,11 @@ Some best practices
 
 ## project installation notes
 
-This section tracks some personal environment names corresponding to projects; as well as 
-(indented) module installations. Unless noted the modules are installed with `conda install`.
+This section tracks some of my environments by names (corresponding to projects) and by 
+manual module installs. (Unless noted modules are installed via `conda install`.) I believe
+it is considered best practive to install, for example, `jupyterlab` within each environment.
+i.e. multiple instances of `jupyterlab`.
+
 
 - numbertheory: Basic coursework; see [this source repository](https://github.com/robfatland/ant).
     - jupyterlab: run this using the command `jupyter-lab`
@@ -123,8 +132,10 @@ This section tracks some personal environment names corresponding to projects; a
     - pandas
 - pbytes
     - jupyterlab
-    - already done: requests, turtle
-- sodium
+    - matplotlib
+    - pandas
+    - already built in: requests, turtle
+- sodium (repos `sodium` and `steam`)
     - jupyterlab
     - matplotlib
     - pandas
