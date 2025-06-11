@@ -116,9 +116,13 @@ Some best practices
 ## project installation notes
 
 This section tracks some of my environments by names (corresponding to projects) and by 
-manual module installs. (Unless noted modules are installed via `conda install`.) I believe
-it is considered best practive to install, for example, `jupyterlab` within each environment.
-i.e. multiple instances of `jupyterlab`.
+manual module installs. (Unless noted modules are installed via `conda install`.)
+It is best practive to install, for example, `jupyterlab` within each environment.
+i.e. multiple instances of `jupyterlab` rather than in the `base` environment.
+
+
+Note that `install jupyterlab` installs a host of libraries; so a subsequent generation of
+`environment.yml` will elicit a lot of modules, not just `jupyterlab`. 
 
 
 - numbertheory: Basic coursework; see [this source repository](https://github.com/robfatland/ant).
@@ -126,16 +130,17 @@ i.e. multiple instances of `jupyterlab`.
     - matplotlib: typical charting accessed in `pyplot` via `from matplotlib import pyplot as plt`
         - Note this breaks with the domain name heuristic.
     - potentially: `FLINT` and then `python-flint` wrapper
-- epipelargosy
+- epipelargosy: A Jupyter book on observational oceanography; plus `oceanclient` a simple demonstrator data client
     - jupyterlab
     - matplotlib
     - pandas
+    - already built in: IPython and sub-modules such as `Image`
 - pbytes
     - jupyterlab
     - matplotlib
     - pandas
     - already built in: requests, turtle
-- sodium (repos `sodium` and `steam`)
+- sodium (repositories `sodium` and `steam`)
     - jupyterlab
     - matplotlib
     - pandas
