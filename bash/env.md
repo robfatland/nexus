@@ -115,6 +115,7 @@ Some best practices
 
 ## project installation notes
 
+
 This section tracks some of my environments by names (corresponding to projects) and by 
 manual module installs. (Unless noted modules are installed via `conda install`.)
 It is best practive to install, for example, `jupyterlab` within each environment.
@@ -134,6 +135,8 @@ Note that `install jupyterlab` installs a host of libraries; so a subsequent gen
     - jupyterlab
     - matplotlib
     - pandas
+    - xarray
+    - netcdf4 as one backend for file I/O using xarray.open_dataset(fnm)
     - already built in: IPython and sub-modules such as `Image`
 - pbytes
     - jupyterlab
