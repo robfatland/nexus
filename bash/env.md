@@ -105,6 +105,7 @@ Some best practices
         - `conda env update -f environment.yml` is the `conda` way
     - `conda env export` to produce `environment.yml` for the current environment
     - `conda remove -n envname --all` to delete
+    - `conda update -n base -c defaults conda` will be suggested to update `conda` to the most recent version
 - `pip` to `requirements.txt` goes as follows
     - Create a virtual environment `python3 -m venv /path/to/new/virtual/env`
     - Install packages using `pip install <package>`
