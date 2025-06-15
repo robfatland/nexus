@@ -138,6 +138,7 @@ Note that `install jupyterlab` installs a host of libraries; so a subsequent gen
     - pandas
     - xarray
     - netcdf4 as one backend for file I/O using xarray.open_dataset(fnm)
+    - scipy as recommended for working with xarray
     - already built in: IPython and sub-modules such as `Image`
 - pbytes
     - jupyterlab
