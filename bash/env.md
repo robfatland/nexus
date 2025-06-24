@@ -144,7 +144,18 @@ Note that `install jupyterlab` installs a host of libraries; so a subsequent gen
     - jupyterlab
     - matplotlib
     - pandas
-    - already built in: requests, turtle
+    - already installed: requests, turtle...
+        - but [turtle](https://docs.python.org/3/library/turtle.html) runs once only as a pop-up window and hangs thereafter
+            - `ipyturtle` may save the day...
+            - ...but `conda install` runs into PackageNotFoundError...
+            - ...and this is not fixed by means of `conda config --add channels conda-forge`...
+            - ...so `pip` is necessary though not the best practice
+            - From the [IPyTurtle page](https://github.com/gkvoelkl/ipython-turtle-widget) two steps:
+                - `python -m pip install ipyturtle3` (use `conda list` to verify success)
+                - For Jupyter notebooks the command is: `jupyter nbextension enable --py --sys-prefix ipyturtle`
+                - For Jupyter-lab the extension manager must be activated
+                    - Left sidebar puzzle piece: Produces a warning: Proceed at your own risk by clicking **Yes**
+                    - End of this thread so far... stuck!
 - sodium (repositories `sodium` and `steam`)
     - jupyterlab
     - matplotlib
