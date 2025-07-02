@@ -21,7 +21,7 @@ The objective here is to track the process of mounting S3 buckets as drives on a
     - As a result: `aws --version` gives `aws-cli/2.27.48 etcetera`
  
 Now we can set up authentication by running `aws configure` 
-- Access Key ID: Obtain from AWS console; keep away from GitHub repos$^*$
+- Access Key ID: Obtain from AWS console; keep away from GitHub repos $^*$
 - Secrete Key: As above
 - Default region name: use `uswest-2`
 - Default output format use `json` (other options: `text`, `table`, `yaml`)
