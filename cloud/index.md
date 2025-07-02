@@ -18,6 +18,9 @@ concern cloud consumer services such as iCloud and Google Drive.
 - [spot market](https://github.com/robfatland/nexus/blob/gh-pages/cloud/spot.md) 
 - [studies](https://github.com/robfatland/nexus/blob/gh-pages/cloud/studies.md)
 - [organizations](https://github.com/robfatland/nexus/blob/gh-pages/cloud/organizations.md)
+- [aws](https://github.com/robfatland/nexus/blob/gh-pages/cloud/aws.md)
+- [azure]()
+- [gcp]()
 
 
 ## references
