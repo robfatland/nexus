@@ -3,14 +3,6 @@
 
 # aws
 
-## Aspirational
-
-
-- Repeat this process on Kopah
-- Link back to and forward from `environments` so Jupyter set up is called back
-- Show how this works on both a cloud VM and on localhost
-- Extend this use of S3 to Containers
-
 
 ## Overview
 
@@ -54,17 +46,24 @@
 ## condensed narrative
 
 
-- Establish a Linux working environment; perhaps a `conda` environment 
-- Install the AWS command line interface (cli)
-- Configure the cli and verify it is authenticating to the AWS cloud
-- Verify that `aws s3` commands work
-- Localhost path: For working from "my laptop"
-    - Install `mountpoint`
-- AWS Virtual Machine path: For working from an AWS VM via roles
-    - Set up the Role
-    - Install `mountpoint`
-- Mount an S3 bucket as a pseudo-filesystem
-- Test file manipulation on this filesystem
+- Establish a Linux working environment; `bash` at least and perhaps `miniconda` 
+- If not in place already: Install the AWS command line interface
+- Optional for AWS Virtual Machines
+    - Define and assign a Role rather than use an Access Key (see next step)
+    - This is a 'better practice' way to handle authentication
+    - Done easily using the AWS console
+        - The Role is assigned a Policy; and the VM then assumes this Role
+- Configure the cli and verify it authenticates to AWS
+    - The localhost method uses an Access Key: Handle with care
+- Install `mountpoint` available from AWS
+- Use `aws s3` to create an S3 bucket
+- Use `mkdir` to create an empty folder `bucket`
+- Use `mount-s3` to mount the S3 bucket as a pseudo-filesystem on the `bucket` folder
+    - Enable file deletion by appending `--allow-delete`
+- Test file create / delete in the `bucket` folder
+
+
+The following sections follow this narrative in more detail.
 
 
 ## aws cli
@@ -105,7 +104,7 @@ with the Amazon cloud.
 
 Problem: The **S3 Browser** application was failing to list buckets for the account I was using. This means the
 access key is no longer valid. Regenerating a new key and installing it in the S3 Browser profile; and in the 
-`aws configure` process fixed this. Now we have reference commands: 
+`aws configure` process fixed this. Now we proceed to reference commands: 
 
 
 - `aws sts get-caller-identity` to verify the `aws cli` configuration is ok
@@ -116,6 +115,7 @@ access key is no longer valid. Regenerating a new key and installing it in the S
 
 
 ## mount point
+
 
 - Determine which version to install: [AWS documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/mountpoint-installation.html)
 - My Linux distribution is Ubuntu so: `wget https://s3.amazonaws.com/mountpoint-s3-release/latest/x86_64/mount-s3.deb`
@@ -151,5 +151,35 @@ machine that is in fact virtual infinite storage on the Amazon cloud. Some would
 
 
 At this point let's delete the bucket and rebuild it with `delete object` permission built in.
+There is nothing preventing mounting the *same* S3 bucket `erdos-23049527340598` on a different folder
+*provided* that folder is not inside the `bucket` folder. 
 
+
+- `cd ~`
+- `mkdir bucket2`
+- `mount-s3 erdos-23049527340598 bucket2 --allow-delete` results in `bucket erdos-23049527340598 is mounted at bucket2` 
+
+
+Now verify `bucket2` permits object deletion where `bucket` does not: 
+
+
+```
+(aws)$ ls -al bucket/tfile.txt
+... bucket/tfile.txt ...
+(aws)$ ls -al bucket2/tfile.txt
+... bucket2/tfile.txt ...
+(aws)$ rm bucket/tfile.txt
+rm: cannot remove 'bucket/tfile.txt': Operation not permitted
+(aws)$ rm bucket2/tfile.txt
+(aws)$ ls -al bucket/tfile.txt
+ls: cannot access 'bucket/tfile.txt': No such file or directory
+```
+
+## Aspirations
+
+- What happens when we power cycle localhost?
+- Repeat for Kopah
+- Use Jupyter to test `boto3`
+- Fill in VM Role details
+- Extend to a Container example
 
