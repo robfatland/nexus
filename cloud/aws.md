@@ -45,7 +45,7 @@ Repeat this process on the Kopah system
 Now we can set up authentication by running `aws configure` 
 - Access Key ID: Obtain from AWS console; keep away from GitHub repos $^*$
 - Secrete Key: As above
-- Default region name: use `uswest-2`
+- Default region name: use `us-west-2` and if you get this wrong (like `uswest-2`) you will be stuck with *Can't connect* errors
 - Default output format use `json` (other options: `text`, `table`, `yaml`)
 
 
@@ -58,4 +58,10 @@ The `aws` cli interface should now be ready to operate; and will self-authentica
 with the Amazon cloud. In this instance I found that my **S3 Browser** application was failing; and it seems to
 be using the same access key as the one I used in `aws configure`. Therefore I will log in to the AWS console
 for this account and determine whether the access key is still valid. 
+
+
+- `aws sts get-caller-identity` to verify configuration is ok
+- `aws configure list` to examinen the configuration parameters
+- `aws s3 mb s3://erdos-23049527340598` to create a bucket of that name
+- `aws s3 rb s3://erdos-23049527340598` to remove and add `--force` if it has contents
 
