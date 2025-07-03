@@ -127,6 +127,11 @@ Note that `install jupyterlab` installs a host of libraries; so a subsequent gen
 `environment.yml` will elicit a lot of modules, not just `jupyterlab`. 
 
 
+- aws: For working with the Amazon Web Services (AWS) cloud
+    - [`sudo apt install unzip` in order to install `aws`](https://github.com/robfatland/nexus/blob/gh-pages/cloud/aws.md#aws-cli)
+    - jupyterlab
+    - pandas
+    - matplotlib
 - numbertheory: Basic coursework; see [this source repository](https://github.com/robfatland/ant).
     - jupyterlab: run this using the command `jupyter-lab`
     - matplotlib: typical charting accessed in `pyplot` via `from matplotlib import pyplot as plt`
