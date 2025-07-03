@@ -58,8 +58,11 @@
 - Install the AWS command line interface (cli)
 - Configure the cli and verify it is authenticating to the AWS cloud
 - Verify that `aws s3` commands work
-- Role?
-- Install `mountpoint`?
+- Localhost path: For working from "my laptop"
+    - Install `mountpoint`
+- AWS Virtual Machine path: For working from an AWS VM via roles
+    - Set up the Role
+    - Install `mountpoint`
 - Mount an S3 bucket as a pseudo-filesystem
 - Test file manipulation on this filesystem
 
@@ -75,12 +78,13 @@
         - `conda install jupyterlab`
         - `conda install pandas`
         - `conda install matplotlib`
-- Before the install worked I was obliged to install `unzip` using `sudo apt install unzip`... then:
+- To install `aws` I first had to install `unzip`
+    - `sudo apt install unzip`
     - `curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"`
     - `unzip awscliv2.zip`
     - `sudo ./aws/install`
     - `rm awscliv2.zip`
-    - As a result: `aws --version` gives `aws-cli/2.27.48 etcetera`
+    - Result: `aws --version` gives `aws-cli/2.27.48 etcetera`
 
 
 Now we can set up authentication by running `aws configure` 
@@ -113,4 +117,9 @@ access key is no longer valid. Regenerating a new key and installing it in the S
 
 ## mount point
 
-S3 is an object store.
+- Determine which version to install: [AWS documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/mountpoint-installation.html)
+- My Linux distribution is Ubuntu so: `wget https://s3.amazonaws.com/mountpoint-s3-release/latest/x86_64/mount-s3.deb`
+- `mount-s3.deb` is a 12MB file
+- `sudo apt-get install ./mount-s3.deb`
+- Verify: `mount-s3 --version` gives `mount-s3 1.19.0`
+- Both `aws` and `mount-s3` are global: `/usr/local/bin` and `/usr/bin` respectively, not in a `miniconda` environment
