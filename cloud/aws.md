@@ -187,6 +187,9 @@ The continuation is interesting: We are unable to `mv` a file in `bucket` becaus
 deleting. We can `cp` and then `rm` in `bucket2`. 
 
 
+Possibly a good laugh: Go into `bucket2` and issue a `df .` command. 
+
+
 ## Aspirations
 
 
