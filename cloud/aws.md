@@ -123,3 +123,33 @@ access key is no longer valid. Regenerating a new key and installing it in the S
 - `sudo apt-get install ./mount-s3.deb`
 - Verify: `mount-s3 --version` gives `mount-s3 1.19.0`
 - Both `aws` and `mount-s3` are global: `/usr/local/bin` and `/usr/bin` respectively, not in a `miniconda` environment
+
+
+## mount and use bucket
+
+
+This is the payoff; the following commands and comments begin a narrative on 'getting' how object storage 
+is and is not equivalent to a standard Linux folder. Not to bury the lead however: Once the bucket is 
+mounted on a local folder (the second command below) we have what *appears* to be a file folder on our localhost
+machine that is in fact virtual infinite storage on the Amazon cloud. Some would say that's pretty cool. 
+
+
+- `mkdir bucket`
+- `mount-s3 erdos-23049527340598 bucket`
+- `ls -al bucket`
+- `cd bucket`
+- `ls -al`
+- `touch tfile.txt`
+- `vi tfile.txt`
+    - Modify and attempt to save: Error message (because one can't edit object files)
+    - Save to new filename: Success (because one can create new files in object storage)
+    - Quit the `vim` editor
+- `ls -al` may list several additional files associated with a `vim` session (swap etcetera)
+- `rm tfile.txt` results in `Operation not permitted`: This bucket has not been granted `delete` permission
+- `mkdir subbucket` creates a subfolder as expected
+- `subbucket` does not appear in the `S3` application *until* it contains at least one object (file)
+
+
+At this point let's delete the bucket and rebuild it with `delete object` permission built in.
+
+
