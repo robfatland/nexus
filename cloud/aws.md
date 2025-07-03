@@ -4,6 +4,9 @@
 # aws
 
 
+Lots to do on the AWS cloud; so let's start with integrating infinite cloud storage with our local computing environment. 
+
+
 ## Overview
 
 
