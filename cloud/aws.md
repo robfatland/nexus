@@ -67,11 +67,14 @@
 ## aws cli
 
 
-- [Get started guide](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+- [AWS get started guide](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 - On my `localhost`:
     - `conda create --name aws` provides a dedicated environment
     - `conda activate aws` makes this the active environment
-    - `conda install various`
+    - [Install libraries](https://github.com/robfatland/nexus/blob/gh-pages/bash/env.md#project-installation-notes) for example:
+        - `conda install jupyterlab`
+        - `conda install pandas`
+        - `conda install matplotlib`
 - Before the install worked I was obliged to install `unzip` using `sudo apt install unzip`... then:
     - `curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"`
     - `unzip awscliv2.zip`
