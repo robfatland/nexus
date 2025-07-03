@@ -49,6 +49,10 @@ Lots to do on the AWS cloud; so let's start with integrating infinite cloud stor
 ## condensed narrative
 
 
+Here is [a helpful YouTube lecture](https://youtu.be/RNOxlcaAMpg) on working with AWS Mountpoint.
+The notes below expand on the following procedure, to this end.
+
+
 - Establish a Linux working environment; `bash` at least and perhaps `miniconda` 
 - If not in place already: Install the AWS command line interface
 - Optional for AWS Virtual Machines
@@ -182,6 +186,7 @@ ls: cannot access 'bucket/tfile.txt': No such file or directory
 
 - What happens when we power cycle localhost?
 - Repeat for Kopah
+    - `mount-s3 my-bucket /path --endpoint-url https://etcetera`
 - Use Jupyter to test `boto3`
 - Fill in VM Role details
 - Extend to a Container example
