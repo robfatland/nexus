@@ -55,13 +55,17 @@ a GitHub repo folder.
 
 
 The `aws` cli interface should now be ready to operate; and will self-authenticate whenever it runs and interacts
-with the Amazon cloud. In this instance I found that my **S3 Browser** application was failing; and it seems to
-be using the same access key as the one I used in `aws configure`. Therefore I will log in to the AWS console
-for this account and determine whether the access key is still valid. 
+with the Amazon cloud. 
 
 
-- `aws sts get-caller-identity` to verify configuration is ok
+Problem: The **S3 Browser** application was failing to list buckets for the account I was using. This means the
+access key is no longer valid. Regenerating a new key and installing it in the S3 Browser profile; and in the 
+`aws configure` process fixed this. Now we have reference commands: 
+
+
+- `aws sts get-caller-identity` to verify the `aws cli` configuration is ok
 - `aws configure list` to examinen the configuration parameters
+- `aws s3 ls` to get a list of buckets
 - `aws s3 mb s3://erdos-23049527340598` to create a bucket of that name
 - `aws s3 rb s3://erdos-23049527340598` to remove and add `--force` if it has contents
 
