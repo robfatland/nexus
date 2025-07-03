@@ -182,7 +182,9 @@ rm: cannot remove 'bucket/tfile.txt': Operation not permitted
 ls: cannot access 'bucket/tfile.txt': No such file or directory
 ```
 
+
 ## Aspirations
+
 
 - What happens when we power cycle localhost?
 - Repeat for Kopah
