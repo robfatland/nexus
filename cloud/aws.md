@@ -35,7 +35,7 @@ Repeat this process on the Kopah system
 - On my `localhost`: `conda create --name aws` so as to have a dedicated environment
 - `conda activate aws`
 - Before the install worked I was obliged to install `unzip` using `sudo apt install unzip`... then:
-    - `curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+    - `curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"`
     - `unzip awscliv2.zip`
     - `sudo ./aws/install`
     - `rm awscliv2.zip`
