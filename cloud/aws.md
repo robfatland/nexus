@@ -6,7 +6,8 @@
 ## Aspirational
 
 
-Repeat this process on the Kopah system
+- Repeat this process on the Kopah system.
+- Link back to and forward from `environments` so Jupyter set up is called back
 
 
 ## Overview
