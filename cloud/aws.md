@@ -183,13 +183,19 @@ ls: cannot access 'bucket/tfile.txt': No such file or directory
 ```
 
 
+The continuation is interesting: We are unable to `mv` a file in `bucket` because that would require
+deleting. We can `cp` and then `rm` in `bucket2`. 
+
+
 ## Aspirations
 
 
 - What happens when we power cycle localhost?
-- Repeat for Kopah
-    - `mount-s3 my-bucket /path --endpoint-url https://etcetera`
-- Use Jupyter to test `boto3`
-- Fill in VM Role details
+    - Start a new `bash` shell: existing mounts persist
+- Repeat these procedures on Kopah
+    - use `mount-s3 my-bucket /path --endpoint-url https://etcetera`
+- Open Jupyter and test `boto3`: `Client` low-level versus `Resource` high-level approaches
+- Fill in VM Role details: See the cited YouTube video
 - Extend to a Container example
+    - Idea would be to mount `bucket2` in the Container to effect a direct pipeline to S3
 
