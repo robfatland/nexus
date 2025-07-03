@@ -70,3 +70,7 @@ access key is no longer valid. Regenerating a new key and installing it in the S
 - `aws s3 mb s3://erdos-23049527340598` to create a bucket of that name
 - `aws s3 rb s3://erdos-23049527340598` to remove and add `--force` if it has contents
 
+
+## mount point
+
+S3 is an object store.
