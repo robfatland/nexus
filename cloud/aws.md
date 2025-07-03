@@ -68,8 +68,10 @@
 
 
 - [Get started guide](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
-- On my `localhost`: `conda create --name aws` so as to have a dedicated environment
-- `conda activate aws`
+- On my `localhost`:
+    - `conda create --name aws` provides a dedicated environment
+    - `conda activate aws` makes this the active environment
+    - `conda install various`
 - Before the install worked I was obliged to install `unzip` using `sudo apt install unzip`... then:
     - `curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"`
     - `unzip awscliv2.zip`
