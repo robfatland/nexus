@@ -118,6 +118,7 @@ access key is no longer valid. Regenerating a new key and installing it in the S
 - `aws configure list` to examinen the configuration parameters
 - `aws s3 ls` to get a list of buckets
 - `aws s3 mb s3://erdos-23049527340598` to create a bucket of that name
+    - This bucket name has no significance beyond its likelihood to be unique
 - `aws s3 rb s3://erdos-23049527340598` to remove and add `--force` if it has contents
 
 
@@ -194,6 +195,8 @@ The basic idea is clear but there are often pursuant details of interest.
     - Even for `bucket2` (which has `--allow-delete`) the `mv` command is not implemented
     - What *is* possible in `bucket2` (but not `bucket`) is `cp file.txt file2.txt; rm file.txt`
     - The shell command `!` used in Interactive Python and Jupyter does not follow the above behavior
+        - For example the `!mv` command was found to behave like `rm`
+        - The `!cp` command was found to behave as expected 
         - Always perform harmless testing to verify expected behavior 
 - Check (pseudo) disk capacity in `bucket2`
     - `cd bucket2; df .`
@@ -215,8 +218,8 @@ The basic idea is clear but there are often pursuant details of interest.
 
 - Will mount-s3 work on Kopah?
     - use `mount-s3 my-bucket /path --endpoint-url https://etcetera`
-- Open Jupyter and test `boto3`: `Client` low-level versus `Resource` high-level approaches
-- Fill in VM Role details: See the cited YouTube video
-- Extend to a Container example
-    - Idea would be to mount `bucket2` in the Container to effect a direct pipeline to S3
+- `boto3` remarks
+    - `Client` is a low-level object; versus `Resource`, a high-level object
+- Fill in VM Role from cited YouTube video
+- Container example: Mount `bucket2` in the Container for checkpointing
 
