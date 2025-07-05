@@ -53,6 +53,7 @@ Here are corresponding API URLs:
 - Ocean profiler metadata: [`https://oceanography.azurewebsites.net`](https://oceanography.azurewebsites.net)
 - Ocean sensor data (temperature and salinity): [`https://oceansensors.azurewebsites.net`](https://oceansensors.azurewebsites.net)
     - An example Client for the oceanography data is [published here](https://github.com/robfatland/oceanclient)
+    - [OOI data tools](https://oceanobservatories.org/community-data-tools/)
 
 
 As noted, part 1 concerns an API to get information about elements from the Periodic table. Annotations begin
