@@ -183,19 +183,37 @@ ls: cannot access 'bucket/tfile.txt': No such file or directory
 ```
 
 
-The continuation is interesting: We are unable to `mv` a file in `bucket` because that would require
-deleting. We can `cp` and then `rm` in `bucket2`. 
+### Continuations
 
 
-Possibly a good laugh: Go into `bucket2` and issue a `df .` command. 
+The basic idea is clear but there are often pursuant details of interest. 
+
+
+- Not possible to `mv` a file in `bucket` or `bucket2` (which has delete enabled).
+    - Why: `move` is a `copy` plus a `delete`
+    - Even for `bucket2` (which has `--allow-delete`) the `mv` command is not implemented
+    - What *is* possible in `bucket2` (but not `bucket`) is `cp file.txt file2.txt; rm file.txt`
+    - The shell command `!` used in Interactive Python and Jupyter does not follow the above behavior
+        - Always perform harmless testing to verify expected behavior 
+- Check (pseudo) disk capacity in `bucket2`
+    - `cd bucket2; df .`
+        - Filesystem = `mountpoint-s3`
+        - 1K-blocks total = 9007199254740992
+        - Used = `0%`
+        - Mounted on = `/home/user/bucket2`
+    - Interpretation: laptop has an empty 9 Exabyte disk drive available (one billion billion bytes)
+        - Down side: Fill this drive to capacity and it will run $276 million per year.
+- Suppose I open a new `bash` shell: Does the mounted S3 bucket appear there? Answer: Yes.
+- Suppose I power cycle my laptop: What is the procedure to re-mount the S3 bucket?
+    - `mount-s3 erdos-23049527340598 bucket2 --allow-delete` does this
+    - Time required: about five seconds
+    - To reiterate: Authentication is 'baked in' to the localhost filesystem
 
 
 ## Aspirations
 
 
-- What happens when we power cycle localhost?
-    - Start a new `bash` shell: existing mounts persist
-- Repeat these procedures on Kopah
+- Will mount-s3 work on Kopah?
     - use `mount-s3 my-bucket /path --endpoint-url https://etcetera`
 - Open Jupyter and test `boto3`: `Client` low-level versus `Resource` high-level approaches
 - Fill in VM Role details: See the cited YouTube video
