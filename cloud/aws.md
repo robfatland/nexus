@@ -213,11 +213,36 @@ The basic idea is clear but there are often pursuant details of interest.
     - To reiterate: Authentication is 'baked in' to the localhost filesystem
 
 
-## Aspirations
+## kopah
 
 
-- Will mount-s3 work on Kopah?
-    - use `mount-s3 my-bucket /path --endpoint-url https://etcetera`
+Kopah is on-prem storage that is API-compatible with AWS S3. It is supported by UW IT for use by 
+the UW community. The following is working notes on recreating the S3 pseudo-drive using Kopah.
+
+
+- Towards reproducing `mount-s3` for on-prem S3-compatible storage system [Kopah](https://hyak.uw.edu/docs/storage/kopah/)
+    - `ssh netid@klone.hyak.uw.edu` and find a credentials file `netid_kopah`
+    - localhost: create an empty folder `mkdir ~/kopah`
+    - create a kopah bucket called `hilbert-1920384756`:
+        - Follow the instructions to install and use `s3cmd` found [here](https://hyak.uw.edu/docs/storage/cli/)
+            - This replaces the AWS cli `aws s3` with `s3cmd`
+    - create a new *profile* on localhost
+        - `cd ~/.aws; vi credentials`
+            - Use a parallel construct to add a profile called *kopah*
+                - Follow the `[default]` pattern by adding the line `[kopah]`
+                - Now add public and secret keys below the new profile title...
+                    - The Kopah-specific instructions differ so this needs to be resolved
+                - Keys are available from a file in the klone user home directory
+    - `cd ~`
+    - `mount-s3 hilbert-1920384756 kopah --profile kopah --endpoint-url https://s3.kopah.uw.edu --allow-delete`
+        - This is intended to work from the default credentials file for AWS S3
+        - Open topic: Would `aws s3` work in lieu of `s3cmd`?
+
+
+
+## aspirations
+
+
 - `boto3` remarks
     - `Client` is a low-level object; versus `Resource`, a high-level object
 - Fill in VM Role from cited YouTube video
