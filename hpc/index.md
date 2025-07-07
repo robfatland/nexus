@@ -5,8 +5,21 @@
 # high performance computing
 
 We oversimplify High Performance Computing to mean: Multiple computers networked together with very 
-low communication latency creating in effect a supercomputer. How is this done on the three primary
-cloud platforms?
+low communication latency creating in effect a supercomputer. How is this done on prem? How is it 
+done on the three primary cloud platforms? 
+
+
+### uw on-premise hpc
+
+
+This will be a slightly abstracted description of working on facilities at the University of Washington.
+
+
+- Get white listed with access to Klone, Tillicum and Kopah
+    - Respectively HPC blades, GPU sysytems, and S3-style object storage
+    - Follow instructions to get MFA 
+- `ssh NetID@klone.hyak.uw.edu`
+    - This is the login node (not necessarily where work gets done)
 
 
 ### AWS Parallel Computing Service PCS
