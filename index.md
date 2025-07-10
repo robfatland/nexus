@@ -46,9 +46,9 @@ Nexus is a 3-level tree. Here is the link map:
         - [spot](https://github.com/robfatland/nexus/blob/gh-pages/cloud/spot.md)
         - [studies](https://github.com/robfatland/nexus/blob/gh-pages/cloud/studies.md)
         - [organizations](https://github.com/robfatland/nexus/blob/gh-pages/cloud/organizations.md)
-        - [aws](https://github.com/robfatland/nexus/blob/gh-pages/cloud/aws.md)
+        - [aws](https://github.com/robfatland/nexus/blob/gh-pages/cloud/aws.md) featuring 'local drive' S3 object storage
         - [azure](https://github.com/robfatland/nexus/blob/gh-pages/cloud/azure.md)
-        - [gcp](https://github.com/robfatland/nexus/blob/gh-pages/cloud/gcp.md) featuring 'local drive' S3 object storage
+        - [gcp](https://github.com/robfatland/nexus/blob/gh-pages/cloud/gcp.md)
 - [manim](https://robfatland.github.io/nexus/manim)
     - [manim index.md](https://github.com/robfatland/nexus/blob/gh-pages/manim/index.md)
 - [(meta-)documentation](https://robfatland.github.io/nexus/documentation)
