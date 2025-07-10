@@ -112,6 +112,8 @@ Some best practices
     - Save all packages `pip freeze > requirements.txt`
     - "Pin all the package versions"... not sure what the action is or what this means
     - Move `requirements.txt` to the root directory of the project
+- **`jupyterlab` informs me there is a new release out!**
+    - `conda activate my_environment; conda update jupyterlab`
 
 
 ## project installation notes
