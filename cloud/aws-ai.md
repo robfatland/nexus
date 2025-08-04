@@ -23,16 +23,24 @@ Here I use AI in the broad definition sense; incorporating Machine Learning meth
             - Learn About
       
 
-## Planning a data-driven university hackathon
+### Planning a data-driven university hackathon
 
 
-* [Open data on AWS](https://aws.amazon.com/opendata)
-* [Google data](https://datasetsearch.research.google.com/)
-* [Azure open datasets](https://azure.microsoft.com/en-us/products/open-datasets)
-* paid data resources and services
-* [`data.gov`](https://data.gov)
+Particularly we are working at the University of Washington; with an active student computing element. 
 
 
-## [First workshop on Amazon SageMaker](https://catalog.us-east-1.prod.workshops.aws/workshops/06dbe60c-3a94-463e-8ac2-18c7f85788d4)
+* theme
+    * suggested: UW in relation to the Seattle community
+* data resources
+    * [Open data on AWS](https://aws.amazon.com/opendata)
+    * [Google data](https://datasetsearch.research.google.com/)
+    * [Azure open datasets](https://azure.microsoft.com/en-us/products/open-datasets)
+    * paid data resources and services
+    * [`data.gov`](https://data.gov)
+* key note
+* panelists
+
+
+### [First workshop on Amazon SageMaker](https://catalog.us-east-1.prod.workshops.aws/workshops/06dbe60c-3a94-463e-8ac2-18c7f85788d4)
 
 
