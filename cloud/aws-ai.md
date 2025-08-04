@@ -23,6 +23,15 @@ Here I use AI in the broad definition sense; incorporating Machine Learning meth
             - Learn About
       
 
+## Planning a data-driven university hackathon
+
+
+* [Open data on AWS](https://aws.amazon.com/opendata)
+* [Google data](https://datasetsearch.research.google.com/)
+* [Azure open datasets](https://azure.microsoft.com/en-us/products/open-datasets)
+* paid data resources and services
+* [`data.gov`](https://data.gov)
+
 
 ## [First workshop on Amazon SageMaker](https://catalog.us-east-1.prod.workshops.aws/workshops/06dbe60c-3a94-463e-8ac2-18c7f85788d4)
 
