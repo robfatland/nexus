@@ -44,3 +44,6 @@ Particularly we are working at the University of Washington; with an active stud
 ### [First workshop on Amazon SageMaker](https://catalog.us-east-1.prod.workshops.aws/workshops/06dbe60c-3a94-463e-8ac2-18c7f85788d4)
 
 
+### [Model Context Protocol workshop](https://catalog.us-east-1.prod.workshops.aws/workshops/7e5a3b66-1e87-45cd-bfaa-025c3d5f28ac)
+
+
