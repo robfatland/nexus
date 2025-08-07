@@ -5,6 +5,39 @@
 
 # jupyter
 
+## Littlest conv with Naomi
+
+- N was teaching 'get excited about data science workshop'
+- LJH as an independent entity: Small class 10 people: 1 lecture
+- Colab... is mid. Gemini is mid. Binder is brittle / fragile... so golly let's use the cloud and do a LJH
+- I have a budget-conscious approach to avoid spending X hundred dollars
+- I want a 10-student LJH on a single VM
+- I want them to use their NetID and a class password
+- They get a pre-populated (notebooks are there) and the student can go crazy; no damage
+- Home directories stored in FILE storage: Not object, not block: A network drive
+    - Block storage is like an internal drive so 64GB for a LJH
+    - But I don't want to expend those dollars
+    - So EFS which is NFS which on Azure is Azure Fileshare which is a floating drive that is pay by used capacity
+- But there are some things to figure out...
+    - How big is the VM gotta be?
+    - How do I get JHub to put home directories in the Fileshare?
+    - How do I have everyone launch their env with a single password?
+    - How do I set up a starter file system with notebooks and such?
+        - There is nbgitpuller which is flexible and nice but N didn't want that level of sophistication
+    - The Azure-specific solution involved mounting the Azure network share to the VM
+    - VM sizing
+        - Most of the time your students are not running code
+        - Split-second run time
+        - The limiting resource is actually RAM
+        - Benchmark for yourself, then multiply by n_students
+        - e.g. 300MB x 30 students = 9GB so 10GB RAM + RAM for Linux etc so 16GB RAM
+            - So this was actually developed on a smaller VM, stop, resize,
+        - How to benchmark: Use the status bar value for kernel RAM use at bottom of page
+- Get mechanical notes from slack
+
+
+## Returning to operation in Jupyter
+
 
 Common Jupyter notebook actions: In relation to a GitHub repo. 
 
