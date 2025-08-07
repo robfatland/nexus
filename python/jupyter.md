@@ -5,15 +5,21 @@
 
 # jupyter
 
-## Littlest conv with Naomi
 
-- N was teaching 'get excited about data science workshop'
-- LJH as an independent entity: Small class 10 people: 1 lecture
-- Colab... is mid. Gemini is mid. Binder is brittle / fragile... so golly let's use the cloud and do a LJH
-- I have a budget-conscious approach to avoid spending X hundred dollars
-- I want a 10-student LJH on a single VM
-- I want them to use their NetID and a class password
-- They get a pre-populated (notebooks are there) and the student can go crazy; no damage
+## Notes on the Littlest Jupyter Hub
+
+
+Suppose one is giving a lecture with the title 'Get Excited About Data Science'. This lecture will feature 
+a student hands-on segment using a Jupyter Lab environment; but one that has been prepared in advance subject
+to the following qualifiers: 
+
+
+- The Jupyter Hub is not intended to last longer than a few hours or a couple of days
+- Cloud notebook services are undesirable for some reason ("no Colab because X Y Z")
+- There will be 10 or perhaps as many as 30 students, no more
+- Let us be budget-conscious and spend at most $30 on cloud resources
+- Student connect: Browser, URL, some username, one customized short-term password
+    - Result: A pre-populated home directory: 3 notebooks are here
 - Home directories stored in FILE storage: Not object, not block: A network drive
     - Block storage is like an internal drive so 64GB for a LJH
     - But I don't want to expend those dollars
