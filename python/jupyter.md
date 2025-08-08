@@ -6,40 +6,77 @@
 # jupyter
 
 
+The main purpose here is to provide notes on common useful tasks from within Jupyter notebook
+cells. However first we have an intermezzo on cyberinfrastructure: Building Jupyter Hubs.
+
+
 ## Notes on the Littlest Jupyter Hub
 
 
-Suppose one is giving a lecture with the title 'Get Excited About Data Science'. This lecture will feature 
-a student hands-on segment using a Jupyter Lab environment; but one that has been prepared in advance subject
-to the following qualifiers: 
+The Littlest Jupyter Hub swaps large scale for small scale and complexity for simplicity. An extended example
+case is given below; but before that a word on scale and durability. First let's differentiate the Jupyter 
+Hub from Jupyter Lab (or equivalently Jupyter Notebook). The former, the Hub, is infrastructure to serve
+multiple Jupyter Lab environments to multiple Users. Each User has their own home directory and often a
+pre-built set of Jupyter notebooks (file extension `.ipynb`). In this way User A can make changes and write new
+code without running afoul of the work of Users B, C and D. Finally a small detail: The Jupyter Lab environment
+runs in a browser and -- for a given notebook cell -- displays the amount of RAM in use. This is helpful
+information for judging the size of the Python execution task in relation to the total RAM available, a limiting
+factor in hosting multiple Jupyter Labs within a single Jupyter Hub on a single VM. Now to scale:
+
+
+If I need a single Jupyter Lab instance: I can simply start up a Virtual Machine and proceed to install
+a Python distribution and related packages. (There are notes on this here at `nexus` including ways to
+port-forward the interface: `ssh` tunnel or `VSCode` for example.)
+
+
+If I need a large number of Jupyter Lab instances; like 100 of them for a large course with 100 students: I can 
+follow the full Jupyter Hub instruction path. This makes use of containers and kubernetes to orchestrate them.
+
+
+If I need between-two-and-a-few Jupyter Lab instances; like for myself and my three collaborators: The Littlest
+Jupyter Hub just might be a good Goldilocks solution. It installs on a single Virtual Machine and provides
+processing power, RAM and disk space in the moderate-to-a-lot range depending on which VM I choose. 
+
+
+### The Littlest Jupyter Hub example case
+
+
+Suppose one is giving a lecture with the title 'Getting Excited About Data Science'. This lecture will feature 
+a student hands-on segment using a Jupyter Lab environment that has been prepared in advance. Consider the 
+following qualifiers: 
 
 
 - The Jupyter Hub is not intended to last longer than a few hours or a couple of days
-- Cloud notebook services are undesirable for some reason ("no Colab because X Y Z")
-- There will be 10 or perhaps as many as 30 students, no more
-- Let us be budget-conscious and spend at most $30 on cloud resources
-- Student connect: Browser, URL, some username, one customized short-term password
-    - Result: A pre-populated home directory: 3 notebooks are here
-- Home directories stored in FILE storage: Not object, not block: A network drive
-    - Block storage is like an internal drive so 64GB for a LJH
-    - But I don't want to expend those dollars
-    - So EFS which is NFS which on Azure is Azure Fileshare which is a floating drive that is pay by used capacity
-- But there are some things to figure out...
-    - How big is the VM gotta be?
-    - How do I get JHub to put home directories in the Fileshare?
-    - How do I have everyone launch their env with a single password?
-    - How do I set up a starter file system with notebooks and such?
-        - There is nbgitpuller which is flexible and nice but N didn't want that level of sophistication
-    - The Azure-specific solution involved mounting the Azure network share to the VM
-    - VM sizing
-        - Most of the time your students are not running code
-        - Split-second run time
-        - The limiting resource is actually RAM
-        - Benchmark for yourself, then multiply by n_students
-        - e.g. 300MB x 30 students = 9GB so 10GB RAM + RAM for Linux etc so 16GB RAM
+- Cloud managed notebook services are unsuitable for some reason ("Can't use Colab because of X Y and Z")
+- There will be 10 or perhaps even as many as 30 students each needing their own Jupyter Lab
+- We are budget-conscious and plan to spend at most $30 on cloud resources
+- Student connect experience: Browser > URL > username > password
+- Result: Arrive in a pre-populated home directory: 3 notebooks are already here
+- Home directories stored in File Share storage: Not object, not block: A network drive (aka NFS)
+    - Block storage is the default but to provision it can get expensive and we are being frugal
+    - On AWS we have the EFS service; on Azure we have Fileshare
+        - These NFS-style shared drives are paid for on a usage (not reserved capacity) basis
+        - The down sides: They are a bit slower and can be more complicated to implement
+
+With these conditions the next step is to answer some procedural questions:
+
+- How big of a VM do we need?
+- How to get the Littlest Jupyter Hub to place User home directories on the File Share?
+- How to configure Username / Password access?
+- How to make the three instructional notebooks appear automatically in the User home directory?
+    - `nbgitpuller` is a standard method but a bit complicated
+ 
+
+### Sizing the VM
+
+
+- Most of the time students are not running code and/or cells run for a fraction of a second
+- The limiting resource is actually RAM
+- Benchmark for yourself, then multiply by n_students
+- e.g. 300MB x 30 students = 9GB so 10GB RAM + RAM for Linux etc so 16GB RAM
             - So this was actually developed on a smaller VM, stop, resize,
-        - How to benchmark: Use the status bar value for kernel RAM use at bottom of page
-- Get mechanical notes from slack
+- How to benchmark: Use the status bar value for kernel RAM use at bottom of page
+- more notes on slack
 
 
 ## Returning to operation in Jupyter
