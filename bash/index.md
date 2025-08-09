@@ -158,24 +158,36 @@ libraries, and then finally to start and use a Jupyter notebook server.
 > These notes were developed on AWS and should apply with minor variations (username) to any cloud
 
 
-- AWS Console: Find and select the VM instance; make sure it is Running, not Stopped
-- On AWS console: Connect button > Connect page > Use EC2 Instance Connect > Connect
-- Black screen, `bash` prompt
+- Connect to the VM using the browser console/portal
+    - Find, select the VM instance: Ensure it is *Running*, not *Stopped*
+    - Note the VM ip address; and check that port 22 for `ssh` is open
+        - warning: leaving ports open is considered a risk in the long term
+    - On the browser console/portal interface there are built in "connect" means
+    - Success: Arrive at a black screen showing a `bash` prompt
 
-- Alternatively from a laptop:
-    - `chmod 400 <keypair.pem file>`
+
+- From a laptop:
+    - Ensure the cloud VM is *Running* (not *Stopped*)
+    - Ensure the keypair file has correct permissions: `chmod 400 <keypair.pem>`
     - AWS: `ssh -i ~/.keypairs/CloudKeypair.pem ubuntu@123.123.123.12`
-    - Azure: username is `azureuser`
+    - Azure: `ssh -i ~/.keypairs/CloudKeypair.pem azureuser@123.123.123.12`
+    - Should arrive at `bash` prompt for the VM; with `sudo` enabled
+    - `lsb_release -a` to check the Ubuntu version
+    - `ls -al ~/.ssh` to confirm a (slightly hidden) file `authorized_keys`
+        - This file contains the public `ssh` key
 
 
 > ***PRO TIP*** Getting a publickey error when trying the `ssh` to your VM?
 > - Make sure you ran `chmod 400 CloudKeypair.pem`
 > - Make sure you are using the correct username: Is it `ubuntu` or `ec2user` or `azureuser` or ...?
-> - Make sure the home directory in VSCode is the same as that of your local Ubuntu shell
->     - Sometimes multiple editions of Linux get installed accidentally
+> - Using VSCode? Make sure the home directory in VSCode is the same as that of your local Ubuntu shell
+>     - Sometimes multiple editions of Linux get installed accidentally!
 
 
-Now on the VM: In `~` the `.ssh` directory includes a file `authorized_keys`. This file should
+#### On the VM
+
+
+In `~` the `.ssh` directory includes a file `authorized_keys`. This file should
 be pre-loaded from a keypair `.pem` file selected or generated during VM spin-up, what we
 refer to here as `CloudKeyPair.pem`. The `authorized_keys` file resides on the VM to 
 validate `ssh` connections. 
