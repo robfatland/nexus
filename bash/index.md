@@ -155,13 +155,17 @@ as a research environment. The goal is to configure a cloud VM to have a GitHub 
 libraries, and then finally to start and use a Jupyter notebook server. 
 
 
-> These notes were developed on AWS; and should be validated on other clouds.
+> These notes were developed on AWS and should apply with minor variations (username) to any cloud
 
 
-- AWS Console: Find and select the EC2 instance
-- Connect button > Connect page > Use EC2 Instance Connect > Connect
-- Should reach a black screen with a `bash` prompt.
-- Alternatively, from a laptop: `ssh -i ~/.keypairs/CloudKeypair.pem ubuntu@123.123.123.12`
+- AWS Console: Find and select the VM instance; make sure it is Running, not Stopped
+- On AWS console: Connect button > Connect page > Use EC2 Instance Connect > Connect
+- Black screen, `bash` prompt
+
+- Alternatively from a laptop:
+    - `chmod 400 <keypair.pem file>`
+    - AWS: `ssh -i ~/.keypairs/CloudKeypair.pem ubuntu@123.123.123.12`
+    - Azure: username is `azureuser`
 
 
 > ***PRO TIP*** Getting a publickey error when trying the `ssh` to your VM?
