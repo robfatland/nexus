@@ -478,6 +478,10 @@ The next section, Part 2, works through a more complicated oceanographic example
 ### Intermezzo rebuild notes
 
 
+I have walked away from this project for a few months... and quite possibly deleted the key resources: The test code
+running in a Jupyter notebook fails its API calls. So this is an opportunity to rebuild. Here are the notes in phases. 
+
+
 - Can't see a VM with a familiar ip address... so I start a new one `rob-ocean-api-dev-vm` with `D/geosmart-workstation_key.pem`.
     - I may need to relocate the key as I get VSCode ready to run VSCode Server from a new VM
     - I recollected that the VM should autostop at 6PM, use a `key.pem` file that already exists, and be port-open to `ssh` and maybe `https`
@@ -485,6 +489,14 @@ The next section, Part 2, works through a more complicated oceanographic example
     - I recollected that on logging in to the VM using the VSCode TERMINAL (i.e. VSCode Server working as expected)...
         - ...it can't hurt to run `sudo apt update; sudo apt upgrade`
     - I recollected that VSCode Server is my IDE for creating an Azure Function App (actually two)
+    - Anyway now I have a VM that I can log in to  from VSCode Server
+ 
+One thing we always say is "Make an Image of the VM". I go looking for this but am unable to find it... so that means this time
+around let's make an Image; and then Terminate the VM and rejuvenate it again. I did find a Stopped VM associated with GeoSmart
+that does not have an entry in the `config` found in `.ssh`. So I'll try starting it up and see what is there...
+
+
+
 
 
 ### Where the narrative continues after the intermezzo
