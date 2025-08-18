@@ -496,6 +496,14 @@ around let's make an Image; and then Terminate the VM and rejuvenate it again. I
 that does not have an entry in the `config` found in `.ssh`. So I'll try starting it up and see what is there...
 
 
+The more I re-read the more I realize that *everything* is busted from my previous go-round and I will need to 
+start over. Exception: The NoSQL CosmosDB database is fine. So that's good news. 
+
+
+The Azure Function App for both the kids' game and the element lookup is in my `othermathclub` repo under **Communication**,
+sub-folder `**requests**`. So that's good news. This should make it easy to rebuild. 
+
+
 
 
 
