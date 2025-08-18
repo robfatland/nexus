@@ -56,7 +56,7 @@ Here are corresponding API URLs:
     - [OOI data tools](https://oceanobservatories.org/community-data-tools/)
 
 
-As noted, part 1 concerns an API to get information about elements from the Periodic table. Annotations begin
+As noted, part 1 concerns an API to get information about elements from the Periodic table. Process annotation begins
 just here, and annotations for part 2 (oceanography) [are found further down on this page.](#oceanography) 
 
 
