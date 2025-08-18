@@ -475,6 +475,21 @@ The next section, Part 2, works through a more complicated oceanographic example
 ## oceanography
 
 
+### Intermezzo rebuild notes
+
+
+- Can't see a VM with a familiar ip address... so I start a new one `rob-ocean-api-dev-vm` with `D/geosmart-workstation_key.pem`.
+    - I may need to relocate the key as I get VSCode ready to run VSCode Server from a new VM
+    - I recollected that the VM should autostop at 6PM, use a `key.pem` file that already exists, and be port-open to `ssh` and maybe `https`
+    - I recollected that VSCode needs a new entry in `~/.ssh/config` modeled after the existing ones
+    - I recollected that on logging in to the VM using the VSCode TERMINAL (i.e. VSCode Server working as expected)...
+        - ...it can't hurt to run `sudo apt update; sudo apt upgrade`
+    - I recollected that VSCode Server is my IDE for creating an Azure Function App (actually two)
+
+
+### Where the narrative continues after the intermezzo
+
+
 This segment of the `nexus api` page concerns the "shoebox problem": A research team has an old 
 shoebox full of data tapes from ten years back. They would like to make that data available: For 
 themselves, their collaborators and possibly for other research teams. The end result would be a
