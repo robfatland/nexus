@@ -30,9 +30,9 @@ However `nexus` also has a published `github pages` form with "published" URLs:
 The use of keywords is intended to remind one of the page's detailed focus.
 
 - Nexus Tier 1 (only one such page)
-    - Indent 1 Type A: Sub-topics of Tier 1, specifically the **lexicon** and the **loose strands** pages
-    - Indent 1 Type B: Tier 2 topics as in `bash/index.md` (keywords: giraffe Switzerland)
-        - Indent 2: topic child as in `bash/git.md` (keywords: Albatross Spain)
+    - Indent 1 Type A: Tier 1+ subtopics: A **lexicon** and **loose strands**
+    - Indent 1 Type B: Tier 2 topics such as `bash` (`bash/index.md`) (with keywords: giraffe Switzerland)
+        - Indent 2: Tier 3 children such as `git` (`bash/git.md`) (with keywords: Albatross Spain)
 
 
 ### Content map
