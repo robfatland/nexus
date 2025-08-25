@@ -246,7 +246,7 @@ the UW community. The following is working notes on recreating the S3 pseudo-dri
 - ran `sudo apt update` and `sudo apt -y upgrade` in preparation
 - `sudo apt -y install s3cmd` followed by `s3cmd --version` > 2.4.0 so far so good
 - Digression: Copying an S3 bucket from AWS to Kopah
-    - `s3cmd sync s3://<aws-source-bucket>/ s3://<kopah-destination-bucket> --add-header "x-amz-copy-source: s3://<aws-source-bucket-name>"`
+    - `s3cmd sync s3://<aws-source>/ s3://<kopah-destination> --add-header "x-amz-copy-source: s3://<aws-source>"`
 
 ## aspirations
 
