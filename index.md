@@ -17,59 +17,59 @@ Content is threefold in the sense of: *native* plus *external* plus *hybrid* doc
 ## Interpreting the `nexus` content map 
 
 
-- left-justified: To published GitHub pages
-    - Indented: To `gh-pages` source markdown files
-    - Each topic is anchored by `index.md` file with...
-        - ...one or more children
+Nexus is a 3-level tree of notes. Every page has a 'build' form which is all I really care about. 
+However `nexus` also has a published `github pages` form with "published" URLs:
+- [https://robfatland.github.io/nexus](https://robfatland.github.io/nexus) is the root i.e. tier 1
+- [https://robfatland.github.io/nexus/bash](https://robfatland.github.io/nexus/bash) for tier 2 topics
+- [https://robfatland.github.io/nexus/bash/git](https://robfatland.github.io/nexus/bash/git) for tier 3
 
 
-Nexus is a 3-level tree. Here is the link map:
+### Structure of the content map
 
 
-- [nexus](https://robfatland.github.io/nexus)
-    - [nexus root index.md](https://github.com/robfatland/nexus/blob/gh-pages/index.md) (Level 1)
-        - [nexus lexicon](https://github.com/robfatland/nexus/blob/gh-pages/lexicon.md) (Level 2)
-        - [nexus loose strands (a ttdl)](https://github.com/robfatland/nexus/blob/gh-pages/loosestrands.md) (Level 2)
-- [bash](https://robfatland.github.io/nexus/bash)
+The use of keywords is intended to remind one of the page's detailed focus.
+
+- Nexus Tier 1 (only one such page)
+    - Indent 1 Type A: Sub-topics of Tier 1, specifically the **lexicon** and the **loose strands** pages
+    - Indent 1 Type B: Tier 2 topics as in `bash/index.md` (keywords: giraffe Switzerland)
+        - Indent 2: topic child as in `bash/git.md` (keywords: Albatross Spain)
+
+
+### Content map
+
+
+- [nexus root index.md](https://github.com/robfatland/nexus/blob/gh-pages/index.md) (Level 1)
+    - [nexus lexicon](https://github.com/robfatland/nexus/blob/gh-pages/lexicon.md) (Level 1+)
+    - [nexus loose strands (a ttdl)](https://github.com/robfatland/nexus/blob/gh-pages/loosestrands.md) (Level 1+)
     - [bash index.md](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md) (Level 2) 
         - [environments](https://github.com/robfatland/nexus/blob/gh-pages/bash/env.md) (Level 3)
         - [git and GitHub](https://github.com/robfatland/nexus/blob/gh-pages/bash/git.md) (Level 3)
         - [wrenching the terminal](https://github.com/robfatland/nexus/blob/gh-pages/bash/terminal.md) (Level 3)
         - [ssh tunneling](https://github.com/robfatland/nexus/blob/gh-pages/bash/tunneling.md) (Level 3)
-- [data](https://robfatland.github.io/nexus/data)
     - [data index.md](https://github.com/robfatland/nexus/blob/gh-pages/data/index.md) (stub)
-        - [api](https://github.com/robfatland/nexus/blob/gh-pages/data/api.md) (keywords: NoSQL API serverless Azure periodic table ocean science data access)
-- [hpc](https://robfatland.github.io/nexus/hpc)
+        - [api](https://github.com/robfatland/nexus/blob/gh-pages/data/api.md) (keywords: NoSQL API serverless Azure periodic table ocean science data publication)
     - [hpc index.md](https://github.com/robfatland/nexus/blob/gh-pages/hpc/index.md) (stub)
-- [cloud](https://robfatland.github.io/nexus/cloud)
     - [cloud index.md](https://github.com/robfatland/nexus/blob/gh-pages/cloud/index.md) (keywords: VM login using VSCode plus basics and links)
-        - [spot](https://github.com/robfatland/nexus/blob/gh-pages/cloud/spot.md) (keywords: nascent cloud clinic installment 1 one spot market)
+        - [spot](https://github.com/robfatland/nexus/blob/gh-pages/cloud/spot.md) (keywords: preemptible spot market checkpoint)
         - [studies](https://github.com/robfatland/nexus/blob/gh-pages/cloud/studies.md) (keywords: SCOPED Neotoma nascent link-based stub)
         - [organizations](https://github.com/robfatland/nexus/blob/gh-pages/cloud/organizations.md) (keywords: AWS organizations services) (**Note: Rebrand as AWS-organizations**)
         - [aws](https://github.com/robfatland/nexus/blob/gh-pages/cloud/aws.md) (keywords: local drive S3 object storage)
         - [aws ai](https://github.com/robfatland/nexus/blob/gh-pages/cloud/aws-ai.md) (keywords: AWS AI workshop notes SageMaker Bedrock) (**Note: Merge with AI-AWS**)
         - [azure](https://github.com/robfatland/nexus/blob/gh-pages/cloud/azure.md) (stub)
         - [gcp](https://github.com/robfatland/nexus/blob/gh-pages/cloud/gcp.md) (stub)
-- [manim](https://robfatland.github.io/nexus/manim)
     - [manim index.md](https://github.com/robfatland/nexus/blob/gh-pages/manim/index.md) (nascent notes on getting started)
-- [(meta-)documentation](https://robfatland.github.io/nexus/documentation)
     - [(meta-)documentation index.md](https://github.com/robfatland/nexus/blob/gh-pages/documentation/index.md) (stub; mentions flameshot)
-- [python](https://robfatland.github.io/nexus/python)
     - [python index.md](https://github.com/robfatland/nexus/blob/gh-pages/python/index.md) (keywords: topics to learn, a start on hashing)
         - [jupyter](https://github.com/robfatland/nexus/blob/gh-pages/python/jupyter.md) (keywords: Littlest, image display, list directory, slider control (stub))
         - [python packages](https://github.com/robfatland/nexus/blob/gh-pages/python/packages.md) (stub: should namedrop apt, pip, conda, mamba, pixi)
-- [containers](https://robfatland.github.io/nexus/containers)
     - [containers index.md](https://github.com/robfatland/nexus/blob/gh-pages/containers/index.md) (keywords: nascent eigenconcept notes refers MSE544)
-- [artificial intelligence](https://robfatland.github.io/nexus/ai)
     - [artificial intelligence index.md](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md) (keywords: AI eigenconcepts nascent notes)
         - [gcp](https://github.com/robfatland/nexus/blob/gh-pages/ai/gcp.md) (keywords: Gemini bootstrap notes)
         - [aws](https://github.com/robfatland/nexus/blob/gh-pages/ai/aws.md) (get started pointers)
         - [azure](https://github.com/robfatland/nexus/blob/gh-pages/ai/azure.md) 
-- [quantum computing](https://robfatland.github.io/nexus/quantum)
-    - [quantum computing index.md](https://github.com/robfatland/nexus/blob/gh-pages/quantum/index.md) (stub)
-        - [Hadamard gates](https://github.com/robfatland/nexus/blob/gh-pages/quantum/hadamard.md) (stub)
-- [earth science](https://robfatland.github.io/nexus/earth)
-    - [earth science index.md](https://github.com/robfatland/nexus/blob/gh-pages/earth/index.md) (stub)
+    - [quantum](https://github.com/robfatland/nexus/blob/gh-pages/quantum/index.md) computing (stub)
+        - [hadamard](https://github.com/robfatland/nexus/blob/gh-pages/quantum/hadamard.md) gates (stub)
+    - [earth](https://github.com/robfatland/nexus/blob/gh-pages/earth/index.md) science (stub)
         - [data](https://github.com/robfatland/nexus/blob/gh-pages/earth/data.md) (stub)
 
 
