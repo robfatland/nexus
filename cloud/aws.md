@@ -224,8 +224,10 @@ the UW community. The following is working notes on recreating the S3 pseudo-dri
     - `ssh netid@klone.hyak.uw.edu` and find a credentials file `netid_kopah`
     - localhost: create an empty folder `mkdir ~/kopah`
     - create a kopah bucket called `hilbert-1920384756`:
-        - Follow the instructions to install and use `s3cmd` found [here](https://hyak.uw.edu/docs/storage/cli/)
-            - This replaces the AWS cli `aws s3` with `s3cmd`
+        - install `s3cmd`
+            - [a junky-looking installation site](https://hyak.uw.edu/docs/storage/cli/)
+            - See procedural notes below
+            - In the Kopah context: `s3cmd` substitutes for the AWS cli command `aws s3`
     - create a new *profile* on localhost
         - `cd ~/.aws; vi credentials`
             - Use a parallel construct to add a profile called *kopah*
@@ -239,6 +241,12 @@ the UW community. The following is working notes on recreating the S3 pseudo-dri
         - Open topic: Would `aws s3` work in lieu of `s3cmd`?
 
 
+### procedural notes
+
+- ran `sudo apt update` and `sudo apt -y upgrade` in preparation
+- `sudo apt -y install s3cmd` followed by `s3cmd --version` > 2.4.0 so far so good
+- Digression: Copying an S3 bucket from AWS to Kopah
+    - `s3cmd sync s3://<aws-source-bucket>/ s3://<kopah-destination-bucket> --add-header "x-amz-copy-source: s3://<aws-source-bucket-name>"`
 
 ## aspirations
 
