@@ -246,19 +246,46 @@ the UW community. The following is working notes on recreating the S3 pseudo-dri
 
 - ran `sudo apt update` and `sudo apt -y upgrade` in preparation
 - `sudo apt -y install s3cmd` followed by `s3cmd --version` > 2.4.0 so far so good
-- Intermezzo: Using `s3cmd`: How to copy an AWS S3 bucket to a Kopah bucket
-    - `s3cmd --configure` produces ten fill-in-the-blank questions:
-        -   Access Key:                                    *Note: Not in use in favor of bucket-specific keys*
-        -   Secret Key:
-        -   Default Region: US
-        -   S3 Endpoint: s3.amazonaws.com
-        -   DNS-style bucket+hostname:port template for accessing a bucket: %(bucket)s.s3.amazonaws.com
-        -   Encryption password:
-        -   Path to GPG program: /usr/bin/gpg             *Note: This is the correct path to the Gnu Privacy Guard utility*
-        -   Use HTTPS protocol: True
-        -   HTTP Proxy server name:
-        -   HTTP Proxy server port: 0
+
+
+#### Intermezzo: Using `s3cmd`
+
+
+How to copy an AWS S3 bucket to a Kopah bucket
+
+
+- `s3cmd --configure` produces ten fill-in-the-blank questions:
+    - Access Key, Secret Key, Default Region (US), S3 Endpoint (s3.amazonaws.com)
+    - DNS-style bucket+hostname:port template for accessing a bucket: %(bucket)s.s3.amazonaws.com
+    - Encryption password
+    - Path to GPG program: /usr/bin/gpg             *Note: This is the correct path to the Gnu Privacy Guard utility*
+    - Use HTTPS protocol: True
+    - HTTP Proxy server name:
+    - HTTP Proxy server port: 0
     - `s3cmd sync s3://<aws-source>/ s3://<kopah-destination> --add-header "x-amz-copy-source: s3://<aws-source>"`
+
+
+The configuration file associated with `s3cmd` is called ~/.s3cfg with contents as follows: 
+
+
+```
+host_base = s3.kopah.uw.edu
+host_bucket = s3.kopah.uw.edu/%(spatialtranscriptomic)
+use_https = True
+public_url_use_https = True
+# Login credentials
+access_key = Q301NARGYDO93WP90QFK
+secret_key = asdfowiQEFQEF243562SDFGDwertertQWQER
+```
+
+The keys are examples. 
+
+- Empty a bucket and delete it: `s3cmd rb s3://spatialtranscriptomic --recursive --force`
+- Make a bucket: `s3cmd mb s3://spatialtranscriptomic`
+- List contents: `s3cmd ls; s3cmd ls s3://spatialtranscriptomic`
+- Synchronize a local directory `./` with a kopah bucket: `s3cmd sync ./ s3://spatialtranscriptomic`
+    - This can take some time to apparently latch (5 mins?) when `./` is an AWS S3 bucket mounted via `mount-s3` (see above)
+ 
 
 
 ## aspirations
