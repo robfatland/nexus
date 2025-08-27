@@ -251,7 +251,12 @@ the UW community. The following is working notes on recreating the S3 pseudo-dri
 #### Intermezzo: Using `s3cmd`
 
 
-How to copy an AWS S3 bucket to a Kopah bucket
+To copy an AWS S3 bucket to a Kopah bucket: In principle we could mount the AWS bucket as a local
+folder and use `s3cmd` to copy the contents to kopah. In practice with many files this might fall
+prey to localhost-as-bottleneck. 
+
+
+Here, then, we outline configuring `s3cmd` before providing a two-stage procedure. 
 
 
 - `s3cmd --configure` produces ten fill-in-the-blank questions:
@@ -278,14 +283,24 @@ access_key = Q301NARGYDO93WP90QFK
 secret_key = asdfowiQEFQEF243562SDFGDwertertQWQER
 ```
 
-The keys are examples. 
+The key values are examples only.
 
 - Empty a bucket and delete it: `s3cmd rb s3://spatialtranscriptomic --recursive --force`
 - Make a bucket: `s3cmd mb s3://spatialtranscriptomic`
 - List contents: `s3cmd ls; s3cmd ls s3://spatialtranscriptomic`
 - Synchronize a local directory `./` with a kopah bucket: `s3cmd sync ./ s3://spatialtranscriptomic`
     - This can take some time to apparently latch (5 mins?) when `./` is an AWS S3 bucket mounted via `mount-s3` (see above)
- 
+
+
+ ### Two stage procedure
+
+
+```
+mkdir localhost_bucket_copy
+cd localhost_bucket_copy
+aws s3 sync s3://bucketname .
+s3cmd sync ./ s3://kopahbucketname --quiet
+```
 
 
 ## aspirations
