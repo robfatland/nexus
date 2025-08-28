@@ -302,6 +302,13 @@ aws s3 sync s3://bucketname .
 s3cmd sync ./ s3://kopahbucketname --quiet
 ```
 
+...and perhaps from another terminal to monitor progress while this is ongoing...
+
+
+```
+s3cmd du s3://kopahbucketname
+```
+
 
 ## aspirations
 
