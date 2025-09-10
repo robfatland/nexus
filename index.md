@@ -67,10 +67,10 @@ The use of keywords is intended to remind one of the page's detailed focus.
         - [gcp](https://github.com/robfatland/nexus/blob/gh-pages/ai/gcp.md) (keywords: Gemini bootstrap notes)
         - [aws](https://github.com/robfatland/nexus/blob/gh-pages/ai/aws.md) (get started pointers)
         - [azure](https://github.com/robfatland/nexus/blob/gh-pages/ai/azure.md) 
-    - [quantum](https://github.com/robfatland/nexus/blob/gh-pages/quantum/index.md) computing (stub)
-        - [hadamard](https://github.com/robfatland/nexus/blob/gh-pages/quantum/hadamard.md) gates (stub)
-    - [earth](https://github.com/robfatland/nexus/blob/gh-pages/earth/index.md) science (stub)
-        - [data](https://github.com/robfatland/nexus/blob/gh-pages/earth/data.md) (stub)
+    - [quantum computing](https://github.com/robfatland/nexus/blob/gh-pages/quantum/index.md) (stub)
+        - [hadamard gates](https://github.com/robfatland/nexus/blob/gh-pages/quantum/hadamard.md) (stub)
+    - [earth science](https://github.com/robfatland/nexus/blob/gh-pages/earth/index.md) (stub)
+        - [earth science data](https://github.com/robfatland/nexus/blob/gh-pages/earth/data.md) (stub)
 
 
 [Essay: Understanding the cloud-for-research time investment](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md#the-basic-idea-here)
