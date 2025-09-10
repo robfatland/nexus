@@ -6,8 +6,8 @@
 # jupyter
 
 
-The main purpose here is to provide notes on common useful tasks from within Jupyter notebook
-cells. However first we have an intermezzo on cyberinfrastructure: Building Jupyter Hubs.
+Below are notes on useful tasks from within a Jupyter notebook. The follow an intermezzo on building a Littlest Jupyter Hub.
+This is a Jupyter Lab / Notebook server replicated several times for multiple users on a single machine. 
 
 
 ## Notes on the Littlest Jupyter Hub
