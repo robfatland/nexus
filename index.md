@@ -38,10 +38,10 @@ The use of keywords is intended to remind one of the page's detailed focus.
 ### Content map
 
 
-- [nexus root index.md](https://github.com/robfatland/nexus/blob/gh-pages/index.md) (Level 1)
+- [nexus root](https://github.com/robfatland/nexus/blob/gh-pages/index.md) (Level 1)
     - [nexus lexicon](https://github.com/robfatland/nexus/blob/gh-pages/lexicon.md) (Level 1+)
     - [nexus loose strands (a ttdl)](https://github.com/robfatland/nexus/blob/gh-pages/loosestrands.md) (Level 1+)
-    - [bash index.md](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md) (Level 2) 
+    - [bash](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md) (Level 2) 
         - [environments](https://github.com/robfatland/nexus/blob/gh-pages/bash/env.md) (Level 3)
         - [git and GitHub](https://github.com/robfatland/nexus/blob/gh-pages/bash/git.md) (Level 3)
         - [wrenching the terminal](https://github.com/robfatland/nexus/blob/gh-pages/bash/terminal.md) (Level 3)
