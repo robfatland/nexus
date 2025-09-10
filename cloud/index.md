@@ -4,11 +4,10 @@
 # cloud
 
 
-"Cloud" in the context of research computing refers to *commercial clouds*, for example AWS, GCP and Azure,
-where Virtual Machines are available on a pay-as-you-go basis. (As these platforms and services are available 
-to the public the term *public cloud* is used pretty interchangeably.) This content concerns computing resource
-services such as Virtual Machines, networking and low-level storage; and so on. It does *not*
-concern consumer services such as iCloud and Google Drive.
+"Cloud" in research computing refers to *commercial clouds* also sometimes called *public clouds*: AWS, GCP, Azure, etcetera.
+Here Virtual Machines are available on a pay-for-use basis like a utility. This page concerns computing resource services such 
+as Virtual Machines, networking, storage; and many many abstractions built up from that starting point. 'Cloud' does *not*
+mean consumer services such as iCloud and Google Drive.
 
 
 [Essay: Is cloud computing a good idea for you?](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md#the-basic-idea-here)
