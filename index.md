@@ -24,15 +24,15 @@ However `nexus` also has a published `github pages` form with "published" URLs:
 - [https://robfatland.github.io/nexus/bash/git](https://robfatland.github.io/nexus/bash/git) for tier 3
 
 
-### Structure of the content map
+### Structure of the toc
 
 
-The use of keywords is intended to remind one of the page's detailed focus.
+Keywords: A page's detailed focus.
 
-- Nexus Tier 1 (only one such page)
-    - Indent 1 Type A: Tier 1+ subtopics: A **lexicon** and **loose strands**
-    - Indent 1 Type B: Tier 2 topics such as `bash` (`bash/index.md`) (with keywords: giraffe Switzerland)
-        - Indent 2: Tier 3 children such as `git` (`bash/git.md`) (with keywords: Albatross Spain)
+- Nexus Tier 1 (this page)
+    - Indent 1: Tier 1+ subtopics: A **lexicon** and **loose strands**
+        - Indent 2: Tier 2 topics such as `bash` (`bash/index.md`) (keywords)
+            - Indent 3: Tier 3 children such as `git` (`bash/git.md`) (keywords)
 
 
 ### Content map
@@ -47,25 +47,25 @@ The use of keywords is intended to remind one of the page's detailed focus.
         - [wrenching the terminal](https://github.com/robfatland/nexus/blob/gh-pages/bash/terminal.md) (Level 3)
         - [ssh tunneling](https://github.com/robfatland/nexus/blob/gh-pages/bash/tunneling.md) (Level 3)
     - [data](https://github.com/robfatland/nexus/blob/gh-pages/data/index.md) (stub)
-        - [api](https://github.com/robfatland/nexus/blob/gh-pages/data/api.md) (keywords: NoSQL API serverless Azure periodic table ocean science data publication)
+        - [api](https://github.com/robfatland/nexus/blob/gh-pages/data/api.md) (NoSQL API serverless Azure periodic table ocean science data publication)
     - [hpc](https://github.com/robfatland/nexus/blob/gh-pages/hpc/index.md) (stub)
-    - [cloud](https://github.com/robfatland/nexus/blob/gh-pages/cloud/index.md) (keywords: VM login using VSCode plus basics and links)
-        - [spot market / preemptible instances](https://github.com/robfatland/nexus/blob/gh-pages/cloud/spot.md) (keywords: preemptible spot market checkpoint)
-        - [studies](https://github.com/robfatland/nexus/blob/gh-pages/cloud/studies.md) (keywords: SCOPED Neotoma nascent link-based stub)
-        - [aws Organizations](https://github.com/robfatland/nexus/blob/gh-pages/cloud/organizations.md) (keywords: AWS organizations services)
-        - [aws object storage](https://github.com/robfatland/nexus/blob/gh-pages/cloud/aws.md) (keywords: local drive S3 object storage)
-        - [aws ai](https://github.com/robfatland/nexus/blob/gh-pages/cloud/aws-ai.md) (keywords: AWS AI workshop notes SageMaker Bedrock) (**Note: Merge with AI-AWS**)
+    - [cloud](https://github.com/robfatland/nexus/blob/gh-pages/cloud/index.md) (VM login using VSCode plus basics and links)
+        - [spot market / preemptible instances](https://github.com/robfatland/nexus/blob/gh-pages/cloud/spot.md) (preemptible spot market checkpoint)
+        - [studies](https://github.com/robfatland/nexus/blob/gh-pages/cloud/studies.md) (SCOPED Neotoma nascent link-based stub)
+        - [aws Organizations](https://github.com/robfatland/nexus/blob/gh-pages/cloud/organizations.md) (AWS organizations services)
+        - [aws object storage](https://github.com/robfatland/nexus/blob/gh-pages/cloud/aws.md) (local drive S3 object storage)
+        - [aws ai](https://github.com/robfatland/nexus/blob/gh-pages/cloud/aws-ai.md) (AWS AI workshop notes SageMaker Bedrock) (**Note: Merge with AI-AWS**)
         - [azure](https://github.com/robfatland/nexus/blob/gh-pages/cloud/azure.md) (stub)
         - [gcp](https://github.com/robfatland/nexus/blob/gh-pages/cloud/gcp.md) (stub)
     - [manim](https://github.com/robfatland/nexus/blob/gh-pages/manim/index.md) (nascent notes on getting started)
     - [(meta-)documentation](https://github.com/robfatland/nexus/blob/gh-pages/documentation/index.md) (stub; mentions flameshot)
-    - [python](https://github.com/robfatland/nexus/blob/gh-pages/python/index.md) (keywords: topics to learn, a start on hashing)
-        - [jupyter](https://github.com/robfatland/nexus/blob/gh-pages/python/jupyter.md) (keywords: Littlest, image display, list directory, slider control (stub))
+    - [python](https://github.com/robfatland/nexus/blob/gh-pages/python/index.md) (topics to learn, a start on hashing)
+        - [jupyter](https://github.com/robfatland/nexus/blob/gh-pages/python/jupyter.md) (Littlest, image display, list directory, slider control (stub))
         - [python packages](https://github.com/robfatland/nexus/blob/gh-pages/python/packages.md) (stub: should namedrop apt, pip, conda, mamba, pixi)
-    - [containers](https://github.com/robfatland/nexus/blob/gh-pages/containers/index.md) (keywords: nascent eigenconcept notes refers MSE544)
-    - [artificial intelligence](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md) (keywords: AI eigenconcepts nascent notes)
-        - [gcp](https://github.com/robfatland/nexus/blob/gh-pages/ai/gcp.md) (keywords: Gemini bootstrap notes)
-        - [aws](https://github.com/robfatland/nexus/blob/gh-pages/ai/aws.md) (get started pointers)
+    - [containers](https://github.com/robfatland/nexus/blob/gh-pages/containers/index.md) (nascent eigenconcept notes refers MSE544)
+    - [artificial intelligence](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md) (AI eigenconcepts nascent notes)
+        - [gcp](https://github.com/robfatland/nexus/blob/gh-pages/ai/gcp.md) (Gemini bootstrap notes)
+        - [aws](https://github.com/robfatland/nexus/blob/gh-pages/ai/aws.md) (get started using the AWS AI stack; pointers)
         - [azure](https://github.com/robfatland/nexus/blob/gh-pages/ai/azure.md) 
     - [quantum computing](https://github.com/robfatland/nexus/blob/gh-pages/quantum/index.md) (stub)
         - [hadamard gates](https://github.com/robfatland/nexus/blob/gh-pages/quantum/hadamard.md) (stub)
