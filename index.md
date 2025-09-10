@@ -52,7 +52,7 @@ The use of keywords is intended to remind one of the page's detailed focus.
     - [cloud](https://github.com/robfatland/nexus/blob/gh-pages/cloud/index.md) (keywords: VM login using VSCode plus basics and links)
         - [spot market / preemptible instances](https://github.com/robfatland/nexus/blob/gh-pages/cloud/spot.md) (keywords: preemptible spot market checkpoint)
         - [studies](https://github.com/robfatland/nexus/blob/gh-pages/cloud/studies.md) (keywords: SCOPED Neotoma nascent link-based stub)
-        - [organizations](https://github.com/robfatland/nexus/blob/gh-pages/cloud/organizations.md) (keywords: AWS organizations services) (**Note: Rebrand as AWS-organizations**)
+        - [aws Organizations](https://github.com/robfatland/nexus/blob/gh-pages/cloud/organizations.md) (keywords: AWS organizations services)
         - [aws object storage](https://github.com/robfatland/nexus/blob/gh-pages/cloud/aws.md) (keywords: local drive S3 object storage)
         - [aws ai](https://github.com/robfatland/nexus/blob/gh-pages/cloud/aws-ai.md) (keywords: AWS AI workshop notes SageMaker Bedrock) (**Note: Merge with AI-AWS**)
         - [azure](https://github.com/robfatland/nexus/blob/gh-pages/cloud/azure.md) (stub)
