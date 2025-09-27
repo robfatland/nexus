@@ -13,7 +13,12 @@
     - Includes some light justification verbiage for Anthropic
 - Choose "Do it on your own" rather than as part of an event
     - This leads to a [page describing what must be installed](https://catalog.workshops.aws/building-agentic-workflows/en-US/on_your_own)
-    - The IDE in particular will be VS Code Code-Server
+    - The IDE in particular will be VS Code Server
+ 
+
+Now: Upon subsequent turns of fate I arrived at the following (as-yet-untested) recipe for setting up 
+a VS Code Server instance on an AWS EC2 instance with Q Developer enabled and a few minor whistles 
+and bells. 
 
  
 ## Build a working environment on EC2 including Q Developer access
@@ -55,8 +60,18 @@ EOF
 sudo systemctl enable --now code-server@ubuntu
 ```
 
-Here the 'your-secure-password' is an arbitrary password I select. I use it in 
-authenticating in to the VS Code Server instance: Prompted when navigating to
+
+Warning: `cert: false` means no SSL/TLS certificate will be in play. Communication
+will be over unencrypted HTTP, not HTTPS. This is easily modified: One changes to 
+the `.config/code-server/config.yaml` file: `cert: true`. The browser address still
+uses `:8080` and we will see a browser warning 'Not secure'. To this we respond by 
+clicking 'Advanced > Proceed` and we now have encrypted traffic. There is a more 
+proper method of accomplishing this that involves using a domain name for the EC2; 
+I skip this for now.
+
+
+Above note there is 'your-secure-password'. This is an arbitrary password I select. 
+I use it in authenticating in to the VS Code Server instance: As prompted when navigating to
 `http://ec2-ip-address:8080`.
 
 
