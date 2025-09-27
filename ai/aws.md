@@ -60,6 +60,24 @@ authenticating in to the VS Code Server instance: Prompted when navigating to
 `http://ec2-ip-address:8080`.
 
 
+Here is a variant of the above that auto-generates a 20-character password.
+
+
+```
+# Generate a random password
+PASSWORD=$(openssl rand -base64 20)
+echo "Your VS Code Server password: $PASSWORD"
+
+# Use it in config
+cat > ~/.config/code-server/config.yaml << EOF
+bind-addr: 0.0.0.0:8080
+auth: password
+password: $PASSWORD
+cert: false
+EOF
+```
+
+
 - Install Python3
 
 
