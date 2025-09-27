@@ -65,7 +65,7 @@ Keywords: A page's detailed focus.
     - [containers](https://github.com/robfatland/nexus/blob/gh-pages/containers/index.md) (nascent eigenconcept notes refers MSE544)
     - [artificial intelligence](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md) (AI eigenconcepts nascent notes)
         - [gcp](https://github.com/robfatland/nexus/blob/gh-pages/ai/gcp.md) (Gemini bootstrap notes)
-        - [aws](https://github.com/robfatland/nexus/blob/gh-pages/ai/aws.md) (get started using the AWS AI stack; pointers)
+        - [aws](https://github.com/robfatland/nexus/blob/gh-pages/ai/aws.md) (AWS AI stack; pointers; configure VS Code Server; Amazon Q Developer)
         - [azure](https://github.com/robfatland/nexus/blob/gh-pages/ai/azure.md) 
     - [quantum computing](https://github.com/robfatland/nexus/blob/gh-pages/quantum/index.md) (stub)
         - [hadamard gates](https://github.com/robfatland/nexus/blob/gh-pages/quantum/hadamard.md) (stub)
