@@ -119,6 +119,14 @@ pip3 install --upgrade pip
 pip3 install networkx boto3 streamlit transformers torch pillow
 ```
 
+WARNING: There may be a library incompatibility from this install when running
+a streamlit web application. A solution that has proven to work is: 
+
+
+```
+pip install --upgrade boto3 botocore
+```
+
 
 - Enable Amazon Q Developer
     - In VS Code Server aka browser address `http://the-ec2-ip:8080`
