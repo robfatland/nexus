@@ -4,8 +4,16 @@
 
 [ai index src](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md)
 
+# Content sections
 
-# AI on the Amazon Web Services cloud platform
+
+- AI on AWS pointers
+- EC2 working environment build with Q Developer on VS Code Server
+- Example Python Streamlit AI playground application
+
+
+
+## AI on AWS pointers
 
 - [Instructions](https://catalog.workshops.aws/building-agentic-workflows/en-US/bedrock-api)
 - Log in to an active account
@@ -21,7 +29,7 @@ a VS Code Server instance on an AWS EC2 instance with Q Developer enabled and a 
 and bells. 
 
  
-## Build a working environment on EC2 including Q Developer access
+## EC2 working environment build with Q Developer on VS Code Server
 
 
 - EC2: Ubuntu Server latest; say c5.xlarge; keypair; new security group
@@ -173,7 +181,175 @@ G.add_edge('A', 'B')
 print(f"NetworkX working: {list(G.edges())}")
 ```
 
+## Example Python Streamlit AI playground application
 
+
+```
+import io
+import json
+
+import boto3
+import streamlit as st
+from PIL import Image
+from transformers import GPT2LMHeadModel, GPT2Tokenizer, DistilBertTokenizer, DistilBertForSequenceClassification
+import torch
+
+st.title("Building with Bedrock")  # Title of the application
+st.subheader("Model Playground")
+
+# Turn base64 string to image with PIL
+def base64_to_pil(base64_string):
+    """
+    Purpose:
+        Turn base64 string to image with PIL
+    Args/Requests:
+         base64_string: base64 string of image
+    Return:
+        image: PIL image
+    """
+    import base64
+
+    imgdata = base64.b64decode(base64_string)
+    image = Image.open(io.BytesIO(imgdata))
+    return image
+
+
+bedrock_runtime = boto3.client(
+    service_name="bedrock-runtime",
+    region_name="us-west-2",
+)
+
+
+# Bedrock api call to stable diffusion
+def generate_image_sd(text):
+    """
+    Purpose:
+        Uses Bedrock API to generate an Image
+    Args/Requests:
+         text: Prompt
+    Return:
+        image: base64 string of image
+    """
+    body = {
+        "prompt": text,
+        "output_format": "jpeg",
+        "seed": 0,
+    }
+
+    body = json.dumps(body)
+
+    modelId = "stability.stable-image-core-v1:1"
+
+    response = bedrock_runtime.invoke_model(
+        body=body, 
+        modelId=modelId
+    )
+    response_body = json.loads(response["body"].read().decode("utf-8"))
+
+    results = response_body["images"][0]
+    return results
+
+def call_nova(
+    system_prompt: str,
+    prompt: str,
+    model_id: str = "us.amazon.nova-pro-v1:0",
+):
+    prompt_config = {
+        "system": [
+            {"text": system_prompt}
+        ],
+        "messages": [
+            {
+                "role": "user",
+                "content": [
+                    {"text": prompt},
+                ],
+            }
+        ],
+    }
+    body = json.dumps(prompt_config)
+
+    modelId = model_id
+    accept = "application/json"
+    contentType = "application/json"
+
+    response = bedrock_runtime.invoke_model(
+        body=body, modelId=modelId, accept=accept, contentType=contentType
+    )
+    response_body = json.loads(response.get("body").read())
+
+    results = response_body["output"]["message"]["content"][0].get("text")
+    return results
+
+@st.cache_resource
+def load_gpt2():
+    tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
+    model = GPT2LMHeadModel.from_pretrained("gpt2")
+    tokenizer.pad_token = tokenizer.eos_token
+    return tokenizer, model
+
+def generate_gpt2_text(prompt, max_length=100):
+    tokenizer, model = load_gpt2()
+    inputs = tokenizer.encode(prompt, return_tensors="pt")
+    with torch.no_grad():
+        outputs = model.generate(inputs, max_length=max_length, num_return_sequences=1, pad_token_id=tokenizer.eos_token_id)
+    return tokenizer.decode(outputs[0], skip_special_tokens=True)
+
+@st.cache_resource
+def load_distilbert():
+    tokenizer = DistilBertTokenizer.from_pretrained("distilbert-base-uncased-finetuned-sst-2-english")
+    model = DistilBertForSequenceClassification.from_pretrained("distilbert-base-uncased-finetuned-sst-2-english")
+    return tokenizer, model
+
+def classify_sentiment(text):
+    tokenizer, model = load_distilbert()
+    inputs = tokenizer(text, return_tensors="pt", truncation=True, padding=True)
+    with torch.no_grad():
+        outputs = model(**inputs)
+    predictions = torch.nn.functional.softmax(outputs.logits, dim=-1)
+    labels = ["NEGATIVE", "POSITIVE"]
+    return f"{labels[predictions.argmax().item()]}: {predictions.max().item():.3f}"
+
+models = ["Stable Image Core", "Amazon Nova Pro", "GPT2", "DistilBERT"]
+
+current_model = st.selectbox("Select Model", models)
+
+
+if current_model == "Stable Image Core":
+    # text input
+    prompt = st.text_area("Enter prompt")
+
+    #  Generate image from prompt,
+    if st.button("Generate Image"):
+        base64_image = generate_image_sd(prompt)
+        image = base64_to_pil(base64_image)
+        st.image(image)
+
+if current_model == "Amazon Nova Pro":
+    system_prompt = st.text_area("Enter system prompt")
+    prompt = st.text_area("Enter prompt")
+
+    #  Generate text from prompt,
+    if st.button("Call Nova"):
+        generated_text = call_nova(system_prompt, prompt, "us.amazon.nova-pro-v1:0")
+        st.markdown(generated_text)
+
+if current_model == "GPT2":
+    prompt = st.text_area("Enter prompt for GPT2")
+    max_length = st.slider("Max length", 50, 200, 100)
+    
+    if st.button("Generate Text"):
+        generated_text = generate_gpt2_text(prompt, max_length)
+        st.markdown(generated_text)
+
+if current_model == "DistilBERT":
+    text = st.text_area("Enter text for sentiment analysis")
+    
+    if st.button("Analyze Sentiment"):
+        sentiment = classify_sentiment(text)
+        st.markdown(f"**Sentiment:** {sentiment}")
+
+```
 
 
 
