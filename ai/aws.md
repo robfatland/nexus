@@ -9,7 +9,7 @@
 
 - AI on AWS pointers
 - EC2 working environment build with Q Developer on VS Code Server
-- Example Python Streamlit AI playground application
+- Example Python Streamlit application: Uses 4 models, 2 AWS-hosted, 2 copied from HF
 
 
 
@@ -181,7 +181,7 @@ G.add_edge('A', 'B')
 print(f"NetworkX working: {list(G.edges())}")
 ```
 
-## Example Python Streamlit AI playground application
+## Example Python Streamlit application: Uses 4 models, 2 AWS-hosted, 2 copied from HF
 
 
 ```
@@ -194,8 +194,8 @@ from PIL import Image
 from transformers import GPT2LMHeadModel, GPT2Tokenizer, DistilBertTokenizer, DistilBertForSequenceClassification
 import torch
 
-st.title("Building with Bedrock")  # Title of the application
-st.subheader("Model Playground")
+st.title("AWS Bedrock Web App")  # Title of the application
+st.subheader("Four models available")
 
 # Turn base64 string to image with PIL
 def base64_to_pil(base64_string):
@@ -220,7 +220,7 @@ bedrock_runtime = boto3.client(
 )
 
 
-# Bedrock api call to stable diffusion
+# Bedrock api call to Stable Image Core text to image model
 def generate_image_sd(text):
     """
     Purpose:
@@ -235,20 +235,17 @@ def generate_image_sd(text):
         "output_format": "jpeg",
         "seed": 0,
     }
-
     body = json.dumps(body)
-
     modelId = "stability.stable-image-core-v1:1"
-
     response = bedrock_runtime.invoke_model(
         body=body, 
         modelId=modelId
     )
     response_body = json.loads(response["body"].read().decode("utf-8"))
-
     results = response_body["images"][0]
     return results
 
+# Nova is an AWS hosted text completion model
 def call_nova(
     system_prompt: str,
     prompt: str,
@@ -268,16 +265,13 @@ def call_nova(
         ],
     }
     body = json.dumps(prompt_config)
-
     modelId = model_id
     accept = "application/json"
     contentType = "application/json"
-
     response = bedrock_runtime.invoke_model(
         body=body, modelId=modelId, accept=accept, contentType=contentType
     )
     response_body = json.loads(response.get("body").read())
-
     results = response_body["output"]["message"]["content"][0].get("text")
     return results
 
@@ -313,7 +307,6 @@ def classify_sentiment(text):
 models = ["Stable Image Core", "Amazon Nova Pro", "GPT2", "DistilBERT"]
 
 current_model = st.selectbox("Select Model", models)
-
 
 if current_model == "Stable Image Core":
     # text input
