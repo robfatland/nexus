@@ -5,7 +5,7 @@
 # containers
 
 
-## notes from working through the [544 tutorial](https://naclomi.github.io/containers-tutorial/)
+## notes from working through the [544 tutorial](https://github.com/cloudbank-project/containers-tutorial)
 
 
 - Prerequisite: [Set up a cloud VM (Azure) as a workstation](https://cloudbank-project.github.io/az-serverless-tutorial/workstation/)
