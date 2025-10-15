@@ -351,8 +351,10 @@ if current_model == "DistilBERT":
 
 This uses port forwarding: From a laptop to the 
 EC2 VM running Jupyter Lab. One can also use an `ssh` tunnel, 
-more secure. Also more secure: Modifying the communication
-protocol to `https`.
+more secure. The **nexus** writeup for `ssh` tunnels is
+found [here](https://github.com/robfatland/nexus/blob/gh-pages/bash/tunneling.md).
+It is also more secure to modify the communication
+protocol from `http` to `https`.
 
 
 - `pip3 install jupyter`
@@ -367,13 +369,13 @@ protocol to `https`.
 ### If the preceding is not working...
 
 
-The EC2 VM may not be configured for inbound http traffic on port 8888. 
+The EC2 VM may not be configured for inbound `http` traffic on port 8888. 
 
 
 - Open the AWS console to add an inbound rule to the VM's security group
-    - Type: Custom TCP
-    - Port: 8888
-    - Source: Your IP address (or 0.0.0.0/0 for any IP)
+    - `Type: Custom TCP`
+    - `Port: 8888`
+    - `Source: Your IP address (or 0.0.0.0/0 for any IP)`
 
 
 
