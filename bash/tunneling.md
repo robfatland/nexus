@@ -3,23 +3,38 @@
 
 # ssh tunnels
 
-`ssh` tunnels enable us to log in to remote machines and even run `jupyter lab` by means of port forwarding. 
+
+`ssh` tunnels enable us to log in to remote machines and run `jupyter lab` by means of port forwarding. 
 [This lab](https://github.com/cloudbank-project/az-serverless-tutorial/blob/main/content/workstation/_index.md) 
 walks through setting up **VS Code Server** in this manner. My notes are below under the heading
 [Using VSCode Server](#Using-VSCode-Server].
+
 
 ## Overview
 
 
 This page describes `ssh` tunnel use through the specific application of using a cloud virtual machine
-as a working Jupyter environment. 
+as a working Jupyter environment. These instructions were written using an Azure VM (hence the 
+Username is `azureuser`) but they apply equally to other cloud platforms / remote VMs. On AWS the
+Ubuntu default username would be `ubuntu` rather than `azureuser`.
 
 
 Suppose I want to run a Jupyter notebook server on a cloud Virtual Machine. I will view and interact with this 
 from my laptop web browser. I can select a VM with a desired level of compute power. I can run the
 `jupyter` notebook server on an internet-facing VM (less secure) or on a cloud-internal VM (more secure). 
 This approach is simpler than building a "Littlest Jupyter Hub" which in turn is much simpler than building 
-a full-scale Jupyter Hub.
+a full-scale Jupyter Hub. Let's review these three options briefly, with build times being "YMMV".
+
+
+- Full-scale Jupyter Hub: Provides Jupyter Lab Server for hundreds, even thousands of individuals
+    - Build time: Days to learn and build a first time; with necessary ongoing care and feeding
+- Littlest Jupyter hub: Jupyter Lab Server for two up to 12 people
+    - Build time: Set up in half a day; plan on occasional updating
+- Jupyter Lab Server on a VM: For one person
+    - Build time: Up and running in an hour; update whenever
+
+
+In all cases each User should take advantage of independent software versioning such as GitHub.
 
 
 One way to proceed is to employ the `ssh` protocol to create a secure tunnel between machines. We consider
