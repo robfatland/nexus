@@ -7,6 +7,37 @@
 - [azure](https://github.com/robfatland/nexus/blob/gh-pages/ai/azure.md) cloud: stub
 
 
+# en avance: Notes from a lecture by Elle O'Brien (UMich School of Information)
+
+Past org: Data Version Control
+
+- Code LLMs (abbreviated here CL) regarding simulation, cata collection, etcetera
+- Undertrained as a Developer? You must be a Scientist!
+- Debugging code you didn't write is difficult
+- Inaccuracies in code and comments are a liability
+- Science context: What is "testing practice"?
+- Survey of scientists who use CL: Excerpted outcomes
+    - Who are you? Life sciences and engineering and etcetera
+    - What CL do you use? Partial: They use Chatbots not GitHub Copilot 3:1
+        - Chatbots produce longer blocks of code (hypothesis: this increases the cognitive load on R)
+    - Use case: "language changes" (e.g. due to legacy code, changing labs, specialty tools etcetera)
+    - Chat is 1000x easier than documentation...
+        - Why use documentation? CL can read and apply it for me
+    - Testing: Ad hoc, eyeball, not systematic
+        - Unsurprising: This can easily lead to failure modes
+    - Incorrect mental models by R can lead to failure modes
+
+
+The bottom line seems to be: People with experience and skill in software development, the lower the
+"productivity boost".
+
+
+Questions
+- How does Model Context Protocol (MCP) enter into mitigating negative outcomes? Does it exacerbate?
+- What is the status of RAG? By this I mean: Has it been "abstracted away" into new terminology?
+
+
+
 # artificial intelligence
 
 
