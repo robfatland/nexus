@@ -7,8 +7,8 @@
 - [azure](https://github.com/robfatland/nexus/blob/gh-pages/ai/azure.md) cloud: stub
 
 
-# en avance: Notes from a lecture 
-## delivered by Dr. Elle O'Brien 14-October-2025; University of Michigan School of Information
+# en avance: Notes from a lecture at the University of Washington
+## Dr. Elle O'Brien 14-October-2025; University of Michigan School of Information
 
 
 - Code LLMs (abbreviated here CL) are in regular use: simulation, data collection, etc research software
