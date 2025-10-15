@@ -8,48 +8,55 @@
 
 
 # en avance: Notes from a lecture 
-## delivered by Elle O'Brien 14-October-2025
-### UMich School of Information
+## delivered by Dr. Elle O'Brien 14-October-2025; University of Michigan School of Information
 
 
-Past org: Data Version Control
-
-
-- Code LLMs (abbreviated here CL) regarding simulation, cata collection, etcetera
+- Code LLMs (abbreviated here CL) are in regular use: simulation, data collection, etc research software
 - Undertrained as a Developer? You must be a Scientist!
-- Debugging code you didn't write is difficult
-- Inaccuracies in code and comments are a liability
-- Science context: What is "testing practice"?
-- Survey of scientists who use CL: Excerpted outcomes
-    - Who are you? Life sciences and engineering and etcetera
-    - What CL do you use? Partial: They use Chatbots not GitHub Copilot 3:1
-        - Chatbots produce longer blocks of code (hypothesis: this increases the cognitive load on R)
-    - Use case: "language changes" (e.g. due to legacy code, changing labs, specialty tools etcetera)
-    - Chat is 1000x easier than documentation...
-        - Why use documentation? CL can read and apply it for me
-    - Testing: Ad hoc, eyeball, not systematic
-        - Unsurprising: This can easily lead to failure modes
-    - Incorrect mental models by R can lead to failure modes
+- Established: Debugging code you didn't write is difficult
+- Established: Inaccuracies in code and comments are a liability
+- Science context: 'What is "testing practice"?' (lack of awareness)
+- From a survey of scientists who use CL: Excerpted outcomes
+    - Who are you? Life sciences and engineering and etcetera down the domain line
+    - What CL do you use? Ratio 3 to 1: Chatbots over GitHub Copilot (coding assistants)
+        - Consequently: As Chatbots produce longer blocks of code in comparison...
+        - ...the null hypothesis is that Chatbot code increases cognitive load imposed on the Researcher-Developer
+    - Under what conditions do researchers work with unfamiliar coding languages?
+        - due to legacy code, moving between labs, domain tools and belike
+    - How do Researcher-Developers interact with documentation?
+        - In short: They don't.
+            - "Chat is 1000x easier than documentation."
+            - "Why use documentation? The CL can read it and apply it for me"
+    - How does research code **testing** get done?
+        - Ad hoc or 'eyeball' methods; not systematic
+        - This can easily lead to failure modes
+    - Another common theme is incorrect mental models...
+        - ...that is: on the part of the Researcher-Developer
+        - "The code is looking at an Internet-based resource..."
+        - ...when in fact the code is not looking at the Internet
+        - Needless to say this can produce failure modes
 
 
-The bottom line seems to be: People with experience and skill in software development, the lower the
-"productivity boost".
+The survey results proceeded to the relationship between CL effectiveness (perceived) in
+productivity in relation to facets of skill on the part of the Researcher-Developer. 
+A summary point: People with experience and skill in software development experience a
+lower "productivity boost" from using a CL, even to the point of *decrease*.
 
 
-As part of this process: Be aware of the Retraction Watch database. 10s-of-k retraction; compare count of papers per year: 3 million.
+Turning to the scientific literature produced as a result of CL collaboration. An 
+interesting resource is the Retraction Watch database. In one year there are currently
+O(10k) retractions; in comparison with 3 million published papers per year.
 
 
-Potential failure mode: The quality of scientific literature slowly and quietly degrades.
+In summary the narrative suggests the following failure modes: 
+- The quality of scientific literature slowly and quietly degrades.
+- Scientists stop using professional caliber scientific software.
+- Poor research attribitable to CL use results in a public trust crisis, 'as featured in the New York Times'. 
 
 
-Potential failure mode: Scientists stop using professional caliber scientific software.
-
-
-Potential failure mode: Public trust crisis, as featured in the New York Times. 
-
-
-A bottom line I take away is that this is a Cautionary Tale deserving our attention and effort
-as scientists. A grass roots approach (as suggested by the presenter) could begin with "buddy up"
+A Cautionary Tale deserving of attention and effort: As scientists credibility is an important
+part of how we operate ('philosophy of doubt'). Where to begin? The speaker suggests as an
+example taking a grass roots approach: "Buddy up"
 with an RSE. 
 
 
