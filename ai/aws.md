@@ -4,16 +4,17 @@
 
 [ai index src](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md)
 
+
 # Content sections
 
 
-- AI on AWS pointers
-- EC2 working environment build with Q Developer on VS Code Server
-- Example Python Streamlit application: Uses 4 models, 2 AWS-hosted, 2 copied from HF
+- Artificial Intelligence on AWS: pointers
+- Build an AWS VM (EC2) work environment that includes Q Developer and VS Code Server
+- Example Web Application: Access to 4 AI models { 2 AWS-hosted and 2 from Hugging Face }
 
 
 
-## AI on AWS pointers
+## Artificial Intelligence on AWS pointers
 
 - [Instructions](https://catalog.workshops.aws/building-agentic-workflows/en-US/bedrock-api)
 - Log in to an active account
@@ -346,15 +347,17 @@ if current_model == "DistilBERT":
 
 
 
-# Running Jupyter on an AWS EC2 VM
+# Running `jupyter lab` on an AWS EC2 VM including `git`
+
+
+## Set up Jupyter and connect
 
 
 This uses port forwarding: From a laptop to the 
-EC2 VM running Jupyter Lab. One can also use an `ssh` tunnel, 
+EC2 VM running Jupyter Lab. One can also use an `ssh` tunnel which is considered 
 more secure. The **nexus** writeup for `ssh` tunnels is
-found [here](https://github.com/robfatland/nexus/blob/gh-pages/bash/tunneling.md).
-It is also more secure to modify the communication
-protocol from `http` to `https`.
+[here](https://github.com/robfatland/nexus/blob/gh-pages/bash/tunneling.md).
+It is also more secure to modify the communication protocol from `http` to `https`.
 
 
 - `pip3 install jupyter`
@@ -377,6 +380,31 @@ The EC2 VM may not be configured for inbound `http` traffic on port 8888.
     - `Port: 8888`
     - `Source: Your IP address (or 0.0.0.0/0 for any IP)`
 
+
+## Authenticate to GitHub
+
+
+First method: Generate / grab a valid GitHub access token. With this in hand run...
+
+```
+git config --global credential.helper store
+git push  # Enter username and token (will be cached)
+```
+
+
+Second method: Use `git config` to claim your identity and then authenticate (MFA) 
+when executing a push
+
+
+```
+git config --global user.name "Your Name"
+git config --global user.email "your_email@example.com"
+git pull
+git add .
+git commit -m "Use double quotes for this comment"
+git push
+<authentication process ensues>
+```
 
 
 
