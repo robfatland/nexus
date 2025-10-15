@@ -346,3 +346,38 @@ if current_model == "DistilBERT":
 
 
 
+# Running Jupyter on an AWS EC2 VM
+
+
+This uses port forwarding: From a laptop to the 
+EC2 VM running Jupyter Lab. One can also use an `ssh` tunnel, 
+more secure. Also more secure: Modifying the communication
+protocol to `https`.
+
+
+- `pip3 install jupyter`
+- `cd ~; git clone https://github.com/robfatland/ant`
+- `jupyter lab --ip=0.0.0.0 --port=8888 --no-browser`
+    - probably not necessary to append `--allow-root`
+    - as the Jupyter Lab spins up (lots of print): Note the long token string
+- In the laptop browser address bar type in `http://<EC2-public-ip-address>:8888/
+    - Paste the token string from above
+
+
+### If the preceding is not working...
+
+
+The EC2 VM may not be configured for inbound http traffic on port 8888. 
+
+
+- Open the AWS console to add an inbound rule to the VM's security group
+    - Type: Custom TCP
+    - Port: 8888
+    - Source: Your IP address (or 0.0.0.0/0 for any IP)
+
+
+
+
+
+
+
