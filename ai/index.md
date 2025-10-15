@@ -7,9 +7,13 @@
 - [azure](https://github.com/robfatland/nexus/blob/gh-pages/ai/azure.md) cloud: stub
 
 
-# en avance: Notes from a lecture by Elle O'Brien (UMich School of Information)
+# en avance: Notes from a lecture 
+## delivered by Elle O'Brien 14-October-2025
+### UMich School of Information
+
 
 Past org: Data Version Control
+
 
 - Code LLMs (abbreviated here CL) regarding simulation, cata collection, etcetera
 - Undertrained as a Developer? You must be a Scientist!
@@ -32,9 +36,28 @@ The bottom line seems to be: People with experience and skill in software develo
 "productivity boost".
 
 
+As part of this process: Be aware of the Retraction Watch database. 10s-of-k retraction; compare count of papers per year: 3 million.
+
+
+Potential failure mode: The quality of scientific literature slowly and quietly degrades.
+
+
+Potential failure mode: Scientists stop using professional caliber scientific software.
+
+
+Potential failure mode: Public trust crisis, as featured in the New York Times. 
+
+
+A bottom line I take away is that this is a Cautionary Tale deserving our attention and effort
+as scientists. A grass roots approach (as suggested by the presenter) could begin with "buddy up"
+with an RSE. 
+
+
 Questions
-- How does Model Context Protocol (MCP) enter into mitigating negative outcomes? Does it exacerbate?
-- What is the status of RAG? By this I mean: Has it been "abstracted away" into new terminology?
+- Does the advent of Model Context Protocol (MCP) represent an opportunity to mitigate negative outcomes?
+    - The speaker made the point that a *chain* of reliabilities gives a collective multiplicative reliability i.e. much less than 1
+    - The speaker also acknowledged the potential to mitigate; which is the notion I have picked up from a "front line" worker at AI2
+- What is the status of RAG with respect to abstraction?
 
 
 
