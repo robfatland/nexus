@@ -5,14 +5,12 @@
 # `bash`
 
 
-`bash` is the **B**ourne **A**gain **Sh**ell, the entry point for data science. In particular we want
-to dive into setting up a Virtual Machine (VM) on the cloud to host a Jupyter Notebook server via a 
-browser on a local machine (laptop, desktop). This is an important typical 'first step' so let us call out
-two ways to get to a functional build, presuming a running cloud VM:
+`bash` is the **B**ourne **A**gain **Sh**ell, the entry point for data science. These notes
+dive into setting up a VM to get to a Jupyter Notebook server via laptop browser. Two means to this end:
 
 
 - set up an `ssh` tunnel
-- have VSCode set up an `ssh` tunnel
+- VSCode sets up an `ssh` tunnel ([VS Code Server](https://code.visualstudio.com/docs/remote/vscode-server))
 
 
 ## children
