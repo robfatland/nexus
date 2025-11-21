@@ -41,7 +41,7 @@ Keywords: A page's detailed focus.
 - [nexus root](https://github.com/robfatland/nexus/blob/gh-pages/index.md) (Level 1)
   - [lexicon](https://github.com/robfatland/nexus/blob/gh-pages/lexicon.md) (Level 1+)
   - [loose strands (a ttdl)](https://github.com/robfatland/nexus/blob/gh-pages/loosestrands.md) (Level 1+)
-    - [bash](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md) (Level 2) 
+    - [bash](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md) (Level 2) (+ install miniconda)
         - [environments](https://github.com/robfatland/nexus/blob/gh-pages/bash/env.md) (Level 3)
         - [git and GitHub](https://github.com/robfatland/nexus/blob/gh-pages/bash/git.md) (Level 3)
         - [wrenching the terminal](https://github.com/robfatland/nexus/blob/gh-pages/bash/terminal.md) (Level 3)
