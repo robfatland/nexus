@@ -5,18 +5,19 @@
 # `bash`
 
 
-`bash` is the **B**ourne **A**gain **Sh**ell, the entry point for data science. These notes
-dive into setting up a VM to get to a Jupyter Notebook server via laptop browser. Two means to this end:
+`bash` is the **B**ourne **A**gain **Sh**ell, an entryway to data science: `bash` to `Python` to `libraries` 
+to `Jupyter` to `containers` to... well it doesn't end. Any case these notes concern setting up a VM to 
+get to `bash` and thence to a Jupyter Notebook server viewed in one's laptop browser. Two means to this end:
 
 
-- set up an `ssh` tunnel
+- We set up our own `ssh` tunnel
 - VSCode sets up an `ssh` tunnel ([VS Code Server](https://code.visualstudio.com/docs/remote/vscode-server))
 
 
 ## children
 
 
-Sub-pages of this page: 
+Sub-pages from this page: 
 
 
 - [environments](https://github.com/robfatland/nexus/blob/gh-pages/bash/env.md) including `import`
