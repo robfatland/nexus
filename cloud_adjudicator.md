@@ -1,13 +1,12 @@
 # CloudMaven on GitHub
 
-Has 19 repositories; I will summarize their respective value in bullet list style (or delete them).
+Has n < 19 repositories; I will summarize their respective value in bullet list style (or delete them).
 
 - documentation
 - cloudmaven
 - tutorial_contents
 - cloud101_aws
-- haciendata
-- pangeo
+- pangeo DELETE
 - dssg2017
 - s3-bucket-listing
 - cloud101_spot_ELB
@@ -17,7 +16,7 @@ Has 19 repositories; I will summarize their respective value in bullet list styl
 - cloud101_webframework
 - cloud101demo_beanstalk
 - webmap
-- Rosetta
+- Rosetta DELETE
 - cloud101_costing
 - cloud101_template
 - geohack_copy
