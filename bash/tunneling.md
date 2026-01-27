@@ -59,7 +59,7 @@ for the complete careful procedure.
 - Where to save? `/home/user/.ssh/config`: Open this and edit an entry to read:
 
 ```
-Host 123.12.23.123
+Identity string goes here, such as Ocean Chlorophyll Project VM
   HostName 123.12.23.123
   User azureuser
   IdentityFile "/home/user/.keypairs/some_keypair_filename.pem"
