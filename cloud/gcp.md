@@ -26,6 +26,9 @@ un-managed versions of services. Here we annotate the process of setting up RStu
     - Go to the fourth tab: Networking
         - Do not change anything here; just note the Firewall options for context
         - The eventual idea will be to open port 8787 for `tcp` traffic to support RStudio
+    - Click on the Create button
+        - Go to the VM Instances, find the running instance, note the External IP Address
+        - For example 12.123.12.123. I will refer to this as <ip-address> below
 - GCP console: Connect via `ssh` to the VM
     - Navigate in the console to the VM instances table
     - Find the VM you just started: Notice there is a "Connect" column
@@ -38,30 +41,48 @@ un-managed versions of services. Here we annotate the process of setting up RStu
         - Note: The `wget` command stipulates a particular version; so this might become outdated...
             - ...in which case you would need to go look up more current versions of things
         - `sudo apt install -y gdebi-core`
-        - `wget https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2023.12.1-402-amd64.deb`
-        - `sudo gdebi -n rstudio-server-2023.12.1-402-amd64.deb`
+        - `wget https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2024.12.0-467-amd64.deb`
+        - `sudo gdebi -n rstudio-server-2024.12.0-467-amd64.deb`
+
+# Restart
+sudo systemctl restart rstudio-server
     - Create an RStudio user
         - `sudo adduser rstudio`
-        - This will prompt for a password: I used `krypton` and named the user `R Studio` and added the other User Metadata
+        - Set a password: I used `krypton`
+        - ...also entered the additional User metadata
 - Open firewall port 8787 using GCP Console:
     - Go to VPC network --> Firewall
-    - Click CREATE FIREWALL RULE
+    - Click `Create Firewall Rule`
     - Configure:
-        - Name: allow-rstudio
+        - Name: `allow-rstudio`
         - Direction: Ingress
         - Action on match: Allow
         - Targets: Specified target tags
         - Target tags: rstudio-server
         - Source filter: IP ranges
-        - Source IP ranges: 0.0.0.0/0
+        - Source IP ranges: `0.0.0.0/0`
         - Protocols and ports: Check "Specified protocols and ports"
-        - TCP: 8787
-    - Click CREATE
+        - TCP: `8787`
+    - Click `Create`
 - Add the tag to the VM:
     - Go to Compute Engine --> VM instances
     - Click your VM name
     - Click EDIT at top
     - Scroll to Network tags
-    - Add: rstudio-server
-    - Click SAVE
-    - Now port 8787 is accessible from anywhere (which in Network-speak is 0.0.0.0/0)
+    - Add: `rstudio-server`
+    - Click `Save`
+    - Now port 8787 is accessible from anywhere (which in Network-speak is `0.0.0.0/0`)
+- Connect through a browser
+    - In the address bar type `http://<ipaddress>:8787`
+    - Login as user `rstudio` using the password you chose
+
+
+Here are some diagnostic commands if RStudio does not appear in the browser window.
+
+- From the `bash` shell: `sudo systemctl status rstudio-server`
+- `R --version`
+- `which R`
+
+
+I used a Coding Assistant to eventually narrow the problem down to an incompatibility in
+versions: R Studio Server versus the revision of R. 
