@@ -186,13 +186,14 @@ Security	    Manual firewall	            Built-in IAM integration
 
 
 <table style="margin-left: 0;">
-<tr><th></th><th>p:</th><th>2</th><th>3</th><th>5</th><th>7</th><th>11</th><th>13</th><th>moonlight</th></tr>
-<tr><td>$\alpha:$</td><td><b>1</b></td><td>1</td>
-    <td>2</td><td>4</td><td>6</td><td>$\cdot$</td><td>12</td><td>drive</td></tr>
-<tr><td></td><td><b>2</b></td><td>2</td><td>6</td>
-    <td>$\cdot$</td><td>$\cdot$</td><td>$\cdot$</td><td>$\cdot$</td><td>$\pi$</td></tr>
-<tr><td></td><td><b>3</b></td><td>4</td><td>$\cdot$</td>
-    <td>$\cdot$</td><td>$\cdot$</td><td>$\cdot$</td><td>$\cdot$</td><td>on</td></tr>
+<tr><th>Aspect</th><th>Compute Engine</th><th>Workstations</th></tr>
+<tr><td>Access</td><td>Web browser (port 8787)</td><td>Remote desktop + native apps</td>
+<tr><td>RStudio Type</td><td>Server edition</td><td>Desktop edition</td>
+<tr><td>Setup</td><td>Manual installation</td><td>Container-based</td>
+<tr><td>Management</td><td>DIY</td><td>Fully managed</td>
+<tr><td>Cost</td><td>VM + Storage</td><td>Higher (managed service premium)</td>
+<tr><td>Scaling</td><td>Manual</td><td>Auto-scaling</td>
+<tr><td>Security</td><td>Manual firewall</td><td>Built-in IAM integration</td>
 </table>
 
 
@@ -215,3 +216,4 @@ Workstations: Enterprise environments, native desktop experience, managed infras
 
 Bottom Line: Workstations provide a more desktop-like experience but at higher cost and 
 complexity compared to the simple RStudio Server on Compute Engine.
+
