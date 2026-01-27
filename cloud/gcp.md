@@ -6,8 +6,9 @@
 
 The Google Cloud Platform (gcp) has some excellent features. Also, like with other cloud platforms, there are 
 managed and un-managed versions of services. Below I annotate the process of setting up RStudio on an unmanaged VM 
-(GCP jargon: "Compute Engine"). The managed alternative is called a Workstation; which might have a simpler
-installation path.
+(GCP jargon: "Compute Engine"). The managed alternative is called a Workstation: More expensive, the setup process
+is perhaps a little more arcane; but the end result is more of a desktop working environment. See the section
+below on **Setting up a Workstation**.
 
 
 ### Overview of the procedure
@@ -134,3 +135,49 @@ port number at the end there.
 - Re-starting it (say the next day): See above command
 - Not covered here: Re-starting R Studio Server every time the machine boots
     - This can be built into the VM startup procedure
+ 
+
+## Setting up a GCP Workstation
+
+
+In the sections above we have a procedure for setting up a Google Cloud Platform (GCP)
+"Compute Engine" instance (a Virtual Machine (VM)) and connecting over the Internet
+to set up a browser-based R Studio Server environment. This section will go 
+through the alternative option of using a GCP Workstation to install and access
+R Studio Desktop. (Both options avoid the paid license.)  Before diving into the 
+Workstation setup procedure here are some Coding Assistant remarks characterizing 
+the differences:
+
+
+##### Major Differences
+
+
+Aspect	        Compute Engine	            Workstations
+Access	        Web browser (port 8787)	    Remote desktop + native apps
+RStudio Type	Server edition	            Desktop edition
+Setup	        Manual installation	        Container-based
+Management	    DIY	                        Fully managed
+Cost	        VM + storage	            Higher (managed service premium)
+Scaling	        Manual	                    Auto-scaling
+Security	    Manual firewall	            Built-in IAM integration
+
+
+##### Advantages of Workstations
+
+
+- Native RStudio Desktop (not web interface)
+- Better performance for graphics/plotting
+- Integrated file management
+- No port management needed
+- Automatic backups
+
+
+##### When to Use Each
+
+
+Compute Engine: Simple, cost-effective, web-based R development
+Workstations: Enterprise environments, native desktop experience, managed infrastructure
+
+
+Bottom Line: Workstations provide a more desktop-like experience but at higher cost and 
+complexity compared to the simple RStudio Server on Compute Engine.
