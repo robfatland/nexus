@@ -26,4 +26,42 @@ un-managed versions of services. Here we annotate the process of setting up RStu
     - Go to the fourth tab: Networking
         - Do not change anything here; just note the Firewall options for context
         - The eventual idea will be to open port 8787 for `tcp` traffic to support RStudio
-    - 
+- GCP console: Connect via `ssh` to the VM
+    - Navigate in the console to the VM instances table
+    - Find the VM you just started: Notice there is a "Connect" column
+    - Under that column, for your instance, click `ssh`
+        - This opens up a terminal window where you will have a `bash` prompt on the VM
+- Do some configuration steps on the VM from the `bash` shell
+    - `sudo apt update` (I often run `sudo apt upgrade -y` after doing this)
+    - `sudo apt install -y r-base r-base-dev` (this takes a minute or two)
+    - Install RStudio Server: 3 commands
+        - Note: The `wget` command stipulates a particular version; so this might become outdated...
+            - ...in which case you would need to go look up more current versions of things
+        - `sudo apt install -y gdebi-core`
+        - `wget https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2023.12.1-402-amd64.deb`
+        - `sudo gdebi -n rstudio-server-2023.12.1-402-amd64.deb`
+    - Create an RStudio user
+        - `sudo adduser rstudio`
+        - This will prompt for a password: I used `krypton` and named the user `R Studio` and added the other User Metadata
+- Open firewall port 8787 using GCP Console:
+    - Go to VPC network --> Firewall
+    - Click CREATE FIREWALL RULE
+    - Configure:
+        - Name: allow-rstudio
+        - Direction: Ingress
+        - Action on match: Allow
+        - Targets: Specified target tags
+        - Target tags: rstudio-server
+        - Source filter: IP ranges
+        - Source IP ranges: 0.0.0.0/0
+        - Protocols and ports: Check "Specified protocols and ports"
+        - TCP: 8787
+    - Click CREATE
+- Add the tag to the VM:
+    - Go to Compute Engine --> VM instances
+    - Click your VM name
+    - Click EDIT at top
+    - Scroll to Network tags
+    - Add: rstudio-server
+    - Click SAVE
+    - Now port 8787 is accessible from anywhere (which in Network-speak is 0.0.0.0/0)
