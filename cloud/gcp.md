@@ -4,7 +4,7 @@
 ## R Studio Server on a GCP Compute Engine VM
 
 
-The Google Cloud Platform (gcp) like other cloud platforms includes both managed and un-managed versions 
+The Google Cloud Platform (GCP) like other cloud platforms includes both managed and un-managed versions 
 of cloud services. This page in particular looks at the installation of R Studio for use by a research
 team in both unmanaged and managed context, respectively using GCP Compute Engine and GCP Workstation.
 
@@ -16,38 +16,44 @@ arcane (it incorporates Containers and so on); but the end result is more of a d
 environment. For more: See below the section on **Setting up a GCP Workstation**.
 
 
+> Note: I do not touch on paid versions of R Studio such as `Posit Workbench` or `R Studio
+Desktop Pro`.
+
+
 ### Overview of the procedure
 
-The cloud VM is an "e2-medium" that will run like $25 / month. I'd suggest doing the installation on
-that for practice; and then delete it and have another go on a more powerful VM. The only downside to
-doing just one install on a powerful machine first go is it misses the repetition reinforcement.
+
+The cloud VM I use is an "e2-medium" that will cost like $25 / month. I suggest doing an installation 
+on a small machine for practice; then delete it (or just stop it) and have another go on a more 
+powerful VM. The downside to doing just one install on the powerful instance is missing the repetition 
+reinforcement.
 
 
-Now we want to get on the VM command line. The operating system is Ubuntu Linux and the shell to use 
-is the `bash` shell. There are multiple ways to get there but the simplest is to click a button in
-the GCP console that launches a dedicated `bash` window. This is described below. 
+Now to get on the Ubuntu Linux VM `bash` command line. There are multiple ways to get there but the 
+simplest is to click a button in the GCP console that launches a dedicated pop-out `bash` window. 
 
 
-Now from the command line on the VM it takes about five commands to install R, install the R Studio
-Server, and get the Server running. By default it latches onto port 8787; that is where it intends 
-to receive User input and send back R Studio responses. But by default this port is closed off to 
-the outside world. In fact the only open port is port 22 which is where the `bash` shell is connected.
+From the command line on the VM it takes about five commands to install R, install the R Studio
+Server, and get the Server running. By default it latches onto port 8787; where it intends 
+to send/receive information supporting the R Studio Server GUI. By default this port is closed to 
+the outside world; the only open port is 22 for `ssh`.
 
 
-One more small task from the command line is to create a User called `rstudio` with a password so 
-we can authenticate when we connect to R Studio Server. 
+A final Linux command line task is to create a User called `rstudio` with a password.
 
 
-We're back in the GCP console for the next step. Now we create a Rule that says "Ok to connect to port 
-8787 from anywhere on the internet". We name this rule "allow-rstudio". It exists in a vacuum for the 
-moment. It might sound a bit unsafe and that's absolutely correct, especially with such a simple 
-username/password setup. So this is something to return to once the basics are working.
+Now: Back in the GCP console for the next step: We create a Rule that permits connecting to port 
+8787 from anywhere on the internet. We name this rule `allow-rstudio`. It exists in a vacuum. 
 
-Now (still in the console) we navigate over to the control panel for the VM. (We are ignoring the `bash`
-shell at this point.) We associate the above allow-rstudio Rule with our VMs Network settings. That is
-all that is required to connect to R Studio Server from a browser window in a laptop. What goes in the 
-browser window is described below; it will look like `http://127.48.76.111:8787` where you can see the
-port number at the end there. 
+
+> Note: "Can connect from anywhere on the Internet" sounds a bit unsafe, especially with
+> a simple username/password authentication. This is something to return to once the basic
+> setup is working.
+
+
+Now (still in the console) navigate to the the VM and associate the above `allow-rstudio` Rule 
+with Network settings. We can now connect to R Studio Server from a browser window on a laptop. 
+In the browser window: `http://112.48.76.111:8787` noting the port appended. 
 
 
 ### Condensed Procedure
@@ -155,6 +161,9 @@ port number at the end there.
 ### Operation issues
 
 
+To be aware of:
+
+
 - Shutting the VM off, starting it again
     - The VM can be stopped from the console so as not to pay the hourly rate when it is not in use
     - Re-starting it (say the next day): See above command
@@ -166,7 +175,9 @@ port number at the end there.
     - Serves as a backup of the entire machine
     - Can be used to start up a new VM with more compute power, other parameters changed
 - Re-sizing the root disk
-    - Do this when you realize you need more disk space, for example for data 
+    - Do this when you realize you need more disk space, for example for data
+- Revisit the Firewall rule permitting access from anywhere
+    - Modify the CIDR block to permit traffic only from a small range of ip addresses
  
 
 ## R Studio Desktop on a GCP Workstation
