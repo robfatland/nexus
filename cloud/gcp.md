@@ -147,16 +147,26 @@ port number at the end there.
 - `R --version` to see which version of R is installed
 - `which R` to see where R runs *from*
 - On my first go I was able to log in but the Studio then failed to start up
-    - I used a Coding Assistant to diagnost the problem down
-    - This proved to be a version incompatibility: R Studio Server versus R.
-    - The CA gave me revised installation commands and this fixed the issue
- 
-### Shutting it off, starting it back up
+    - I used a Coding Assistant to diagnose the problem
+    - This proved to be version incompatibility: R Studio Server ~ R.
+    - The CA gave me revised installation commands: fix worked
 
-- The VM can be stopped from the console so as not to pay the hourly rate when it is not in use
-- Re-starting it (say the next day): See above command
-- Not covered here: Re-starting R Studio Server every time the machine boots
-    - This can be built into the VM startup procedure
+ 
+### Operation issues
+
+
+- Shutting the VM off, starting it again
+    - The VM can be stopped from the console so as not to pay the hourly rate when it is not in use
+    - Re-starting it (say the next day): See above command
+    - Not covered here:
+        - Automatically start R Studio Server each time the machine boots
+        - Automatically stop the VM every workday at 7PM
+        - Automatically start the VM every workday at 8AM
+- Backing up the VM as a Machine Image
+    - Serves as a backup of the entire machine
+    - Can be used to start up a new VM with more compute power, other parameters changed
+- Re-sizing the root disk
+    - Do this when you realize you need more disk space, for example for data 
  
 
 ## R Studio Desktop on a GCP Workstation
@@ -172,17 +182,6 @@ the differences:
 
 
 ##### Major Differences
-
-
-Aspect	        Compute Engine	            Workstations
-Access	        Web browser (port 8787)	    Remote desktop + native apps
-RStudio Type	Server edition	            Desktop edition
-Setup	        Manual installation	        Container-based
-Management	    DIY	                        Fully managed
-Cost	        VM + storage	            Higher (managed service premium)
-Scaling	        Manual	                    Auto-scaling
-Security	    Manual firewall	            Built-in IAM integration
-
 
 
 <table style="margin-left: 0;">
