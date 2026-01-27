@@ -1,14 +1,19 @@
 [nexus published](https://robfatland.github.io/nexus), [index source](https://github.com/robfatland/nexus/blob/gh-pages/index.md)
 
 
-## gcp
+## R Studio Server on a GCP Compute Engine VM
 
 
-The Google Cloud Platform (gcp) has some excellent features. Also, like with other cloud platforms, there are 
-managed and un-managed versions of services. Below I annotate the process of setting up RStudio on an unmanaged VM 
-(GCP jargon: "Compute Engine"). The managed alternative is called a Workstation: More expensive, the setup process
-is perhaps a little more arcane; but the end result is more of a desktop working environment. See the section
-below on **Setting up a Workstation**.
+The Google Cloud Platform (gcp) like other cloud platforms includes both managed and un-managed versions 
+of cloud services. This page in particular looks at the installation of R Studio for use by a research
+team in both unmanaged and managed context, respectively using GCP Compute Engine and GCP Workstation.
+
+
+Directly below I annotate setting up R Studio Server on an unmanaged VM (the GCP jargon for this is
+"Compute Engine"). Below that I annotate setting up the managed alternative, R Studio Dekstop on
+a GCP Workstation. The latter is more expensive to operate and the setup process is a bit more 
+arcane (it incorporates Containers and so on); but the end result is more of a desktop working 
+environment. For more: See below the section on **Setting up a GCP Workstation**.
 
 
 ### Overview of the procedure
@@ -137,7 +142,7 @@ port number at the end there.
     - This can be built into the VM startup procedure
  
 
-## Setting up a GCP Workstation
+## R Studio Desktop on a GCP Workstation
 
 
 In the sections above we have a procedure for setting up a Google Cloud Platform (GCP)
