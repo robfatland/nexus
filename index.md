@@ -56,7 +56,7 @@ Keywords: A page's detailed focus.
         - [aws object storage](https://github.com/robfatland/nexus/blob/gh-pages/cloud/aws.md) (local drive S3 object storage)
         - [aws ai](https://github.com/robfatland/nexus/blob/gh-pages/cloud/aws-ai.md) (AWS AI workshop notes SageMaker Bedrock) (**Note: Merge with AI-AWS**)
         - [azure](https://github.com/robfatland/nexus/blob/gh-pages/cloud/azure.md) (stub)
-        - [gcp](https://github.com/robfatland/nexus/blob/gh-pages/cloud/gcp.md) (stub)
+        - [gcp RStudio install](https://github.com/robfatland/nexus/blob/gh-pages/cloud/gcp.md) (via VM and via managed Workstation)
     - [manim](https://github.com/robfatland/nexus/blob/gh-pages/manim/index.md) (nascent notes on getting started)
     - [(meta-)documentation](https://github.com/robfatland/nexus/blob/gh-pages/documentation/index.md) (stub; mentions flameshot)
     - [python](https://github.com/robfatland/nexus/blob/gh-pages/python/index.md) (topics to learn, a start on hashing)
