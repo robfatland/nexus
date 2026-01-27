@@ -178,6 +178,8 @@ To be aware of:
     - Do this when you realize you need more disk space, for example for data
 - Revisit the Firewall rule permitting access from anywhere
     - Modify the CIDR block to permit traffic only from a small range of ip addresses
+- Allocating and mounting an Object Storage bucket as a pseudo-drive on the VM
+    - Intended to provide vast cheap (but not super-fast) data storage capacity
  
 
 ## R Studio Desktop on a GCP Workstation
