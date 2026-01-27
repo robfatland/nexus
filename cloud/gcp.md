@@ -50,6 +50,23 @@ browser window is described below; it will look like `http://127.48.76.111:8787`
 port number at the end there. 
 
 
+### Condensed Procedure
+
+
+- Use the GCP console to start a VM and then log on to it using the console `ssh` button for the instance
+- Issue these Linux commands
+    - `sudo apt update`
+    - `sudo apt install -y r-base r-base-dev`
+    - `sudo apt install -y gdebi-core`
+    - `wget https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2024.12.0-467-amd64.deb`
+    - `sudo gdebi -n rstudio-server-2024.12.0-467-amd64.deb`
+    - `sudo adduser rstudio`
+-  Back on the GCP console...
+    - Create a Firewall Rule `allow-rstudio` granting TCP access to port 8787 from anywhere
+    - Add the tag for this rule to the VM
+- In the browser address bar connect via `http://<ipaddress>:8787` and login as user `rstudio`
+
+
 ### Procedure
 
 
@@ -165,6 +182,18 @@ Management	    DIY	                        Fully managed
 Cost	        VM + storage	            Higher (managed service premium)
 Scaling	        Manual	                    Auto-scaling
 Security	    Manual firewall	            Built-in IAM integration
+
+
+
+<table style="margin-left: 0;">
+<tr><th></th><th>p:</th><th>2</th><th>3</th><th>5</th><th>7</th><th>11</th><th>13</th><th>moonlight</th></tr>
+<tr><td>$\alpha:$</td><td><b>1</b></td><td>1</td>
+    <td>2</td><td>4</td><td>6</td><td>$\cdot$</td><td>12</td><td>drive</td></tr>
+<tr><td></td><td><b>2</b></td><td>2</td><td>6</td>
+    <td>$\cdot$</td><td>$\cdot$</td><td>$\cdot$</td><td>$\cdot$</td><td>$\pi$</td></tr>
+<tr><td></td><td><b>3</b></td><td>4</td><td>$\cdot$</td>
+    <td>$\cdot$</td><td>$\cdot$</td><td>$\cdot$</td><td>$\cdot$</td><td>on</td></tr>
+</table>
 
 
 ##### Advantages of Workstations
