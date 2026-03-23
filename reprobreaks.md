@@ -8,7 +8,7 @@ Read 3/23/2026.
 
 
 - "We propose" --> "We employ" (*)
-- 
+
 
 ### Keywords
 
@@ -55,7 +55,7 @@ Could number the three taxonomic categories (*)
 ### 2 Methodology
 
 
-#### Paragraph 2
+#### 2.1 Corpus Paragraph 2
 
 
 - `.ipynb` comment raises an interesting point: The sub-topic of why a researcher stops at
@@ -70,14 +70,65 @@ their Jupyter notebook (`Run all cells` may have been their workflow) rather tha
 - Idle question: Does your evaluation system include Python code and does it therefore
 pass self-scrutiny?
 
-   
+#### 2.2 Automated Stage 3
+
+
+- Be nice to define / elaborate "Pydantic schema"
+- suggest "; we" --> ". We"
+
+#### Stage 4
+
+
+- Suggest 900 sec --> 15 minutes
+
+
 ### 3 Failure Taxonomy
 
+
+- Suggest "who can address the gap" --> "how authors could address the gap (wwhere some failure modes were noted above in 2.2):"
+
+
+#### 3.2 Tier 2
+
+
+- Does `no_runnable_code` include the case where only `.ipynb` files are present?
+- Does `phantom_dependency` include failing to indicate `conda-forge` etc?
+  
 
 ### 4 Results
 
 
+#### 4.2 Build-Stage Findings
+
+
+- suggest "(12.8%)" --> "one in eight"
+
+
+#### 4.3 Framework Variation
+
+
+May be out of scope but I do wonder why PyTorch does so poorly in comparison to TensorFlow. Speculation?
+
+
 ### 5 Discussion
+
+
+#### 5.1 Paragraph 2 at the end: Suggest "but" --> "that"
+
+
+#### 5.2 Relationship to Prior Work paragraph 1
+
+
+First two sentences could be reworked to flow better. 
+
+
+#### 5.3 Limitations
+
+
+- Good show taking this on.
+- Suggest "successful builds" --> "successful LLM-driven builds"
+- I like the LLM conclusion at the end of this.
+- Optional: Somewhere in this section you could acknowledge the gap between a workflow baked into a Jupyter notebook and one built on `.py` modules, as noted above. Not to throw either the notebooks or your evaluation system under the bus; just an observation.
 
 
 ### 6 Conclusion
