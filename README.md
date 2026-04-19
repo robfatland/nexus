@@ -16,16 +16,20 @@ note gotchas and so on: Make the path easier to follow.
 ## motivation
 
 
-[This repo](https://github.com/robfatland/nexus/tree/main) is motivated by frustration: With sorting out
-a technical task; then writing out notes; then losing those notes; then coming back to the task three months
-later; then start over. Now the idea is to build the nexus static website from github pages. Theme is
-open science in practice, particularly how to build research computing cyberinfrastructure.
+[This repo](https://github.com/robfatland/nexus/tree/main) is motivated by frustration: Sort out
+a technical procedure for some project, write out some notes, lose those notes, move on to something 
+else, return to the project three months later... now start over. So: The idea is to build the nexus 
+static website from github pages. Theme is open science in practice, particularly how to build 
+research computing cyberinfrastructure.
+
+> `nexus` is intended as work in progress; and as much as documenting it strives to be
+> self-referential to help me find that thing I wrote out a few months (or years) back.
 
 
 ## other projects
 
 
-- [epipelargosy, an oceanography Jupyter book](https://github.com/robfatland/oceanography)
+- [argosy, an oceanography Jupyter book](https://github.com/robfatland/argosy)
 - [steam: university-level STE(A)M notes](https://github.com/robfatland/steam)
 - [sodium: a study of distributed forms of information](https://github.com/robfatland/sodium)
 - [analytic number theory](https://github.com/robfatland/ant)
