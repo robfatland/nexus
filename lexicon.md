@@ -145,10 +145,38 @@ jupyter notebook
 ### What is **`conda-forge`**?
 
 
+`conda-forge` is a community-maintained collection of conda packages. It serves as an alternative
+(and often more up-to-date) *channel* for installing packages via `conda`. Usage:
+
+```
+conda install -c conda-forge <package-name>
+```
+
+Many packages are available on `conda-forge` that are not in the default Anaconda channel.
+
+
 ### What is VSCode?
 
 
+Visual Studio Code (VSCode) is a free, open-source Integrated Development Environment (IDE) from Microsoft.
+It runs on Windows, macOS, and Linux. Key features for research computing:
+
+- Remote-SSH extension: Edit files and run terminals on remote machines (cloud VMs)
+- VS Code Server: Runs on a remote machine, presents the full IDE in your local browser or client
+- Jupyter extension: Run `.ipynb` notebooks directly in the editor
+- WSL extension: Seamlessly develop inside your WSL Linux environment from Windows
+
+See also: [nexus vscode notes](https://github.com/robfatland/nexus/blob/gh-pages/vscode/index.md)
+
+
 ### What is **`bash`**?
+
+
+`bash` is the **B**ourne **A**gain **Sh**ell, the default command-line interface on most Linux systems.
+It provides a text-based way to navigate the file system, run programs, manage processes, and automate
+tasks via scripts. If you open a terminal on Ubuntu (including WSL), you are almost certainly in `bash`.
+
+See also: [nexus bash notes](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md)
 
 
 ### What is **`Linux`**?
@@ -201,34 +229,108 @@ would often switch them off because it they just amounted to visual clutter.
 ### What is **`Jupyter`**?
 
 
+Jupyter is an open-source project providing interactive computing environments. The name derives from
+Julia, Python, and R — the three original supported languages. Key components:
+
+- **Jupyter Notebook / Jupyter Lab**: Browser-based interfaces for writing and running code in cells,
+  interspersed with markdown text, equations, and visualizations.
+- **IPython kernel**: The Python execution engine behind Jupyter notebooks.
+- A `.ipynb` file is a JSON document containing cells (code, markdown, output).
+
+See also: [nexus jupyter notes](https://github.com/robfatland/nexus/blob/gh-pages/python/jupyter.md)
+
+
 ### What is **`git`**?
+
+
+`git` is a distributed version control system. It tracks changes to files over time, enabling you to
+revert to earlier versions, collaborate with others, and maintain multiple parallel lines of development
+(branches). Core commands: `clone`, `pull`, `add`, `commit`, `push`.
+
+See also: [nexus git notes](https://github.com/robfatland/nexus/blob/gh-pages/git/index.md)
 
 
 ### What is GitHub?
 
 
+GitHub is a cloud-hosted platform for `git` repositories. It adds a web interface, collaboration tools
+(pull requests, issues, actions), and hosting services (GitHub Pages). A repository on GitHub serves as
+the authoritative "safe copy" of a project.
+
+
 ### What is Binder?
+
+
+Binder (mybinder.org) is a free service that turns a GitHub repository into a collection of interactive
+Jupyter notebooks. It builds a Docker container from your repo's environment specification and launches
+a temporary Jupyter server — no installation required for the user. Useful for sharing reproducible
+analyses and tutorials.
 
 
 ### What is an environment?
 
 
+In Python development, an *environment* is an isolated set of installed packages and a specific Python
+version. Environments prevent conflicts between projects that need different library versions. Managed
+via `conda` (conda environments) or `venv` (Python virtual environments).
+
+See also: [nexus environments notes](https://github.com/robfatland/nexus/blob/gh-pages/bash/env.md)
+
+
 ### What is **`environment.yml`**?
+
+
+A YAML file that specifies a conda environment: its name, channels, and package dependencies. Used to
+recreate an environment on another machine:
+
+```
+conda env create -f environment.yml
+```
 
 
 ### What is **`requirements.txt`**?
 
 
-I can "install" something called WSL... or maybe it is combined with "turning on Linux" inside Windows. 
-But I can also install Ubuntu bash. Which opens a bash terminal in my home directory... where miniconda 
-is not installed. So I install miniconda and now I can create and activate environments. And I can start 
-a Jupyter notebook server. But the other day my Ubuntu <start> icon stopped working. So I forced Ubuntu 
-to start using the Windows start utility. So it started. So I said "ls" and everything was gone. So all 
-my hard work evaporated (except that it was mostly synched with GitHub so Hah Hah Hah on the gods of 
-data loss). So...
-  
-  
-  ### What is a web framework?
-  
-  
-  ### What is flask?
+A plain text file listing Python packages (one per line) for installation via `pip`:
+
+```
+pip install -r requirements.txt
+```
+
+Typically generated with `pip freeze > requirements.txt`.
+
+
+> Anecdote: I can "install" WSL... or maybe it is combined with "turning on Linux" inside Windows.
+> I can also install Ubuntu bash. Which opens a bash terminal in my home directory... where miniconda
+> is not installed. So I install miniconda and now I can create and activate environments. And I can start
+> a Jupyter notebook server. But the other day my Ubuntu start icon stopped working. So I forced Ubuntu
+> to start using the Windows start utility. So it started. So I said "ls" and everything was gone. So all
+> my hard work evaporated (except that it was mostly synched with GitHub so Hah Hah Hah on the gods of
+> data loss). Moral: Keep everything in git.
+
+
+### What is a web framework?
+
+
+A web framework is a software library that simplifies building web applications. It handles
+routing (mapping URLs to code), request/response processing, templating, and often database
+interaction. Python examples: Flask (lightweight), Django (full-featured), FastAPI (modern, async).
+
+
+### What is Flask?
+
+
+Flask is a lightweight Python web framework. It provides the minimum needed to serve web pages
+and APIs without imposing a particular project structure. A minimal Flask app:
+
+```python
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return 'Hello, World!'
+```
+
+Run with `flask run` or `python app.py`. Flask is commonly used for building REST APIs and
+simple data-serving applications in research contexts.

@@ -24,6 +24,7 @@ smoother and faster; and then *documentation* as a philosophical topic.
 
 
 - [markdown](https://github.com/robfatland/nexus/blob/gh-pages/documentation/markdown.md)
+- [LaTeX in Jupyter](https://github.com/robfatland/nexus/blob/gh-pages/documentation/latex.md) (consolidated reference)
 
 
 ## Tactical documentation

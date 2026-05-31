@@ -21,7 +21,7 @@ Sub-pages from this page:
 
 
 - [environments](https://github.com/robfatland/nexus/blob/gh-pages/bash/env.md) including `import`
-- [git](https://github.com/robfatland/nexus/blob/gh-pages/bash/git.md)
+- [git](https://github.com/robfatland/nexus/blob/gh-pages/git/index.md) (consolidated into its own section)
 - [terminal](https://github.com/robfatland/nexus/blob/gh-pages/bash/terminal.md)
 - [tunneling](https://github.com/robfatland/nexus/blob/gh-pages/bash/tunneling.md) (manual *and* VSCode methods)
 
@@ -76,13 +76,13 @@ Linux from a Windows PC. The narrative then jumps into the bootstrapping recipe 
 ## Related links and resources 
 
 
-- [`conda` environments](https://robfatland.github.io/nexus/env)
-- [`git`](https://robfatland.github.io/nexus/git)
-- [`ssh` tunnels](https://robfatland.github.io/nexus/bash/tunnels)
-- [terminal configuration](https://robfatland.github.io/nexus/bash/terminal)
-- [cloud computing](https://robfatland.github.io/nexus/cloud)
-- [ai](https://robfatland.github.io/nexus/ai)
-- [vscode](https://robfatland.github.io/nexus/vscode)
+- [`conda` environments](https://github.com/robfatland/nexus/blob/gh-pages/bash/env.md)
+- [`git`](https://github.com/robfatland/nexus/blob/gh-pages/git/index.md)
+- [`ssh` tunnels](https://github.com/robfatland/nexus/blob/gh-pages/bash/tunneling.md)
+- [terminal configuration](https://github.com/robfatland/nexus/blob/gh-pages/bash/terminal.md)
+- [cloud computing](https://github.com/robfatland/nexus/blob/gh-pages/cloud/index.md)
+- [ai](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md)
+- [vscode](https://github.com/robfatland/nexus/blob/gh-pages/vscode/index.md)
 
 
 ## Linux on a PC running Windows
@@ -305,7 +305,7 @@ conda list
 
 
 We can now set up an `ssh` tunnel to a jupyter notebook server running on the VM.
-This is described in more detail on the [nexus *tunnels*](https://robfatland.github.io/nexus/bash/tunnels) 
+This is described in more detail on the [nexus *tunneling*](https://github.com/robfatland/nexus/blob/gh-pages/bash/tunneling.md) 
 page. Here is the final command we run on the VM, to start the Jupyter notebook server process as a 
 background task:
 

@@ -4,6 +4,13 @@
 
 # containers
 
+> **Conceptual overview only.** For hands-on container usage procedures, see the
+> [MSE544 containers tutorial](https://github.com/cloudbank-project/containers-tutorial)
+> ([published version](https://naclomi.github.io/containers-tutorial/)) and the
+> [Carpentries introduction to Docker](https://carpentries-incubator.github.io/docker-introduction/).
+
+**TODO:** Get links to MSE544 cloud infrastructure topic labs and add step-by-step usage procedures here.
+
 
 ## notes from working through the [544 tutorial](https://github.com/cloudbank-project/containers-tutorial)
 

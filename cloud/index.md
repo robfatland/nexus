@@ -19,10 +19,12 @@ mean consumer services such as iCloud and Google Drive.
 - [spot market](https://github.com/robfatland/nexus/blob/gh-pages/cloud/spot.md) 
 - [studies](https://github.com/robfatland/nexus/blob/gh-pages/cloud/studies.md)
 - [organizations](https://github.com/robfatland/nexus/blob/gh-pages/cloud/organizations.md)
-- [aws](https://github.com/robfatland/nexus/blob/gh-pages/cloud/aws.md)
-- [aws ai](https://github.com/robfatland/nexus/blob/gh-pages/cloud/aws-ai.md)
-- [azure]()
-- [gcp]()
+- [aws object storage](https://github.com/robfatland/nexus/blob/gh-pages/cloud/aws.md)
+- [azure](https://github.com/robfatland/nexus/blob/gh-pages/cloud/azure.md)
+- [gcp](https://github.com/robfatland/nexus/blob/gh-pages/cloud/gcp.md)
+- [azure OpenAI access](https://github.com/robfatland/nexus/blob/gh-pages/cloud/azure-openai-access.md)
+
+> Note: AWS AI content (SageMaker, Bedrock, workshops) has been consolidated into [ai/aws](https://github.com/robfatland/nexus/blob/gh-pages/ai/aws.md).
 
 
 ## references

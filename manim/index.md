@@ -9,7 +9,7 @@ manim has engendered a lot of [community activity around building plugins](https
 
 
 - [Install `manim` from `conda-forge`](https://docs.manim.community/en/stable/installation.html)
-- For rendering equations: [Install LaTeX](). 
+- For rendering equations: [Install LaTeX](https://docs.manim.community/en/stable/installation/linux.html#optional-dependencies). 
 - Create Python code and save as `myvideo.py`
 
 

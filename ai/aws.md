@@ -347,6 +347,37 @@ if current_model == "DistilBERT":
 
 
 
+## SageMaker Unified Studio exploration
+
+(Consolidated from former `cloud/aws-ai.md`)
+
+- Log in to AWS, go to the SageMaker service
+- Select **`Create a Unified Studio Domain`** (one-stop shopping)
+    - Scroll down: Suggests creating a new VPC > Use defaults > Create Stack: `SageMakerUnifiedStudio-VPC`
+    - **`How do you want to set up your domain?`** > Quick Setup > Defaults with one exception
+        - One exception: 'Make your data discoverable'
+        - Create Domain > Success > Open Unified Studio > Landing Page (Discover, Build, Learn About)
+
+
+## Planning a data-driven university hackathon
+
+Particularly at the University of Washington with an active student computing element.
+
+* Theme suggestion: UW in relation to the Seattle community
+* Data resources
+    * [Open data on AWS](https://aws.amazon.com/opendata)
+    * [Google data](https://datasetsearch.research.google.com/)
+    * [Azure open datasets](https://azure.microsoft.com/en-us/products/open-datasets)
+    * [`data.gov`](https://data.gov)
+
+
+## AWS AI workshop links
+
+- [First workshop on Amazon SageMaker](https://catalog.us-east-1.prod.workshops.aws/workshops/06dbe60c-3a94-463e-8ac2-18c7f85788d4)
+- [Model Context Protocol workshop](https://catalog.us-east-1.prod.workshops.aws/workshops/7e5a3b66-1e87-45cd-bfaa-025c3d5f28ac)
+- [Building Agentic Workflows](https://catalog.workshops.aws/building-agentic-workflows/en-US/bedrock-api)
+
+
 # Running `jupyter lab` on an AWS EC2 VM including `git`
 
 

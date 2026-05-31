@@ -2,8 +2,9 @@
 [nexus main](https://github.com/robfatland/nexus/tree/main)
 
 - [ai index src](https://github.com/robfatland/nexus/blob/gh-pages/ai/index.md)
+- [ai.ipynb](https://github.com/robfatland/nexus/blob/gh-pages/ai/ai.ipynb) — working HuggingFace pipeline examples (sentiment analysis, text generation)
 - [google](https://github.com/robfatland/nexus/blob/gh-pages/ai/gcp.md) cloud: A simple vertex/gemini example
-- [aws](https://github.com/robfatland/nexus/blob/gh-pages/ai/aws.md) cloud: stub
+- [aws](https://github.com/robfatland/nexus/blob/gh-pages/ai/aws.md) cloud: EC2 + VS Code Server + Q Developer + Streamlit
 - [azure](https://github.com/robfatland/nexus/blob/gh-pages/ai/azure.md) cloud: stub
 
 

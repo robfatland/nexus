@@ -2,7 +2,7 @@
 [nexus main branch](https://github.com/robfatland/nexus/tree/main)
 
 
-This **`README.md`** shows up only on the github pages branch of the `nexus` repo. (There is another `README.md` on the
+This **`README.md`** shows up only on the GitHub pages branch of the `nexus` repo. (There is another `README.md` on the
 main branch.) This `README.md` does not get published to the corresponding [`nexus website`](https://robfatland.github.io/nexus);
 rather the source for the root published page is `index.md`, also in this directory.
 
@@ -10,8 +10,8 @@ rather the source for the root published page is `index.md`, also in this direct
 ## How is this site built and published? 
 
 
-This **nexus** repo uses a [Jekyll](https://jekyllrb.com/) template (the free service is called *GitHub pages*) 
-to generate a nicely formatted static website.  The content resides in the repo on a code branch called `gh-pages`. 
+This **nexus** repo uses a [Jekyll](https://jekyllrb.com/) template (the free service is called *GitHub Pages*) 
+to generate a nicely formatted static website. The content resides in the repo on a code branch called `gh-pages`. 
 Publication is triggered automatically after each *commit*. URLs:
 
 
@@ -20,19 +20,29 @@ Publication is triggered automatically after each *commit*. URLs:
 - [The nexus static website](https://robfatland.github.io/nexus/)
 
 
-Here is how to get one of these https://**organization**.github.io/**repo** websites started:
+## Link convention
 
 
-- Create some repository on GitHub
-- Menus: Github --> repo --> Settings --> **pages** tab on the left; choose a *theme*
-- Switch to the `gh-pages` branch: From the `Main` branch, use the chooser
-- At the documentation site it will be `index.md` that renders (not a README)
-    - Edits can be a little slow to propagate; refresh!
-- The root directory `index.md` renders as default content
-    - Add other folders and markdown; but cross reference using documentation website URLs, not GitHub URLs
-        - Example: **`https://organization.github.io/repo-name/subfolder`** renders the **`index.md`** therein
+**Internal links in nexus point to the gh-pages branch source**, not to the published website. This is
+because the primary mode of interaction is editing content directly on the gh-pages branch (either in
+the browser or via a local editor like Kiro). The published website is a read-only output; the source
+is where work happens.
+
+Example internal link format:
+```
+[bash notes](https://github.com/robfatland/nexus/blob/gh-pages/bash/index.md)
+```
+
+The published website URLs (`https://robfatland.github.io/nexus/...`) are useful for sharing with
+others who just want to read, but are not used for internal cross-references.
 
 
+## How to set up a GitHub Pages site like this
 
 
-
+- Create a repository on GitHub
+- Settings → **Pages** tab → choose a theme (or add `_config.yml` manually)
+- Switch to the `gh-pages` branch (use the branch chooser or create it)
+- The root `index.md` renders as the site's home page (not README.md)
+- Each subfolder's `index.md` renders at its corresponding URL path
+- Edits can be slow to propagate; refresh the published site after a minute or two
