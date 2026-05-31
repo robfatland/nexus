@@ -1,0 +1,11 @@
+# Jupyter checkpoint files
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
